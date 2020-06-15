@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/PsarewIvan/fsd/issues"
   },
-  "homepage": "https://github.com/PsarewIvan/fsd#readme"
+  "homepage": "https://github.com/PsarewIvan/fsd#readme",
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
 }
