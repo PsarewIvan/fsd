@@ -1,0 +1,19 @@
+{
+  "name": "fsd_frontend",
+  "version": "1.0.0",
+  "description": "Обучающее задание fsd на frontend-разработчика ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PsarewIvan/fsd.git"
+  },
+  "author": "Psarew Ivan <psarew.ivan@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PsarewIvan/fsd/issues"
+  },
+  "homepage": "https://github.com/PsarewIvan/fsd#readme"
+}
