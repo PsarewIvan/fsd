@@ -1,4 +1,20 @@
-.contsiner {
+@import '~normalize.css';
+@import 'fonts.css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
   width: 1000px;
   padding-top: 30px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+
+  background-image: url('../assets/picture.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
