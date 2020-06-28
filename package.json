@@ -4,11 +4,15 @@
   "description": "Обучающее задание fsd на frontend-разработчика ",
   "private": true,
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode development --watch",
-    "start": "webpack-dev-server --mode development --open"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/PsarewIvan/fsd.git"
@@ -20,17 +24,35 @@
   },
   "homepage": "https://github.com/PsarewIvan/fsd#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-typescript": "^7.10.1",
+    "autoprefixer": "^9.8.4",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.2",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.6.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "del-cli": "^3.0.1",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "pug": "^3.0.0",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^3.0.6",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   }
