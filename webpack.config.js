@@ -14,8 +14,8 @@ const PATHS = {
   dist: path.join(__dirname, './dist')
 };
 
-const PAGES_DIR = `${PATHS.src}/pug/pages/`
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
+const PAGES_DIR = `${PATHS.src}/pug/pages/`;
+const PAGES = fs.readdirSync(PAGES_DIR);
 
 const isDev = process.env.NODE_ENV === 'development'; // Режим сборки
 const isProd = !isDev;
@@ -110,8 +110,8 @@ module.exports = {
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
   plugins: [
     ...PAGES.map(page => new HTMLWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`
+      template: `${PAGES_DIR}/${page}/${page}.pug`,
+      filename: `${page}.html`
     })),
     new CleanWebpackPlugin(),
     new CopyPlugin({
