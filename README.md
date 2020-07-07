@@ -13,7 +13,7 @@
 
 ## Сторонние библиотеки
 
-- [Normilize](https://necolas.github.io/normalize.css/)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
 - [JQuery](https://jquery.com/)
 
 ## Поддержка браузеров
