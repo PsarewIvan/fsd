@@ -98,13 +98,14 @@ const babelOptions = preset => {
 };
 
 module.exports = {
+  context: PATHS.src,
+  mode: 'development',
   entry: {
     main:['@babel/polyfill', PATHS.src]
   },
   output: {
     filename: filename('js'),
-    path: PATHS.dist,
-    publicPath: "./"
+    path: PATHS.dist
   },
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
   plugins: [
@@ -130,7 +131,6 @@ module.exports = {
   ],
   optimization: optimization(),
   devServer: {
-    contentBase: `${PATHS.dist}`,
     port: 8088,
     hot: isDev,
     overlay: {
@@ -161,7 +161,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'img',
+            outputPath: 'img'
           }
         }
       },
@@ -171,7 +171,7 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts',
+            outputPath: 'fonts'
           }
         }
       },
