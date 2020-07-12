@@ -1,2 +1,8 @@
 import $ from 'jquery';
-import './assets/scss/styles.scss';
+import 'normalize.css';
+
+function importAll(resolve) {
+  resolve.keys().forEach(resolve);
+}
+
+importAll(require.context('../src/', true, /\.js$|\.scss$/));
