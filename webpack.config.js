@@ -10,7 +10,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { SourceMapDevToolPlugin } = require('webpack');
 
 const PATHS = {
-  src: path.join(__dirname, './src'),
+  src: path.resolve(__dirname, './src'),
   dist: path.join(__dirname, './dist')
 };
 
@@ -75,7 +75,7 @@ const cssLoaders = extra => {
 
   if (extra) {
     loaders.push({
-      loader: 'sass-loader',
+      loader: extra,
       options: { sourceMap: true }
     });
   }
@@ -101,11 +101,18 @@ module.exports = {
   context: PATHS.src,
   mode: 'development',
   entry: {
-    main:['@babel/polyfill', PATHS.src]
+    main:['@babel/polyfill', './index.js']
   },
   output: {
     filename: filename('js'),
-    path: PATHS.dist
+    path: PATHS.dist,
+    // publicPath: PATHS.dist
+  },
+  resolve: {
+    extensions: ['.js', '.json', '.png', 'jpg', 'svg'],
+    alias: {
+      '@': PATHS.src,
+    }
   },
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
   plugins: [
@@ -131,8 +138,11 @@ module.exports = {
   ],
   optimization: optimization(),
   devServer: {
-    port: 8088,
+    port: 9000,
+    compress: true,
     hot: isDev,
+    inline: true,
+    contentBase: PATHS.dist,
     overlay: {
       warnings: true,
       errors: true
@@ -167,6 +177,7 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
+        include: [ `${PATHS.src}/assets/fonts` ],
         use: {
           loader: 'file-loader',
           options: {
