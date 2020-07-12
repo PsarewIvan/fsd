@@ -1,3 +1,5 @@
+@import 'var.scss';
+
 .display-none {
   display: none !important;
 }
@@ -28,4 +30,19 @@ img {
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  max-width: $body;
+  margin: 0 auto;
+
+  font-family: $main-font;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $heading-font;
+  font-weight: bold;
 }
