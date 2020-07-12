@@ -1,0 +1,14 @@
+- var values = [{name: "H1", descr: "This one is the sub-section or widget title", mod: "h1"}, {name: "H2", descr: "Next one is the item title inside widgets", mod: "h2"}, {name: "H3", descr: "This is a label or CTA text", mod: "h3"}, {name: "Body", descr: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", mod: "body"}];
+
+mixin types({name, descr, mod})
+  li.types__element(class=`types__element--${mod}`)
+    p.types__names= name
+    span.types__lorem= descr
+
+ul.types
+  each val in values
+    +types({
+      name: val.name,
+      descr: val.descr,
+      mod: val.mod
+    })
