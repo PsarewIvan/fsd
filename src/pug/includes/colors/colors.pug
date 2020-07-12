@@ -1,0 +1,15 @@
+- var values = [{title: "Dark Shade 100%", color: "#1F2041", mod: "dark-shade-100"}, {title: "Dark Shade 75%", color: "#1F2041", mod: "dark-shade-75"}, {title: "Dark Shade 50%", color: "#1F2041", mod: "dark-shade-50"}, {title: "Dark Shade 25%", color: "#1F2041", mod: "dark-shade-25"}, {title: "Dark Shade 5%", color: "#1F2041", mod: "dark-shade-5"}, {title: "Purple", color: "#BC9CFF", mod: "purple"}, {title: "Green", color: "#6FCF97", mod: "green"}];
+
+mixin colors({title, color, mod})
+  li.colors__element(class=`colors__element--${mod}`)
+    .colors__description
+      span= title
+      span= color
+
+ul.colors
+  each val in values
+    +colors({
+      title: val.title,
+      color: val.color,
+      mod: val.mod
+    })
