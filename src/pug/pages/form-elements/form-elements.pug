@@ -1,0 +1,35 @@
+extends ../../layout/uikit-base/uikit-base
+include ../../includes/input-field/input-field
+
+block title
+  title Form Elements
+
+block content
+  .elements
+    .elements__block
+      .element(class="element--min-margin")
+        +input({
+          type: "email",
+          label: "Text Field",
+          name: "email",
+          placeholder: "Email"
+        })
+      .element(class="element--min-margin")
+        +input({
+          type: "text",
+          label: "Text Field",
+          name: "awesome",
+          placeholder: "placeholder",
+          value: "This is pretty awesome"
+        })
+      form
+        .element
+          +input({
+            type: "text",
+            label: "masked text field",
+            name: "maskedDate",
+            placeholder: "ДД.ММ.ГГГГ",
+            pattern: "/\d{2}\1\d{2}(-|\/|\.)\d{4}/g"
+          })
+        button(type= "submit") submit
+
