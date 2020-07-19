@@ -1,5 +1,6 @@
 extends ../../layout/uikit-base/uikit-base
 include ../../includes/input-field/input-field
+include ../../includes/dropdown/dropdown
 
 block title
   title Form Elements
@@ -21,6 +22,16 @@ block content
           name: "awesome",
           placeholder: "placeholder",
           value: "This is pretty awesome"
+        })
+      .form-elements__element(class="form-elements__element--min-margin")
+        +dropdown({
+          title: "Dropdown",
+          label: "Сколько гостей",
+          elements: [
+            {label: "Взрослые", name: "adult", min: "1"},
+            {label: "Дети", name: "children"},
+            {label: "Младенцы", name: "baby"}
+          ]
         })
       .form-elements__element
         +input({
