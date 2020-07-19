@@ -1,14 +1,11 @@
 mixin dropdown({title, label, elements})
   .dropdown
     h3.dropdown__title= title
-    button.dropdown__drop-button(type="button", aria-expanded="false")= label
-      svg(width="12" height="8" viewBox="0 0 12 8" aria-hidden="true" focusable="false")
-        path(d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5")
-    .dropdown__menu(hidden)
+    p.dropdown__drop-button= label
+    .dropdown__menu
       for elem in elements
         .dropdown__element
           label.dropdown__label(for= elem.name)= elem.label
-          button.dropdown__button(type="button", aria-label="Меньше") -
           input.dropdown__input(
             id= elem.name,
             type="number",
@@ -17,7 +14,3 @@ mixin dropdown({title, label, elements})
             min= elem.min,
             max= elem.max
           )
-          button.dropdown__button(type="button", aria-label="Больше") +
-      .dropdown__controls
-        button(class="dropdown__button dropdown__button--clear", type="button" aria-label="Очистить количество гостей") Очистить
-        button(class="dropdown__button dropdown__button", type="button" aria-label="Применить количество гостей") Применить
