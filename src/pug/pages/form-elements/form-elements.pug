@@ -5,16 +5,16 @@ block title
   title Form Elements
 
 block content
-  .elements
-    .elements__block
-      .element(class="element--min-margin")
+  .form-elements__wrapper
+    .form-elements__block
+      .form-elements__element(class="form-elements__element--min-margin")
         +input({
           type: "email",
           label: "Text Field",
           name: "email",
           placeholder: "Email"
         })
-      .element(class="element--min-margin")
+      .form-elements__element(class="form-elements__element--min-margin")
         +input({
           type: "text",
           label: "Text Field",
@@ -22,14 +22,12 @@ block content
           placeholder: "placeholder",
           value: "This is pretty awesome"
         })
-      form
-        .element
-          +input({
-            type: "text",
-            label: "masked text field",
-            name: "maskedDate",
-            placeholder: "ДД.ММ.ГГГГ",
-            pattern: "/\d{2}\1\d{2}(-|\/|\.)\d{4}/g"
-          })
-        button(type= "submit") submit
+      .form-elements__element
+        +input({
+          type: "text",
+          label: "masked text field",
+          name: "maskedDate",
+          placeholder: "ДД.ММ.ГГГГ",
+          pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
+        })
 

@@ -1,0 +1,74 @@
+.form-elements {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 320px;
+    margin-bottom: 100px;
+  }
+
+  &__element {
+    width: 100%;
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+
+    &--min-margin:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      margin: 0 0 16px;
+
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: #1F2041;
+    }
+
+    &--date {
+      width: 150px;
+    }
+
+    &--filter-date,
+    --subscription,
+    --dropdown-min,
+    --checkbox-expand {
+      width: 266px;
+    }
+
+    &--rate {
+      display: flex;
+      flex-wrap: wrap;
+
+      & .rate:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+
+    &__button-block {
+      display: flex;
+
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+
+    &--bullet {
+      width: 240px;
+    }
+  }
+}
