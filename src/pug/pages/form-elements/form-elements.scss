@@ -1,3 +1,5 @@
+@import '../../../assets/scss/var.scss';
+
 .form-elements {
   &__wrapper {
     display: flex;
@@ -32,7 +34,7 @@
       font-size: 12px;
       line-height: 1.25;
       text-transform: uppercase;
-      color: #1F2041;
+      color: $heading;
     }
 
     &--date {

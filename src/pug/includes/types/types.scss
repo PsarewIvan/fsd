@@ -38,7 +38,7 @@
 
     &--body .types__lorem {
       font-weight: normal;
-      color: $dark-shade-75;
+      color: $main-text;
     }
 
     &--h3 .types__lorem {
@@ -58,5 +58,6 @@
 
   &__lorem {
     font-weight: bold;
+    color: $heading;
   }
 }
