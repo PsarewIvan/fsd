@@ -1,0 +1,11 @@
+@import '../../../assets/scss/var.scss';
+
+.dropdown {
+  &__drop-button {
+    all: inherit;
+  }
+}
+
+[aria-expanded] path {
+    fill: currentColor;
+}
