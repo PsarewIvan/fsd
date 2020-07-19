@@ -9,23 +9,23 @@ block content
     .form-elements__block
       .form-elements__element(class="form-elements__element--min-margin")
         +input({
+          title: "Text Field",
           type: "email",
-          label: "Text Field",
           name: "email",
           placeholder: "Email"
         })
       .form-elements__element(class="form-elements__element--min-margin")
         +input({
+          title: "Text Field",
           type: "text",
-          label: "Text Field",
           name: "awesome",
           placeholder: "placeholder",
           value: "This is pretty awesome"
         })
       .form-elements__element
         +input({
+          title: "masked text field",
           type: "text",
-          label: "masked text field",
           name: "maskedDate",
           placeholder: "ДД.ММ.ГГГГ",
           pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"

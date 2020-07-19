@@ -1,10 +1,9 @@
-mixin input({type, label, name, value, placeholder, pattern})
-  label.input-field__label
-    span.input-field__span= label
-    input.input-field__input(
-      type= type,
-      name= name,
-      value= value,
-      placeholder= placeholder,
-      pattern= pattern
-    )
+mixin input({title, type, name, value, placeholder, pattern})
+  h3.input-field__title= title
+  input.input-field__input(
+    type= type,
+    name= name,
+    value= value,
+    placeholder= placeholder,
+    pattern= pattern
+  )

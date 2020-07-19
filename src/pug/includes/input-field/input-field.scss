@@ -1,16 +1,10 @@
 @import '../../../assets/scss/var.scss';
 
 .input-field {
-  &__label {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__span {
-    align-self: flex-start;
+  &__title {
     margin: 0 0 5px;
 
+    font-family: $main-font;
     font-weight: bold;
     font-size: 12px;
     line-height: 1.25;
@@ -19,6 +13,7 @@
   }
 
   &__input {
+    width: 100%;
     margin: 0;
     padding: 13px 15px;
 
@@ -39,7 +34,7 @@
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
-  .input-field__label:hover .input-field__input {
+  .input-field__input:hover {
     border-color: $border-active;
   }
 }
