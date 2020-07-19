@@ -1,0 +1,53 @@
+.input-field {
+  &__label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__span {
+    align-self: flex-start;
+    margin: 0 0 5px;
+
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #1F2041;
+  }
+
+  &__input {
+    margin: 0;
+    padding: 13px 15px;
+
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+
+    font-size: 14px;
+    line-height: 1.28;
+    color: rgba(31, 32, 65, 0.75);
+
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: rgba(31, 32, 65, 0.25);
+    }
+  }
+}
+
+/* Hover & Focus */
+
+@media(hover: hover) and (pointer: fine) {
+  .input-field__label:hover .input-field__input {
+    border-color: rgba(31, 32, 65, 0.5);
+  }
+
+  .input-field__label:hover .input-field__input--dropdown::after {
+    border-color: rgba(31, 32, 65, 0.75);
+  }
+}
+
+.input-field__input:focus {
+  outline: none;
+  border-color: rgba(31, 32, 65, 0.5);
+}
