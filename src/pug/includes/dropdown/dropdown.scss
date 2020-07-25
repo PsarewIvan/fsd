@@ -1,11 +1,173 @@
 @import '../../../assets/scss/var.scss';
 
 .dropdown {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0 0 5px;
+
+    font-size: 12px;
+    line-height: 1.25;
+    font-family: $main-font;
+    text-transform: uppercase;
+  }
+
   &__drop-button {
-    all: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 12px 15px 8px;
+
+    background-color: transparent;
+    border: 1px solid $border;
+    border-radius: 4px;
+
+    font-size: 14px;
+    line-height: 1.7;
+    color: $main-text;
+
+    transition: border-color 0.2s;
+
+    cursor: pointer;
+
+    & path {
+      transition: fill-opacity 0.2s;
+    }
+
+    &.open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-color: $border-active;
+
+      & path {
+        fill-opacity: 0.75;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+
+    padding: 7px 7px 8px 15px;
+    width: 100%;
+
+    background-color: white;
+    border: 1px solid $border-active;
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__label {
+    margin-right: auto;
+
+    color: $heading;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    padding: 0;
+    margin: 0;
+    width: 32px;
+
+    background-color: transparent;
+    border: none;
+
+    font-weight: bold;
+    font-size: 12px;
+    color: $input-number;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  &__button {
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid $border;
+    border-radius: 50%;
+    color: $button-text;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &[disabled] {
+      opacity: 0.38;
+      cursor: auto;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 19px 0 5px;
+  }
+
+  &__button-ctrl {
+    margin: 0;
+    padding: 0;
+
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $button-text;
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+
+    &--apply {
+      color: $button-light;
+    }
   }
 }
 
 [aria-expanded] path {
     fill: currentColor;
+}
+
+/* Hover & Focus */
+
+@media(hover: hover) and (pointer: fine) {
+  .dropdown__drop-button:hover {
+    border-color: $border-active;
+
+    & path {
+      fill-opacity: 0.75;
+    }
+  }
+}
+
+.dropdown__drop-button:focus {
+  outline: none;
+  border-color: $border-active;
+
+  & path {
+    fill-opacity: 0.75;
+  }
 }
