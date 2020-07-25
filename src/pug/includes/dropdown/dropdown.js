@@ -28,6 +28,7 @@
     let btn = dropdown.querySelector('.dropdown__drop-button');
     btn.setAttribute('type', 'button');
     btn.setAttribute('aria-expanded', 'false');
+    btn.classList.remove('open');
     btn.innerHTML = `${btn.innerHTML}
       <svg width="12" height="8" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
         <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#1F2041" fill-opacity="0.5">
@@ -37,6 +38,7 @@
     let dropdownMenu = dropdown.querySelector('.dropdown__menu');
     let dropdownInputs = dropdown.querySelectorAll('.dropdown__input');
     dropdownMenu.hidden = true;
+    dropdownMenu.style.position = 'absolute';
 
     Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
       dropdownInput.parentNode.insertBefore(createBtn('low', '-'), dropdownInput);
@@ -67,5 +69,10 @@
       btn.classList.toggle('open');
       dropdownMenu.hidden = expanded
     }
+
+    // dropdown.addEventListener('click', (evt) => {
+    //   evt.preventDefault();
+    //   if ()
+    // });
   })
 })()

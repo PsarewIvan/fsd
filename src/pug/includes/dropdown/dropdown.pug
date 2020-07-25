@@ -1,7 +1,7 @@
 mixin dropdown({title, label, elements})
   .dropdown
     h3.dropdown__title= title
-    p.dropdown__drop-button= label
+    p.dropdown__drop-button(class="open")= label
     .dropdown__menu
       for elem in elements
         .dropdown__element
