@@ -46,15 +46,15 @@
     let dropdownCtrl = document.createElement('div');
     dropdownCtrl.classList.add('dropdown__controls');
     dropdownCtrl.innerHTML = `
-      <button class="dropdown__button dropdown__button--clear", type="button" aria-label="Очистить количество гостей")>Очистить</button>
-      <button class="dropdown__button dropdown__button", type="button" aria-label="Применить количество гостей">Применить</button>
+      <button class="dropdown__button-ctrl dropdown__button-ctrl--clear", type="button" aria-label="Очистить количество гостей")>Очистить</button>
+      <button class="dropdown__button-ctrl dropdown__button-ctrl--apply", type="button" aria-label="Применить количество гостей">Применить</button>
     `;
     dropdownMenu.appendChild(dropdownCtrl);
 
     btn.onclick = () => {
       let expanded = btn.getAttribute('aria-expanded') === 'true' || false
-
       btn.setAttribute('aria-expanded', !expanded)
+      btn.classList.toggle('open');
       dropdownMenu.hidden = expanded
     }
   })
