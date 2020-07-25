@@ -41,6 +41,16 @@
     Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
       dropdownInput.parentNode.insertBefore(createBtn('low', '-'), dropdownInput);
       dropdownInput.parentNode.insertBefore(createBtn('hight', '+'), dropdownInput.nextSibling);
+
+      if (dropdownInput.value == 0) {
+        dropdownInput.previousSibling.setAttribute('disabled', 'true');
+      }
+
+      dropdownInput.addEventListener('input', () => {
+        if (dropdownInput.value == 0) {
+          dropdownInput.previousSibling.setAttribute('disabled', 'true');
+        } else dropdownInput.previousSibling.removeAttribute('disabled');
+      });
     });
 
     let dropdownCtrl = document.createElement('div');
