@@ -14,11 +14,12 @@
     return elementNew;
   }
 
-  function createBtn(aria, content) {
+  function createBtn(aria, content, data) {
     let btnElem = document.createElement('button');
-    btnElem.classList.add('dropdown__button');
+    btnElem.classList.add(`dropdown__button`, `dropdown__button--${aria}`);
     btnElem.setAttribute('type', 'button');
     btnElem.setAttribute('aria-label', aria);
+    btnElem.setAttribute('data-value', data);
     btnElem.innerHTML = content;
     return btnElem;
   }
@@ -41,14 +42,14 @@
     dropdownMenu.style.position = 'absolute';
 
     Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
-      dropdownInput.parentNode.insertBefore(createBtn('low', '-'), dropdownInput);
-      dropdownInput.parentNode.insertBefore(createBtn('hight', '+'), dropdownInput.nextSibling);
+      dropdownInput.parentNode.insertBefore(createBtn('low', '-', 'down'), dropdownInput);
+      dropdownInput.parentNode.insertBefore(createBtn('hight', '+', 'up'), dropdownInput.nextSibling);
 
       if (dropdownInput.value == 0) {
         dropdownInput.previousSibling.setAttribute('disabled', 'true');
       }
 
-      dropdownInput.addEventListener('input', () => {
+      dropdownInput.addEventListener('change', () => {
         if (dropdownInput.value == 0) {
           dropdownInput.previousSibling.setAttribute('disabled', 'true');
         } else dropdownInput.previousSibling.removeAttribute('disabled');
@@ -58,8 +59,8 @@
     let dropdownCtrl = document.createElement('div');
     dropdownCtrl.classList.add('dropdown__controls');
     dropdownCtrl.innerHTML = `
-      <button class="dropdown__button-ctrl dropdown__button-ctrl--clear", type="button" aria-label="Очистить количество гостей")>Очистить</button>
-      <button class="dropdown__button-ctrl dropdown__button-ctrl--apply", type="button" aria-label="Применить количество гостей">Применить</button>
+      <button class="dropdown__button-ctrl dropdown__button-ctrl--clear" type="button" aria-label="Очистить количество гостей">Очистить</button>
+      <button class="dropdown__button-ctrl dropdown__button-ctrl--apply" type="button" aria-label="Применить количество гостей">Применить</button>
     `;
     dropdownMenu.appendChild(dropdownCtrl);
 
@@ -70,9 +71,21 @@
       dropdownMenu.hidden = expanded
     }
 
-    // dropdown.addEventListener('click', (evt) => {
-    //   evt.preventDefault();
-    //   if ()
-    // });
+    let dropElements = dropdown.querySelectorAll('.dropdown__element');
+
+    Array.prototype.forEach.call(dropElements, dropElement => {
+      dropElement.addEventListener('click', (evt) => {
+        let inputElement = dropElement.querySelector('.dropdown__input');
+        let inputValue = Number(inputElement.value);
+
+        console.log(evt.target.dataset);
+        if (evt.target.dataset.value === 'up') {
+          inputElement.value = inputValue + 1;
+        }
+        if (evt.target.dataset.value === 'down') {
+          inputElement.value = inputValue - 1;
+        }
+      });
+    });
   })
 })()
