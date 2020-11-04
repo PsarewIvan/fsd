@@ -48,12 +48,6 @@
       if (dropdownInput.value == 0) {
         dropdownInput.previousSibling.setAttribute('disabled', 'true');
       }
-
-      dropdownInput.addEventListener('change', () => {
-        if (dropdownInput.value == 0) {
-          dropdownInput.previousSibling.setAttribute('disabled', 'true');
-        } else dropdownInput.previousSibling.removeAttribute('disabled');
-      });
     });
 
     let dropdownCtrl = document.createElement('div');
@@ -73,18 +67,34 @@
 
     let dropElements = dropdown.querySelectorAll('.dropdown__element');
 
+    // Меняет статус кнопок регулировки количества гостей в зависимости
+    // от атрибутов 'min' и 'max'
+    function setButtonStatus(element) {
+      if (element.value == element.getAttribute('min')) {
+        element.previousSibling.setAttribute('disabled', 'true');
+      } else element.previousSibling.removeAttribute('disabled');
+      if (element.value == element.getAttribute('max')) {
+        element.nextSibling.setAttribute('disabled', 'true');
+      } else element.nextSibling.removeAttribute('disabled');
+    }
+
     Array.prototype.forEach.call(dropElements, dropElement => {
+      let inputElement = dropElement.querySelector('.dropdown__input');
+
       dropElement.addEventListener('click', (evt) => {
-        let inputElement = dropElement.querySelector('.dropdown__input');
         let inputValue = Number(inputElement.value);
 
-        console.log(evt.target.dataset);
         if (evt.target.dataset.value === 'up') {
           inputElement.value = inputValue + 1;
         }
         if (evt.target.dataset.value === 'down') {
           inputElement.value = inputValue - 1;
         }
+        setButtonStatus(inputElement);
+      });
+
+      inputElement.addEventListener('change', () => {
+        setButtonStatus(inputElement);
       });
     });
   })
