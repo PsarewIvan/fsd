@@ -97,5 +97,21 @@
         setButtonStatus(inputElement);
       });
     });
+
+    // Кнопка очистки
+    let clearBtn = dropdown.querySelector('.dropdown__button-ctrl--clear');
+
+    function resetValue() {
+      Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
+        dropdownInput.value = 0;
+        dropdownInput.previousSibling.setAttribute('disabled', 'true');
+        dropdownInput.nextSibling.removeAttribute('disabled');
+      });
+    }
+
+    clearBtn.addEventListener('click', (evt) =>{
+      evt.preventDefault();
+      resetValue();
+    });
   })
 })()
