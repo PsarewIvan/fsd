@@ -4,6 +4,7 @@ include ../../includes/input-field/input-field
 include ../../includes/dropdown/dropdown
 include ../../includes/checkbox/checkbox
 include ../../includes/radio/radio
+include ../../includes/toggle/toggle
 
 block title
   title Form Elements
@@ -62,5 +63,14 @@ block content
           elements: [
             {label: "Мужчина", id: "man", value: "man", checked: false},
             {label: "Женщина", id: "woman", value: "woman", checked: true}
+          ]
+        })
+      .form-elements__element(class="form-elements__element--margin")
+        +toggle({
+          title: "Toggle",
+          name: "special",
+          elements: [
+            {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: false},
+            {label: "Получать спецпредложения", id: "special-2", value: "special-2", checked: false}
           ]
         })
