@@ -1,6 +1,7 @@
 extends ../../layout/uikit-base/uikit-base
 include ../../includes/input-field/input-field
 include ../../includes/dropdown/dropdown
+include ../../includes/checkbox/checkbox
 
 block title
   title Form Elements
@@ -41,4 +42,14 @@ block content
           placeholder: "ДД.ММ.ГГГГ",
           pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
         })
-
+    .form-elements__block
+      .form-elements__element
+        +checkbox({
+          title: "Checkbox buttons",
+          name: "options",
+          elements: [
+            {label: "Можно курить", id: "checkSmoking", value: "isSmoking", checked: false},
+            {label: "Можно с питомцами", id: "checkAnimals", value: "isAnimals", checked: "true"},
+            {label: "Можно пригласить гостей (до 10 человек)", id: "checkGuests", value: "isGuests", checked: "true"}
+          ]
+        })
