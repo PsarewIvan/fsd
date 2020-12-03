@@ -1,0 +1,86 @@
+@import '../../../assets/scss/var.scss';
+
+.checkbox {
+  &__title {
+    margin: 0 0 16px;
+
+    font-size: 12px;
+    line-height: 1.25;
+    font-family: $main-font;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__element {
+    position: relative;
+
+    max-width: 230px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__label {
+    display: block;
+    min-height: 20px;
+    padding-left: 30px;
+
+    line-height: 1.28;
+    color: $button-text;
+
+    cursor: pointer;
+
+    transition: color 0.2s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+
+      display: block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+
+      border: 1px solid $border;
+      border-radius: 4px;
+
+      transition: border-color 0.2s;
+    }
+  }
+
+  &__input:checked + .checkbox__label {
+    color: rgba(31, 32, 65, 0.75);
+
+    &::before {
+      border-color: #BC9CFF;
+      // Добавить сюда data-картинку svg
+      // background-image: url(../svg/check.svg);
+      background-repeat: no-repeat;
+      background-position: center 2px;
+    }
+  }
+}
+
+/* Hover & Focus */
+
+@media(hover: hover) and (pointer: fine) {
+  .checkbox__label:hover,
+  .checkbox__input:focus + .checkbox__label {
+    color: $button-text-hover;
+  }
+
+  .checkbox__label:hover::before,
+  .checkbox__input:focus + .checkbox__label::before {
+    border-color: $button-border-hover;
+  }
+}
