@@ -59,10 +59,10 @@
   }
 
   &__input:checked + .checkbox__label {
-    color: rgba(31, 32, 65, 0.75);
+    color: $button-text-checked;
 
     &::before {
-      border-color: #BC9CFF;
+      border-color: $button-border-checked;
       // Добавить сюда data-картинку svg
       // background-image: url(../svg/check.svg);
       background-repeat: no-repeat;
