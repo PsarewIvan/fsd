@@ -1,0 +1,9 @@
+mixin rating({rate, stars= 5})
+  - var count = 0;
+  ul.rating
+    while count < stars
+      if count < rate
+        li.rating__star(class="rating__star--fill")
+      else
+        li.rating__star
+      -count++;

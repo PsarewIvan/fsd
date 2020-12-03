@@ -6,6 +6,7 @@ include ../../includes/checkbox/checkbox
 include ../../includes/radio/radio
 include ../../includes/toggle/toggle
 include ../../includes/like/like
+include ../../includes/rating/rating
 
 block title
   title Form Elements
@@ -86,3 +87,8 @@ block content
             likes: "12",
             isLiked: true
           })
+      .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Rate button"
+        .form-elements__rating
+          +rating({rate: "4"})
+          +rating({rate: "5"})
