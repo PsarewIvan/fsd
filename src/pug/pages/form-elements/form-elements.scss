@@ -2,9 +2,8 @@
 
 .form-elements {
   &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
   }
 
   &__block {
