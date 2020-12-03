@@ -91,4 +91,9 @@
       width: 240px;
     }
   }
+
+  &__likes {
+    display: flex;
+    gap: 10px;
+  }
 }
