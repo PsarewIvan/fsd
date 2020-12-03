@@ -6,15 +6,6 @@
   display: flex;
   flex-direction: column;
 
-  &__title {
-    margin: 0 0 5px;
-
-    font-size: 12px;
-    line-height: 1.25;
-    font-family: $main-font;
-    text-transform: uppercase;
-  }
-
   &__drop-button {
     display: flex;
     justify-content: space-between;

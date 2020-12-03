@@ -1,15 +1,6 @@
 @import '../../../assets/scss/var.scss';
 
 .checkbox {
-  &__title {
-    margin: 0 0 16px;
-
-    font-size: 12px;
-    line-height: 1.25;
-    font-family: $main-font;
-    text-transform: uppercase;
-  }
-
   &__list {
     display: flex;
     flex-direction: column;

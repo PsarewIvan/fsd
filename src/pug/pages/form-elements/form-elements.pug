@@ -13,23 +13,23 @@ block content
   .form-elements__wrapper
     .form-elements__block
       .form-elements__element(class="form-elements__element--min-margin")
+        h3.form-elements__title= "Text Field"
         +input({
-          title: "Text Field",
           type: "email",
           name: "email",
           placeholder: "Email"
         })
       .form-elements__element(class="form-elements__element--min-margin")
+        h3.form-elements__title= "Text Field"
         +input({
-          title: "Text Field",
           type: "text",
           name: "awesome",
           placeholder: "placeholder",
           value: "This is pretty awesome"
         })
       .form-elements__element(class="form-elements__element--min-margin")
+        h3.form-elements__title= "Dropdown"
         +dropdown({
-          title: "Dropdown",
           label: "Сколько гостей",
           elements: [
             {label: "Взрослые", name: "adult", min: "0", max: "10"},
@@ -38,8 +38,8 @@ block content
           ]
         })
       .form-elements__element
+        h3.form-elements__title= "masked text field"
         +input({
-          title: "masked text field",
           type: "text",
           name: "maskedDate",
           placeholder: "ДД.ММ.ГГГГ",
@@ -47,8 +47,8 @@ block content
         })
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Checkbox buttons"
         +checkbox({
-          title: "Checkbox buttons",
           name: "options",
           elements: [
             {label: "Можно курить", id: "checkSmoking", value: "isSmoking", checked: false},
@@ -57,8 +57,8 @@ block content
           ]
         })
       .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Radio buttons"
         +radio({
-          title: "Radio buttons",
           name: "sex",
           elements: [
             {label: "Мужчина", id: "man", value: "man", checked: false},
@@ -66,8 +66,8 @@ block content
           ]
         })
       .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Toggle"
         +toggle({
-          title: "Toggle",
           name: "special",
           elements: [
             {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: false},

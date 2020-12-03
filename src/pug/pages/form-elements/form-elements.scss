@@ -1,6 +1,21 @@
 @import '../../../assets/scss/var.scss';
 
 .form-elements {
+  &__title {
+    margin: 0 0 5px;
+
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $heading;
+
+    &--margin-large {
+      margin-bottom: 16px;
+    }
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
