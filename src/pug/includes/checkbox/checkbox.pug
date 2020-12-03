@@ -4,6 +4,7 @@ mixin checkbox({title, name, elements})
     for elem in elements
       li.checkbox__element
         input.checkbox__input(
+          class= "visually-hidden"
           id= elem.id,
           type="checkbox",
           name= name,
