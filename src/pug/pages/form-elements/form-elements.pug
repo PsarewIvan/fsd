@@ -1,7 +1,9 @@
 extends ../../layout/uikit-base/uikit-base
+
 include ../../includes/input-field/input-field
 include ../../includes/dropdown/dropdown
 include ../../includes/checkbox/checkbox
+include ../../includes/radio/radio
 
 block title
   title Form Elements
@@ -50,6 +52,15 @@ block content
           elements: [
             {label: "Можно курить", id: "checkSmoking", value: "isSmoking", checked: false},
             {label: "Можно с питомцами", id: "checkAnimals", value: "isAnimals", checked: "true"},
-            {label: "Можно пригласить гостей (до 10 человек)", id: "checkGuests", value: "isGuests", checked: "true"}
+            {label: "Можно пригласить гостей (до 10 человек)", id: "checkGuests", value: "isGuests", checked: true}
+          ]
+        })
+      .form-elements__element(class="form-elements__element--margin")
+        +radio({
+          title: "Radio buttons",
+          name: "sex",
+          elements: [
+            {label: "Мужчина", id: "man", value: "man", checked: false},
+            {label: "Женщина", id: "woman", value: "woman", checked: true}
           ]
         })
