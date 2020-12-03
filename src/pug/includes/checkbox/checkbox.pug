@@ -1,0 +1,13 @@
+mixin checkbox({title, name, elements})
+  h3.checkbox__title= title
+  ul.checkbox__list
+    for elem in elements
+      li.checkbox__element
+        input.checkbox__input(
+          id= elem.id,
+          type="checkbox",
+          name= name,
+          value= elem.value,
+          checked= elem.checked
+        )
+        label.checkbox__label(for= elem.id)= elem.label
