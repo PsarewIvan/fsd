@@ -68,7 +68,7 @@
     &::after {
       left: 24px;
 
-      background-image: linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%);
+      background-image: $gradient;
     }
   }
 }
@@ -76,13 +76,19 @@
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
-  .toggle__label:hover,
-  .toggle__input:focus + .toggle__label {
+  .toggle__label:hover {
     color: $button-text-hover;
   }
 
-  .toggle__label:hover::before,
-  .toggle__input:focus + .toggle__label::before {
+  .toggle__label:hover::before {
     border-color: $button-border-hover;
   }
+}
+
+.toggle__input:focus + .toggle__label {
+  color: $button-text-hover;
+}
+
+.toggle__input:focus + .toggle__label::before {
+  border-color: $button-border-hover;
 }

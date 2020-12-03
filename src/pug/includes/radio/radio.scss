@@ -61,7 +61,7 @@
       height: 12px;
 
       border-radius: 50%;
-      background-image: linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%);
+      background-image: $gradient;
     }
 
     &::before {
@@ -73,13 +73,19 @@
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
-  .radio__label:hover,
-  .radio__input:focus + .radio__label {
+  .radio__label:hover {
     color: $button-text-hover;
   }
 
-  .radio__label:hover::before,
-  .radio__input:focus + .radio__label::before {
+  .radio__label:hover::before {
     border-color: $button-border-hover;
   }
+}
+
+.radio__input:focus + .radio__label {
+  color: $button-text-hover;
+}
+
+.radio__input:focus + .radio__label::before {
+  border-color: $button-border-hover;
 }

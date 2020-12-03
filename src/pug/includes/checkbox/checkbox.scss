@@ -65,13 +65,19 @@
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
-  .checkbox__label:hover,
-  .checkbox__input:focus + .checkbox__label {
+  .checkbox__label:hover {
     color: $button-text-hover;
   }
 
-  .checkbox__label:hover::before,
-  .checkbox__input:focus + .checkbox__label::before {
+  .checkbox__label:hover::before {
     border-color: $button-border-hover;
   }
+}
+
+.checkbox__input:focus + .checkbox__label {
+  color: $button-text-hover;
+}
+
+.checkbox__input:focus + .checkbox__label::before {
+  border-color: $button-border-hover;
 }
