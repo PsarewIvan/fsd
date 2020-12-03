@@ -5,6 +5,7 @@ include ../../includes/dropdown/dropdown
 include ../../includes/checkbox/checkbox
 include ../../includes/radio/radio
 include ../../includes/toggle/toggle
+include ../../includes/like/like
 
 block title
   title Form Elements
@@ -74,3 +75,14 @@ block content
             {label: "Получать спецпредложения", id: "special-2", value: "special-2", checked: false}
           ]
         })
+      .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Like button"
+        .form-elements__likes
+          +like({
+            likes: "2",
+            isLiked: false
+          })
+          +like({
+            likes: "12",
+            isLiked: true
+          })
