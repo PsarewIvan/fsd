@@ -26,6 +26,10 @@
       margin-bottom: 20px;
     }
 
+    &--margin:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+
     &__title {
       margin: 0 0 16px;
 
