@@ -1,0 +1,7 @@
+mixin like ({likes, isLiked})
+  if isLiked
+    button.like-button(class="like-button--liked", type= "button")
+      span.like-button__count= likes
+  else
+    button.like-button(type= "button")
+      span.like-button__count= likes
