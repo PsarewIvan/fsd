@@ -1,0 +1,14 @@
+mixin radio({title, name, elements})
+  h3.radio__title= title
+  ul.radio__list
+    for elem in elements
+      li.radio__element
+        input.radio__input(
+          class= "visually-hidden"
+          id= elem.id,
+          type="radio",
+          name= name,
+          value= elem.value,
+          checked= elem.checked
+        )
+        label.radio__label(for= elem.id)= elem.label
