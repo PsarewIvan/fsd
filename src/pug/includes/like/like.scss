@@ -1,0 +1,85 @@
+@import '../../../assets/scss/var.scss';
+
+.like-button {
+  position: relative;
+
+  padding: 0;
+  margin: 0;
+  min-width: 40px;
+  height: 20px;
+
+  background-color: transparent;
+  border: 1px solid $border;
+  border-radius: 10px;
+
+  text-align: left;
+  line-height: 0;
+
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -1px;
+
+    width: 20px;
+    height: 20px;
+
+    // Вставить картинку сердца как data-атрибут
+    // background-image: url(../svg/heart.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--liked {
+    border: none;
+    background-image: $gradient;
+
+    & .like-button__count {
+      color: $button-like-checked;
+    }
+
+    &::after {
+      top: 0;
+
+      // Вставить картинку сердца как data-атрибут
+      // background-image: url(../svg/heart-fill.svg);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 1px;
+
+      width: 38px;
+      height: 18px;
+
+      border-radius: 9px;
+      background-color: $button-like-fill;
+    }
+  }
+
+  &__count {
+    display: inline-block;
+    margin-left: 25px;
+
+    font-size: 10px;
+    color: $button-like-text;
+
+    transform: translateX(-50%);
+  }
+}
+
+/* Hover & Focus */
+
+@media(hover: hover) and (pointer: fine) {
+  .like-button:not(.like-button--liked):hover {
+    border-color: $button-like-checked;
+  }
+}
+
+.like-button:not(.like-button--liked):focus {
+  border-color: $button-like-checked;
+}
