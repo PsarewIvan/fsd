@@ -1,6 +1,14 @@
-mixin slider()
+mixin slider({type, min, max, from, to, skin= "round", isMinMax= "true"})
   input.js-range-slider(
     type= "text",
     name= "slider",
-    value= ""
+    value= "",
+    data-type= type,
+    data-min= min,
+    data-max= max,
+    data-from= from,
+    data-to= to,
+    data-skin= skin,
+    data-hide-min-max= isMinMax,
+    data-hide-from-to= "true"
   )

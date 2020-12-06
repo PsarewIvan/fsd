@@ -2,12 +2,5 @@ import 'ion-rangeslider';
 import $ from 'jquery';
 
 (function() {
-  $(".js-range-slider").ionRangeSlider({
-    type: "double",
-    min: 0,
-    max: 1000,
-    from: 200,
-    to: 500,
-    grid: true
-  });
+  $(".js-range-slider").ionRangeSlider();
 })()

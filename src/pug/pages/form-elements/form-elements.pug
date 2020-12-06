@@ -97,4 +97,10 @@ block content
       .form-elements__element(class="form-elements__element--margin")
         h3.form-elements__title(class="form-elements__title--margin-large")= "Range slider"
         .form-elements__slider
-          +slider()
+          +slider({
+            type: "double",
+            min: 0,
+            max: 15000,
+            from: 5000,
+            to: 10000
+          })
