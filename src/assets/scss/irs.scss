@@ -1,0 +1,36 @@
+@import '~ion-rangeslider/css/ion.rangeSlider.css';
+@import 'var.scss';
+
+.irs--round {
+  height: 16px;
+
+  & .irs-line,
+  & .irs-bar {
+    top: 7px;
+    height: 6px;
+  }
+
+  & .irs-line {
+    background-color: $white;
+    border: 1px solid $border;
+    border-radius: 3px;
+  }
+
+  & .irs-bar {
+    background: $slider-gradient;
+  }
+
+  & .irs-handle {
+    top: 2px;
+
+    width: 16px;
+    height: 16px;
+
+    background: $slider-gradient;
+    border: 2px solid $white;
+    border-radius: 10px;
+    box-shadow: none;
+
+    cursor: pointer;
+  }
+}
