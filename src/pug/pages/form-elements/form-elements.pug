@@ -8,7 +8,7 @@ include ../../includes/toggle/toggle
 include ../../includes/like/like
 include ../../includes/rating/rating
 include ../../includes/slider/slider
-include ../../includes/datepicker/datepicker
+include ../../includes/drop-date/drop-date
 
 block title
   title Form Elements
@@ -49,6 +49,8 @@ block content
           placeholder: "ДД.ММ.ГГГГ",
           pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
         })
+      .form-elements__element
+        +drop-date()
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
         h3.form-elements__title(class="form-elements__title--margin-large")= "Checkbox buttons"
