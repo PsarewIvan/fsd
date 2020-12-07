@@ -91,8 +91,14 @@ block content
       .form-elements__element(class="form-elements__element--margin")
         h3.form-elements__title(class="form-elements__title--margin-large")= "Rate button"
         .form-elements__rating
-          +rating({rate: "4"})
-          +rating({rate: "5"})
+          +rating({
+            name: "rating-1",
+            rate: "4"
+            })
+          +rating({
+            name: "rating-2",
+            rate: "5"
+            })
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
         h3.form-elements__title(class="form-elements__title--margin-large")= "Range slider"
