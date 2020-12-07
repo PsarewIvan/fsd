@@ -21,5 +21,4 @@ import $ from 'jquery';
       }
     });
   });
-
 })()
