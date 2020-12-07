@@ -53,6 +53,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
+    "air-datepicker": "^2.2.3",
     "focus-visible": "^5.1.0",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
