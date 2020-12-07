@@ -1,9 +1,19 @@
-mixin rating({rate, stars= 5})
-  - var count = 0;
-  ul.rating
-    while count < stars
-      if count < rate
-        li.rating__star(class="rating__star--fill")
-      else
-        li.rating__star
-      -count++;
+mixin rating({name, rate= 0, starsAmount= 5, ariaName= "Рейтинг"})
+  -var count= 0;
+  -var isChecked= false
+  -var _rate= rate - 1
+  fieldset.rating
+    legend.visually-hidden= ariaName
+    .rating__group
+      while count < starsAmount
+        if _rate == count
+          -isChecked= true
+        else
+          -isChecked= false
+        input.rating__star(
+          type= "radio",
+          name= name,
+          value= count + 1,
+          checked= isChecked
+          )
+        -count++;
