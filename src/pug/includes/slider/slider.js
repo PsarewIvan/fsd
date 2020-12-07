@@ -1,5 +1,5 @@
 import 'ion-rangeslider';
-import $ from 'jquery';
+
 
 (function() {
   const sliders = document.querySelectorAll(".js-slider");
