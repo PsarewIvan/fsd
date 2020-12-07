@@ -54,6 +54,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.10.1",
     "focus-visible": "^5.1.0",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   }

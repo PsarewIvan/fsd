@@ -7,6 +7,7 @@ include ../../includes/radio/radio
 include ../../includes/toggle/toggle
 include ../../includes/like/like
 include ../../includes/rating/rating
+include ../../includes/slider/slider
 
 block title
   title Form Elements
@@ -94,3 +95,12 @@ block content
           +rating({rate: "5"})
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Range slider"
+        .form-elements__slider
+          +slider({
+            type: "double",
+            min: 0,
+            max: 15000,
+            from: 5000,
+            to: 10000
+          })

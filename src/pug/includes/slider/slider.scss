@@ -1,0 +1,13 @@
+.slider {
+  position: relative;
+
+  &__data-from-to {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin-top: calc(-16px - 1.1em);
+
+    font-size: 12px;
+  }
+}
