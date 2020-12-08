@@ -6,13 +6,23 @@ import 'air-datepicker';
   Array.prototype.forEach.call(datepickers, function(datepicker) {
 
     function addApplyButton() {
-      const butonsContainer = datepicker.querySelector('.datepicker--buttons');
-      const applyButton = document.createElement('span');
-      applyButton.innerHTML = 'Применить';
-      applyButton.setAttribute('data-action', 'apply');
-      applyButton.classList.add('datepicker--button', 'datepicker--button-apply');
-      butonsContainer.appendChild(applyButton);
+      datepicker.querySelector('.datepicker--buttons').appendChild(
+        createElement(
+        'span',
+        ['datepicker--button', 'datepicker--button-apply'],
+        [{ name: 'data-action', value: 'apply' }],
+        'Применить'
+      ));
+    }
 
+    function createElement(tag, classList, attributes, inner) {
+      const element = document.createElement(tag);
+      element.classList.add(...classList);
+      attributes.forEach((attr) => {
+        element.setAttribute(attr.name, attr.value);
+      });
+      element.innerHTML = inner;
+      return element;
     }
 
     $(datepicker).datepicker({
