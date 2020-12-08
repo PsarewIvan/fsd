@@ -57,8 +57,11 @@ import 'air-datepicker';
       inline: true,
       clearButton: true,
       onRenderCell: (data, cellType) => {
-        return {
-          html: `<span class="calendar__current-date">${data.getDate()}</span>`
+        const thisDay = new Date();
+        if (cellType == 'day' && data.getDate() == thisDay.getDate()) {
+          return {
+            html: `<span class="calendar__current-date">${data.getDate()}</span>`
+          }
         }
       }
     });
