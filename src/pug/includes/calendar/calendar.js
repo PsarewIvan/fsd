@@ -6,13 +6,14 @@ import 'air-datepicker';
   Array.prototype.forEach.call(datepickers, function(datepicker) {
 
     function addApplyButton() {
-      datepicker.querySelector('.datepicker--buttons').appendChild(
-        createElement(
+      const element = createElement(
         'span',
         ['datepicker--button-apply'],
         [{ name: 'data-action', value: 'apply' }],
         'Применить'
-      ));
+      );
+      datepicker.querySelector('.datepicker--buttons').appendChild(element);
+      element.addEventListener('click', applyDates);
     }
 
     function createElement(tag, classList, attributes, inner) {
@@ -23,6 +24,22 @@ import 'air-datepicker';
       });
       element.innerHTML = inner;
       return element;
+    }
+
+    function parseDate(date) {
+      const dd = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+      const mm = date.getMonth() + 1 < 10 ? '0' + date.getMonth() : date.getMonth();
+      const yyyy = date.getFullYear();
+      return `${dd}.${mm}.${yyyy}`;
+    }
+
+    function applyDates() {
+      const dropDate = datepicker.closest('.drop-date');
+      const dateInputs= dropDate.querySelectorAll('.js-drop-date__input');
+      const sd = datepicker.selectedDates;
+      dpData.selectedDates.forEach((date, index) => {
+        dateInputs[index].value = parseDate(date);
+      });
     }
 
     $(datepicker).datepicker({
@@ -37,6 +54,8 @@ import 'air-datepicker';
         }
       }
     });
+
+    const dpData = $(datepicker).data('datepicker');
 
     addApplyButton();
 

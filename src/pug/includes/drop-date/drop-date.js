@@ -6,7 +6,7 @@
     let isMultiple = inputsAmount.length <= 1 ? false : true;
 
     if (isMultiple) {
-      dropDate.querySelector('.js-drop-date__calendar').classList.add("display-none");
+      // dropDate.querySelector('.js-drop-date__calendar').classList.add("display-none");
     }
 
 
