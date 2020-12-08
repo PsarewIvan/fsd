@@ -8,12 +8,11 @@ import 'air-datepicker';
     function addApplyButton() {
       const element = createElement(
         'span',
-        ['datepicker--button-apply'],
+        ['datepicker--button-apply', 'js-datepicker--button-apply'],
         [{ name: 'data-action', value: 'apply' }],
         'Применить'
       );
       datepicker.querySelector('.datepicker--buttons').appendChild(element);
-      element.addEventListener('click', applyDates);
     }
 
     function createElement(tag, classList, attributes, inner) {
@@ -58,6 +57,8 @@ import 'air-datepicker';
     const dpData = $(datepicker).data('datepicker');
 
     addApplyButton();
+    datepicker.querySelector('.js-datepicker--button-apply')
+      .addEventListener('click', applyDates);
 
   });
 })();
