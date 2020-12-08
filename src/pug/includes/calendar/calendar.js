@@ -9,7 +9,7 @@ import 'air-datepicker';
       datepicker.querySelector('.datepicker--buttons').appendChild(
         createElement(
         'span',
-        ['datepicker--button', 'datepicker--button-apply'],
+        ['datepicker--button-apply'],
         [{ name: 'data-action', value: 'apply' }],
         'Применить'
       ));
