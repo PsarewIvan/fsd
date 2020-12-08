@@ -1,3 +1,5 @@
+include ../calendar/calendar
+
 mixin drop-date()
   .drop-date
     .drop-date__block
@@ -10,4 +12,5 @@ mixin drop-date()
       input(
         type= "text"
       )
-    .datepicker-here
+    .drop-date__calendar.js-drop-date__calendar
+      +calendar
