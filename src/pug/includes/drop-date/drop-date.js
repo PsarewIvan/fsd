@@ -26,6 +26,7 @@
     }
 
     if (isMultiple) {
+      const applyButton = dropDate.querySelector('.js-datepicker--button-apply');
       closeCalendar();
 
       Array.prototype.forEach.call(inputs, function(input) {
@@ -37,6 +38,12 @@
           closeCalendar();
         }
       });
+
+      applyButton.addEventListener('click', () => {
+        if (applyButton.dataset.disabled == 'false') {
+          closeCalendar();
+        }
+      })
     }
   });
 })();
