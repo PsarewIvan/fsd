@@ -35,10 +35,19 @@ import 'air-datepicker';
     function applyDates() {
       const dropDate = datepicker.closest('.drop-date');
       const dateInputs= dropDate.querySelectorAll('.js-drop-date__input');
-      const sd = datepicker.selectedDates;
+
       dpData.selectedDates.forEach((date, index) => {
         dateInputs[index].value = parseDate(date);
       });
+    }
+
+    function resetDates() {
+      const dropDate = datepicker.closest('.drop-date');
+      const dateInputs = dropDate.querySelectorAll('.js-drop-date__input');
+
+        Array.prototype.forEach.call(dateInputs, function(input) {
+          input.value = '';
+        })
     }
 
     $(datepicker).datepicker({
@@ -55,10 +64,11 @@ import 'air-datepicker';
     });
 
     const dpData = $(datepicker).data('datepicker');
-
     addApplyButton();
-    datepicker.querySelector('.js-datepicker--button-apply')
-      .addEventListener('click', applyDates);
+    const applyButton = datepicker.querySelector('.js-datepicker--button-apply');
+    const resetButton = datepicker.querySelector('span[data-action=clear]');
 
+    applyButton.addEventListener('click', applyDates);
+    resetButton.addEventListener('click', resetDates);
   });
 })();
