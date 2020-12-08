@@ -27,16 +27,15 @@
 
     if (isMultiple) {
       closeCalendar();
+
       Array.prototype.forEach.call(inputs, function(input) {
-        input.addEventListener('click', () => {
-          showCalendar();
-        });
-        document.addEventListener('click', (evt) => {
-          if (isCloseClick(evt)) {
-            evt.preventDefault();
-            closeCalendar();
-          }
-        });
+        input.addEventListener('click', () => {showCalendar()});
+      });
+
+      document.addEventListener('click', (evt) => {
+        if (isCloseClick(evt)) {
+          closeCalendar();
+        }
       });
     }
   });
