@@ -6,7 +6,9 @@ $dark-shade-50: rgba(31, 32, 65, 0.5);
 $dark-shade-25: rgba(31, 32, 65, 0.25);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
 $purple: #BC9CFF;
+$purple-40: #BC9CFF4d;
 $purple-light: #8BA4F9;
+$purple-light-40: #8BA4F94D;
 $light-blue: #66D2EA;
 $green: #6FCF97;
 $white: #FFFFFF;
@@ -27,11 +29,26 @@ $button-like-checked: $purple;
 $button-like-fill: $white;
 $button-like-text: $dark-shade-25;
 
-$gradient-start: $purple;
-$gradient-end: $purple-light;
-$gradient: linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%);
+$border-color-calendar: $dark-shade-100;
+$calendar-day-name-color: $purple;
+$calendar-day-prev-month-color: $dark-shade-25;
+$calendar-day-color: $dark-shade-50;
+$calendar-current-day-color: $white;
 
-$slider-gradient: linear-gradient(180deg, $green 0%, $light-blue 100%);
+// Gradients
+
+$gradient-main: linear-gradient(180deg, $purple 0%, $purple-light 100%);
+$gradient-main-40: linear-gradient(180deg, $purple-40 0%, $purple-light-40 100%);
+$gradient-second: linear-gradient(180deg, $green 0%, $light-blue 100%);
+$gradient-opacity: linear-gradient(180deg, $green 0%, $light-blue 100%);
+
+$gradient-like-button: $gradient-main;
+$gradient-radio-button: $gradient-main;
+$gradient-toggle-button: $gradient-main;
+$gradient-slider: $gradient-second;
+$gradient-datepicker-current: $gradient-second;
+$gradient-datepicker-selected: $gradient-main;
+$gradient-datepicker-focus: $gradient-main-40;
 
 // Sizes
 
