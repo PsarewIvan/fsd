@@ -26,7 +26,7 @@ import 'air-datepicker';
 
     function parseDate(date) {
       const dd = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-      const mm = date.getMonth() + 1 < 10 ? '0' + date.getMonth() : date.getMonth();
+      const mm = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
       const yyyy = date.getFullYear();
       return `${dd}.${mm}.${yyyy}`;
     }
