@@ -1,0 +1,22 @@
+include ../calendar/calendar
+
+mixin drop-date()
+  .drop-date
+    .drop-date__block
+      h3.drop-date__title= "Date dropdown"
+      input(
+        class= ["drop-date__input", "js-drop-date__input"]
+        type= "text"
+        placeholder= "ДД.ММ.ГГГГ"
+      )
+      .drop-date__icon(aria-hidden= "true")
+    .drop-date__block
+      h3.drop-date__title= "Date dropdown"
+      input(
+        class= ["drop-date__input", "js-drop-date__input"]
+        type= "text"
+        placeholder= "ДД.ММ.ГГГГ"
+      )
+      .drop-date__icon(aria-hidden= "true")
+    .drop-date__calendar.js-drop-date__calendar
+      +calendar

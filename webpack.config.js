@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // могут быть проблемы с git
@@ -134,7 +135,11 @@ module.exports = {
     }),
     new SourceMapDevToolPlugin({
       filename: '[file].map'
-    })
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
   ],
   optimization: optimization(),
   devServer: {

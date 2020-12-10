@@ -17,7 +17,7 @@
   }
 
   & .irs-bar {
-    background: $slider-gradient;
+    background: $gradient-slider;
   }
 
   & .irs-handle {
@@ -26,7 +26,7 @@
     width: 16px;
     height: 16px;
 
-    background: $slider-gradient;
+    background: $gradient-slider;
     border: 2px solid $white;
     border-radius: 10px;
     box-shadow: none;

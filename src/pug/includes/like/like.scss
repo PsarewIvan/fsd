@@ -33,7 +33,7 @@
 
   &--liked {
     border: none;
-    background-image: $gradient;
+    background-image: $gradient-like-button;
 
     & .like-button__count {
       color: $button-like-checked;
