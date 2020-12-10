@@ -1,49 +1,51 @@
+import 'air-datepicker';
+
 (function() {
-  const dropDates = document.querySelectorAll('.drop-date');
+  $(".drop-date").each(function () {
 
-  Array.prototype.forEach.call(dropDates, function(dropDate) {
-    const inputs = dropDate.querySelectorAll('input');
-    let isMultiple = inputs.length <= 1 ? false : true;
+    const dropDate = $(this);
+    const dateFrom = dropDate.find(".drop-date__input-from");
+    const dateTo = dropDate.find (".drop-date__input-to");
 
-    function closeCalendar() {
-      dropDate.querySelector('.js-drop-date__calendar').classList.add("display-none");
-    }
-
-    function showCalendar() {
-      dropDate.querySelector('.js-drop-date__calendar').classList.remove("display-none");
-    }
-
-    function isCloseClick(evt) {
-      const inputFrom = inputs[0];
-      const inputTo = inputs[1];
-      const isCell = evt.target.closest('.datepicker--cell');
-      const isNav = evt.target.closest('.datepicker--nav-action');
-      const isNavMonth = evt.target.closest('.datepicker--nav-title');
-      const isCalendar = evt.target.closest('.datepicker');
-      if (evt.target !== inputFrom && evt.target !== inputTo && !isCalendar && !isCell && !isNav && !isNavMonth) {
-        return true;
+    dropDate.find(".drop-date__datepicker-multi").datepicker({
+      minDate: new Date(),
+      range: 'true',
+      multipleDatesSeparator: ' - ',
+      navTitles: { days: 'MM yyyy' },
+      clearButton: true,
+      onSelect: (date) => {
+        const dates = date.split(" - ");
+        dateFrom.val(dates[0]);
+        dateTo.val(dates[1]);
       }
-    }
+    });
 
-    if (isMultiple) {
-      const applyButton = dropDate.querySelector('.js-datepicker--button-apply');
-      closeCalendar();
+    const datep = dropDate.find(".drop-date__datepicker-multi").data("datepicker");
+    const datepEl = datep.$datepicker;
+    const applyButton = $(
+      `<span class='datepicker--button-apply'>Применить</span>`
+    );
 
-      Array.prototype.forEach.call(inputs, function(input) {
-        input.addEventListener('click', () => {showCalendar()});
-      });
+    applyButton.click(() => {
+      if (datep.selectedDates.length < 2) return;
+      datep.hide();
+    });
 
-      document.addEventListener('click', (evt) => {
-        if (isCloseClick(evt)) {
-          closeCalendar();
-        }
-      });
+    datepEl.find(".datepicker--buttons").append(applyButton);
+    dateTo.click(() => datep.show());
+    dateFrom.click(() => datep.show());
 
-      applyButton.addEventListener('click', () => {
-        if (applyButton.dataset.disabled == 'false') {
-          closeCalendar();
-        }
-      })
-    }
+    $(document).mouseup(function (e) {
+      const dep = $(".datepickers-container");
+      const wrap = $(".drop-date");
+      if (
+        !dep.is(e.target) &&
+        dep.has(e.target).length === 0 &&
+        !wrap.is(e.target) &&
+        wrap.has(e.target).length === 0
+      ) {
+        datep.hide();
+      }
+    });
   });
 })();
