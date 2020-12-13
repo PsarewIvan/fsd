@@ -6,21 +6,24 @@ import 'air-datepicker';
     const dropDate = $(this);
     const dateFrom = dropDate.find(".drop-date__input-from");
     const dateTo = dropDate.find (".drop-date__input-to");
+    const isMulti = dateFrom && dateTo;
 
-    dropDate.find(".drop-date__datepicker-multi").datepicker({
+    dropDate.find(".js-drop-date").datepicker({
       minDate: new Date(),
-      range: 'true',
+      range: true,
       multipleDatesSeparator: ' - ',
       navTitles: { days: 'MM yyyy' },
       clearButton: true,
       onSelect: (date) => {
-        const dates = date.split(" - ");
-        dateFrom.val(dates[0]);
-        dateTo.val(dates[1]);
+        if (isMulti) {
+          const dates = date.split(" - ");
+          dateFrom.val(dates[0]);
+          dateTo.val(dates[1]);
+        }
       }
     });
 
-    const datep = dropDate.find(".drop-date__datepicker-multi").data("datepicker");
+    const datep = dropDate.find(".js-drop-date").data("datepicker");
     const datepEl = datep.$datepicker;
     const applyButton = $(
       `<span class='datepicker--button-apply'>Применить</span>`
@@ -32,8 +35,10 @@ import 'air-datepicker';
     });
 
     datepEl.find(".datepicker--buttons").append(applyButton);
-    dateTo.click(() => datep.show());
-    dateFrom.click(() => datep.show());
+    if (isMulti) {
+      dateTo.click(() => datep.show());
+      dateFrom.click(() => datep.show());
+    }
 
     $(document).mouseup(function (e) {
       const dep = $(".datepickers-container");

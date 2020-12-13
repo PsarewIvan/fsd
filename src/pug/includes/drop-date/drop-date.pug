@@ -1,22 +1,31 @@
-mixin drop-date()
+mixin drop-date({isMultiple= false})
     .drop-date
-      input(
-        class= ["drop-date__datepicker", "drop-date__datepicker-multi"]
-        type= "text"
-      )
-      .drop-date__block
-        h3.drop-date__title= "Date dropdown"
+      if !isMultiple
+        .drop-date__wrapper
+          h3.drop-date__title= "Filter date dropdown"
+          input(
+            class= ["drop-date__input", "js-drop-date"]
+            type= "text"
+            placeholder= "ДД.ММ.ГГГГ"
+          )
+      else
         input(
-          class= ["drop-date__input", "drop-date__input-from", "js-drop-date__input"]
+          class= ["drop-date__datepicker-multi", "js-drop-date"]
           type= "text"
-          placeholder= "ДД.ММ.ГГГГ"
         )
-        .drop-date__icon(aria-hidden= "true")
-      .drop-date__block
-        h3.drop-date__title= "Date dropdown"
-        input(
-          class= ["drop-date__input", "drop-date__input-to", "js-drop-date__input"]
-          type= "text"
-          placeholder= "ДД.ММ.ГГГГ"
-        )
-        .drop-date__icon(aria-hidden= "true")
+        .drop-date__block
+          h3.drop-date__title= "Date dropdown"
+          input(
+            class= ["drop-date__input", "drop-date__input-from"]
+            type= "text"
+            placeholder= "ДД.ММ.ГГГГ"
+          )
+          .drop-date__icon(aria-hidden= "true")
+        .drop-date__block
+          h3.drop-date__title= "Date dropdown"
+          input(
+            class= ["drop-date__input", "drop-date__input-to"]
+            type= "text"
+            placeholder= "ДД.ММ.ГГГГ"
+          )
+          .drop-date__icon(aria-hidden= "true")
