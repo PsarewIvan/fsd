@@ -42,6 +42,10 @@ $button-text-main: $white;
 $button-text-fill: $purple;
 $button-simple-hover: $dark-shade-50;
 
+
+$pagination-hover: $dark-shade-5;
+$pagination-text-current: $white;
+
 // Gradients
 
 $gradient-main: linear-gradient(180deg, $purple 0%, $purple-light 100%);
@@ -53,6 +57,8 @@ $gradient-opacity: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $gradient-like-button: $gradient-main;
 $gradient-radio-button: $gradient-main;
 $gradient-toggle-button: $gradient-main;
+$gradient-pagination-next-button: $gradient-second;
+$gradient-pagination-current-button: $gradient-main;
 $gradient-slider: $gradient-second;
 $gradient-datepicker-current: $gradient-second;
 $gradient-datepicker-selected: $gradient-main;
