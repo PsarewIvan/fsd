@@ -40,4 +40,17 @@
       background-origin: border-box;
     }
   }
+
+  &--simple {
+    min-width: auto;
+    min-height: auto;
+
+    background-image: none;
+
+    color: $button-text-fill;
+
+    & .buttons__span {
+      padding: 0;
+    }
+  }
 }
