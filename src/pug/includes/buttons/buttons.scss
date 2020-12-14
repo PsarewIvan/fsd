@@ -78,4 +78,40 @@
       background-position: center;
     }
   }
+
+  &.-hovered- {
+    background-image: $gradient-main-50;
+  }
+
+  &--simple.-hovered- {
+    background-image: none;
+
+    color: $button-simple-hover;
+  }
+}
+
+@media(hover: hover) and (pointer: fine) {
+  .buttons:hover {
+    background-image: $gradient-main-50;
+  }
+
+  .buttons--simple:hover {
+    background-image: none;
+
+    color: $button-simple-hover;
+  }
+}
+
+.buttons:focus {
+    background-image: $gradient-main-50;
+  }
+
+.buttons--simple:focus {
+  background-image: none;
+
+  color: $button-simple-hover;
+}
+
+.buttons:active {
+  opacity: 0.4;
 }
