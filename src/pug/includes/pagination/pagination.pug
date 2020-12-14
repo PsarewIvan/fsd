@@ -1,0 +1,10 @@
+mixin pagination({elements})
+  .pagination
+    ul.pagination__list
+      for element in elements
+        li.pagination__li= element
+    a.pagination__next-button(
+      href= "#"
+    )
+      span.visually-hidden= "Следующая страница"
+    p.pagination__footer= "1 – 12 из 100+ вариантов аренды"
