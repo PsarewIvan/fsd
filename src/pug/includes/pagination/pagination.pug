@@ -1,0 +1,21 @@
+mixin pagination({elements, currentPage})
+  - var count= 1
+  .pagination
+    .pagination__wrapper
+      ul.pagination__list
+        for element in elements
+          if count === currentPage
+            - var current= "-current-"
+          else
+            - current= ""
+          - count++
+          li.pagination__li
+            a(
+              class= ["pagination__link", current],
+              href= "#"
+            )= element
+      a.pagination__next-button(
+        href= "#"
+      )
+        span.visually-hidden= "Следующая страница"
+    p.pagination__footer= "1 – 12 из 100+ вариантов аренды"

@@ -10,6 +10,7 @@ include ../../includes/rating/rating
 include ../../includes/slider/slider
 include ../../includes/drop-date/drop-date
 include ../../includes/buttons/buttons
+include ../../includes/pagination/pagination
 
 block title
   title Form Elements
@@ -160,3 +161,10 @@ block content
               style: "large",
               link: "www.google.com"
             })
+      .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Pagination"
+        .form-elements__pagination
+          +pagination({
+            elements: ["1", "2", "3", "...", "15"],
+            currentPage: 1
+          })
