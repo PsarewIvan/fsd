@@ -2,7 +2,10 @@ mixin pagination({elements})
   .pagination
     ul.pagination__list
       for element in elements
-        li.pagination__li= element
+        li.pagination__li
+          a.pagination__link(
+            href= "#"
+          )= element
     a.pagination__next-button(
       href= "#"
     )
