@@ -1,5 +1,11 @@
-mixin buttons ({type, label})
+mixin buttons ({type, label, style})
+  if style == "fill"
+    - var mod= "buttons--fill"
+  else if style == "simple"
+    - var mod= "buttons--simple"
+  else if style == "large"
+    - var mod= "buttons--large"
   button(
-    class= "buttons",
+    class= ["buttons", mod],
     type= type
   )= label
