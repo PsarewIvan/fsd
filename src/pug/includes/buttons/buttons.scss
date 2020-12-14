@@ -1,0 +1,23 @@
+@import '../../../assets/scss/var.scss';
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  margin: 0;
+  min-width: 99px;
+  min-height: 44px;
+
+  border: none;
+  border-radius: 22px;
+  background-color: transparent;
+  background-image: $gradient-main;
+
+  font-size: 12px;
+  font-weight: bold;
+  color: $button-text-main;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
