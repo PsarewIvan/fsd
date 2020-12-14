@@ -2,9 +2,9 @@
 
 .buttons {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: 5px 10px;
+  padding: 2px;
   margin: 0;
   min-width: 99px;
   min-height: 44px;
@@ -13,6 +13,7 @@
   border-radius: 22px;
   background-color: transparent;
   background-image: $gradient-main;
+  background-origin: border-box;
 
   font-size: 12px;
   font-weight: bold;
@@ -20,4 +21,23 @@
   text-transform: uppercase;
 
   cursor: pointer;
+
+  & .buttons__span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 10px;
+
+    border-radius: 22px;
+  }
+
+  &--fill {
+    color: $button-text-fill;
+
+    & .buttons__span {
+      background-color: white;
+      background-origin: border-box;
+    }
+  }
 }
