@@ -1,12 +1,16 @@
-mixin buttons ({type, label, style})
+mixin buttons ({type, label, style, hovered})
   if style == "fill"
     - var mod= "buttons--fill"
   else if style == "simple"
     - var mod= "buttons--simple"
   else if style == "large"
     - var mod= "buttons--large"
+  if hovered == "true"
+    - var mod2 = "-hovered-"
+  else
+    - var mod2 = ""
   button(
-    class= ["buttons", mod],
+    class= ["buttons", mod, mod2],
     type= type
   )
     span.buttons__span= label
