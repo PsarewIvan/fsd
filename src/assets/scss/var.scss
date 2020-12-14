@@ -7,8 +7,10 @@ $dark-shade-25: rgba(31, 32, 65, 0.25);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
 $purple: #BC9CFF;
 $purple-40: #BC9CFF4d;
+$purple-50: #BC9CFF80;
 $purple-light: #8BA4F9;
 $purple-light-40: #8BA4F94D;
+$purple-light-50: #8BA4F980;
 $light-blue: #66D2EA;
 $green: #6FCF97;
 $white: #FFFFFF;
@@ -36,10 +38,15 @@ $calendar-day-prev-month-color: $dark-shade-25;
 $calendar-day-color: $dark-shade-50;
 $calendar-current-day-color: $white;
 
+$button-text-main: $white;
+$button-text-fill: $purple;
+$button-simple-hover: $dark-shade-50;
+
 // Gradients
 
 $gradient-main: linear-gradient(180deg, $purple 0%, $purple-light 100%);
 $gradient-main-40: linear-gradient(180deg, $purple-40 0%, $purple-light-40 100%);
+$gradient-main-50: linear-gradient(180deg, $purple-50 0%, $purple-light-50 100%);
 $gradient-second: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $gradient-opacity: linear-gradient(180deg, $green 0%, $light-blue 100%);
 

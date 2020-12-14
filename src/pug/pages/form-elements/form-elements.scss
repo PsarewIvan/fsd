@@ -101,4 +101,14 @@
     display: flex;
     gap: 20px;
   }
+
+  &__buttons-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+  }
 }

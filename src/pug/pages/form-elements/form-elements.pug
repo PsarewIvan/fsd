@@ -9,6 +9,7 @@ include ../../includes/like/like
 include ../../includes/rating/rating
 include ../../includes/slider/slider
 include ../../includes/drop-date/drop-date
+include ../../includes/buttons/buttons
 
 block title
   title Form Elements
@@ -115,3 +116,47 @@ block content
             from: 5000,
             to: 10000
           })
+      .form-elements__element(class="form-elements__element--margin")
+        h3.form-elements__title(class="form-elements__title--margin-large")= "Buttons"
+        .form-elements__buttons
+          .form-elements__buttons-block
+            +buttons({
+              type: "button",
+              label: "Click me"
+            })
+            +buttons({
+              type: "button",
+              label: "Click me",
+              hovered: "true"
+            })
+          .form-elements__buttons-block
+            +buttons({
+              type: "button",
+              label: "Click me",
+              style: "fill"
+            })
+            +buttons({
+              type: "button",
+              label: "Click me",
+              style: "fill",
+              hovered: "true"
+            })
+          .form-elements__buttons-block
+            +buttons({
+              type: "button",
+              label: "Click me",
+              style: "simple"
+            })
+            +buttons({
+              type: "button",
+              label: "Click me",
+              style: "simple",
+              hovered: "true"
+            })
+          .form-elements__buttons-block
+            +buttons({
+              type: "button",
+              label: "перейти к оплате",
+              style: "large",
+              link: "www.google.com"
+            })
