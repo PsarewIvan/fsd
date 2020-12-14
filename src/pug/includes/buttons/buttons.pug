@@ -1,4 +1,4 @@
-mixin buttons ({type, label, style, hovered})
+mixin buttons ({link, type, label, style, hovered})
   if style == "fill"
     - var mod= "buttons--fill"
   else if style == "simple"
@@ -9,8 +9,17 @@ mixin buttons ({type, label, style, hovered})
     - var mod2 = "-hovered-"
   else
     - var mod2 = ""
-  button(
-    class= ["buttons", mod, mod2],
-    type= type
-  )
-    span.buttons__span= label
+
+  if link
+    a(
+      class= ["buttons", mod, mod2],
+      type= type
+      href= link
+    )
+      span.buttons__span= label
+  else
+    button(
+      class= ["buttons", mod, mod2],
+      type= type
+    )
+      span.buttons__span= label
