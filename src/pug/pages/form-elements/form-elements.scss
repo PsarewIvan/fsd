@@ -48,6 +48,10 @@
       margin-bottom: 40px;
     }
 
+    &--checkbox:not(:last-of-type) {
+      margin-bottom: 33px;
+    }
+
     &__title {
       margin: 0 0 16px;
 

@@ -174,7 +174,7 @@ block content
     .form-elements__block
   .form-elements__wrapper
     .form-elements__block
-      .form-elements__element(class="form-elements__element--margin")
+      .form-elements__element(class="form-elements__element--checkbox")
         +checkbox({
           name: "appOptions",
           title: "expandable checkbox list",
@@ -189,9 +189,9 @@ block content
             {label: "Шампунь", id: "shampoo", value: "isShampoo", checked: false}
           ]
         })
-      .form-elements__element(class="form-elements__element--margin")
+      .form-elements__element(class="form-elements__element--checkbox")
         +checkbox({
-          name: "appPptions2",
+          name: "appOptions2",
           title: "expandable checkbox list",
           expandable: "true",
           elements: [
