@@ -1,6 +1,17 @@
 @import '../../../assets/scss/var.scss';
 
 .checkbox {
+  &__title {
+    margin: 0 0 16px;
+
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $heading;
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -61,6 +72,44 @@
   }
 }
 
+// Expandable
+
+.checkbox__title-button {
+  position: relative;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+
+  font: inherit;
+  text-align: left;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 16px;
+
+    display: block;
+    width: 12px;
+    height: 8px;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.-open-::after{
+    transform: rotateX(180deg);
+  }
+}
+
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
@@ -71,6 +120,10 @@
   .checkbox__label:hover::before {
     border-color: $button-border-hover;
   }
+
+  .checkbox__title-button:hover {
+    color: $button-text-hover;
+  }
 }
 
 .checkbox__input:focus + .checkbox__label {
@@ -79,4 +132,8 @@
 
 .checkbox__input:focus + .checkbox__label::before {
   border-color: $button-border-hover;
+}
+
+.checkbox__title-button:focus {
+  color: $button-text-hover;
 }

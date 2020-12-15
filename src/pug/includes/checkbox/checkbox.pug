@@ -1,13 +1,21 @@
-mixin checkbox({name, elements})
-  ul.checkbox__list
-    for elem in elements
-      li.checkbox__element
-        input.checkbox__input(
-          class= "visually-hidden"
-          id= elem.id,
-          type="checkbox",
-          name= name,
-          value= elem.value,
-          checked= elem.checked
-        )
-        label.checkbox__label(for= elem.id)= elem.label
+mixin checkbox({name, title, expandable, isHide, elements})
+  if isHide === "true"
+    - var hide= "display-none"
+  .checkbox
+    if expandable === "true"
+      h3.checkbox__title
+        button.checkbox__title-button= title
+    else
+      h3.checkbox__title= title
+    ul.checkbox__list(class= [mod, hide])
+      for elem in elements
+        li.checkbox__element
+          input.checkbox__input(
+            class= "visually-hidden",
+            id= elem.id,
+            type="checkbox",
+            name= name,
+            value= elem.value,
+            checked= elem.checked
+          )
+          label.checkbox__label(for= elem.id)= elem.label

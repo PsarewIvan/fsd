@@ -57,9 +57,9 @@ block content
         +drop-date({isMultiple: false})
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
-        h3.form-elements__title(class="form-elements__title--margin-large")= "Checkbox buttons"
         +checkbox({
           name: "options",
+          title: "Checkbox buttons",
           elements: [
             {label: "Можно курить", id: "checkSmoking", value: "isSmoking", checked: false},
             {label: "Можно с питомцами", id: "checkAnimals", value: "isAnimals", checked: "true"},
@@ -168,3 +168,44 @@ block content
             elements: ["1", "2", "3", "...", "15"],
             currentPage: 1
           })
+  .form-elements__wrapper
+    .form-elements__block
+    .form-elements__block
+    .form-elements__block
+  .form-elements__wrapper
+    .form-elements__block
+      .form-elements__element(class="form-elements__element--margin")
+        +checkbox({
+          name: "appOptions",
+          title: "expandable checkbox list",
+          expandable: "true",
+          isHide: "true",
+          elements: [
+            {label: "Завтрак", id: "breakfast", value: "isBreakfast", checked: false},
+            {label: "Письменный стол", id: "table", value: "isTable", checked: true},
+            {label: "Стул для кормления", id: "highChair", value: "isHighChair", checked: true},
+            {label: "Кроватка", id: "crib", value: "isCrib", checked: true},
+            {label: "Телевизор", id: "tv", value: "isTv", checked: false},
+            {label: "Шампунь", id: "shampoo", value: "isShampoo", checked: false}
+          ]
+        })
+      .form-elements__element(class="form-elements__element--margin")
+        +checkbox({
+          name: "appPptions2",
+          title: "expandable checkbox list",
+          expandable: "true",
+          elements: [
+            {label: "Завтрак", id: "breakfast", value: "isBreakfast", checked: false},
+            {label: "Письменный стол", id: "table", value: "isTable", checked: true},
+            {label: "Стул для кормления", id: "highChair", value: "isHighChair", checked: true},
+            {label: "Кроватка", id: "crib", value: "isCrib", checked: true},
+            {label: "Телевизор", id: "tv", value: "isTv", checked: false},
+            {label: "Шампунь", id: "shampoo", value: "isShampoo", checked: false}
+          ]
+        })
+    .form-elements__block
+    .form-elements__block
+  .form-elements__wrapper
+    .form-elements__block
+    .form-elements__block
+    .form-elements__block
