@@ -24,7 +24,7 @@
   &__element {
     position: relative;
 
-    max-width: 230px;
+    max-width: 320px;
 
     &:not(:last-of-type) {
       margin-bottom: 10px;
@@ -32,7 +32,8 @@
   }
 
   &__label {
-    display: block;
+    display: flex;
+    align-items: center;
     min-height: 20px;
     padding-left: 30px;
 
@@ -107,6 +108,25 @@
 
   &.-open-::after{
     transform: rotateX(180deg);
+  }
+}
+
+// Rich
+
+.checkbox {
+  &__label {
+    &.-rich- {
+      font-weight: bold;
+      color: $main-text;
+    }
+  }
+
+  &__riched-text {
+    display: block;
+    margin: 5px 0 0 30px;
+
+    font-size: 12px;
+    color: $light-text;
   }
 }
 

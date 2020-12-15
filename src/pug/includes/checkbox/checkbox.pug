@@ -1,8 +1,10 @@
-mixin checkbox({name, title, expandable, isHide, elements})
+mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
+  if isRich
+    - var rich= "-rich-"
   if isHide === "true"
     - var hide= "display-none"
   .checkbox
-    if expandable === "true"
+    if isExpandable === "true"
       h3.checkbox__title
         button.checkbox__title-button= title
     else
@@ -18,4 +20,9 @@ mixin checkbox({name, title, expandable, isHide, elements})
             value= elem.value,
             checked= elem.checked
           )
-          label.checkbox__label(for= elem.id)= elem.label
+          label(
+            class= ["checkbox__label", rich],
+            for= elem.id
+          )= elem.label
+          if isRich
+            span.checkbox__riched-text= elem.description
