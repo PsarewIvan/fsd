@@ -6,9 +6,14 @@
     const button = checkbox.querySelector('.checkbox__title-button');
 
     if (button) {
+      if (!list.classList.contains('display-none')) {
+        button.classList.add('-open-');
+      }
+
       button.addEventListener('click', (evt) => {
         evt.preventDefault();
         list.classList.toggle('display-none');
+        button.classList.toggle('-open-');
       })
     }
   })
