@@ -193,7 +193,7 @@ block content
         +checkbox({
           name: "appOptions2",
           title: "expandable checkbox list",
-          expandable: "true",
+          isExpandable: "true",
           elements: [
             {label: "Завтрак", id: "breakfast", value: "isBreakfast", checked: false},
             {label: "Письменный стол", id: "table", value: "isTable", checked: true},
@@ -204,6 +204,16 @@ block content
           ]
         })
     .form-elements__block
+      .form-elements__element(class="form-elements__element--margin")
+        +checkbox({
+          name: "richOptions",
+          title: "rich Checkbox Buttons",
+          isRich: "true",
+          elements: [
+            {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "hall", value: "isHall", checked: false},
+            {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "invalid", value: "invalid", checked: false}
+          ]
+        })
     .form-elements__block
   .form-elements__wrapper
     .form-elements__block
