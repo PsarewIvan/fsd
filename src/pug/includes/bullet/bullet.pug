@@ -1,0 +1,6 @@
+mixin bullet({title, elements})
+  .bullet
+    h3.bullet__title= title
+    ul.bullet__list
+      for elem in elements
+        li.bullet__li= elem.label
