@@ -11,6 +11,7 @@ include ../../includes/slider/slider
 include ../../includes/drop-date/drop-date
 include ../../includes/buttons/buttons
 include ../../includes/pagination/pagination
+include ../../includes/bullet/bullet
 
 block title
   title Form Elements
@@ -215,6 +216,15 @@ block content
           ]
         })
     .form-elements__block
+      .form-elements__element(class="form-elements__element--margin")
+        +bullet({
+          title: "bullet list",
+          elements: [
+            {label: "Нельзя с питомцами"},
+            {label: "Без вечеринок и мероприятий"},
+            {label: "Время прибытия — после 13:00, а выезд до 12:00"}
+          ]
+        })
   .form-elements__wrapper
     .form-elements__block
     .form-elements__block
