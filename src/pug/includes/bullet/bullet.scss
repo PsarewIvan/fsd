@@ -1,0 +1,46 @@
+@import '../../../assets/scss/var.scss';
+
+.bullet {
+  &__title {
+    margin: 0 0 16px;
+
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $heading;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__li {
+    position: relative;
+
+    max-width: 225px;
+    padding-left: 20px;
+
+    font-size: 12px;
+    line-height: 24px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 0;
+
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+      background-color: $border;
+    }
+  }
+}
