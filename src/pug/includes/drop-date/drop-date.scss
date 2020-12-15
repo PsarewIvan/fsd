@@ -60,6 +60,12 @@
 
     transition: border-color 0.2s;
   }
+
+  &__filter {
+    & .drop-date__input {
+      width: 266px;
+    }
+  }
 }
 
 /* Hover & Focus */
