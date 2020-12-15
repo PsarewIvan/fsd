@@ -104,6 +104,10 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  &.-open-::after{
+    transform: rotateX(180deg);
+  }
 }
 
 /* Hover & Focus */
