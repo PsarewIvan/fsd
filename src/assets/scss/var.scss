@@ -4,6 +4,7 @@ $dark-shade-100: #1F2041;
 $dark-shade-75: rgba(31, 32, 65, 0.75);
 $dark-shade-50: rgba(31, 32, 65, 0.5);
 $dark-shade-25: rgba(31, 32, 65, 0.25);
+$dark-shade-10: rgba(31, 32, 65, 0.1);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
 $purple: #BC9CFF;
 $purple-40: #BC9CFF4d;
@@ -43,9 +44,10 @@ $button-text-main: $white;
 $button-text-fill: $purple;
 $button-simple-hover: $dark-shade-50;
 
-
 $pagination-hover: $dark-shade-5;
 $pagination-text-current: $white;
+
+$features-border: $dark-shade-10;
 
 // Gradients
 

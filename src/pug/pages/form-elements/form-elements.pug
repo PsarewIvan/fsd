@@ -12,6 +12,7 @@ include ../../includes/drop-date/drop-date
 include ../../includes/buttons/buttons
 include ../../includes/pagination/pagination
 include ../../includes/bullet/bullet
+include ../../includes/features/features
 
 block title
   title Form Elements
@@ -227,5 +228,20 @@ block content
         })
   .form-elements__wrapper
     .form-elements__block
+      .form-elements__element(class="form-elements__element-margin")
+        +features({
+          list: [
+            {
+              label: "Комфорт",
+              description: "Шумопоглощающие стены",
+              url: require("./img/insert_emoticon.svg").default
+            },
+            {
+              label: "Удобство",
+              description: "Окно в каждой из спален",
+              url: require("./img/location_city.svg").default
+            }
+          ]
+        })
     .form-elements__block
     .form-elements__block
