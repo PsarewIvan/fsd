@@ -1,0 +1,7 @@
+mixin features({list})
+  .features
+    ul.features__list
+      for elem in list
+        li.features__li(style= `background-image: url(${elem.url})`)
+          h4.features__li-title= elem.label
+          p.features__li-description= elem.description
