@@ -31,6 +31,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: flex-start;
+
+    &--comments {
+      grid-column: 2 / 4;
+    }
   }
 
   &__element {
