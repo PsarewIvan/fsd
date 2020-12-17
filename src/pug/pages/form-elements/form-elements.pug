@@ -13,6 +13,7 @@ include ../../includes/buttons/buttons
 include ../../includes/pagination/pagination
 include ../../includes/bullet/bullet
 include ../../includes/features/features
+include ../../includes/comments/comments
 
 block title
   title Form Elements
@@ -213,7 +214,7 @@ block content
           isRich: "true",
           elements: [
             {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "hall", value: "isHall", checked: false},
-            {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "invalid", value: "invalid", checked: false}
+            {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "invalid", value: "isInvalid", checked: false}
           ]
         })
     .form-elements__block
@@ -243,5 +244,9 @@ block content
             }
           ]
         })
-    .form-elements__block
-    .form-elements__block
+    .form-elements__block(class= "form-elements__block--comments")
+      +comments({
+        name: "Мурад Сарафанов",
+        imgSrc: require("./img/image.jpg").default,
+        label: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."
+      })
