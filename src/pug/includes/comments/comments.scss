@@ -4,4 +4,32 @@
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 10px;
+
+  &__img {
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px $avatar-shadow-color;
+  }
+
+  &__name {
+    margin: 5px 0 0;
+
+    color: inherit;
+  }
+
+  &__time {
+    display: block;
+    margin: 10px 0 0;
+  }
+
+  &__comment {
+    margin: 0;
+
+    line-height: 1.7;
+  }
+
+  &__like {
+    display: flex;
+    justify-content: center;
+  }
 }
