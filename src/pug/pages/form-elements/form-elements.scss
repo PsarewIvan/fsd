@@ -18,8 +18,9 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: 320px 320px 320px;
+    justify-content: space-between;
+    gap: 20px;
 
     &:not(:last-of-type) {
       margin-bottom: 100px;
