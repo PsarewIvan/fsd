@@ -14,6 +14,7 @@ include ../../includes/pagination/pagination
 include ../../includes/bullet/bullet
 include ../../includes/features/features
 include ../../includes/comments/comments
+include ../../includes/subscription/subscription
 
 block title
   title Form Elements
@@ -58,6 +59,11 @@ block content
         +drop-date({isMultiple: true})
       .form-elements__element
         +drop-date({isMultiple: false})
+      .form-elements__element
+        +subscription({
+          title: "subscription text field",
+          server: "#"
+        })
     .form-elements__block
       .form-elements__element(class="form-elements__element--margin")
         +checkbox({
