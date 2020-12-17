@@ -9,8 +9,9 @@ mixin comments({name, imgSrc, label})
     .comments__name-block
       h4.comments__name= name
       span.comments__time= "5 дней назад"
-    +like({
-      likes: "12",
-      isLiked: true
-    })
+    .comments__like
+      +like({
+        likes: "12",
+        isLiked: true
+      })
     p.comments__comment= label
