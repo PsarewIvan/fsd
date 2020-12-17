@@ -1,0 +1,17 @@
+include ../../includes/input-field/input-field
+
+mixin subscription({title, server})
+  .subscription
+    h3.subscription__title= title
+    form.subscription__form(
+      method= "GET"
+      action= server
+      name= "subscription"
+    )
+      +input({
+        type: "email",
+        name: "email",
+        placeholder: "Email"
+      })
+      button.subscription__button(type= "submith")
+        span.visually-hidden= "Подписаться"
