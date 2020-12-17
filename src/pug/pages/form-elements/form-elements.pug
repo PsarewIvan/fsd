@@ -59,7 +59,7 @@ block content
         +drop-date({isMultiple: true})
       .form-elements__element
         +drop-date({isMultiple: false})
-      .form-elements__element
+      .form-elements__element(class="form-elements__element--narrow")
         +subscription({
           title: "subscription text field",
           server: "#"
@@ -179,7 +179,7 @@ block content
           })
   .form-elements__wrapper
     .form-elements__block
-      .form-elements__element(class="form-elements__element--min-margin")
+      .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "2 спальни, 2 кровати...",
@@ -189,7 +189,7 @@ block content
             {label: "ванные комнаты", name: "bathroom", min: "0", max: "5"}
           ]
         })
-      .form-elements__element(class="form-elements__element--min-margin")
+      .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "2 спальни, 2 кровати...",
@@ -223,7 +223,7 @@ block content
         })
   .form-elements__wrapper
     .form-elements__block
-      .form-elements__element(class="form-elements__element--checkbox")
+      .form-elements__element(class=["form-elements__element--checkbox", "form-elements__element--narrow"])
         +checkbox({
           name: "appOptions",
           title: "expandable checkbox list",
@@ -238,7 +238,7 @@ block content
             {label: "Шампунь", id: "shampoo", value: "isShampoo", checked: false}
           ]
         })
-      .form-elements__element(class="form-elements__element--checkbox")
+      .form-elements__element(class=["form-elements__element--checkbox", "form-elements__element--narrow"])
         +checkbox({
           name: "appOptions2",
           title: "expandable checkbox list",
@@ -253,7 +253,7 @@ block content
           ]
         })
     .form-elements__block
-      .form-elements__element(class="form-elements__element--margin")
+      .form-elements__element(class=["form-elements__element--margin", "form-elements__element--narrow"])
         +checkbox({
           name: "richOptions",
           title: "rich Checkbox Buttons",
@@ -264,7 +264,7 @@ block content
           ]
         })
     .form-elements__block
-      .form-elements__element(class="form-elements__element--margin")
+      .form-elements__element(class=["form-elements__element--margin", "form-elements__element--narrow"])
         +bullet({
           title: "bullet list",
           elements: [
@@ -275,7 +275,7 @@ block content
         })
   .form-elements__wrapper
     .form-elements__block
-      .form-elements__element(class="form-elements__element-margin")
+      .form-elements__element(class=["form-elements__element-margin", "form-elements__element--pre-narrow"])
         +features({
           list: [
             {
