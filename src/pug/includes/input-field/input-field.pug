@@ -1,4 +1,6 @@
-mixin input({type, name, value, placeholder, pattern})
+mixin input({title, type, name, value, placeholder, pattern})
+  if title
+    h3.input-field__title= title
   input.input-field__input(
     type= type,
     name= name,
