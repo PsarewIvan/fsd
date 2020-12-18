@@ -1,8 +1,8 @@
-mixin drop-date({isMultiple= false})
+mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate})
     .drop-date
       if !isMultiple
         .drop-date__wrapper
-          h3.drop-date__title= "Filter date dropdown"
+          h4.drop-date__title= filterDate
           input(
             class= ["drop-date__input", "js-drop-date"]
             type= "text"
@@ -14,7 +14,7 @@ mixin drop-date({isMultiple= false})
           type= "text"
         )
         .drop-date__block
-          h3.drop-date__title= "Date dropdown"
+          h4.drop-date__title= dateFrom
           input(
             class= ["drop-date__input", "drop-date__input-from"]
             type= "text"
@@ -22,7 +22,7 @@ mixin drop-date({isMultiple= false})
           )
           .drop-date__icon(aria-hidden= "true")
         .drop-date__block
-          h3.drop-date__title= "Date dropdown"
+          h4.drop-date__title= dateTo
           input(
             class= ["drop-date__input", "drop-date__input-to"]
             type= "text"
