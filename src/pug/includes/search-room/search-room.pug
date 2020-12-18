@@ -1,2 +1,29 @@
-mixin search-room({})
-  .search-room
+include ../../includes/dropdown/dropdown
+include ../../includes/drop-date/drop-date
+include ../../includes/buttons/buttons
+
+mixin search-room({action})
+  form.search-room(method="GET" action= action)
+    h3.search-room__title= "Найдём номера под ваши пожелания"
+    .search-room__date
+      +drop-date({
+        isMultiple: true,
+        dateFrom: "прибытие",
+        dateTo: "выезд"
+      })
+    .search-room__guests
+      +dropdown({
+        title: "Гости",
+        label: "Сколько гостей",
+        elements: [
+          {label: "Взрослые", name: "adult", min: "0", max: "10"},
+          {label: "Дети", name: "children", min: "0"},
+          {label: "Младенцы", name: "baby", min: "0"}
+        ]
+      })
+    .search-room__button
+      +buttons({
+              type: "submith",
+              label: "подобрать номер",
+              style: "large"
+            })
