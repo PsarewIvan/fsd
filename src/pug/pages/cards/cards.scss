@@ -1,0 +1,16 @@
+.cards {
+  display: flex;
+  justify-content: space-between;
+
+  &__block {
+    width: 380px;
+
+    &:last-of-type {
+      width: 320px;
+    }
+  }
+
+  &__element:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}
