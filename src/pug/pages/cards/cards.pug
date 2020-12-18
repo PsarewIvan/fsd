@@ -14,9 +14,13 @@ block content
   .cards
     .cards__block
       .cards__element
-        +search-room({})
+        +search-room({
+          action: "#"
+        })
       .cards__element
-        +registration({})
+        +registration({
+          action: "#"
+        })
     .cards__block
       .cards__element
         +room-cards({})
