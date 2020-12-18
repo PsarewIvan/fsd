@@ -1,2 +1,73 @@
-mixin registration({})
+include ../../includes/input-field/input-field
+include ../../includes/radio/radio
+include ../../includes/toggle/toggle
+include ../../includes/buttons/buttons
+
+mixin registration({action})
   .registration
+    form.registration__form(method= "GET", action= action)
+      h3.registration__title= "Регистрация аккаунта"
+      .registration__name
+        +input({
+          type: "text",
+          name: "name",
+          placeholder: "Имя"
+        })
+      .registration__surname
+        +input({
+          type: "text",
+          name: "surname",
+          placeholder: "Фамилия"
+        })
+      .registration__sex
+        +radio({
+          name: "sex",
+          elements: [
+            {label: "Мужчина", id: "man", value: "man", checked: true},
+            {label: "Женщина", id: "woman", value: "woman", checked: false}
+          ]
+        })
+      .registration__birthday
+        +input({
+          title: "дата рожденияx",
+          type: "text",
+          name: "maskedDate",
+          placeholder: "ДД.ММ.ГГГГ",
+          pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
+        })
+      .registration__email
+        +input({
+          title: "данные для входа в сервис",
+          type: "text",
+          name: "maskedDate",
+          placeholder: "ДД.ММ.ГГГГ",
+          pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
+        })
+      .registration__pass
+        +input({
+          type: "text",
+          name: "maskedDate",
+          placeholder: "ДД.ММ.ГГГГ",
+          pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
+        })
+      .registration__special
+        +toggle({
+          name: "special",
+          elements: [
+            {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: false}
+          ]
+        })
+      .registration__button
+        +buttons({
+          type: "submith",
+          label: "перейти к оплате",
+          style: "large"
+        })
+    .registration__log
+      p.registration__log-description= "Уже есть аккаунт на Toxin"
+      +buttons({
+          type: "link",
+          link: "#",
+          label: "войти",
+          style: "fill"
+        })

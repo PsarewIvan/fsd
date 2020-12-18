@@ -23,15 +23,15 @@ block content
   .form-elements__wrapper
     .form-elements__block
       .form-elements__element(class="form-elements__element--min-margin")
-        h3.form-elements__title= "Text Field"
         +input({
+          title: "Text Field",
           type: "email",
           name: "email",
           placeholder: "Email"
         })
       .form-elements__element(class="form-elements__element--min-margin")
-        h3.form-elements__title= "Text Field"
         +input({
+          title: "Text Field",
           type: "text",
           name: "awesome",
           placeholder: "placeholder",
@@ -48,8 +48,8 @@ block content
           ]
         })
       .form-elements__element
-        h3.form-elements__title= "masked text field"
         +input({
+          title: "masked text field",
           type: "text",
           name: "maskedDate",
           placeholder: "ДД.ММ.ГГГГ",

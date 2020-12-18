@@ -1,0 +1,39 @@
+@import '../../../assets/scss/var.scss';
+
+.registration {
+  padding: 40px 30px 30px;
+
+  border: 1px solid $cards-border-color;
+  border-radius: 4px;
+  box-shadow: 0px 0px 25px $cards-shadow-color;
+
+  &__form {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0 0 21px;
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 1.22;
+  }
+
+  &__name,
+  &__surname,
+  &__email,
+  &__pass {
+    margin-bottom: 10px;
+  }
+
+  &__sex,
+  &__birthday,
+  &__special {
+    margin-bottom: 20px;
+  }
+
+  &__log {
+    display: flex;
+    justify-content: space-between;
+  }
+}
