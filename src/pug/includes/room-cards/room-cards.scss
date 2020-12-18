@@ -1,0 +1,119 @@
+@import '../../../assets/scss/var.scss';
+
+.room-cards {
+  padding: 40px 30px 30px;
+
+  border: 1px solid $cards-border-color;
+  box-shadow: 0px 0px 25px $cards-shadow-color;
+  border-radius: 4px;
+
+  &__title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__title {
+    position: relative;
+
+    margin: 0 0 20px;
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 1.22;
+    font-family: $main-font;
+
+    &.-luxe-::after {
+      content: "люкс";
+      display: inline-block;
+
+      font-size: 12px;
+      color: $room-luxe;
+      text-transform: uppercase;
+    }
+  }
+
+  &__price-block {
+    margin: 0;
+
+    color: $light-text;
+  }
+
+  &__price {
+    font-weight: bold;
+  }
+
+  &__symbol {
+    font-size: 16px;
+  }
+
+  &__calendar,
+  &__guests {
+    margin-bottom: 20px;
+  }
+
+  &__table {
+    width: 100%;
+    border-spacing: 0 10px;
+  }
+
+  &__calculation {
+    margin-bottom: 30px;
+  }
+
+  &__td {
+    margin: 0;
+    padding: 0;
+    height: 24px;
+
+    border: none;
+
+    line-height: 1.28;
+
+    &:last-of-type {
+      width: 80px;
+
+      text-align: right;
+    }
+  }
+
+  &__option-td {
+    width: 20px;
+
+    &.-info-::after {
+      content: 'i';
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px;
+
+      border: 1px solid $border;
+      border-radius: 50%;
+
+      font-size: 12px;
+      font-weight: bold;
+      color: $border;
+
+      cursor: pointer;
+    }
+  }
+
+  &__total {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    margin-bottom: 25px;
+  }
+
+  &__total-dotted {
+    border-bottom: 1px dotted $border;
+  }
+
+  &__total-text,
+  &__total-price {
+    font-size: 19px;
+    font-weight: bold;
+    color: $heading;
+  }
+}

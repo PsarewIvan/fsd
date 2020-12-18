@@ -10,11 +10,11 @@ mixin room-cards({number, isLuxe, price, action})
     form.room-cards__form(method= "GET", action= action)
       .room-cards__title-block
         h3(class= ["room-cards__title", luxe])
-          span.room-cards__symbol= "№"
+          span.room-cards__symbol= "№ "
           span.room-cards__number= number
         p.room-cards__price-block
-          span.room-price__coast= `${price}₽`
-          span.room-price__text= "в сутки"
+          span.room-cards__price= `${price}₽`
+          span.room-cards__price-text= " в сутки"
       .room-cards__calendar
         +drop-date({
           isMultiple: true,
@@ -53,15 +53,15 @@ mixin room-cards({number, isLuxe, price, action})
           tbody
             tr
               td.room-cards__td= "9 990₽ х 4 суток"
-              td.room-cards__option-td
-              td= "39 960₽"
+              td(class= ["room-cards__td", "room-cards__option-td"])
+              td.room-cards__td= "39 960₽"
             tr
               td.room-cards__td= "Сбор за услуги: скидка 2 179₽"
-              td(class= [".room-cards__option-td", "-info-"])
+              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
               td.room-cards__td= "0₽"
             tr
               td.room-cards__td= "Сбор за дополнительные услуги"
-              td.room-cards__option-td
+              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
               td.room-cards__td= "300₽"
       .room-cards__total
         span.room-cards__total-text= "Итого"
