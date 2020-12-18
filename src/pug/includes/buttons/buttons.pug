@@ -10,10 +10,9 @@ mixin buttons ({link, type, label, style, hovered})
   else
     - var mod2 = ""
 
-  if link
+  if type == "link"
     a(
       class= ["buttons", mod, mod2],
-      type= type
       href= link
     )
       span.buttons__span= label
