@@ -1,4 +1,4 @@
-mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate})
+mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, to})
     .drop-date
       if !isMultiple
         .drop-date__wrapper
@@ -7,6 +7,7 @@ mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate})
             class= ["drop-date__input", "js-drop-date"]
             type= "text"
             placeholder= "ДД.ММ.ГГГГ"
+            value= range
           )
       else
         input(
@@ -19,6 +20,7 @@ mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate})
             class= ["drop-date__input", "drop-date__input-from"]
             type= "text"
             placeholder= "ДД.ММ.ГГГГ"
+            value= from
           )
           .drop-date__icon(aria-hidden= "true")
         .drop-date__block
@@ -27,5 +29,6 @@ mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate})
             class= ["drop-date__input", "drop-date__input-to"]
             type= "text"
             placeholder= "ДД.ММ.ГГГГ"
+            value= to
           )
           .drop-date__icon(aria-hidden= "true")

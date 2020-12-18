@@ -23,7 +23,12 @@ block content
         })
     .cards__block
       .cards__element
-        +room-cards({})
+        +room-cards({
+          number: "888",
+          isLuxe: "true",
+          price: "9 999",
+          action: "#"
+        })
       .cards__element
         +login({})
     .cards__block

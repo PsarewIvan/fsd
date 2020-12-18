@@ -1,2 +1,75 @@
-mixin room-cards({})
+include ../../includes/drop-date/drop-date
+include ../../includes/dropdown/dropdown
+include ../../includes/buttons/buttons
+
+mixin room-cards({number, isLuxe, price, action})
+  - var luxe= ""
+  if isLuxe
+    - luxe= "-luxe-"
   .room-cards
+    form.room-cards__form(method= "GET", action= action)
+      .room-cards__title-block
+        h3(class= ["room-cards__title", luxe])
+          span.room-cards__symbol= "№ "
+          span.room-cards__number= number
+        p.room-cards__price-block
+          span.room-cards__price= `${price}₽`
+          span.room-cards__price-text= " в сутки"
+      .room-cards__calendar
+        +drop-date({
+          isMultiple: true,
+          dateFrom: "Прибытие",
+          dateTo: "Выезд",
+          from: "19.08.2019",
+          to: "23.08.2019"
+        })
+      .room-cards__guests
+        +dropdown({
+          title: "Гости",
+          label: "Сколько гостей",
+          elements: [
+            {
+              label: "Взрослые",
+              name: "adult-room",
+              min: "0",
+              max: "10",
+              value: "1"
+            },
+            {
+              label: "Дети",
+              name: "children-room",
+              min: "0",
+              value: "2"
+            },
+            {
+              label: "Младенцы",
+              name: "baby-room",
+              min: "0"
+            }
+          ]
+        })
+      .room-cards__calculation
+        table.room-cards__table
+          tbody
+            tr
+              td.room-cards__td= "9 990₽ х 4 суток"
+              td(class= ["room-cards__td", "room-cards__option-td"])
+              td.room-cards__td= "39 960₽"
+            tr
+              td.room-cards__td= "Сбор за услуги: скидка 2 179₽"
+              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
+              td.room-cards__td= "0₽"
+            tr
+              td.room-cards__td= "Сбор за дополнительные услуги"
+              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
+              td.room-cards__td= "300₽"
+      .room-cards__total
+        span.room-cards__total-text= "Итого"
+        .room-cards__total-dotted
+        span.room-cards__total-price= "38 081₽"
+      .room-cards__button
+        +buttons({
+          type: "submith",
+          label: "забронировать",
+          style: "large"
+        })
