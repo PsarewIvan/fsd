@@ -1,4 +1,5 @@
-mixin dropdown({label, elements})
+mixin dropdown({title, label, elements})
+  h4.dropdown__title= title
   .dropdown
     p.dropdown__drop-button(class="open")= label
     .dropdown__menu

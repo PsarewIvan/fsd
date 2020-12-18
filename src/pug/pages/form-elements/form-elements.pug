@@ -38,8 +38,8 @@ block content
           value: "This is pretty awesome"
         })
       .form-elements__element(class="form-elements__element--min-margin")
-        h3.form-elements__title= "Dropdown"
         +dropdown({
+          title: "Dropdown",
           label: "Сколько гостей",
           elements: [
             {label: "Взрослые", name: "adult", min: "0", max: "10"},
@@ -56,9 +56,16 @@ block content
           pattern: "[0-9]{2}.[0-9]{2}.[0-9]{4}"
         })
       .form-elements__element
-        +drop-date({isMultiple: true})
+        +drop-date({
+          isMultiple: true,
+          dateFrom: "date Dropdown",
+          dateTo: "date Dropdown"
+        })
       .form-elements__element
-        +drop-date({isMultiple: false})
+        +drop-date({
+          isMultiple: false,
+          filterDate: "filter date dropdown"
+        })
       .form-elements__element(class="form-elements__element--narrow")
         +subscription({
           title: "subscription text field",
