@@ -33,7 +33,10 @@ block content
         +login({})
     .cards__block
       .cards__element
-        +drop-date({isMultiple: false})
+        +drop-date({
+          isMultiple: true,
+          inline: true
+        })
       .cards__element
         +room-preview({})
       .cards__element
