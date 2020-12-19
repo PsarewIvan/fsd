@@ -7,6 +7,10 @@ import 'air-datepicker';
     const dateFrom = dropDate.find('.drop-date__input-from');
     const dateTo = dropDate.find ('.drop-date__input-to');
     const isMulti = dateFrom && dateTo;
+    let inline = false;
+    if (dropDate.find('.drop-date__input').hasClass('-inline-')) {
+      inline = true;
+    }
 
     dropDate.find('.js-drop-date').datepicker({
       minDate: new Date(),
@@ -14,6 +18,7 @@ import 'air-datepicker';
       multipleDatesSeparator: ' - ',
       navTitles: { days: 'MM yyyy' },
       clearButton: true,
+      inline: inline,
       onSelect: (date) => {
         if (isMulti) {
           const dates = date.split(' - ');
