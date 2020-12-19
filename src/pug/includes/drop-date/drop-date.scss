@@ -37,6 +37,10 @@
     pointer-events: none;
 
     transition: opacity 0.2s;
+
+    &.-inline- {
+      display: none;
+    }
   }
 
   &__title {
@@ -48,6 +52,10 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $heading;
+
+    &.-inline- {
+      display: none;
+    }
   }
 
   &__input {
@@ -59,6 +67,10 @@
     border-radius: 4px;
 
     transition: border-color 0.2s;
+
+    &.-inline- {
+      display: none;
+    }
   }
 
   &__filter {
