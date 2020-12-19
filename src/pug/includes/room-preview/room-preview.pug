@@ -1,2 +1,24 @@
-mixin room-preview({})
+include ../img-slider/img-slider
+include ../rating/rating
+
+mixin room-preview({number, price, isLuxe, rating, comments, images})
+  if isLuxe
+    - var luxe= "-luxe-"
   .room-preview
+    +img-slider({images})
+    .room-preview__block
+      .room-preview__number-wrapper
+        span.room-preview__number-symbol= "№"
+        span.room-preview__number(class= luxe)= number
+      .room-preview__price-wrapper
+        span.room-preview__price= `${price} ₽`
+        span.room-preview__price-descr= " в сутки"
+    .room-preview__block
+      .room-preview__rating
+        +rating({
+          name: `room-${number}`,
+          rate: rating
+        })
+      .room-preview__comments
+        span.room-preview__comments-count= comments
+        span.room-preview__comments-text= " Отзывов"
