@@ -1,34 +1,48 @@
-mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, to})
-    .drop-date
-      if !isMultiple
-        .drop-date__wrapper
-          h4.drop-date__title= filterDate
-          input(
-            class= ["drop-date__input", "js-drop-date"]
-            type= "text"
-            placeholder= "ДД.ММ.ГГГГ"
-            value= range
-          )
-      else
+mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, to, inline})
+  if inline
+    - var inlineClass= "-inline-"
+  .drop-date
+    if !isMultiple
+      .drop-date__wrapper
+        h4(
+          class= ["drop-date__title", inlineClass]
+        )= filterDate
         input(
-          class= ["drop-date__datepicker-multi", "js-drop-date"]
+          class= ["drop-date__input", "js-drop-date", inlineClass]
           type= "text"
+          placeholder= "ДД.ММ.ГГГГ"
+          value= range
         )
-        .drop-date__block
-          h4.drop-date__title= dateFrom
-          input(
-            class= ["drop-date__input", "drop-date__input-from"]
-            type= "text"
-            placeholder= "ДД.ММ.ГГГГ"
-            value= from
+    else
+      input(
+        class= ["drop-date__datepicker-multi", "js-drop-date"]
+        type= "text"
+      )
+      .drop-date__block
+        h4(
+          class= ["drop-date__title", inlineClass]
+        )= dateFrom
+        input(
+          class= ["drop-date__input", "drop-date__input-from", inlineClass]
+          type= "text"
+          placeholder= "ДД.ММ.ГГГГ"
+          value= from
+        )
+        .drop-date__icon(
+          class= inlineClass
+          aria-hidden= "true"
           )
-          .drop-date__icon(aria-hidden= "true")
-        .drop-date__block
-          h4.drop-date__title= dateTo
-          input(
-            class= ["drop-date__input", "drop-date__input-to"]
-            type= "text"
-            placeholder= "ДД.ММ.ГГГГ"
-            value= to
+      .drop-date__block
+        h4(
+          class= ["drop-date__title", inlineClass]
+        )= dateTo
+        input(
+          class= ["drop-date__input", "drop-date__input-to", inlineClass]
+          type= "text"
+          placeholder= "ДД.ММ.ГГГГ"
+          value= to
+        )
+        .drop-date__icon(
+          class= inlineClass
+          aria-hidden= "true"
           )
-          .drop-date__icon(aria-hidden= "true")
