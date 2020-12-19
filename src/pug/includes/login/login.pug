@@ -1,2 +1,33 @@
+include ../input-field/input-field
+include ../buttons/buttons
+
 mixin login({})
   .login
+    h3.login__title= "Войти"
+    form.login__form
+      .login__form-email
+        +input({
+          type: "email",
+          name: "email",
+          placeholder: "Email"
+        })
+      .login__form-pass
+        +input({
+          type: "password",
+          name: "pass",
+          placeholder: "Пароль"
+        })
+      .login__form-button
+        +buttons({
+          type: "submith",
+          label: "Войти",
+          style: "large"
+        })
+    .login__log
+      p.login__log-description= "Нет аккаунта на Toxin?"
+      +buttons({
+        type: "link",
+        link: "#",
+        label: "создать",
+        style: "fill"
+      })
