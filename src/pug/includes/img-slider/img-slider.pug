@@ -1,0 +1,7 @@
+mixin img-slider({images})
+  .img-slider
+    for image in images
+      .img-slider__img-wrapper
+        img.img-slider__img(
+          src= image.src
+        )
