@@ -1,0 +1,60 @@
+@import '../../../assets/scss/var.scss';
+
+.room-preview {
+  width: 270px;
+  padding-bottom: 20px;
+
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    width: 233px;
+    min-height: 33px;
+    margin: 0 auto;
+
+    &:not(:last-of-type) {
+      align-items: baseline;
+
+      border-bottom: 1px solid $cards-border-color;
+    }
+
+    &:last-of-type {
+      align-items: flex-end;
+    }
+  }
+
+  &__number-symbol,
+  &__number {
+    font-weight: bold;
+    color: $heading;
+  }
+
+  &__number {
+    font-size: 19px;
+
+    &.-luxe-:after {
+      content: 'люкс';
+      margin-left: 3px;
+
+      font-size: 12px;
+      color: $room-luxe;
+      text-transform: uppercase;
+    }
+  }
+
+  &__comments {
+    margin-bottom: 3px;
+  }
+
+  &__price,
+  &__comments-count {
+    font-weight: bold;
+  }
+
+  &__price-descr {
+    font-size: 12px;
+  }
+}

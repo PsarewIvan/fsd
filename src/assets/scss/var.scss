@@ -55,6 +55,7 @@ $avatar-shadow-color: $dark-shade-10;
 
 $cards-border-color: $gray-12;
 $cards-shadow-color: $gray-20;
+$cards-border-color: $dark-shade-10;
 
 $room-luxe: $purple;
 
@@ -75,6 +76,8 @@ $gradient-slider: $gradient-second;
 $gradient-datepicker-current: $gradient-second;
 $gradient-datepicker-selected: $gradient-main;
 $gradient-datepicker-focus: $gradient-main-40;
+$gradient-slick-slider-prev: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+$gradient-slick-slider-next: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
 
 // Sizes
 
