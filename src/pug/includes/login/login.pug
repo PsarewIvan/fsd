@@ -21,7 +21,7 @@ mixin login({})
         +buttons({
           type: "submith",
           label: "Войти",
-          style: "large"
+          styles: ["large"]
         })
     .login__log
       p.login__log-description= "Нет аккаунта на Toxin?"
@@ -29,5 +29,5 @@ mixin login({})
         type: "link",
         link: "#",
         label: "создать",
-        style: "fill"
+        styles: ["fill"]
       })
