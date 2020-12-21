@@ -1,9 +1,14 @@
-mixin nav({items})
+mixin nav({items, currentPage})
   .nav
     ul.nav__list
       each item in items
+        if currentPage == item.label
+          - var mod= "nav__link--current"
+        else
+          - var mod= ""
         li.nav__li
           a.nav__link(
+            class= mod
             href= item.href
           )= item.label
           if item.extend
