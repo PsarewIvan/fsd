@@ -1,0 +1,15 @@
+mixin nav({items})
+  .nav
+    ul.nav__list
+      each item in items
+        li.nav__li
+          a.nav__link(
+            href= item.href
+          )= item.label
+          if item.extend
+            ul.nav__list--extend
+              each itemEx in item.extend
+                li.nav__li--extend
+                  a.nav__link--extend(
+                    href= itemEx.href
+                  )= itemEx.label
