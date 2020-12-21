@@ -1,0 +1,51 @@
+include ../nav/nav
+include ../buttons/buttons
+
+.header__wrapper
+  .header
+    .header__block
+      a.header__main-link(
+        href= "index.html"
+      )
+        img(
+          class= "header__icon"
+          alt= "Toxin icon"
+          src= 'img/icon-color.svg'
+        )
+        img(
+          class= "header__icon-text"
+          alt= "Toxin"
+          src= 'img/toxin.svg'
+        )
+    .header__block
+      +nav({
+        items: [
+          {label: "О нас", href: "#"},
+          {label: "Услуги", href: "#", extend: [
+            {label: "Услуга 1", href: "#"},
+            {label: "Услуга 2", href: "#"},
+            {label: "Услуга 3", href: "#"}
+          ]},
+          {label: "Вакансии", href: "#"},
+          {label: "Новости", href: "#"},
+          {label: "Соглашения", href: "#", extend: [
+            {label: "Соглашение 1", href: "#"},
+            {label: "Соглашение 2", href: "#"},
+            {label: "Соглашение 3", href: "#"}
+          ]}
+        ]
+      })
+    .header__block
+      +buttons({
+          type: "link",
+          link: "#",
+          label: "войти",
+          style: "fill"
+        })
+    .header__block
+      +buttons({
+          type: "link",
+          link: "#",
+          label: "зарегестрироваться",
+          style: "large"
+        })
