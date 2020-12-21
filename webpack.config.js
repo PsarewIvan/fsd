@@ -127,6 +127,10 @@ module.exports = {
         {
           from: `${PATHS.src}/favicon`,
           to: PATHS.dist
+        },
+        {
+          from: `${PATHS.src}/assets/img`,
+          to: `${PATHS.dist}/img`
         }
       ]
     }),
