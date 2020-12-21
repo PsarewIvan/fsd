@@ -1,6 +1,12 @@
+@import '../../../assets/scss/var.scss';
+
 .cards {
   display: flex;
   justify-content: space-between;
+
+  &__body {
+    background-color: $background-color;
+  }
 
   &__block {
     width: 380px;
