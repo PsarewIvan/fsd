@@ -1,10 +1,14 @@
-mixin buttons ({link, type, label, style, hovered})
-  if style == "fill"
-    - var mod= "buttons--fill"
-  else if style == "simple"
-    - var mod= "buttons--simple"
-  else if style == "large"
-    - var mod= "buttons--large"
+mixin buttons ({link, type, label, styles= [], hovered})
+  - var mod= []
+  if styles.includes("fill")
+    - mod.push("buttons--fill")
+  if styles.includes("simple")
+    - mod.push("buttons--simple")
+  if styles.includes("large")
+    - mod.push("buttons--large")
+  if styles.includes("low")
+    - mod.push("buttons--low")
+
   if hovered == "true"
     - var mod2 = "-hovered-"
   else
