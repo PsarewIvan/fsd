@@ -1,0 +1,60 @@
+include ../nav-footer/nav-footer
+include ../subscription/subscription
+
+.footer__wrapper
+  .footer
+    .footer__block
+      a.footer__main-link(
+        href= "index.html"
+      )
+        img(
+          class= "header__icon"
+          alt= "Toxin icon"
+          src= 'img/icon-color.svg'
+        )
+        img(
+          class= "header__icon-text"
+          alt= "Toxin"
+          src= 'img/toxin.svg'
+        )
+      p.footer__link-description= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+    .footer__block
+      +nav-footer({
+        title: "навигация",
+        items: [
+          {label: "О нас", href: "#"},
+          {label: "Новости", href: "#"},
+          {label: "Служба поддержки", href: "#"},
+          {label: "Услуги", href: "#"}
+        ]
+      })
+    .footer__block
+      +nav-footer({
+        title: "о нас",
+        items: [
+          {label: "О сервисе", href: "#"},
+          {label: "Наша команда", href: "#"},
+          {label: "Вакансии", href: "#"},
+          {label: "Инвесторы", href: "#"}
+        ]
+      })
+    .footer__block
+      +nav-footer({
+        title: "Служба поддержки",
+        items: [
+          {label: "Соглашения", href: "#"},
+          {label: "Сообщества", href: "#"},
+          {label: "Связь с нами", href: "#"}
+        ]
+      })
+    .footer__block
+      .footer__subscription
+        h4.footer__subscription-title= "Подписка"
+        p.footer__subscription-text= "Получайте специальные предложения и новости сервиса"
+        +subscription({
+          server: "#"
+        })
+  .footer__sub-block-wrapper
+    .footer__sub-block
+      p.footer__license= "Copyright © 2018 Toxin отель. Все права зачищены."
+      .footer__social
