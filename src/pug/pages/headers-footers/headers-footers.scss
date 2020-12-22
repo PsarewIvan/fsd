@@ -4,4 +4,8 @@
   &__body {
     background-color: $background-color;
   }
+
+  &__block:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
 }

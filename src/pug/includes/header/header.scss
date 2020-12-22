@@ -1,0 +1,47 @@
+@import '../../../assets/scss/var.scss';
+
+.header {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr max-content max-content max-content;
+  align-content: center;
+  width: $content-pc;
+  min-height: 70px;
+  margin: 0 auto;
+
+  &__wrapper {
+    background-color: $white;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+
+  &__main-link {
+    display: flex;
+    align-items: center;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    height: 40px;
+
+    &-text {
+      margin-left: 13px;
+      height: 14px;
+    }
+  }
+}
+
+/* Hover & Focus */
+
+@media(hover: hover) and (pointer: fine) {
+  .header__main-link:hover {
+    opacity: 0.7;
+  }
+}
+
+.header__main-link:focus {
+  opacity: 0.7;
+}

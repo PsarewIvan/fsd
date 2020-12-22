@@ -1,0 +1,33 @@
+mixin nav({items, currentPage})
+  nav.nav
+    ul.nav__list
+      each item in items
+        if currentPage == item.label
+          - var mod= "nav__link--current"
+        else
+          - var mod= ""
+        if item.extend
+          li.nav__li(class= "nav__li--extend")
+            a.nav__link(
+              class= mod
+              href= item.href
+            )= item.label
+            button.nav__extend-button(
+              type= "button"
+              aria-label= "Открыть выпадающий список"
+              tabindex= "-1"
+            )
+            .nav__list--extend-wrapper
+              ul.nav__list(class= "nav__list--extend")
+                each itemEx in item.extend
+                  li.nav__li(class= "nav__li--extend")
+                    a.nav__link(
+                      class= "nav__link--extend"
+                      href= itemEx.href
+                    )= itemEx.label
+        else
+          li.nav__li
+            a.nav__link(
+              class= mod
+              href= item.href
+            )= item.label
