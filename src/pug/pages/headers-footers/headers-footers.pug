@@ -17,4 +17,9 @@ block content
     .headers-footers__block
       block footer
         include ../../includes/footer/footer
-    .headers-footers__block
+    .headers-footers__block(
+      class= "headers-footers__block--tablet"
+    )
+      block footer
+        - var mod = "-tablet-"
+        include ../../includes/footer/footer
