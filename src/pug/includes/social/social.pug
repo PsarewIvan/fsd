@@ -1,0 +1,14 @@
+mixin social ({items})
+  .social
+    ul.social__list
+      each item in items
+        li.social__li
+          a.social__link(
+            href= item.href
+            aria-label= item.label
+          )
+            img.social__icon(
+              src= item.iconSrc
+              alt= item.label
+              aria-hidden= "true"
+            )
