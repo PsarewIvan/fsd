@@ -48,6 +48,8 @@
     &--current {
       font-weight: bold;
       color: $main-text;
+
+      cursor: default;
     }
   }
 
@@ -78,7 +80,7 @@
     display: block;
   }
 
-  .nav__li:hover>.nav__link {
+  .nav__li:hover>.nav__link:not(.nav__link--current) {
     opacity: 0.7;
   }
 }
@@ -87,6 +89,6 @@
   display: block;
 }
 
-.nav__li:focus>.nav__link {
+.nav__li:focus>.nav__link:not(.nav__link--current) {
   opacity: 0.7;
 }
