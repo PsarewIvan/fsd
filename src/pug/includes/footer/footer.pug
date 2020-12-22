@@ -1,5 +1,6 @@
 include ../nav-footer/nav-footer
 include ../subscription/subscription
+include ../social/social
 
 .footer__wrapper
   .footer
@@ -10,12 +11,12 @@ include ../subscription/subscription
         img(
           class= "header__icon"
           alt= "Toxin icon"
-          src= 'img/icon-color.svg'
+          src= "img/icon-color.svg"
         )
         img(
           class= "header__icon-text"
           alt= "Toxin"
-          src= 'img/toxin.svg'
+          src= "img/toxin.svg"
         )
       p.footer__link-description= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
     .footer__block
@@ -58,3 +59,22 @@ include ../subscription/subscription
     .footer__sub-block
       p.footer__license= "Copyright © 2018 Toxin отель. Все права зачищены."
       .footer__social
+        +social({
+          items: [
+            {
+              label: "twitter",
+              href: "http://t.co",
+              iconSrc: "img/twitter.svg"
+            },
+            {
+              label: "facebook",
+              href: "https://www.facebook.com/",
+              iconSrc: "img/facebook.svg"
+            },
+            {
+              label: "instagram",
+              href: "https://www.instagram.com/",
+              iconSrc: "img/instagram.svg"
+            }
+          ]
+        })
