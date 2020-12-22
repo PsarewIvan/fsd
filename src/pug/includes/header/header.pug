@@ -1,5 +1,6 @@
 include ../nav/nav
 include ../buttons/buttons
+include ../user-link/user-link
 
 .header__wrapper
   .header
@@ -36,17 +37,24 @@ include ../buttons/buttons
         ],
         currentPage: current
       })
-    .header__block
-      +buttons({
-          type: "link",
-          link: "#",
-          label: "войти",
-          styles: ["fill", "low"]
+    if isLogin
+      .header__block
+        +user-link({
+          name: "Юлий Цезарь",
+          link: "#"
         })
-    .header__block
-      +buttons({
-          type: "link",
-          link: "#",
-          label: "зарегестрироваться",
-          styles: ["low"]
-        })
+    else
+      .header__block
+        +buttons({
+            type: "link",
+            link: "#",
+            label: "войти",
+            styles: ["fill", "low"]
+          })
+      .header__block
+        +buttons({
+            type: "link",
+            link: "#",
+            label: "зарегестрироваться",
+            styles: ["low"]
+          })
