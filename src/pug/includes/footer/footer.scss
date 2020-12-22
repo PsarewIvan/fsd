@@ -59,6 +59,44 @@
   }
 }
 
+// Tablet styles
+
+.footer__wrapper.-tablet- {
+  .footer {
+    width: auto;
+    grid-template-columns: 1fr;
+    margin: 120px 104px 0;
+  }
+
+  .footer__block {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer__block:not(:first-of-type) {
+    display: none;
+  }
+
+  .footer__link-description {
+    display: none;
+  }
+
+  .footer__sub-block {
+    width: auto;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .footer__sub-block-wrapper {
+    margin-bottom: 120px;
+    border: none;
+  }
+
+  .footer__license {
+    margin-bottom: 25px;
+  }
+}
+
 /* Hover & Focus */
 
 @media(hover: hover) and (pointer: fine) {
