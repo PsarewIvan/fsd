@@ -10,5 +10,9 @@ block content
         - var current = "О нас"
         include ../../includes/header/header
     .headers-footers__block
+      block header
+        - var current = "О нас"
+        - var isLogin = true
+        include ../../includes/header/header
     .headers-footers__block
     .headers-footers__block
