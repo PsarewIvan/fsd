@@ -5,7 +5,14 @@
     background-color: $background-color;
   }
 
-  &__block:not(:last-of-type) {
-    margin-bottom: 40px;
+  &__block {
+    &--tablet {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
   }
 }

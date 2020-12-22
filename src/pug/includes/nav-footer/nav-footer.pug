@@ -1,0 +1,10 @@
+mixin nav-footer({title, items})
+  .nav-footer
+    h4.nav-footer__title= title
+    nav.nav-footer__nav
+      ul.nav-footer__list
+        each item in items
+          li.nav-footer__li
+            a.nav-footer__link(
+              href= item.href
+            )= item.label

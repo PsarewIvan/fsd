@@ -15,4 +15,11 @@ block content
         - var isLogin = true
         include ../../includes/header/header
     .headers-footers__block
-    .headers-footers__block
+      block footer
+        include ../../includes/footer/footer
+    .headers-footers__block(
+      class= "headers-footers__block--tablet"
+    )
+      block footer
+        - var mod = "-tablet-"
+        include ../../includes/footer/footer
