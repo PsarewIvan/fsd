@@ -18,7 +18,7 @@
     // Убирает появление меню при ховере на тач-усройствах
     if (isTouchEnabled()) {
       const navLinks = nav.querySelectorAll('.nav__li');
-        navLinks.forEach( (li) => {
+      navLinks.forEach( (li) => {
         li.classList.add('-touch-');
         if ( li.querySelector('button') ) {
           li.querySelector('button').classList.add('-touch-');
@@ -26,7 +26,7 @@
       });
 
       const buttons = nav.querySelectorAll('.nav__extend-button');
-        buttons.forEach( (button) => {
+      buttons.forEach( (button) => {
         button.addEventListener('click', function() {
           this.classList.toggle('-active-');
           this.nextElementSibling.classList.toggle('-open-');
