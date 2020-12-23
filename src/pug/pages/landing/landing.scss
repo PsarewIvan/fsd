@@ -1,0 +1,42 @@
+@import '../../../assets/scss/var.scss';
+
+.landing {
+  &__block {
+    display: flex;
+    max-width: $body;
+    min-height: 830px;
+    margin: 0 auto;
+
+    background-image: url(img/title.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto 100%;
+  }
+
+  &__block-search {
+    position: relative;
+
+    width: $content-pc;
+    margin: 70px auto 20px;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 300px;
+    margin: 0;
+
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: normal;
+    text-align: right;
+    color: $main-text;
+  }
+
+  &__search-block {
+    width: 380px;
+  }
+}
