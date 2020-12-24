@@ -1,0 +1,74 @@
+include ../dropdown/dropdown
+include ../drop-date/drop-date
+include ../slider/slider
+include ../checkbox/checkbox
+
+form.form-filter
+  .form-filter__block
+    +drop-date({
+      isMultiple: false,
+      filterDate: "даты пребывания в отеле"
+    })
+  .form-filter__block
+    +dropdown({
+      title: "гости",
+      label: "Сколько гостей",
+      elements: [
+        {label: "Взрослые", name: "adult", min: "0", max: "10"},
+        {label: "Дети", name: "children", min: "0"},
+        {label: "Младенцы", name: "baby", min: "0"}
+      ]
+    })
+  .form-filter__block
+    +slider({
+      type: "double",
+      min: 0,
+      max: 15000,
+      from: 5000,
+      to: 10000
+    })
+  .form-filter__block
+    +checkbox({
+      name: "rules",
+      title: "правила дома",
+      elements: [
+        {label: "Можно курить", id: "checkSmoking", value: "isSmoking", checked: false},
+        {label: "Можно с питомцами", id: "checkAnimals", value: "isAnimals", checked: true},
+        {label: "Можно пригласить гостей (до 10 человек)", id: "checkGuests", value: "isGuests", checked: true}
+      ]
+    })
+  .form-filter__block
+    +checkbox({
+      name: "accessibility",
+      title: "доступность",
+      isRich: "true",
+      elements: [
+        {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", id: "hall", value: "isHall", checked: false},
+        {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", id: "invalid", value: "isInvalid", checked: false}
+      ]
+    })
+  .form-filter__block
+    +dropdown({
+      title: "удобства номера",
+      label: "2 спальни, 2 кровати...",
+      elements: [
+        {label: "спальни", name: "bedroom", min: "0", max: "5"},
+        {label: "кровати", name: "bed", min: "0"},
+        {label: "ванные комнаты", name: "bathroom", min: "0", max: "5"}
+      ]
+    })
+  .form-filter__block
+    +checkbox({
+          name: "options",
+          title: "дополнительные удобства",
+          isExpandable: "true",
+          isHide: "true",
+          elements: [
+            {label: "Завтрак", id: "breakfast", value: "isBreakfast", checked: false},
+            {label: "Письменный стол", id: "table", value: "isTable", checked: true},
+            {label: "Стул для кормления", id: "highChair", value: "isHighChair", checked: true},
+            {label: "Кроватка", id: "crib", value: "isCrib", checked: true},
+            {label: "Телевизор", id: "tv", value: "isTv", checked: false},
+            {label: "Шампунь", id: "shampoo", value: "isShampoo", checked: false}
+          ]
+        })
