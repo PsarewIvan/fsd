@@ -61,7 +61,7 @@ mixin registration({action})
         +buttons({
           type: "submith",
           label: "перейти к оплате",
-          styles: ["large"]
+          modify: ["large"]
         })
     .registration__log
       p.registration__log-description= "Уже есть аккаунт на Toxin"
@@ -69,5 +69,5 @@ mixin registration({action})
           type: "link",
           link: "#",
           label: "войти",
-          styles: ["fill"]
+          modify: ["fill"]
         })

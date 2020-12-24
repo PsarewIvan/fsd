@@ -49,12 +49,14 @@ include ../user-link/user-link
             type: "link",
             link: "#",
             label: "войти",
-            styles: ["fill", "low"]
+            modify: ["fill", "low"],
+            classes: ["-login-button-"]
           })
       .header__block
         +buttons({
             type: "link",
             link: "#",
             label: "зарегестрироваться",
-            styles: ["low"]
+            modify: ["low"],
+            classes: ["-reg-button-"]
           })
