@@ -18,6 +18,19 @@
     // Убирает появление меню при ховере на тач-усройствах
     if (isTouchEnabled()) {
       const navLinks = nav.querySelectorAll('.nav__li');
+      const buttons = nav.querySelectorAll('.nav__extend-button');
+
+      function toggleMenu(button) {
+        button.classList.toggle('-active-');
+        button.nextElementSibling.classList.toggle('-open-');
+      }
+
+      function createOverlay() {
+        const overlay = document.createElement('div');
+        overlay.classList.add('nav__list-overlay');
+        return overlay;
+      }
+
       navLinks.forEach( (li) => {
         li.classList.add('-touch-');
         if ( li.querySelector('button') ) {
@@ -25,22 +38,17 @@
         }
       });
 
-      const buttons = nav.querySelectorAll('.nav__extend-button');
       buttons.forEach( (button) => {
         button.addEventListener('click', function() {
-          this.classList.toggle('-active-');
-          this.nextElementSibling.classList.toggle('-open-');
+          const overlay = createOverlay();
+          toggleMenu(button);
+          document.body.append(overlay);
+          overlay.addEventListener('click', () => {
+            toggleMenu(button);
+            overlay.remove();
+          });
         });
       });
-
-      // document.addEventListener('click', (evt) => {
-      //   console.log(evt.target.closest('.nav__list--extend-wrapper'))
-
-      //   if ( !evt.target.closest('.nav__list--extend-wrapper') ) {
-      //     evt.target.closest('.nav__list--extend-wrapper').classList.toggle('-open-');
-      //     evt.target.closest('.nav__list--extend-wrapper').previousElementSibling.classList.toggle('-active-');
-      //   }
-      // })
     }
   })
 })();
