@@ -1,0 +1,61 @@
+@import '../../../assets/scss/var.scss';
+
+.landing {
+  &__block {
+    display: flex;
+    max-width: $body;
+    margin: 0 auto;
+
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: auto 100%;
+
+    &--search {
+      min-height: 830px;
+
+      background-image: url(img/title.jpg);
+    }
+
+    &--login,
+    &--reg {
+      justify-content: center;
+      align-items: center;
+      min-height: 702px;
+
+      background-image: url(img/title2.jpg);
+    }
+  }
+
+  &__block-search {
+    position: relative;
+
+    width: $content-pc;
+    margin: 70px auto 20px;
+  }
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 300px;
+    margin: 0;
+
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: normal;
+    text-align: right;
+    color: $main-text;
+  }
+
+  &__search,
+  &__login,
+  &__reg {
+    width: 380px;
+  }
+
+  // &__login,
+  // &__reg {
+  // }
+}

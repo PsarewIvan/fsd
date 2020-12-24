@@ -1,0 +1,30 @@
+extends ../../layout/landing-base/landing-base
+
+include ../../includes/search-room/search-room
+include ../../includes/registration/registration
+include ../../includes/login/login
+
+block title
+  title Toxin
+
+block content
+  h1.visually-hidden= "Toxin - сайт по бронированию номеров в лучшем отеле"
+  section.landing__block(class=["landing__block--search"])
+    .landing__block-search
+      h2.landing__title= "Лучшие номера для вашей работы, отдыха и просто вдохновения"
+      .landing__search
+        +search-room({
+          action: "#"
+        })
+  section.landing__block(class=["landing__block--login", "display-none"])
+    .landing__block-login
+      h2.visually-hidden= "Форма входа на сайт"
+      .landing__login
+        +login({})
+  section.landing__block(class=["landing__block--reg", "display-none"])
+    .landing__block-reg
+      h2.visually-hidden= "Форма регистрации на сатйе"
+      .landing__reg
+        +registration({
+          action: "#"
+        })

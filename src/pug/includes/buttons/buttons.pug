@@ -1,12 +1,12 @@
-mixin buttons ({link, type, label, styles= [], hovered})
+mixin buttons ({link, type, label, modify= [], hovered, classes= []})
   - var mod= []
-  if styles.includes("fill")
+  if modify.includes("fill")
     - mod.push("buttons--fill")
-  if styles.includes("simple")
+  if modify.includes("simple")
     - mod.push("buttons--simple")
-  if styles.includes("large")
+  if modify.includes("large")
     - mod.push("buttons--large")
-  if styles.includes("low")
+  if modify.includes("low")
     - mod.push("buttons--low")
 
   if hovered == "true"
@@ -16,13 +16,13 @@ mixin buttons ({link, type, label, styles= [], hovered})
 
   if type == "link"
     a(
-      class= ["buttons", mod, mod2],
+      class= ["buttons", mod, mod2, ...classes]
       href= link
     )
       span.buttons__span= label
   else
     button(
-      class= ["buttons", mod, mod2],
+      class= ["buttons", mod, mod2, ...classes]
       type= type
     )
       span.buttons__span= label
