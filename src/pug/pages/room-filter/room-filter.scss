@@ -1,0 +1,9 @@
+@import '../../../assets/scss/var.scss';
+
+.room-filter {
+  display: grid;
+  grid-template-columns: 266px 1fr;
+  gap: 60px;
+  max-width: $content-pc;
+  margin: 30px auto 0;
+}
