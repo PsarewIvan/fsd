@@ -55,29 +55,83 @@
 
   &__li {
     position: relative;
+
+    display: flex;
+
+    &--extend .nav__link{
+      margin-right: 5px;
+    }
   }
 
   &__extend-button {
     display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin: 0 5px 0 5px;
+    width: 12px;
+    height: 100%;
+    margin: 0;
     padding: 0;
 
-    border: 2px solid $border-active;
-    border-top: none;
-    border-left: 0;
+    border: none;
     background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
 
-    transform: rotate(45deg) translateY(-5px);
+    transform-origin: center center;
+    transition: transform 0.2s;
   }
 }
 
-/* Hover & Focus */
+// Overlay
+
+.nav__list-overlay {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+// Touch
+
+.nav__extend-button.-touch- {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 200%;
+    height: 200%;
+    margin-left: -50%;
+    margin-top: -50%;
+  }
+}
+
+.nav__extend-button.-active- {
+  transform: rotate(180deg);
+}
+
+.nav__list--extend-wrapper.-open- {
+  display: block;
+}
+
+// Hover & Focus
 
 @media(hover: hover) and (pointer: fine) {
-  .nav__li--extend:hover .nav__list--extend-wrapper {
+  .nav__li--extend:hover:not(.-touch-) .nav__list--extend-wrapper {
     display: block;
+  }
+
+  .nav__li--extend:hover:not(.-touch-) .nav__extend-button {
+    transform: rotate(180deg);
   }
 
   .nav__li:hover>.nav__link:not(.nav__link--current) {
@@ -85,9 +139,13 @@
   }
 }
 
-.nav__li--extend:focus-within .nav__list--extend-wrapper {
+.nav__li--extend:focus-within:not(.-touch-) .nav__list--extend-wrapper {
   display: block;
 }
+
+.nav__li--extend:focus-within:not(.-touch-) .nav__extend-button {
+    transform: rotate(180deg);
+  }
 
 .nav__li:focus>.nav__link:not(.nav__link--current) {
   opacity: 0.7;
