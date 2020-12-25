@@ -1,6 +1,10 @@
 extends ../../layout/landing-base/landing-base
 
 include ../../includes/room-gallery/room-gallery
+include ../../includes/room-cards/room-cards
+include ../../includes/features/features
+include ../../includes/comments/comments
+include ../../includes/diagram/diagram
 
 block title
   title Room details
@@ -21,18 +25,57 @@ block content
       .room-details__section-wrapper
         section.room-details__info
           h2.room-details__section-title= "Сведения о номере"
-
+          +features({
+          list: [
+            {
+              label: "Комфорт",
+              description: "Шумопоглощающие стены",
+              url: require("./img/insert_emoticon.svg").default
+            },
+            {
+              label: "Удобство",
+              description: "Окно в каждой из спален",
+              url: require("./img/location_city.svg").default
+            },
+            {
+              label: "Уют",
+              description: "Номер оснащён камином",
+              url: require("./img/whatshot.svg").default
+            }
+          ]
+        })
         section.room-details__showing
           h2.room-details__section-title= "Впечатления от номера"
-
+          +diagram({})
       section.room-details__comments
         .room-details__commets-title-wrapper
           h2.room-details__section-title= "Отзывы посетителей номера"
           span.room-details__comments-amount= "2 отзыва"
-
+          +comments({
+            name: "Мурад Сарафанов",
+            imgSrc: require("./img/image1.jpg").default,
+            label: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+            isLiked: true,
+            longAgo: "5 дней",
+            likes: "12"
+          })
+          +comments({
+            name: "Патрисия Стёклышкова",
+            imgSrc: require("./img/image2.jpg").default,
+            label: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+            isLiked: false,
+            longAgo: "Неделю",
+            likes: "2"
+          })
       section.room-details__rules
         h2.visually-hidden= "Дополнительная информация"
 
     section.room-details__reserve
       h2.visually-hidden= "Забронировать номер"
+      +room-cards({
+          number: "888",
+          isLuxe: "true",
+          price: "9 999",
+          action: "#"
+        })
 
