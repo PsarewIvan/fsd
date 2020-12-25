@@ -1,0 +1,18 @@
+extends ../../layout/landing-base/landing-base
+
+include ../../includes/room-gallery/room-gallery
+
+block title
+  title Room details
+
+block content
+  h1.visually-hidden= "Подробная информация о номере 888"
+  section.room-details__promo
+    h2.visually-hidden= "Фотографии номера"
+    +room-gallery({
+      images: [
+        {src: require("./img/888.1.jpg").default, alt: "Спальня номера 888"},
+        {src: require("./img/888.2.jpg").default, alt: "Рабочий кабинет номера 888"},
+        {src: require("./img/888.3.jpg").default, alt: "Гостинная номера 888"}
+      ]
+    })
