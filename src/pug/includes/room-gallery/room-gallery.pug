@@ -1,0 +1,8 @@
+mixin room-gallery({images})
+  ul.room-gallery
+    each image in images
+      li.room-gallery__li
+        img.room-gallery__img(
+          src= image.src
+          alt= image.alt
+        )
