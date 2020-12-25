@@ -6,4 +6,10 @@
   gap: 60px;
   max-width: $content-pc;
   margin: 30px auto 0;
+
+  &__rooms-title {
+    margin: 0 0 20px;
+
+    font-size: 24px;
+  }
 }
