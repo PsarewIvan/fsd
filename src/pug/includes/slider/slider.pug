@@ -1,5 +1,6 @@
-mixin slider({type, min, max, from, to, skin= "round", isMinMax= "true"})
+mixin slider({title, description, type, min, max, from, to, skin= "round", isMinMax= "true"})
   .slider(class="js-slider")
+    h3.slider__title= title
     .slider__data-from-to
     input.js-range-slider(
       type= "text",
@@ -14,3 +15,4 @@ mixin slider({type, min, max, from, to, skin= "round", isMinMax= "true"})
       data-hide-min-max= isMinMax,
       data-hide-from-to= "true"
     )
+    p.slider__description= description
