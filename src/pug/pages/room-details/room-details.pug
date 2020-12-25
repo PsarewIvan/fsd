@@ -16,3 +16,23 @@ block content
         {src: require("./img/888.3.jpg").default, alt: "Гостинная номера 888"}
       ]
     })
+  .room-details__main-wrapper
+    .room-details__block-wrapper
+      .room-details__section-wrapper
+        section.room-details__info
+          h2.room-details__section-title= "Сведения о номере"
+
+        section.room-details__showing
+          h2.room-details__section-title= "Впечатления от номера"
+
+      section.room-details__comments
+        .room-details__commets-title-wrapper
+          h2.room-details__section-title= "Отзывы посетителей номера"
+          span.room-details__comments-amount= "2 отзыва"
+
+      section.room-details__rules
+        h2.visually-hidden= "Дополнительная информация"
+
+    section.room-details__reserve
+      h2.visually-hidden= "Забронировать номер"
+
