@@ -61,6 +61,8 @@ $cards-border-color: $dark-shade-10;
 
 $room-luxe: $purple;
 
+$diagram-text: $purple;
+
 $background-color: $gray;
 
 $footer-border: $dark-shade-10;
@@ -72,6 +74,12 @@ $gradient-main-40: linear-gradient(180deg, $purple-40 0%, $purple-light-40 100%)
 $gradient-main-50: linear-gradient(180deg, $purple-50 0%, $purple-light-50 100%);
 $gradient-second: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $gradient-opacity: linear-gradient(180deg, $green 0%, $light-blue 100%);
+
+// Diagram-gradients
+$gradient-magnificently: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+$gradient-good: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+$gradient-passably: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$gradient-disappointed: linear-gradient(180deg, #919191 0%, #3D4975 100%);
 
 $gradient-like-button: $gradient-main;
 $gradient-radio-button: $gradient-main;
