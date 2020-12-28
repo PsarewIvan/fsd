@@ -1,6 +1,6 @@
 include ../like/like
 
-mixin comments({name, imgSrc, label})
+mixin comments({name, imgSrc, label, likes= "12", isLiked= true, longAgo= "5 дней"})
   .comments
     img.comments__img(
       src= imgSrc
@@ -8,10 +8,10 @@ mixin comments({name, imgSrc, label})
     )
     .comments__name-block
       h4.comments__name= name
-      span.comments__time= "5 дней назад"
+      span.comments__time= `${longAgo} назад`
     .comments__like
       +like({
-        likes: "12",
-        isLiked: true
+        likes: likes,
+        isLiked: isLiked
       })
     p.comments__comment= label

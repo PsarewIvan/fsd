@@ -1,0 +1,64 @@
+@import '../../../assets/scss/var.scss';
+
+.room-details {
+  &__promo {
+    margin-bottom: 70px;
+  }
+
+  &__main-wrapper {
+    max-width: $content-pc;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 70px;
+  }
+
+  &__section-wrapper {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 280px 311px;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  &__comments-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__comments {
+    margin-bottom: 30px;
+  }
+
+  &__comments-list {
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+  }
+
+  &__comments-li:not(:last-of-type) {
+    margin-bottom: 22px;
+  }
+
+  &__rules {
+    display: grid;
+    grid-template-columns: 292px 341px;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__cancellation {
+    margin: 0;
+
+    line-height: 1.7;
+  }
+}

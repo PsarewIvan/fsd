@@ -1,0 +1,12 @@
+include ../diagram/diagram
+
+mixin impression({})
+  .impression
+    .impression__diagram
+      +diagram({})
+    ul.impression__list
+      li.impression__li= "Великолепно"
+      li.impression__li= "Хорошо"
+      li.impression__li= "Удовлетворительно"
+      li.impression__li= "Разочарован"
+

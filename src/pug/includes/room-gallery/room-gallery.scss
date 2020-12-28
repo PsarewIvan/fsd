@@ -1,0 +1,23 @@
+@import '../../../assets/scss/var.scss';
+
+.room-gallery {
+  display: grid;
+  grid-template-columns: 459px 1fr 459px;
+  grid-template-rows: 243px 243px;
+  padding: 0;
+  margin: 0 auto;
+  max-width: $body;
+
+  list-style: none;
+
+  &__li:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
