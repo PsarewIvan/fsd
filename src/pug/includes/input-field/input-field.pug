@@ -1,10 +1,18 @@
-mixin input({title, type, name, value, placeholder, pattern})
+mixin input({title, type, name, value, placeholder, masked= false})
   if title
     h3.input-field__title= title
-  input.input-field__input(
-    type= type,
-    name= name,
-    value= value,
-    placeholder= placeholder,
-    pattern= pattern
-  )
+  if masked
+    input.input-field__input(
+      class= "input-field__input--masked"
+      type= "text",
+      name= name,
+      value= value,
+      placeholder= "ДД.ММ.ГГГГ"
+    )
+  else
+    input.input-field__input(
+      type= type,
+      name= name,
+      value= value,
+      placeholder= placeholder
+    )

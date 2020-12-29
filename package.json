@@ -55,6 +55,7 @@
     "@babel/polyfill": "^7.12.1",
     "air-datepicker": "^2.2.3",
     "focus-visible": "^5.2.0",
+    "imask": "^6.0.5",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1",
