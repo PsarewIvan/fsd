@@ -83,19 +83,21 @@
       }
     });
 
-    const dropdownCtrl = document.createElement('div');
-    dropdownCtrl.classList.add('dropdown__controls');
-    dropdownCtrl.innerHTML = `
-      <button class="dropdown__button-ctrl dropdown__button-ctrl--clear" type="button" aria-label="Очистить количество гостей">Очистить</button>
-      <button class="dropdown__button-ctrl dropdown__button-ctrl--apply" type="button" aria-label="Применить количество гостей">Применить</button>
-    `;
-    dropdownMenu.appendChild(dropdownCtrl);
+    if (btn.dataset.button === 'true') {
+      const dropdownCtrl = document.createElement('div');
+      dropdownCtrl.classList.add('dropdown__controls');
+      dropdownCtrl.innerHTML = `
+        <button class="dropdown__button-ctrl dropdown__button-ctrl--clear" type="button" aria-label="Очистить количество гостей">Очистить</button>
+        <button class="dropdown__button-ctrl dropdown__button-ctrl--apply" type="button" aria-label="Применить количество гостей">Применить</button>
+      `;
+      dropdownMenu.appendChild(dropdownCtrl);
+    }
 
     // -- end --
 
     // -- start -- Логика визуализации выпадающего меню
 
-    if (btn.dataset.open === "true") {
+    if (btn.dataset.open === 'true') {
       btn.setAttribute('aria-expanded', 'true');
       btn.classList.toggle('open');
       dropdownMenu.hidden = false;
@@ -110,10 +112,12 @@
         });
       });
 
-      dropdown.querySelector('.dropdown__button-ctrl--apply').addEventListener('click', function() {
-        document.querySelector('.dropdown__overlay').remove();
-        toggleVisibilityDropMenu(btn, dropdownMenu);
-      });
+      if (btn.dataset.button === 'true') {
+        dropdown.querySelector('.dropdown__button-ctrl--apply').addEventListener('click', function() {
+          document.querySelector('.dropdown__overlay').remove();
+          toggleVisibilityDropMenu(btn, dropdownMenu);
+        });
+      }
     }
 
 
@@ -162,10 +166,12 @@
       });
     }
 
-    clearBtn.addEventListener('click', (evt) =>{
-      evt.preventDefault();
-      resetValue();
-    });
+    if (btn.dataset.button === 'true') {
+      clearBtn.addEventListener('click', (evt) =>{
+        evt.preventDefault();
+        resetValue();
+      });
+    }
   })
 
   //  -- end --

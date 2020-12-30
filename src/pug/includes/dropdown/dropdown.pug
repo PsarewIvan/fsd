@@ -1,9 +1,10 @@
-mixin dropdown({title, label, isOpen= "false", elements})
+mixin dropdown({title, label, isOpen= "false", isButton= "true", elements})
   h4.dropdown__title= title
   .dropdown
     p.dropdown__drop-button(
       class= "open"
       data-open= isOpen.toString()
+      data-button= isButton.toString()
     )= label
     .dropdown__menu
       for elem in elements

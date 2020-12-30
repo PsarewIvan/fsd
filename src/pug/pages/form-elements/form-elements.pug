@@ -190,6 +190,7 @@ block content
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "2 спальни, 2 кровати...",
+          isButton: false,
           elements: [
             {label: "спальни", name: "bedroom", min: "0", max: "5", value: "2"},
             {label: "кровати", name: "bed", min: "0", value: "2"},
@@ -201,6 +202,7 @@ block content
         +dropdown({
           label: "2 спальни, 2 кровати...",
           isOpen: true,
+          isButton: false,
           elements: [
             {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2"},
             {label: "кровати", name: "bed2", min: "0", value: "2"},
