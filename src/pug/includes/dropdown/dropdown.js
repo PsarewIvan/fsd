@@ -2,7 +2,7 @@
   const dropdowns = document.querySelectorAll('.dropdown');
 
   function replaceTag(element, newTag) {
-    let elementNew = document.createElement(newTag);
+    const elementNew = document.createElement(newTag);
     elementNew.innerHTML = element.innerHTML;
 
     Array.prototype.forEach.call(element.attributes, attr => {
@@ -15,7 +15,7 @@
   }
 
   function createBtn(aria, content, data) {
-    let btnElem = document.createElement('button');
+    const btnElem = document.createElement('button');
     btnElem.classList.add(`dropdown__button`, `dropdown__button--${aria}`);
     btnElem.setAttribute('type', 'button');
     btnElem.setAttribute('aria-label', aria);
@@ -24,9 +24,9 @@
     return btnElem;
   }
 
-  Array.prototype.forEach.call(dropdowns, dropdown => {
+  dropdowns.forEach( (dropdown) => {
     replaceTag(dropdown.querySelector('.dropdown__drop-button'), 'button');
-    let btn = dropdown.querySelector('.dropdown__drop-button');
+    const btn = dropdown.querySelector('.dropdown__drop-button');
     btn.setAttribute('type', 'button');
     btn.setAttribute('aria-expanded', 'false');
     btn.classList.remove('open');
@@ -36,12 +36,12 @@
       </svg>
     `;
 
-    let dropdownMenu = dropdown.querySelector('.dropdown__menu');
-    let dropdownInputs = dropdown.querySelectorAll('.dropdown__input');
+    const dropdownMenu = dropdown.querySelector('.dropdown__menu');
+    const dropdownInputs = dropdown.querySelectorAll('.dropdown__input');
     dropdownMenu.hidden = true;
     dropdownMenu.style.position = 'absolute';
 
-    Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
+    dropdownInputs.forEach( (dropdownInput) => {
       dropdownInput.parentNode.insertBefore(createBtn('low', '-', 'down'), dropdownInput);
       dropdownInput.parentNode.insertBefore(createBtn('hight', '+', 'up'), dropdownInput.nextSibling);
 
@@ -50,7 +50,7 @@
       }
     });
 
-    let dropdownCtrl = document.createElement('div');
+    const dropdownCtrl = document.createElement('div');
     dropdownCtrl.classList.add('dropdown__controls');
     dropdownCtrl.innerHTML = `
       <button class="dropdown__button-ctrl dropdown__button-ctrl--clear" type="button" aria-label="Очистить количество гостей">Очистить</button>
@@ -65,7 +65,7 @@
       dropdownMenu.hidden = expanded
     }
 
-    let dropElements = dropdown.querySelectorAll('.dropdown__element');
+    const dropElements = dropdown.querySelectorAll('.dropdown__element');
 
     // Меняет статус кнопок регулировки количества гостей в зависимости
     // от атрибутов 'min' и 'max'
@@ -78,11 +78,11 @@
       } else element.nextSibling.removeAttribute('disabled');
     }
 
-    Array.prototype.forEach.call(dropElements, dropElement => {
-      let inputElement = dropElement.querySelector('.dropdown__input');
+    dropElements.forEach( (dropElement) => {
+      const inputElement = dropElement.querySelector('.dropdown__input');
 
       dropElement.addEventListener('click', (evt) => {
-        let inputValue = Number(inputElement.value);
+        const inputValue = Number(inputElement.value);
 
         if (evt.target.dataset.value === 'up') {
           inputElement.value = inputValue + 1;
@@ -99,10 +99,10 @@
     });
 
     // Кнопка очистки
-    let clearBtn = dropdown.querySelector('.dropdown__button-ctrl--clear');
+    const clearBtn = dropdown.querySelector('.dropdown__button-ctrl--clear');
 
     function resetValue() {
-      Array.prototype.forEach.call(dropdownInputs, dropdownInput => {
+      dropdownInputs.forEach( (dropdownInput) => {
         dropdownInput.value = 0;
         dropdownInput.previousSibling.setAttribute('disabled', 'true');
         dropdownInput.nextSibling.removeAttribute('disabled');
