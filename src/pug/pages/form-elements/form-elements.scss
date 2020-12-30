@@ -7,12 +7,12 @@
     font-family: $main-font;
     font-weight: bold;
     font-size: 12px;
-    line-height: 1.25;
+    line-height: 1.2;
     text-transform: uppercase;
     color: $heading;
 
     &--margin-large {
-      margin-bottom: 16px;
+      margin-bottom: 17px;
     }
   }
 
@@ -36,6 +36,10 @@
     justify-content: space-between;
     align-content: flex-start;
 
+    &:nth-of-type(2) {
+      margin-left: 27px;
+    }
+
     &--comments {
       grid-column: 2 / 4;
     }
@@ -45,19 +49,23 @@
     width: 100%;
 
     &:not(:last-of-type) {
-      margin-bottom: 40px;
+      margin-bottom: 43px;
     }
 
     &--min-margin:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     &--margin:not(:last-of-type) {
-      margin-bottom: 40px;
+      margin-bottom: 42px;
     }
 
     &--checkbox:not(:last-of-type) {
       margin-bottom: 33px;
+    }
+
+    &--slider:not(:last-of-type) {
+      margin-bottom: 29px;
     }
 
     &__title {
@@ -130,8 +138,16 @@
     align-items: flex-start;
     gap: 20px;
 
-    &:not(:last-of-type) {
-      margin-bottom: 30px;
+    &--simple {
+      gap: 15px;
     }
+
+    &:not(:last-of-type) {
+      margin-bottom: 29px;
+    }
+  }
+
+  &__slider {
+    width: 266px;
   }
 }

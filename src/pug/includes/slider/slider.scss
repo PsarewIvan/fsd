@@ -9,7 +9,7 @@
     font-family: $main-font;
     font-weight: bold;
     font-size: 12px;
-    line-height: 1.25;
+    line-height: 1.2;
     text-transform: uppercase;
     color: $heading;
   }
@@ -17,7 +17,7 @@
   &__data-from-to {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 4px;
 
     font-size: 12px;
   }

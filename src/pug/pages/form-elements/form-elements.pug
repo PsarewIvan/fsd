@@ -85,8 +85,8 @@ block content
         +radio({
           name: "sex",
           elements: [
-            {label: "Мужчина", id: "man", value: "man", checked: false},
-            {label: "Женщина", id: "woman", value: "woman", checked: true}
+            {label: "Мужчина", id: "man", value: "man", checked: true},
+            {label: "Женщина", id: "woman", value: "woman", checked: false}
           ]
         })
       .form-elements__element(class="form-elements__element--margin")
@@ -94,7 +94,7 @@ block content
         +toggle({
           name: "special",
           elements: [
-            {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: false},
+            {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: true},
             {label: "Получать спецпредложения", id: "special-2", value: "special-2", checked: false}
           ]
         })
@@ -121,13 +121,13 @@ block content
             rate: "5"
             })
     .form-elements__block
-      .form-elements__element(class="form-elements__element--margin")
+      .form-elements__element(class="form-elements__element--slider")
         .form-elements__slider
           +slider({
             title: "Range slider",
             type: "double",
-            min: 0,
-            max: 15000,
+            min: 450,
+            max: 15600,
             from: 5000,
             to: 10000
           })
@@ -156,7 +156,9 @@ block content
               modify: ["fill"],
               hovered: "true"
             })
-          .form-elements__buttons-block
+          .form-elements__buttons-block(
+            class= "form-elements__buttons-block--simple"
+          )
             +buttons({
               type: "button",
               label: "Click me",
