@@ -1,5 +1,12 @@
 (function () {
+
+  // -- start -- Находим все выпадающие списки
+
   const dropdowns = document.querySelectorAll('.dropdown');
+
+  // -- end --
+
+  // -- start -- Функции для создания элементов
 
   function replaceTag(element, newTag) {
     const elementNew = document.createElement(newTag);
@@ -24,7 +31,33 @@
     return btnElem;
   }
 
+  // -- end --
+
+  // -- start -- Добавляем логику для каждого выпадающего меню
+
   dropdowns.forEach( (dropdown) => {
+
+    // --start -- Функции
+
+    // Скрытие/показ меню
+    function toggleVisibilityDropMenu(menuBtn, dropMenu) {
+      let expanded = menuBtn.getAttribute('aria-expanded') === 'true' || false;
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      menuBtn.classList.toggle('open');
+      dropMenu.hidden = expanded;
+    }
+
+    // Создание оверлея (для закрытия меню при клике вне его)
+    function createOverlay() {
+      const overlay = document.createElement('div');
+      overlay.classList.add('dropdown__overlay');
+      return overlay;
+    }
+
+    // -- end --
+
+    // -- start -- Замена верстки
+
     replaceTag(dropdown.querySelector('.dropdown__drop-button'), 'button');
     const btn = dropdown.querySelector('.dropdown__drop-button');
     btn.setAttribute('type', 'button');
@@ -58,14 +91,33 @@
     `;
     dropdownMenu.appendChild(dropdownCtrl);
 
-    btn.onclick = () => {
-      let expanded = btn.getAttribute('aria-expanded') === 'true' || false
-      btn.setAttribute('aria-expanded', !expanded)
+    // -- end --
+
+    // -- start -- Логика визуализации выпадающего меню
+
+    if (btn.dataset.open === "true") {
+      btn.setAttribute('aria-expanded', 'true');
       btn.classList.toggle('open');
-      dropdownMenu.hidden = expanded
+      dropdownMenu.hidden = false;
+    } else {
+      btn.addEventListener('click', function() {
+        toggleVisibilityDropMenu(btn, dropdownMenu);
+        const overlay = createOverlay();
+        document.body.append(overlay);
+        overlay.addEventListener('click', () => {
+          toggleVisibilityDropMenu(btn, dropdownMenu);
+          overlay.remove();
+        });
+      });
+
+      dropdown.querySelector('.dropdown__button-ctrl--apply').addEventListener('click', function() {
+        document.querySelector('.dropdown__overlay').remove();
+        toggleVisibilityDropMenu(btn, dropdownMenu);
+      });
     }
 
-    const dropElements = dropdown.querySelectorAll('.dropdown__element');
+
+    // -- end --
 
     // Меняет статус кнопок регулировки количества гостей в зависимости
     // от атрибутов 'min' и 'max'
@@ -78,7 +130,8 @@
       } else element.nextSibling.removeAttribute('disabled');
     }
 
-    dropElements.forEach( (dropElement) => {
+    dropdown.querySelectorAll('.dropdown__element').
+      forEach( (dropElement) => {
       const inputElement = dropElement.querySelector('.dropdown__input');
 
       dropElement.addEventListener('click', (evt) => {
@@ -114,4 +167,6 @@
       resetValue();
     });
   })
+
+  //  -- end --
 })()
