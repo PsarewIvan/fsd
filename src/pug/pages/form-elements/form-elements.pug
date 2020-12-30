@@ -191,8 +191,8 @@ block content
         +dropdown({
           label: "2 спальни, 2 кровати...",
           elements: [
-            {label: "спальни", name: "bedroom", min: "0", max: "5"},
-            {label: "кровати", name: "bed", min: "0"},
+            {label: "спальни", name: "bedroom", min: "0", max: "5", value: "2"},
+            {label: "кровати", name: "bed", min: "0", value: "2"},
             {label: "ванные комнаты", name: "bathroom", min: "0", max: "5"}
           ]
         })
@@ -200,9 +200,10 @@ block content
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "2 спальни, 2 кровати...",
+          isOpen: true,
           elements: [
-            {label: "спальни", name: "bedroom2", min: "0", max: "5"},
-            {label: "кровати", name: "bed2", min: "0"},
+            {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2"},
+            {label: "кровати", name: "bed2", min: "0", value: "2"},
             {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5"}
           ]
         })
@@ -211,6 +212,7 @@ block content
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "Сколько гостей",
+          isOpen: true,
           elements: [
             {label: "Взрослые", name: "adult2", min: "0", max: "10"},
             {label: "Дети", name: "children2", min: "0"},
@@ -222,9 +224,10 @@ block content
         h3.form-elements__title= "Dropdown"
         +dropdown({
           label: "Сколько гостей",
+          isOpen: true,
           elements: [
-            {label: "Взрослые", name: "adult3", min: "0", max: "10"},
-            {label: "Дети", name: "children3", min: "0"},
+            {label: "Взрослые", name: "adult3", min: "0", max: "10", value: "2"},
+            {label: "Дети", name: "children3", min: "0", value: "1"},
             {label: "Младенцы", name: "baby3", min: "0"}
           ]
         })
