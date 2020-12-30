@@ -1,7 +1,14 @@
+@import '../../../assets/scss/var.scss';
+
 .content {
   padding: 145px 0;
 }
 
 .colors-types {
   display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: $content-colors-types-pc;
+  padding: 0 40px;
+  margin: 0 auto;
 }
