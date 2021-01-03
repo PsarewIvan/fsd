@@ -5,7 +5,8 @@
   grid-template-columns: 22.414% 13.794% 13.794% 13.794% 22.414%;
   gap: 40px;
   width: $content-pc;
-  margin: 100px auto;
+  padding: 0 40px;
+  margin: 100px auto 101px;
 
   &__wrapper {
     display: flex;
@@ -25,19 +26,20 @@
     align-items: center;
     width: $content-pc;
     min-height: 70px;
+    padding: 0 40px;
     margin: 0 auto;
   }
 
   &__main-link {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
   }
 
   &__link-description {
     margin: 0;
 
-    line-height: 1.7;
+    line-height: 1.72;
   }
 
   &__subscription-title {
@@ -49,7 +51,7 @@
   }
 
   &__subscription-text {
-    margin: 0 0 20px;
+    margin: 0 0 24px;
 
     line-height: 1.7;
   }
@@ -66,6 +68,10 @@
     width: auto;
     grid-template-columns: 1fr;
     margin: 120px 104px 0;
+  }
+
+  .footer__main-link {
+    margin-bottom: 21px;
   }
 
   .footer__block {
@@ -88,12 +94,12 @@
   }
 
   .footer__sub-block-wrapper {
-    margin-bottom: 120px;
+    margin-bottom: 118px;
     border: none;
   }
 
   .footer__license {
-    margin-bottom: 25px;
+    margin-bottom: 27px;
   }
 }
 

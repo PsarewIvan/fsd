@@ -4,9 +4,11 @@
   display: flex;
   align-items: stretch;
   justify-content: center;
+  width: 100%;
+  min-width: 99px;
+  min-height: 44px;
   padding: 2px;
   margin: 0;
-  min-height: 44px;
 
   border: none;
   border-radius: 22px;
@@ -23,6 +25,7 @@
   cursor: pointer;
 
   &--low {
+    min-width: 87px;
     min-height: max-content;
     height: 34px;
   }
@@ -40,8 +43,6 @@
   }
 
   &--fill {
-    min-width: 99px;
-
     color: $button-text-fill;
 
     & .buttons__span {
