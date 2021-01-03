@@ -135,27 +135,31 @@ block content
         h3.form-elements__title(class="form-elements__title--margin-large")= "Buttons"
         .form-elements__buttons
           .form-elements__buttons-block
-            +buttons({
-              type: "button",
-              label: "Click me"
-            })
-            +buttons({
-              type: "button",
-              label: "Click me",
-              hovered: "true"
-            })
+            .form-elements__button
+              +buttons({
+                type: "button",
+                label: "Click me"
+              })
+            .form-elements__button
+              +buttons({
+                type: "button",
+                label: "Click me",
+                hovered: "true"
+              })
           .form-elements__buttons-block
-            +buttons({
-              type: "button",
-              label: "Click me",
-              modify: ["fill"]
-            })
-            +buttons({
-              type: "button",
-              label: "Click me",
-              modify: ["fill"],
-              hovered: "true"
-            })
+            .form-elements__button
+              +buttons({
+                type: "button",
+                label: "Click me",
+                modify: ["fill"]
+              })
+            .form-elements__button
+              +buttons({
+                type: "button",
+                label: "Click me",
+                modify: ["fill"],
+                hovered: "true"
+              })
           .form-elements__buttons-block(
             class= "form-elements__buttons-block--simple"
           )
