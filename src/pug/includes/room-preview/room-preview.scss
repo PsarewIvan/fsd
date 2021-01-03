@@ -2,7 +2,7 @@
 
 .room-preview {
   width: 270px;
-  padding-bottom: 20px;
+  padding-bottom: 17px;
 
   border-radius: 4px;
   background-color: $white;
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     width: 233px;
-    min-height: 33px;
+    min-height: 34px;
     margin: 0 auto;
 
     &:not(:last-of-type) {
@@ -46,7 +46,9 @@
   }
 
   &__comments {
-    margin-bottom: 3px;
+    margin-bottom: 6px;
+
+    color: $light-text;
   }
 
   &__price,
@@ -55,6 +57,13 @@
   }
 
   &__price-descr {
+    margin-left: 2px;
+
     font-size: 12px;
+  }
+
+  &__price,
+  &__price-descr {
+    color: $light-text;
   }
 }

@@ -3,6 +3,10 @@
 .cards {
   display: flex;
   justify-content: space-between;
+  max-width: $content-pc;
+  gap: 20px;
+  padding: 0 40px;
+  margin: 0 auto;
 
   &__body {
     background-color: $background-color;
@@ -19,4 +23,8 @@
   &__element:not(:last-of-type) {
     margin-bottom: 40px;
   }
+}
+
+.cards__body .content {
+  padding-top: 150px;
 }

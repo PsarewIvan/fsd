@@ -40,6 +40,8 @@
   }
 
   &--fill {
+    min-width: 99px;
+
     color: $button-text-fill;
 
     & .buttons__span {

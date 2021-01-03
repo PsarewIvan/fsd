@@ -1,7 +1,7 @@
 @import '../../../assets/scss/var.scss';
 
 .search-room {
-  padding: 40px 30px 30px;
+  padding: 38px 29px 29px;
 
   border: 1px solid $cards-border-color;
   border-radius: 4px;
@@ -9,18 +9,19 @@
   box-shadow: 0px 0px 25px $cards-shadow-color;
 
   &__title {
-    margin: 0 0 21px;
+    margin: 0 0 24px;
     padding: 0;
 
     font-size: 24px;
     line-height: 1.22;
+    letter-spacing: 0.5px;
   }
 
   &__date {
-    margin-bottom: 20px;
+    margin-bottom: 23px;
   }
 
   &__guests {
-    margin-bottom: 30px;
+    margin-bottom: 31px;
   }
 }

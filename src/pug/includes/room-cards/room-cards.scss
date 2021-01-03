@@ -1,7 +1,7 @@
 @import '../../../assets/scss/var.scss';
 
 .room-cards {
-  padding: 40px 30px 30px;
+  padding: 40px 29px 29px;
 
   border: 1px solid $cards-border-color;
   border-radius: 4px;
@@ -17,7 +17,7 @@
   &__title {
     position: relative;
 
-    margin: 0 0 20px;
+    margin: 0 0 22px;
     padding: 0;
 
     font-size: 24px;
@@ -41,35 +41,41 @@
   }
 
   &__price {
+    margin-right: 1px;
+
     font-weight: bold;
   }
 
+  &__price-text {
+    font-size: 12px;
+  }
+
   &__symbol {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   &__calendar,
   &__guests {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
 
   &__table {
     width: 100%;
-    border-spacing: 0 10px;
+    border-collapse: collapse;
   }
 
   &__calculation {
-    margin-bottom: 30px;
+    margin-bottom: 18px;
   }
 
   &__td {
     margin: 0;
     padding: 0;
-    height: 24px;
+    vertical-align: top;
 
     border: none;
 
-    line-height: 1.28;
+    line-height: 1.2;
 
     &:last-of-type {
       width: 80px;
@@ -104,10 +110,12 @@
   &__total {
     display: grid;
     grid-template-columns: max-content 1fr max-content;
-    margin-bottom: 25px;
+    margin-bottom: 21px;
   }
 
   &__total-dotted {
+    margin-bottom: 4px;
+
     border-bottom: 1px dotted $border;
   }
 
@@ -116,5 +124,9 @@
     font-size: 19px;
     font-weight: bold;
     color: $heading;
+  }
+
+  tr td {
+    padding-bottom: 16px;
   }
 }
