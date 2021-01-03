@@ -2,7 +2,7 @@
 
 .checkbox {
   &__title {
-    margin: 0 0 16px;
+    margin: 0 0 17px;
 
     font-family: $main-font;
     font-weight: bold;
@@ -27,7 +27,7 @@
     max-width: 320px;
 
     &:not(:last-of-type) {
-      margin-bottom: 11px;
+      margin-bottom: 10px;
     }
   }
 
@@ -126,6 +126,7 @@
 
   &__riched-text {
     display: block;
+    width: 230px;
     margin: 5px 0 0 30px;
 
     font-size: 12px;

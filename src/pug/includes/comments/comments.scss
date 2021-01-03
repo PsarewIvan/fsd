@@ -3,7 +3,7 @@
 .comments {
   display: grid;
   grid-template-columns: 48px 1fr;
-  gap: 15px 10px;
+  gap: 13px 10px;
 
   &__img {
     border: 2px solid white;
@@ -14,12 +14,13 @@
   &__name {
     margin: 5px 0 0;
 
+    letter-spacing: 0.4px;
     color: inherit;
   }
 
   &__time {
     display: block;
-    margin: 10px 0 0;
+    margin: 8px 0 0;
   }
 
   &__comment {

@@ -100,6 +100,7 @@
     if (btn.dataset.open === 'true') {
       btn.setAttribute('aria-expanded', 'true');
       btn.classList.toggle('open');
+      dropdownMenu.style.position = 'relative';
       dropdownMenu.hidden = false;
     } else {
       btn.addEventListener('click', function() {

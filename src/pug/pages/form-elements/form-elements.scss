@@ -28,6 +28,14 @@
     &:not(:last-of-type) {
       margin-bottom: 100px;
     }
+
+    &--dropdown:not(:last-of-type) {
+      margin-bottom: 54px;
+    }
+
+    &--checkbox:not(:last-of-type) {
+      margin-bottom: 106px;
+    }
   }
 
   &__block {
@@ -42,6 +50,11 @@
 
     &--comments {
       grid-column: 2 / 4;
+      margin-top: 5px;
+    }
+
+    &--dropdown {
+      width: 320px;
     }
   }
 
@@ -61,7 +74,7 @@
     }
 
     &--checkbox:not(:last-of-type) {
-      margin-bottom: 33px;
+      margin-bottom: 35px;
     }
 
     &--slider:not(:last-of-type) {

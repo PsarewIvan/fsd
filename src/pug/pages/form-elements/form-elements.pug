@@ -184,7 +184,7 @@ block content
             elements: ["1", "2", "3", "...", "15"],
             currentPage: 1
           })
-  .form-elements__wrapper
+  .form-elements__wrapper(class= "form-elements__wrapper--dropdown")
     .form-elements__block
       .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
         h3.form-elements__title= "Dropdown"
@@ -209,7 +209,7 @@ block content
             {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5"}
           ]
         })
-    .form-elements__block
+    .form-elements__block(class="form-elements__block--dropdown")
       .form-elements__element(class="form-elements__element--min-margin")
         h3.form-elements__title= "Dropdown"
         +dropdown({
@@ -233,7 +233,7 @@ block content
             {label: "Младенцы", name: "baby3", min: "0"}
           ]
         })
-  .form-elements__wrapper
+  .form-elements__wrapper(class="form-elements__wrapper--checkbox")
     .form-elements__block
       .form-elements__element(class=["form-elements__element--checkbox", "form-elements__element--narrow"])
         +checkbox({
