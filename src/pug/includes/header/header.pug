@@ -45,7 +45,8 @@ include ../user-link/user-link
         })
     else
       .header__block
-        +buttons({
+        .header__log-wrapper
+          +buttons({
             type: "link",
             link: "#",
             label: "войти",
@@ -53,7 +54,8 @@ include ../user-link/user-link
             classes: ["-login-button-"]
           })
       .header__block
-        +buttons({
+        .header__reg-wrapper
+          +buttons({
             type: "link",
             link: "#",
             label: "зарегестрироваться",

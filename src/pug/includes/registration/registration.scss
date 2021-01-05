@@ -1,7 +1,7 @@
 @import '../../../assets/scss/var.scss';
 
 .registration {
-  padding: 40px 30px 30px;
+  padding: 40px 29px 29px;
 
   border: 1px solid $cards-border-color;
   border-radius: 4px;
@@ -17,7 +17,8 @@
     padding: 0;
 
     font-size: 24px;
-    line-height: 1.22;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
   }
 
   &__name,
@@ -30,7 +31,7 @@
   &__sex,
   &__birthday,
   &__special {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   &__log {

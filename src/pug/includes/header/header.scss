@@ -8,6 +8,7 @@
   width: $content-pc;
   min-height: 70px;
   margin: 0 auto;
+  padding: 0 40px;
 
   &__wrapper {
     background-color: $white;
@@ -28,9 +29,17 @@
     height: 40px;
 
     &-text {
-      margin-left: 13px;
+      margin-left: 12px;
       height: 14px;
     }
+  }
+
+  &__reg-wrapper {
+    width: 196px;
+  }
+
+  &__log-wrapper {
+    width: 87px;
   }
 }
 

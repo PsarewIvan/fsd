@@ -11,25 +11,27 @@
   }
 
   &__li {
-    min-height: 69px;
+    min-height: 65px;
     padding-left: 58px;
 
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: 5px top;
 
     border-bottom: 1px solid $features-border;
 
     line-height: 1.7;
 
     &:not(:last-of-type) {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
   }
 
   &__li-title {
-    margin: 0;
+    margin: 0 0 5px;
     padding: 0;
 
+    line-height: 1.2;
+    letter-spacing: 0.4px;
     font-weight: bold;
     color: $main-text;
   }

@@ -5,11 +5,13 @@
   grid-template-columns: 266px 1fr;
   gap: 60px;
   max-width: $content-pc;
-  margin: 30px auto 0;
+  padding: 0 40px;
+  margin: 30px auto 78px;
 
   &__rooms-title {
-    margin: 0 0 20px;
+    margin: 0 0 22px;
 
     font-size: 24px;
+    letter-spacing: 0.02em;
   }
 }

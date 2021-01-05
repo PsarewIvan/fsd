@@ -59,13 +59,13 @@
     display: flex;
 
     &--extend .nav__link{
-      margin-right: 5px;
+      margin-right: 1px;
     }
   }
 
   &__extend-button {
     display: inline-block;
-    width: 12px;
+    width: 24px;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -86,7 +86,7 @@
 .nav__list-overlay {
   &::after {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 

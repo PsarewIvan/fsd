@@ -3,8 +3,8 @@
 .types {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  margin: 0;
+  width: 436px;
+  margin: 0 8px 0 0;
   padding: 0;
 
   list-style: none;
@@ -12,7 +12,7 @@
   &__element {
     display: flex;
     align-items: baseline;
-    margin-bottom: 50px;
+    margin-bottom: 52px;
 
     &:last-child {
       margin-bottom: 0;
@@ -32,6 +32,8 @@
     }
 
     &--body {
+      width: 370px;
+
       font-size: 14px;
       line-height: 1.7;
     }
@@ -48,7 +50,7 @@
 
   &__names {
     flex-shrink: 0;
-    width: 50px;
+    width: 37px;
     margin: 0 30px 0 0;
 
     line-height: 1.2;
@@ -57,7 +59,12 @@
   }
 
   &__lorem {
+    line-height: 1.23;
     font-weight: bold;
     color: $heading;
+  }
+
+  &__element--body .types__lorem {
+    line-height: 1.5;
   }
 }

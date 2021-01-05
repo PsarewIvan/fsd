@@ -12,7 +12,7 @@
     font-family: $main-font;
     font-weight: bold;
     font-size: 12px;
-    line-height: 1.25;
+    line-height: 1.1;
     text-transform: uppercase;
     color: $heading;
   }
@@ -22,7 +22,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 12px 15px 8px;
+    padding: 9px 15px 10px;
 
     background-color: transparent;
     border: 1px solid $border;
@@ -55,7 +55,7 @@
     top: 100%;
     z-index: 10;
 
-    padding: 7px 7px 8px 15px;
+    padding: 5px 6px 8px 14px;
     width: 100%;
 
     background-color: white;
@@ -87,7 +87,7 @@
 
   &__input {
     padding: 0;
-    margin: 0;
+    margin: 0 0 3px;
     width: 32px;
 
     background-color: transparent;
@@ -109,8 +109,8 @@
   }
 
   &__button {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
 
     border: 1px solid $border;
     border-radius: 50%;
@@ -128,7 +128,7 @@
   &__controls {
     display: flex;
     justify-content: space-between;
-    margin: 19px 0 5px;
+    margin: 20px 0 5px;
   }
 
   &__button-ctrl {
@@ -139,20 +139,35 @@
     line-height: 1.25;
     font-weight: bold;
     text-transform: uppercase;
-    color: $button-text;
+    color: $button-light;
     background-color: transparent;
     border: none;
 
     cursor: pointer;
-
-    &--apply {
-      color: $button-light;
-    }
   }
 }
 
 [aria-expanded] path {
-    fill: currentColor;
+  fill: currentColor;
+}
+
+.dropdown__drop-button[data-open="true"]+.dropdown__menu {
+  position: relative;
+}
+
+// Overlay
+
+.dropdown__overlay {
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 /* Hover & Focus */
