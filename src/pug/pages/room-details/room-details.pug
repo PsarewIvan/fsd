@@ -74,7 +74,7 @@ block content
       section.room-details__rules
         h2.visually-hidden= "Дополнительная информация"
         .room-details__block
-          h3.room-details__title= "Правила"
+          h3.room-details__title(class="room-details__title--rules room-details__title--bullet")= "Правила"
           +bullet({
             elements: [
               {label: "Нельзя с питомцами"},
@@ -83,7 +83,7 @@ block content
             ]
           })
         .room-details__block
-          h3.room-details__title= "Отмена"
+          h3.room-details__title(class="room-details__title--rules")= "Отмена"
           p.room-details__cancellation= "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
     section.room-details__reserve
       h2.visually-hidden= "Забронировать номер"

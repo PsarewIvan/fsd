@@ -20,9 +20,17 @@
     &--reg {
       justify-content: center;
       align-items: center;
-      min-height: 702px;
 
       background-image: url(img/title2.jpg);
+      background-size: cover;
+    }
+
+    &--login {
+      min-height: 702px;
+    }
+
+    &--reg {
+      min-height: 683px;
     }
   }
 
@@ -30,6 +38,7 @@
     position: relative;
 
     width: $content-pc;
+    padding: 0 40px;
     margin: 70px auto 20px;
   }
 
@@ -39,7 +48,7 @@
     right: 0;
 
     width: 300px;
-    margin: 0;
+    margin: 0 40px 0 0;
 
     font-family: $main-font;
     font-size: 14px;
@@ -54,8 +63,4 @@
   &__reg {
     width: 380px;
   }
-
-  // &__login,
-  // &__reg {
-  // }
 }

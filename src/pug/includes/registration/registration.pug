@@ -61,7 +61,8 @@ mixin registration({action})
         })
     .registration__log
       p.registration__log-description= "Уже есть аккаунт на Toxin"
-      +buttons({
+      .registration__button
+        +buttons({
           type: "link",
           link: "#",
           label: "войти",
