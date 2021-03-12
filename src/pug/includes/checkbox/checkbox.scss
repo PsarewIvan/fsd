@@ -109,7 +109,7 @@
     background-position: center;
   }
 
-  &.-open-::after{
+  &.-open-::after {
     transform: rotateX(180deg);
   }
 }
@@ -124,7 +124,7 @@
     }
   }
 
-  &__riched-text {
+  &__rich-text {
     display: block;
     width: 230px;
     margin: 5px 0 0 30px;
@@ -136,7 +136,7 @@
 
 /* Hover & Focus */
 
-@media(hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .checkbox__label:hover {
     color: $button-text-hover;
   }
