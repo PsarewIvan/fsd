@@ -1,170 +1,189 @@
 @import '../../../assets/scss/var.scss';
 
-.form-elements {
-  &__title {
-    margin: 0 0 5px;
+// Title
 
-    font-family: $main-font;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    color: $heading;
+.form-elements__title {
+  margin: 0 0 5px;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $heading;
 
-    &--margin-large {
-      margin-bottom: 17px;
+  &--margin-large {
+    margin-bottom: 17px;
+  }
+}
+
+// Wrapper
+
+.form-elements__wrapper {
+  display: grid;
+  grid-template-columns: 320px 320px 320px;
+  justify-content: space-between;
+  max-width: $content-pc;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @media (max-width: 1120px) {
+    grid-template-columns: 320px 320px;
+    row-gap: 35px;
+    max-width: 860px;
+  }
+
+  @media (max-width: 740px) {
+    grid-template-columns: 1fr;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 100px;
+  }
+
+  &--dropdown:not(:last-of-type) {
+    margin-bottom: 54px;
+  }
+
+  &--checkbox:not(:last-of-type) {
+    margin-bottom: 106px;
+  }
+}
+
+// Block
+
+.form-elements__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+
+  &:nth-of-type(2) {
+    margin-left: 27px;
+
+    @media (max-width: 1120px) {
+      margin-left: 0;
     }
   }
 
-  &__wrapper {
-    display: grid;
-    grid-template-columns: 320px 320px 320px;
-    justify-content: space-between;
-    gap: 20px;
-    max-width: $content-pc;
-    padding: 0 40px;
-    margin: 0 auto;
-
-    &:not(:last-of-type) {
-      margin-bottom: 100px;
-    }
-
-    &--dropdown:not(:last-of-type) {
-      margin-bottom: 54px;
-    }
-
-    &--checkbox:not(:last-of-type) {
-      margin-bottom: 106px;
-    }
+  &--comments {
+    grid-column: 2 / 4;
+    margin-top: 5px;
   }
 
-  &__block {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: flex-start;
+  &--dropdown {
+    width: 320px;
+  }
+}
 
-    &:nth-of-type(2) {
-      margin-left: 27px;
-    }
+// Button
 
-    &--comments {
-      grid-column: 2 / 4;
-      margin-top: 5px;
-    }
+.form-elements__button {
+  width: 99px;
+}
 
-    &--dropdown {
-      width: 320px;
-    }
+// Element
+
+.form-elements__element {
+  width: 100%;
+  min-width: 266px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 43px;
   }
 
-  &__button {
-    width: 99px;
+  &--min-margin:not(:last-of-type) {
+    margin-bottom: 22px;
   }
 
-  &__element {
-    width: 100%;
-
-    &:not(:last-of-type) {
-      margin-bottom: 43px;
-    }
-
-    &--min-margin:not(:last-of-type) {
-      margin-bottom: 22px;
-    }
-
-    &--margin:not(:last-of-type) {
-      margin-bottom: 42px;
-    }
-
-    &--checkbox:not(:last-of-type) {
-      margin-bottom: 35px;
-    }
-
-    &--slider:not(:last-of-type) {
-      margin-bottom: 29px;
-    }
-
-    &__title {
-      margin: 0 0 16px;
-
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 1.25;
-      text-transform: uppercase;
-      color: $heading;
-    }
-
-    &--date {
-      width: 150px;
-    }
-
-    &--filter-date,
-    --subscription,
-    --dropdown-min,
-    --checkbox-expand {
-      width: 266px;
-    }
-
-    &--rate {
-      display: flex;
-      flex-wrap: wrap;
-
-      & .rate:not(:last-of-type) {
-        margin-right: 20px;
-      }
-    }
-
-    &__button-block {
-      display: flex;
-
-      &:not(:last-of-type) {
-        margin-bottom: 30px;
-      }
-
-      &:not(:last-of-type) {
-        margin-right: 20px;
-      }
-    }
-
-    &--bullet {
-      width: 240px;
-    }
-
-    &--narrow {
-      width: 266px;
-    }
-
-    &--pre-narrow {
-      width: 280px;
-    }
+  &--margin:not(:last-of-type) {
+    margin-bottom: 42px;
   }
 
-  &__likes {
-    display: flex;
-    gap: 10px;
+  &--checkbox:not(:last-of-type) {
+    margin-bottom: 35px;
   }
 
-  &__rating {
-    display: flex;
-    gap: 20px;
+  &--slider:not(:last-of-type) {
+    margin-bottom: 29px;
   }
 
-  &__buttons-block {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-
-    &--simple {
-      gap: 15px;
-    }
-
-    &:not(:last-of-type) {
-      margin-bottom: 29px;
-    }
+  &--date {
+    width: 150px;
   }
 
-  &__slider {
+  &--filter-date,
+  --subscription,
+  --dropdown-min,
+  --checkbox-expand {
     width: 266px;
   }
+
+  &--rate {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .rate:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__button-block {
+    display: flex;
+
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &--bullet {
+    width: 240px;
+  }
+
+  &--narrow {
+    width: 266px;
+  }
+
+  &--pre-narrow {
+    width: 280px;
+  }
+}
+
+// Likes
+
+.form-elements__likes {
+  display: flex;
+  gap: 10px;
+}
+
+// Rating
+
+.form-elements__rating {
+  display: flex;
+  gap: 20px;
+}
+
+// Buttons block
+
+.form-elements__buttons-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  &--simple {
+    gap: 15px;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 29px;
+  }
+}
+
+// Slider
+
+.form-elements__slider {
+  width: 266px;
 }

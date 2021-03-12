@@ -138,6 +138,7 @@
       forEach( (dropElement) => {
       const inputElement = dropElement.querySelector('.dropdown__input');
 
+      // тут нужно повесить событие input на инпут
       dropElement.addEventListener('click', (evt) => {
         const inputValue = Number(inputElement.value);
 

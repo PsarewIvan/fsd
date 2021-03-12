@@ -1,21 +1,23 @@
-(function() {
-  const navigations = document.querySelectorAll('.nav');
+(function () {
+  const navigation = document.querySelectorAll('.nav');
 
-    navigations.forEach( (nav) => {
+  navigation.forEach((nav) => {
     // Убирает атрибут href у текущей ссылки
-    if ( nav.querySelector('.nav__link--current') ) {
-      const  navLink = nav.querySelector('.nav__link--current');
+    if (nav.querySelector('.nav__link--current')) {
+      const navLink = nav.querySelector('.nav__link--current');
       navLink.removeAttribute('href');
     }
 
     // Проверка на тач-устройства
     function isTouchEnabled() {
-      return ('ontouchstart' in window) ||
-        (navigator.maxTouchPoints > 0) ||
-        (navigator.msMaxTouchPoints > 0);
+      return (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      );
     }
 
-    // Убирает появление меню при ховере на тач-усройствах
+    // Убирает появление меню при ховере на тач-устройствах
     if (isTouchEnabled()) {
       const navLinks = nav.querySelectorAll('.nav__li');
       const buttons = nav.querySelectorAll('.nav__extend-button');
@@ -31,15 +33,15 @@
         return overlay;
       }
 
-      navLinks.forEach( (li) => {
+      navLinks.forEach((li) => {
         li.classList.add('-touch-');
-        if ( li.querySelector('button') ) {
+        if (li.querySelector('button')) {
           li.querySelector('button').classList.add('-touch-');
         }
       });
 
-      buttons.forEach( (button) => {
-        button.addEventListener('click', function() {
+      buttons.forEach((button) => {
+        button.addEventListener('click', function () {
           const overlay = createOverlay();
           toggleMenu(button);
           document.body.append(overlay);
@@ -50,5 +52,5 @@
         });
       });
     }
-  })
+  });
 })();

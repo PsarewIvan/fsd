@@ -1,0 +1,32 @@
+@import '../../../assets/scss/var.scss';
+
+// Colors-type
+
+.colors-type {
+  display: flex;
+  justify-content: space-between;
+  max-width: $content-colors-types-pc;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @media (max-width: 660px) {
+    flex-direction: column;
+  }
+}
+
+// Colors
+
+.colors-type__colors {
+  margin-right: 35px;
+
+  @media (max-width: 660px) {
+    margin-right: 0;
+    margin-bottom: 55px;
+  }
+}
+
+// Type
+
+.colors-type__type {
+  margin-right: 8px;
+}

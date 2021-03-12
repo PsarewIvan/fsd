@@ -3,10 +3,9 @@
 .types {
   display: flex;
   flex-direction: column;
-  width: 436px;
-  margin: 0 8px 0 0;
+  max-width: 436px;
+  margin: 0;
   padding: 0;
-
   list-style: none;
 
   &__element {
@@ -32,8 +31,6 @@
     }
 
     &--body {
-      width: 370px;
-
       font-size: 14px;
       line-height: 1.7;
     }
@@ -52,7 +49,6 @@
     flex-shrink: 0;
     width: 37px;
     margin: 0 30px 0 0;
-
     line-height: 1.2;
     color: $dark-shade-25;
     text-align: right;
