@@ -5,66 +5,67 @@ include ../buttons/buttons
 
 mixin registration({action})
   .registration
-    form.registration__form(method= "GET", action= action)
-      h3.registration__title= "Регистрация аккаунта"
-      .registration__name
-        +input({
-          type: "text",
-          name: "name",
-          placeholder: "Имя"
-        })
-      .registration__surname
-        +input({
-          type: "text",
-          name: "surname",
-          placeholder: "Фамилия"
-        })
-      .registration__sex
-        +radio({
-          name: "sex",
-          elements: [
-            {label: "Мужчина", id: "man", value: "man", checked: true},
-            {label: "Женщина", id: "woman", value: "woman", checked: false}
-          ]
-        })
-      .registration__birthday
-        +input({
-          title: "дата рождения",
-          name: "maskedDate",
-          masked: true
-        })
-      .registration__email
-        +input({
-          title: "данные для входа в сервис",
-          type: "email",
-          name: "email",
-          placeholder: "Email"
-        })
-      .registration__pass
-        +input({
-          type: "password",
-          name: "pass",
-          placeholder: "Пароль"
-        })
-      .registration__special
-        +toggle({
-          name: "special",
-          elements: [
-            {label: "Получать спецпредложения", id: "special-1", value: "special-1", checked: false}
-          ]
-        })
-      .registration__button
-        +buttons({
-          type: "submit",
-          label: "перейти к оплате",
-          modify: ["large"]
-        })
-    .registration__log
-      p.registration__log-description= "Уже есть аккаунт на Toxin"
-      .registration__button
-        +buttons({
-          type: "link",
-          link: "#",
-          label: "войти",
-          modify: ["fill"]
-        })
+    .registration__wrapper
+      form.registration__form(method= "GET", action= action)
+        h3.registration__title= "Регистрация аккаунта"
+        .registration__name
+          +input({
+            type: "text",
+            name: "name",
+            placeholder: "Имя"
+          })
+        .registration__surname
+          +input({
+            type: "text",
+            name: "surname",
+            placeholder: "Фамилия"
+          })
+        .registration__sex
+          +radio({
+            name: "sex",
+            elements: [
+              {label: "Мужчина", id: "man", value: "man", checked: true},
+              {label: "Женщина", id: "woman", value: "woman", checked: false}
+            ]
+          })
+        .registration__birthday
+          +input({
+            title: "дата рождения",
+            name: "maskedDate",
+            masked: true
+          })
+        .registration__email
+          +input({
+            title: "данные для входа в сервис",
+            type: "email",
+            name: "email",
+            placeholder: "Email"
+          })
+        .registration__pass
+          +input({
+            type: "password",
+            name: "pass",
+            placeholder: "Пароль"
+          })
+        .registration__special
+          +toggle({
+            name: "special",
+            elements: [
+              {label: "Получать спецпредложения", id: "special-1", value:   "special-1", checked: false}
+            ]
+          })
+        .registration__button
+          +buttons({
+            type: "submit",
+            label: "перейти к оплате",
+            modify: ["large"]
+          })
+      .registration__log
+        p.registration__log-description= "Уже есть аккаунт на Toxin"
+        .registration__button
+          +buttons({
+            type: "link",
+            link: "#",
+            label: "войти",
+            modify: ["fill"]
+          })
