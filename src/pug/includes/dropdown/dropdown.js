@@ -1,5 +1,4 @@
 (function () {
-
   // -- start -- Находим все выпадающие списки
 
   const dropdowns = document.querySelectorAll('.dropdown');
@@ -12,7 +11,7 @@
     const elementNew = document.createElement(newTag);
     elementNew.innerHTML = element.innerHTML;
 
-    Array.prototype.forEach.call(element.attributes, attr => {
+    Array.prototype.forEach.call(element.attributes, (attr) => {
       elementNew.setAttribute(attr.name, attr.value);
     });
 
@@ -35,8 +34,7 @@
 
   // -- start -- Добавляем логику для каждого выпадающего меню
 
-  dropdowns.forEach( (dropdown) => {
-
+  dropdowns.forEach((dropdown) => {
     // --start -- Функции
 
     // Скрытие/показ меню
@@ -45,6 +43,7 @@
       menuBtn.setAttribute('aria-expanded', !expanded);
       menuBtn.classList.toggle('open');
       dropMenu.hidden = expanded;
+      dropMenu.classList.toggle('open');
     }
 
     // Создание оверлея (для закрытия меню при клике вне его)
@@ -74,9 +73,15 @@
     dropdownMenu.hidden = true;
     dropdownMenu.style.position = 'absolute';
 
-    dropdownInputs.forEach( (dropdownInput) => {
-      dropdownInput.parentNode.insertBefore(createBtn('low', '-', 'down'), dropdownInput);
-      dropdownInput.parentNode.insertBefore(createBtn('hight', '+', 'up'), dropdownInput.nextSibling);
+    dropdownInputs.forEach((dropdownInput) => {
+      dropdownInput.parentNode.insertBefore(
+        createBtn('low', '-', 'down'),
+        dropdownInput
+      );
+      dropdownInput.parentNode.insertBefore(
+        createBtn('hight', '+', 'up'),
+        dropdownInput.nextSibling
+      );
 
       if (dropdownInput.value == 0) {
         dropdownInput.previousSibling.setAttribute('disabled', 'true');
@@ -103,7 +108,7 @@
       dropdownMenu.style.position = 'relative';
       dropdownMenu.hidden = false;
     } else {
-      btn.addEventListener('click', function() {
+      btn.addEventListener('click', function () {
         toggleVisibilityDropMenu(btn, dropdownMenu);
         const overlay = createOverlay();
         document.body.append(overlay);
@@ -114,10 +119,12 @@
       });
 
       if (btn.dataset.button === 'true') {
-        dropdown.querySelector('.dropdown__button-ctrl--apply').addEventListener('click', function() {
-          document.querySelector('.dropdown__overlay').remove();
-          toggleVisibilityDropMenu(btn, dropdownMenu);
-        });
+        dropdown
+          .querySelector('.dropdown__button-ctrl--apply')
+          .addEventListener('click', function () {
+            document.querySelector('.dropdown__overlay').remove();
+            toggleVisibilityDropMenu(btn, dropdownMenu);
+          });
       }
     }
 
@@ -134,8 +141,7 @@
       } else element.nextSibling.removeAttribute('disabled');
     }
 
-    dropdown.querySelectorAll('.dropdown__element').
-      forEach( (dropElement) => {
+    dropdown.querySelectorAll('.dropdown__element').forEach((dropElement) => {
       const inputElement = dropElement.querySelector('.dropdown__input');
 
       // тут нужно повесить событие input на инпут
@@ -160,7 +166,7 @@
     const clearBtn = dropdown.querySelector('.dropdown__button-ctrl--clear');
 
     function resetValue() {
-      dropdownInputs.forEach( (dropdownInput) => {
+      dropdownInputs.forEach((dropdownInput) => {
         dropdownInput.value = 0;
         dropdownInput.previousSibling.setAttribute('disabled', 'true');
         dropdownInput.nextSibling.removeAttribute('disabled');
@@ -168,12 +174,12 @@
     }
 
     if (btn.dataset.button === 'true') {
-      clearBtn.addEventListener('click', (evt) =>{
+      clearBtn.addEventListener('click', (evt) => {
         evt.preventDefault();
         resetValue();
       });
     }
-  })
+  });
 
   //  -- end --
-})()
+})();
