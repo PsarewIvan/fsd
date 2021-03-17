@@ -60,10 +60,11 @@ block content
           titleTo: "date Dropdown"
         })
       .form-elements__element
-        +drop-date({
-          isMultiple: false,
-          filterDate: "filter date dropdown"
-        })
+        .form-elements__narrow-element
+          +drop-date({
+            isMultiple: false,
+            filterDate: "filter date dropdown"
+          })
       .form-elements__element(class="form-elements__element--narrow")
         +subscription({
           title: "subscription text field",
@@ -225,7 +226,7 @@ block content
             {label: "Младенцы", name: "baby2", min: "0"}
           ]
         })
-    .form-elements__block
+    .form-elements__block(class="form-elements__block--dropdown")
       .form-elements__element(class="form-elements__element--min-margin")
         h3.form-elements__title= "Dropdown"
         +dropdown({
