@@ -12,6 +12,10 @@
   @media (max-width: 660px) {
     flex-direction: column;
   }
+
+  @media (max-width: 400px) {
+    padding: 0 8px;
+  }
 }
 
 // Colors
