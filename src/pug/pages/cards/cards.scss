@@ -1,30 +1,54 @@
 @import '../../../assets/scss/var.scss';
 
+// Cards
+
 .cards {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   max-width: $content-pc;
-  gap: 20px;
+  gap: 40px;
   padding: 0 40px;
   margin: 0 auto;
 
-  &__body {
-    background-color: $background-color;
+  @media (max-width: 1240px) {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 
-  &__block {
-    width: 380px;
-
-    &:last-of-type {
-      width: 320px;
-    }
-  }
-
-  &__element:not(:last-of-type) {
-    margin-bottom: 40px;
+  @media (max-width: 880px) {
+    grid-template-columns: 1fr;
+    padding: 0;
   }
 }
 
+// Content
+
 .cards__body .content {
   padding-top: 150px;
+}
+
+// Body cards
+
+.cards__body {
+  background-color: $background-color;
+}
+
+// Block
+
+.cards__block {
+  width: 380px;
+
+  @media (max-width: 380px) {
+    width: 100%;
+  }
+
+  &:last-of-type {
+    width: 320px;
+  }
+}
+
+// Element
+
+.cards__element:not(:last-of-type) {
+  margin-bottom: 40px;
 }
