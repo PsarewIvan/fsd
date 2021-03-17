@@ -1,132 +1,156 @@
 @import '../../../assets/scss/var.scss';
 
-.room-cards {
-  padding: 40px 29px 29px;
+// Room cards
 
+.room-cards {
   border: 1px solid $cards-border-color;
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
+}
 
-  &__title-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+// Form
 
-  &__title {
-    position: relative;
+.room-cards__form {
+  max-width: 320px;
+  margin: 40px auto 29px;
+}
 
-    margin: 0 0 22px;
-    padding: 0;
+// Title block
 
-    font-size: 24px;
-    line-height: 1.22;
-    font-family: $main-font;
+.room-cards__title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
-    &.-luxe-::after {
-      content: "люкс";
-      display: inline-block;
+// Title
 
-      font-size: 12px;
-      color: $room-luxe;
-      text-transform: uppercase;
-    }
-  }
+.room-cards__title {
+  position: relative;
+  margin: 0 0 22px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1.22;
+  font-family: $main-font;
 
-  &__price-block {
-    margin: 0;
-
-    color: $light-text;
-  }
-
-  &__price {
-    margin-right: 1px;
-
-    font-weight: bold;
-  }
-
-  &__price-text {
+  &.-luxe-::after {
+    content: 'люкс';
+    display: inline-block;
     font-size: 12px;
+    color: $room-luxe;
+    text-transform: uppercase;
   }
+}
 
-  &__symbol {
-    font-size: 14px;
+// Price block
+
+.room-cards__price-block {
+  margin: 0;
+  color: $light-text;
+}
+
+// Price
+
+.room-cards__price {
+  margin-right: 1px;
+  font-weight: bold;
+}
+
+// Price text
+
+.room-cards__price-text {
+  font-size: 12px;
+}
+
+// Symbol
+
+.room-cards__symbol {
+  font-size: 14px;
+}
+
+// Calendar
+
+.room-cards__calendar {
+  margin-bottom: 22px;
+}
+
+// Guests
+
+.room-cards__guests {
+  margin-bottom: 22px;
+}
+
+// Table
+
+.room-cards__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// Calculation
+
+.room-cards__calculation {
+  margin-bottom: 18px;
+}
+
+// Table data
+
+.room-cards__td {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  border: none;
+  line-height: 1.2;
+
+  &:last-of-type {
+    width: 80px;
+    text-align: right;
   }
+}
 
-  &__calendar,
-  &__guests {
-    margin-bottom: 22px;
-  }
+.room-cards tr td {
+  padding-bottom: 16px;
+}
 
-  &__table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+// Option table data
 
-  &__calculation {
-    margin-bottom: 18px;
-  }
+.room-cards__option-td {
+  width: 20px;
 
-  &__td {
-    margin: 0;
-    padding: 0;
-    vertical-align: top;
-
-    border: none;
-
-    line-height: 1.2;
-
-    &:last-of-type {
-      width: 80px;
-
-      text-align: right;
-    }
-  }
-
-  &__option-td {
+  &.-info-::after {
+    content: 'i';
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20px;
-
-    &.-info-::after {
-      content: 'i';
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20px;
-      height: 20px;
-
-      border: 1px solid $border;
-      border-radius: 50%;
-
-      font-size: 12px;
-      font-weight: bold;
-      color: $border;
-
-      cursor: pointer;
-    }
+    height: 20px;
+    border: 1px solid $border;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    color: $border;
+    cursor: pointer;
   }
+}
 
-  &__total {
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
-    margin-bottom: 21px;
-  }
+// Total
 
-  &__total-dotted {
+.room-cards__total {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  margin-bottom: 21px;
+
+  &-dotted {
     margin-bottom: 4px;
-
     border-bottom: 1px dotted $border;
   }
 
-  &__total-text,
-  &__total-price {
+  &-text,
+  &-price {
     font-size: 19px;
     font-weight: bold;
     color: $heading;
-  }
-
-  tr td {
-    padding-bottom: 16px;
   }
 }
