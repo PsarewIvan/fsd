@@ -1,26 +1,40 @@
 @import '../../../assets/scss/var.scss';
 
-.registration {
-  padding: 40px 29px 29px;
+// Registration
 
+.registration {
   border: 1px solid $cards-border-color;
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
+}
 
-  &__form {
-    margin-bottom: 30px;
-  }
+// Wrapper
 
-  &__title {
-    margin: 0 0 21px;
-    padding: 0;
+.registration__wrapper {
+  max-width: 320px;
+  margin: 40px auto 29px;
+}
 
-    font-size: 24px;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
-  }
+// Form
 
+.registration__form {
+  margin-bottom: 30px;
+}
+
+// Title
+
+.registration__title {
+  margin: 0 0 21px;
+  padding: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+// Element
+
+.registration {
   &__name,
   &__surname,
   &__email,
@@ -33,9 +47,11 @@
   &__special {
     margin-bottom: 24px;
   }
+}
 
-  &__log {
-    display: flex;
-    justify-content: space-between;
-  }
+// Log
+
+.registration__log {
+  display: flex;
+  justify-content: space-between;
 }
