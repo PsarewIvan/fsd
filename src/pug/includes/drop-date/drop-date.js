@@ -1,12 +1,11 @@
 import 'air-datepicker';
 
-(function() {
+(function () {
   $('.drop-date').each(function () {
-
     const dropDate = $(this);
-    const dateFrom = dropDate.find('.drop-date__input-from');
-    const dateTo = dropDate.find ('.drop-date__input-to');
-    const isMulti = dateFrom && dateTo;
+    const titleFrom = dropDate.find('.drop-date__input-from');
+    const titleTo = dropDate.find('.drop-date__input-to');
+    const isMulti = titleFrom && titleTo;
     let inline = false;
     if (dropDate.find('.drop-date__input').hasClass('-inline-')) {
       inline = true;
@@ -22,17 +21,17 @@ import 'air-datepicker';
       onSelect: (date) => {
         if (isMulti) {
           const dates = date.split(' - ');
-          dateFrom.val(dates[0]);
-          dateTo.val(dates[1]);
+          titleFrom.val(dates[0]);
+          titleTo.val(dates[1]);
         }
-      }
+      },
     });
 
-    if (!dateFrom.length && !dateTo.length) {
-      dropDate.addClass('drop-date__filter');
+    if (!titleFrom.length && !titleTo.length) {
+      dropDate.addClass('drop-date__single');
       dropDate.find('.js-drop-date').datepicker({
-        classes: '-filter-'
-      })
+        classes: '-filter-',
+      });
     }
 
     const datep = dropDate.find('.js-drop-date').data('datepicker');
@@ -48,8 +47,8 @@ import 'air-datepicker';
 
     datepEl.find('.datepicker--buttons').append(applyButton);
     if (isMulti) {
-      dateTo.click(() => datep.show());
-      dateFrom.click(() => datep.show());
+      titleTo.click(() => datep.show());
+      titleFrom.click(() => datep.show());
     }
 
     $(document).mouseup(function (e) {

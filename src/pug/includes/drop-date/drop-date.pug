@@ -1,4 +1,4 @@
-mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, to, inline})
+mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from, to, inline})
   if inline
     - var inlineClass= "-inline-"
   .drop-date
@@ -21,7 +21,7 @@ mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, t
       .drop-date__block
         h4(
           class= ["drop-date__title", inlineClass]
-        )= dateFrom
+        )= titleFrom
         input(
           class= ["drop-date__input", "drop-date__input-from", inlineClass]
           type= "text"
@@ -35,7 +35,7 @@ mixin drop-date({isMultiple= false, dateFrom, dateTo, filterDate, range, from, t
       .drop-date__block
         h4(
           class= ["drop-date__title", inlineClass]
-        )= dateTo
+        )= titleTo
         input(
           class= ["drop-date__input", "drop-date__input-to", inlineClass]
           type= "text"
