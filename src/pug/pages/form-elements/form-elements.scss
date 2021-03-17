@@ -47,6 +47,10 @@
   &--checkbox:not(:last-of-type) {
     margin-bottom: 106px;
   }
+
+  @media (max-width: 400px) {
+    padding: 0 8px;
+  }
 }
 
 // Block
@@ -68,10 +72,18 @@
   &--comments {
     grid-column: 2 / 4;
     margin-top: 5px;
+
+    @media (max-width: 740px) {
+      grid-column: auto;
+    }
   }
 
   &--dropdown {
-    width: 320px;
+    max-width: 320px;
+  }
+
+  @media (max-width: 740px) {
+    flex-direction: column;
   }
 }
 
@@ -115,7 +127,7 @@
   --subscription,
   --dropdown-min,
   --checkbox-expand {
-    width: 266px;
+    max-width: 266px;
   }
 
   &--rate {
@@ -140,16 +152,22 @@
   }
 
   &--bullet {
-    width: 240px;
+    max-width: 240px;
   }
 
   &--narrow {
-    width: 266px;
+    max-width: 266px;
   }
 
   &--pre-narrow {
-    width: 280px;
+    max-width: 280px;
   }
+}
+
+// Narrow element
+
+.form-elements__narrow-element {
+  max-width: 266px;
 }
 
 // Likes
@@ -185,5 +203,5 @@
 // Slider
 
 .form-elements__slider {
-  width: 266px;
+  max-width: 266px;
 }
