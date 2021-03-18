@@ -1,83 +1,103 @@
 @import '../../../assets/scss/var.scss';
 
-.nav {
+// List
+
+.nav__list {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--extend-wrapper {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    display: none;
+    min-width: 100%;
+    padding-top: 1.7em;
+
+    &.-open- {
+      display: block;
+    }
+  }
+
+  &--extend {
+    display: grid;
+    grid-auto-flow: row;
+    padding: 10px 15px;
+    background-color: $white;
+    border: 1px solid $border;
+    border-radius: 4px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+}
+
+// Link
+
+.nav__link {
+  color: $light-text;
+  text-decoration: none;
+  cursor: pointer;
+
+  &--extend {
+    white-space: nowrap;
+  }
+
+  &--current {
+    font-weight: bold;
+    color: $main-text;
+    cursor: default;
+  }
+}
+
+// List element
+
+.nav__li {
+  position: relative;
   display: flex;
-  align-items: center;
 
-  &__list {
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-
-    &--extend-wrapper {
-      position: absolute;
-      top: 18px;
-      left: 0;
-      z-index: 10;
-
-      display: none;
-      min-width: 100%;
-      padding-top: 5px;
-    }
-
-    &--extend {
-      display: flex;
-      flex-direction: column;
-      padding: 10px 15px;
-
-      background-color: $white;
-      border: 1px solid $border;
-      border-radius: 4px;
-      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-    }
+  &--extend .nav__link {
+    margin-right: 1px;
   }
+}
 
-  &__link {
-    color: $light-text;
-    text-decoration: none;
+// Extend button
 
-    cursor: pointer;
+.nav__extend-button {
+  z-index: 10;
+  display: inline-block;
+  width: 24px;
+  height: 1.2em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  transform-origin: center center;
+  transition: transform 0.2s;
 
-    &--extend {
-      white-space: nowrap;
-    }
-
-    &--current {
-      font-weight: bold;
-      color: $main-text;
-
-      cursor: default;
-    }
-  }
-
-  &__li {
+  &.-touch- {
     position: relative;
 
-    display: flex;
-
-    &--extend .nav__link{
-      margin-right: 1px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 200%;
+      height: 200%;
+      margin-left: -50%;
+      margin-top: -50%;
     }
   }
 
-  &__extend-button {
-    display: inline-block;
-    width: 24px;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-
-    border: none;
-    background-color: transparent;
-    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' fill-opacity='0.5'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center;
-
-    transform-origin: center center;
-    transition: transform 0.2s;
+  &.-active- {
+    transform: rotate(180deg);
   }
 }
 
@@ -89,43 +109,15 @@
     position: fixed;
     top: 0;
     left: 0;
-
     display: block;
     width: 100vw;
     height: 100vh;
   }
 }
 
-// Touch
-
-.nav__extend-button.-touch- {
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: block;
-    width: 200%;
-    height: 200%;
-    margin-left: -50%;
-    margin-top: -50%;
-  }
-}
-
-.nav__extend-button.-active- {
-  transform: rotate(180deg);
-}
-
-.nav__list--extend-wrapper.-open- {
-  display: block;
-}
-
 // Hover & Focus
 
-@media(hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .nav__li--extend:hover:not(.-touch-) .nav__list--extend-wrapper {
     display: block;
   }
@@ -134,7 +126,7 @@
     transform: rotate(180deg);
   }
 
-  .nav__li:hover>.nav__link:not(.nav__link--current) {
+  .nav__li:hover > .nav__link:not(.nav__link--current) {
     opacity: 0.7;
   }
 }
@@ -144,9 +136,9 @@
 }
 
 .nav__li--extend:focus-within:not(.-touch-) .nav__extend-button {
-    transform: rotate(180deg);
-  }
+  transform: rotate(180deg);
+}
 
-.nav__li:focus>.nav__link:not(.nav__link--current) {
+.nav__li:focus > .nav__link:not(.nav__link--current) {
   opacity: 0.7;
 }
