@@ -1,34 +1,36 @@
 @import '../../../assets/scss/var.scss';
 
-.nav-footer {
-  &__title {
-    margin: 4px 0 22px 0;
+// Title
 
-    font-size: 12px;
-    line-height: 1.25;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-  }
+.nav-footer__title {
+  margin: 4px 0 22px 0;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin: 0;
-    padding: 0;
+// List
 
-    list-style: none;
-  }
+.nav-footer__list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  &__link {
-    color: $light-text;
-    text-decoration: none;
-  }
+// Link
+
+.nav-footer__link {
+  color: $light-text;
+  text-decoration: none;
 }
 
 /* Hover & Focus */
 
-@media(hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .nav-footer__link:hover {
     opacity: 0.7;
   }
