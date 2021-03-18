@@ -1,51 +1,66 @@
 @import '../../../assets/scss/var.scss';
 
+// Header
+
 .header {
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr max-content max-content max-content;
   align-content: center;
-  width: $content-pc;
+  max-width: $content-pc;
   min-height: 70px;
   margin: 0 auto;
   padding: 0 40px;
+}
 
-  &__wrapper {
-    background-color: $white;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+// Wrapper
+
+.header__wrapper {
+  background-color: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+
+// Main link
+
+.header__main-link {
+  display: flex;
+  align-items: center;
+  min-width: 106px;
+}
+
+// Block
+
+.header__block {
+  display: flex;
+  align-items: center;
+}
+
+// Icon
+
+.header__icon {
+  height: 40px;
+
+  &-text {
+    margin-left: 12px;
+    height: 14px;
   }
+}
 
-  &__main-link {
-    display: flex;
-    align-items: center;
-  }
+// Registration
 
-  &__block {
-    display: flex;
-    align-items: center;
-  }
+.header__reg-wrapper {
+  width: 196px;
+}
 
-  &__icon {
-    height: 40px;
+// Login
 
-    &-text {
-      margin-left: 12px;
-      height: 14px;
-    }
-  }
-
-  &__reg-wrapper {
-    width: 196px;
-  }
-
-  &__log-wrapper {
-    width: 87px;
-  }
+.header__log-wrapper {
+  width: 87px;
 }
 
 /* Hover & Focus */
 
-@media(hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .header__main-link:hover {
     opacity: 0.7;
   }
