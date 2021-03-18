@@ -8,15 +8,12 @@ mixin nav({items, currentPage})
           - var mod= ""
         if item.extend
           li.nav__li(class= "nav__li--extend")
-            a.nav__link(
-              class= mod
-              href= item.href
-            )= item.label
             button.nav__extend-button(
+              class= "nav__link"
               type= "button"
               aria-label= "Открыть выпадающий список"
               tabindex= "-1"
-            )
+            )= item.label
             .nav__list--extend-wrapper
               ul.nav__list(class= "nav__list--extend")
                 each itemEx in item.extend
