@@ -1,5 +1,5 @@
 mixin nav({items, currentPage})
-  nav.nav
+  nav.nav(class= "js-nav")
     ul.nav__list
       each item in items
         if currentPage == item.label
@@ -7,9 +7,9 @@ mixin nav({items, currentPage})
         else
           - var mod= ""
         if item.extend
-          li.nav__li(class= "nav__li--extend")
+          li.nav__li(class= "nav__li--extend, js-nav__li")
             button.nav__extend-button(
-              class= "nav__link"
+              class= "nav__link js-nav__extend-button"
               type= "button"
               aria-label= "Открыть выпадающий список"
               tabindex= "-1"
@@ -23,7 +23,7 @@ mixin nav({items, currentPage})
                       href= itemEx.href
                     )= itemEx.label
         else
-          li.nav__li
+          li.nav__li(class= "js-nav__li")
             a.nav__link(
               class= mod
               href= item.href
