@@ -1,5 +1,13 @@
 @import '../../../assets/scss/var.scss';
 
+// Nav footer
+
+.nav-footer {
+  @media (max-width: 870px) {
+    width: max-content;
+  }
+}
+
 // Title
 
 .nav-footer__title {
@@ -8,6 +16,26 @@
   line-height: 1.25;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+
+  @media (max-width: 870px) {
+    position: relative;
+    width: max-content;
+    padding-right: 20px;
+    margin: 0;
+    cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -1px;
+      right: 0;
+      width: 0.7em;
+      height: 0.7em;
+      border-top: 2px solid $heading;
+      border-left: 2px solid $heading;
+      transform: rotate(-135deg);
+    }
+  }
 }
 
 // List
@@ -28,14 +56,39 @@
   text-decoration: none;
 }
 
+// Nav
+
+.nav-footer__nav {
+  @media (max-width: 870px) {
+    display: none;
+    padding: 10px 20px;
+  }
+}
+
 /* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .nav-footer__link:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: 870px) {
+    .nav-footer__title:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .nav-footer__link:focus {
   opacity: 0.7;
+}
+
+@media (max-width: 870px) {
+  .nav-footer__title:focus {
+    opacity: 0.7;
+  }
+
+  .nav-footer:focus-within > .nav-footer__nav {
+    display: block;
+  }
 }
