@@ -1,6 +1,6 @@
 mixin nav-footer({title, items})
   .nav-footer
-    h4.nav-footer__title= title
+    h4.nav-footer__title(tabindex= 0)= title
     nav.nav-footer__nav
       ul.nav-footer__list
         each item in items
