@@ -5,32 +5,38 @@
 .nav__list {
   display: grid;
   grid-auto-flow: column;
-  gap: 20px;
+  gap: 21px;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  &--extend-wrapper {
-    position: absolute;
-    left: 0;
-    z-index: 1;
-    display: none;
-    min-width: 100%;
-    padding-top: 1.7em;
-
-    &.-open- {
-      display: block;
-    }
-  }
-
   &--extend {
-    display: grid;
     grid-auto-flow: row;
-    padding: 10px 15px;
+    padding: 15px 20px;
     background-color: $white;
     border: 1px solid $border;
     border-radius: 4px;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  }
+}
+
+// Extend list wrapper
+
+.nav__list--extend-wrapper {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  display: none;
+  min-width: 100%;
+  padding-top: 0.5em;
+  margin-top: 1em;
+
+  &.-open- {
+    display: block;
+  }
+
+  @media (max-width: 980px) {
+    margin-top: 0;
   }
 }
 
@@ -74,14 +80,26 @@
   position: relative;
   display: flex;
 
-  &--extend .nav__link {
-    margin-right: 1px;
+  @media (max-width: 980px) {
+    flex-direction: column;
+    max-width: max-content;
+  }
+
+  &--extend::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    top: -5px;
+    left: -5px;
   }
 }
 
-// Extend button
+// Extend link
 
-.nav__extend-button {
+.nav__extend-link {
+  position: relative;
   margin: 0;
   padding: 0 24px 0 0;
   border: none;
@@ -102,50 +120,34 @@
     transition: transform 0.2s;
   }
 
-  &.-touch- {
-    // position: relative;
-  }
-
   &.-active-::after {
     transform: rotate(180deg);
-  }
-}
-
-// Overlay
-
-.nav__list-overlay {
-  &::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100vw;
-    height: 100vh;
   }
 }
 
 // Hover & Focus
 
 @media (hover: hover) and (pointer: fine) {
-  .nav__li--extend:hover:not(.-touch-) .nav__list--extend-wrapper {
-    display: block;
+  @media (min-width: 980px) {
+    .nav__li--extend:hover:not(.-touch-) .nav__list--extend-wrapper {
+      display: block;
+    }
+
+    .nav__li--extend:hover:not(.-touch-) .nav__extend-link::after {
+      transform: rotate(180deg);
+    }
   }
 
-  .nav__li--extend:hover:not(.-touch-) .nav__extend-button::after {
-    transform: rotate(180deg);
-  }
-
-  .nav__li:hover > .nav__link:not(.nav__link--current) {
+  .nav__link:hover:not(.nav__link--current) {
     opacity: 0.7;
   }
 }
 
-.nav__li--extend:focus-within:not(.-touch-) .nav__list--extend-wrapper {
+.nav__li--extend:focus-within > .nav__list--extend-wrapper {
   display: block;
 }
 
-.nav__li--extend:focus-within:not(.-touch-) .nav__extend-button {
+.nav__li-extend:focus-within > .nav__extend-link::after {
   transform: rotate(180deg);
 }
 
