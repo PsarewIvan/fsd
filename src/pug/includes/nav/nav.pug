@@ -7,12 +7,11 @@ mixin nav({items, currentPage})
         else
           - var mod= ""
         if item.extend
-          li.nav__li(class= "nav__li--extend, js-nav__li")
-            button.nav__extend-button(
-              class= "nav__link js-nav__extend-button"
-              type= "button"
+          li.nav__li(class= "nav__li--extend js-nav__li")
+            a.nav__link(
+              class= "nav__extend-link js-nav__extend-link"
               aria-label= "Открыть выпадающий список"
-              tabindex= "-1"
+              tabindex= 0
             )= item.label
             .nav__list--extend-wrapper
               ul.nav__list(class= "nav__list--extend")
