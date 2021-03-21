@@ -75,6 +75,6 @@ class NavFooter {
   }
 }
 
-document.querySelectorAll('.nav-footer').forEach((nav) => {
+document.querySelectorAll('.js-nav-footer').forEach((nav) => {
   new NavFooter(nav);
 });
