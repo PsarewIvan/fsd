@@ -1,50 +1,48 @@
 @import '../../../assets/scss/var.scss';
 
-.bullet {
-  &__title {
-    margin: 0 0 12px;
+// Title
 
-    font-family: $main-font;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 1.25;
-    text-transform: uppercase;
-    color: $heading;
+.bullet__title {
+  margin: 0 0 12px;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.25;
+  text-transform: uppercase;
+  color: $heading;
+}
+
+// List
+
+.bullet__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// List element
+
+.bullet__li {
+  position: relative;
+  max-width: 260px;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 24px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $border;
   }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-
-    list-style: none;
-  }
-
-  &__li {
-    position: relative;
-
-    max-width: 260px;
-    padding-left: 20px;
-
-    font-size: 14px;
-    line-height: 24px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 7px;
-      left: 0;
-
-      width: 10px;
-      height: 10px;
-
-      border-radius: 50%;
-      background-color: $border;
-    }
-  }
-
-  &__li:not(:last-of-type) {
-    margin-bottom: 10px;
+  &:not(:last-of-type) {
+    margin-bottom: 9px;
   }
 }
