@@ -120,8 +120,10 @@
     transition: transform 0.2s;
   }
 
-  &.-active-::after {
-    transform: rotate(180deg);
+  &.-open- {
+    &::after {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -129,11 +131,11 @@
 
 @media (hover: hover) and (pointer: fine) {
   @media (min-width: 980px) {
-    .nav__li--extend:hover:not(.-touch-) .nav__list--extend-wrapper {
+    .nav__li--extend:hover .nav__list--extend-wrapper {
       display: block;
     }
 
-    .nav__li--extend:hover:not(.-touch-) .nav__extend-link::after {
+    .nav__li--extend:hover .nav__extend-link::after {
       transform: rotate(180deg);
     }
   }
@@ -143,12 +145,14 @@
   }
 }
 
-.nav__li--extend:focus-within > .nav__list--extend-wrapper {
-  display: block;
-}
+.nav__li--extend:focus-within {
+  & > .nav__list--extend-wrapper {
+    display: block;
+  }
 
-.nav__li-extend:focus-within > .nav__extend-link::after {
-  transform: rotate(180deg);
+  & > .nav__extend-link::after {
+    transform: rotate(180deg);
+  }
 }
 
 .nav__li:focus > .nav__link:not(.nav__link--current) {
