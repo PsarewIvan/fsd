@@ -88,6 +88,11 @@
   min-height: 70px;
   padding: 0 40px;
   margin: 0 auto;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    margin: 20px auto;
+  }
 }
 
 .footer__wrapper--short {
@@ -130,8 +135,9 @@
   line-height: 1.72;
 
   @media (max-width: 870px) {
-    width: max-content;
+    width: 100%;
     margin: 0 auto;
+    text-align: center;
   }
 }
 
@@ -162,6 +168,10 @@
 
 .footer__license {
   margin: 0;
+
+  @media (max-width: 580px) {
+    order: 1;
+  }
 }
 
 .footer__wrapper--short {
