@@ -1,13 +1,24 @@
 class NavFooter {
   constructor(nav) {
-    this.nav = nav;
     this.WINDOW_WIDTH_THIN = 870;
+    this.nav = nav;
     this.isActive = false;
     this.menu = nav.querySelector('.js-nav-footer__nav');
     if (this.isWindowThin) {
       this.activateMenu();
     }
     this.windowListener();
+  }
+
+  activateMenu() {
+    this.replaceTag();
+    this.buttonListener();
+    this.isActive = true;
+  }
+
+  deactivateMenu() {
+    this.replaceTag();
+    this.isActive = false;
   }
 
   buttonListener() {
@@ -29,17 +40,6 @@ class NavFooter {
         this.deactivateMenu();
       }
     });
-  }
-
-  activateMenu() {
-    this.replaceTag();
-    this.buttonListener();
-    this.isActive = true;
-  }
-
-  deactivateMenu() {
-    this.replaceTag();
-    this.isActive = false;
   }
 
   replaceTag() {
