@@ -1,57 +1,53 @@
 class Nav {
-  constructor(nav) {
-    this.nav = nav;
+  constructor(list) {
     this.MIN_WINDOW_WIDTH = 980;
-    this.navLists = this.nav.querySelectorAll('.js-nav__li');
-    this.exLinks = this.nav.querySelectorAll('.js-nav__extend-link');
-    this.clearCurrentLink();
-    if (this.isTouchEnabled || !this.isWindowWide) {
-      this.navLists.forEach((li) => {
-        this.toggleClassMod(li);
-      });
-      this.exLinks.forEach((exLink) => {
-        this.exLinkListener(exLink);
-      });
+    this.list = list;
+    this.extendList = this.list.querySelector('.js-nav__list--extend-wrapper');
+    this.extendLink = this.list.querySelector('.js-nav__extend-link');
+    this.isActivate = false;
+    if (this.isWindowThin) {
+      this.activateMenu();
     }
+    this.windowListener();
   }
 
-  clearCurrentLink() {
-    const navLink = this.nav.querySelector('.nav__link--current');
-    navLink ? navLink.removeAttribute('href') : null;
+  activateMenu() {
+    this.linkListener();
+    this.isActivate = true;
   }
 
-  exLinkListener(exLink) {
-    exLink.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      this.toggleMenu(exLink);
-      exLink.blur();
+  deactivateMenu() {
+    this.extendLink.removeEventListener('click', this.linkHandler.bind(this));
+    this.isActivate = false;
+  }
+
+  linkListener() {
+    this.extendLink.addEventListener('click', this.linkHandler.bind(this));
+  }
+
+  linkHandler(evt) {
+    evt.preventDefault();
+    this.extendLink.classList.toggle('-open-');
+    this.extendList.classList.toggle('-open-');
+    this.extendLink.blur();
+  }
+
+  windowListener() {
+    window.addEventListener('resize', () => {
+      if (this.isWindowThin && !this.isActive) {
+        this.activateMenu();
+      }
+      if (!this.isWindowThin && this.isActive) {
+        this.deactivateMenu();
+      }
     });
   }
 
-  toggleMenu(exLink) {
-    exLink.classList.toggle('-active-');
-    exLink.nextElementSibling.classList.toggle('-open-');
-  }
-
-  toggleClassMod(li) {
-    li.classList.toggle('-touch-');
-    const exLink = li.querySelector('.js-nav__extend-link');
-    exLink ? exLink.classList.toggle('-touch-') : null;
-  }
-
-  get isTouchEnabled() {
-    return (
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      navigator.msMaxTouchPoints > 0
-    );
-  }
-
-  get isWindowWide() {
-    return document.documentElement.clientWidth > this.MIN_WINDOW_WIDTH;
+  get isWindowThin() {
+    return document.documentElement.clientWidth <= this.MIN_WINDOW_WIDTH;
   }
 }
 
-document.querySelectorAll('.js-nav').forEach((nav) => {
-  new Nav(nav);
+document.querySelectorAll('.js-nav__li').forEach((extendList) => {
+  new Nav(extendList);
 });
