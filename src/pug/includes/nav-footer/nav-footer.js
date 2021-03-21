@@ -4,7 +4,7 @@ class NavFooter {
     this.WINDOW_WIDTH_THIN = 870;
     this.isActive = false;
     this.menu = nav.querySelector('.js-nav-footer__nav');
-    if (document.documentElement.clientWidth <= this.WINDOW_WIDTH_THIN) {
+    if (this.isWindowThin) {
       this.activateMenu();
     }
     this.windowListener();
@@ -21,11 +21,11 @@ class NavFooter {
   }
 
   windowListener() {
-    window.addEventListener('resize', (evt) => {
-      if (evt.target.innerWidth <= this.WINDOW_WIDTH_THIN && !this.isActive) {
+    window.addEventListener('resize', () => {
+      if (this.isWindowThin && !this.isActive) {
         this.activateMenu();
       }
-      if (evt.target.innerWidth > this.WINDOW_WIDTH_THIN && this.isActive) {
+      if (!this.isWindowThin && this.isActive) {
         this.deactivateMenu();
       }
     });
@@ -68,6 +68,10 @@ class NavFooter {
     const heading = document.createElement('h4');
     heading.classList.add('nav-footer__title', 'js-nav-footer__title');
     return heading;
+  }
+
+  get isWindowThin() {
+    return document.documentElement.clientWidth <= this.WINDOW_WIDTH_THIN;
   }
 }
 
