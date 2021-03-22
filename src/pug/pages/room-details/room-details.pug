@@ -26,25 +26,26 @@ block content
       .room-details__section-wrapper
         section.room-details__info
           h2.room-details__title= "Сведения о номере"
-          +features({
-          list: [
-            {
-              label: "Комфорт",
-              description: "Шумопоглощающие стены",
-              url: require("./img/insert_emoticon.svg").default
-            },
-            {
-              label: "Удобство",
-              description: "Окно в каждой из спален",
-              url: require("./img/location_city.svg").default
-            },
-            {
-              label: "Уют",
-              description: "Номер оснащён камином",
-              url: require("./img/whatshot.svg").default
-            }
-          ]
-        })
+          .room-details__features
+            +features({
+              list: [
+                {
+                  label: "Комфорт",
+                  description: "Шумопоглощающие стены",
+                  url: require("./img/insert_emoticon.svg").default
+                },
+                {
+                  label: "Удобство",
+                  description: "Окно в каждой из спален",
+                  url: require("./img/location_city.svg").default
+                },
+                {
+                  label: "Уют",
+                  description: "Номер оснащён камином",
+                  url: require("./img/whatshot.svg").default
+                }
+              ]
+            })
         section.room-details__showing
           h2.room-details__title= "Впечатления от номера"
           +impression({})
@@ -71,9 +72,9 @@ block content
               longAgo: "Неделю",
               likes: "2"
             })
-      section.room-details__rules
+      section.room-details__additional
         h2.visually-hidden= "Дополнительная информация"
-        .room-details__block
+        .room-details__rules-wrapper
           h3.room-details__title(class="room-details__title--rules room-details__title--bullet")= "Правила"
           +bullet({
             elements: [
@@ -82,7 +83,7 @@ block content
               {label: "Время прибытия — после 13:00, а выезд до 12:00"}
             ]
           })
-        .room-details__block
+        .room-details__cancellation-wrapper
           h3.room-details__title(class="room-details__title--rules")= "Отмена"
           p.room-details__cancellation= "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
     section.room-details__reserve
