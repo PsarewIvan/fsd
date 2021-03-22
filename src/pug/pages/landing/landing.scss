@@ -1,66 +1,82 @@
 @import '../../../assets/scss/var.scss';
 
-.landing {
-  &__block {
-    display: flex;
-    max-width: $body;
-    margin: 0 auto;
+// Block
 
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: auto 100%;
+.landing__block {
+  display: flex;
+  max-width: $body;
+  margin: 0 auto;
 
-    &--search {
-      min-height: 830px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: auto 100%;
 
-      background-image: url(img/title.jpg);
-    }
+  &--search {
+    min-height: 830px;
 
-    &--login,
-    &--reg {
-      justify-content: center;
-      align-items: center;
-
-      background-image: url(img/title2.jpg);
-      background-size: cover;
-    }
-
-    &--login {
-      min-height: 702px;
-    }
-
-    &--reg {
-      min-height: 683px;
-    }
+    background-image: url(img/title.jpg);
   }
 
-  &__block-search {
-    position: relative;
+  &--login,
+  &--reg {
+    justify-content: center;
+    align-items: center;
 
-    width: $content-pc;
-    padding: 0 40px;
-    margin: 70px auto 20px;
+    background-image: url(img/title2.jpg);
+    background-size: cover;
   }
 
-  &__title {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    width: 300px;
-    margin: 0 40px 0 0;
-
-    font-family: $main-font;
-    font-size: 14px;
-    line-height: 1.7;
-    font-weight: normal;
-    text-align: right;
-    color: $main-text;
+  &--login {
+    min-height: 702px;
   }
 
-  &__search,
-  &__login,
-  &__reg {
-    width: 380px;
+  &--reg {
+    min-height: 683px;
   }
+}
+
+// Block search
+
+.landing__block-search {
+  position: relative;
+
+  width: $content-pc;
+  padding: 0 40px;
+  margin: 70px auto 20px;
+}
+
+// Title
+
+.landing__title {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 300px;
+  margin: 0 40px 0 0;
+
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: normal;
+  text-align: right;
+  color: $main-text;
+}
+
+// Search
+
+.landing__search {
+  width: 380px;
+}
+
+// Login
+
+.landing__login {
+  width: 380px;
+}
+
+// Reg
+
+.landing__login__reg {
+  width: 380px;
 }
