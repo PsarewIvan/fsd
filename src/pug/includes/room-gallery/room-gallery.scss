@@ -1,23 +1,29 @@
 @import '../../../assets/scss/var.scss';
 
+// Room gallery
+
 .room-gallery {
   display: grid;
-  grid-template-columns: 459px 1fr 459px;
-  grid-template-rows: 243px 243px;
+  grid-template-columns: 32% 1fr 31.875%;
+  grid-template-rows: 50% 50%;
   padding: 0;
   margin: 0 auto;
   max-width: $body;
-
+  max-height: 485px;
   list-style: none;
+}
 
-  &__li:nth-child(1) {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 2;
-  }
+// List element
 
-  &__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.room-gallery__li:nth-child(1) {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
+// Image
+
+.room-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
