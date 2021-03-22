@@ -1,18 +1,19 @@
 mixin dropdown({title, label, isOpen= "false", isButton= "true", elements})
   h4.dropdown__title= title
-  .dropdown
+  .dropdown(class= "js-dropdown")
     p.dropdown__drop-button(
-      class= "open"
+      class= "js-dropdown__drop-button open"
       data-open= isOpen.toString()
       data-button= isButton.toString()
     )= label
-    .dropdown__menu
+    .dropdown__menu(class= "js-dropdown__menu")
       for elem in elements
         if elem.value == undefined
           - elem.value= "0"
-        .dropdown__element
+        .dropdown__element(class= "js-dropdown__element")
           label.dropdown__label(for= elem.name)= elem.label
           input.dropdown__input(
+            class= "js-dropdown__input"
             id= elem.name
             type="number"
             name= elem.name
