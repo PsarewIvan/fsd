@@ -6,14 +6,12 @@
   display: flex;
   max-width: $body;
   margin: 0 auto;
-
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100%;
 
   &--search {
     min-height: 830px;
-
     background-image: url(img/title.jpg);
   }
 
@@ -21,7 +19,6 @@
   &--reg {
     justify-content: center;
     align-items: center;
-
     background-image: url(img/title2.jpg);
     background-size: cover;
   }
@@ -39,7 +36,6 @@
 
 .landing__block-search {
   position: relative;
-
   width: $content-pc;
   padding: 0 40px;
   margin: 70px auto 20px;
@@ -51,10 +47,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
-
   width: 300px;
   margin: 0 40px 0 0;
-
   font-family: $main-font;
   font-size: 14px;
   line-height: 1.7;
