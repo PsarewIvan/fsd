@@ -2,11 +2,30 @@
 
 .room-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px 12px;
   padding: 0;
   margin: 0;
   list-style: none;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 945px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @media (max-width: 910px) {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: auto;
+  }
 }
 
 // Pagination

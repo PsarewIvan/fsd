@@ -1,11 +1,36 @@
-.form-filter {
-  &__block {
-    &:not(:last-of-type) {
-      margin-bottom: 32px;
-    }
+// Form filter
 
-    &:first-of-type {
-      margin-bottom: 23px;
-    }
+.form-filter {
+  @media (max-width: 945px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    max-width: none;
+  }
+
+  @media (max-width: 910px) {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: 20px;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Block
+
+.form-filter__block {
+  max-width: 266px;
+
+  &:not(:last-of-type) {
+    margin-bottom: 32px;
+  }
+
+  &:first-of-type {
+    margin-bottom: 23px;
   }
 }

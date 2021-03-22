@@ -4,11 +4,22 @@
 
 .room-filter {
   display: grid;
-  grid-template-columns: 266px 1fr;
-  gap: 60px;
+  grid-template-columns: 266px auto;
+  justify-content: space-between;
   max-width: $content-pc;
   padding: 0 40px;
   margin: 30px auto 78px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 266px 1fr;
+    gap: 40px;
+  }
+
+  @media (max-width: 945px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 10px;
+  }
 }
 
 // Rooms title
