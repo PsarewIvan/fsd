@@ -1,15 +1,18 @@
+// Room list
+
 .room-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px 12px;
   padding: 0;
   margin: 0;
-
   list-style: none;
+}
 
-  &__pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
+// Pagination
+
+.room-list__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
