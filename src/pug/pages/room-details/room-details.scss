@@ -1,72 +1,92 @@
 @import '../../../assets/scss/var.scss';
 
-.room-details {
-  &__promo {
-    margin-bottom: 70px;
+// Promo
+
+.room-details__promo {
+  margin-bottom: 70px;
+}
+
+// Main wrapper
+
+.room-details__main-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 70px;
+  max-width: $content-pc;
+  padding: 0 40px;
+  margin: 0 auto 73px;
+}
+
+// Section wrapper
+
+.room-details__section-wrapper {
+  display: grid;
+  grid-template-columns: 280px 311px;
+  gap: 81px;
+  margin-bottom: 12px;
+}
+
+// Title
+
+.room-details__title {
+  margin: 0 0 22px;
+  font-size: 19px;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+
+  &--rules {
+    margin-bottom: 18px;
   }
 
-  &__main-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 70px;
-    max-width: $content-pc;
-    padding: 0 40px;
-    margin: 0 auto 71px;
+  &--bullet {
+    margin-left: 20px;
   }
+}
 
-  &__section-wrapper {
-    display: grid;
-    grid-template-columns: 280px 311px;
-    gap: 81px;
-    margin-bottom: 12px;
-  }
+// Comments title wrapper
 
-  &__title {
-    margin: 0 0 22px;
+.room-details__comments-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
 
-    font-size: 19px;
-    line-height: 1.25;
-    letter-spacing: 0.02em;
+// Comments
 
-    &--rules {
-      margin-bottom: 18px;
-    }
+.room-details__comments {
+  margin-bottom: 34px;
+}
 
-    &--bullet {
-      margin-left: 20px;
-    }
-  }
+// Comments list
 
-  &__comments-title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+.room-details__comments-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
 
-  &__comments {
-    margin-bottom: 34px;
-  }
+// Comments list element
 
-  &__comments-list {
-    padding: 0;
-    margin: 0;
+.room-details__comments-li:not(:last-of-type) {
+  margin-bottom: 22px;
+}
 
-    list-style: none;
-  }
+// Comments amount
 
-  &__comments-li:not(:last-of-type) {
-    margin-bottom: 22px;
-  }
+.room-details__comments-amount {
+  margin: 8px 0 auto;
+}
 
-  &__rules {
-    display: grid;
-    grid-template-columns: 292px 341px;
-    gap: 69px;
-  }
+// Rules
 
-  &__cancellation {
-    margin: 0;
+.room-details__rules {
+  display: grid;
+  grid-template-columns: 292px 341px;
+  gap: 69px;
+}
 
-    line-height: 1.75;
-  }
+// Cancellation
+
+.room-details__cancellation {
+  margin: 0;
+  line-height: 1.75;
 }
