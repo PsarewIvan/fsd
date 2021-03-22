@@ -5,6 +5,11 @@
 .search-room {
   max-width: 320px;
   margin: 38px auto 29px;
+
+  @media (max-width: 340px) {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
 }
 
 // Wrapper

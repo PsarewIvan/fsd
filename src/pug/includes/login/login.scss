@@ -14,6 +14,11 @@
 .login__wrapper {
   max-width: 320px;
   margin: 40px auto 31px;
+
+  @media (max-width: 340px) {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
 }
 
 // Form
