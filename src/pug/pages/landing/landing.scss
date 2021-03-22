@@ -36,9 +36,14 @@
 
 .landing__block-search {
   position: relative;
-  width: $content-pc;
+  width: 100%;
+  max-width: $content-pc;
   padding: 0 40px;
   margin: 70px auto 20px;
+
+  @media (max-width: 460px) {
+    padding: 0;
+  }
 }
 
 // Title
@@ -60,17 +65,21 @@
 // Search
 
 .landing__search {
-  width: 380px;
+  max-width: 380px;
+
+  @media (max-width: 650px) {
+    margin: 0 auto;
+  }
 }
 
 // Login
 
 .landing__login {
-  width: 380px;
+  max-width: 380px;
 }
 
 // Reg
 
 .landing__login__reg {
-  width: 380px;
+  max-width: 380px;
 }
