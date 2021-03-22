@@ -24,6 +24,10 @@
   text-decoration: none;
   cursor: pointer;
 
+  &.-hovered- {
+    background-image: $gradient-main-50;
+  }
+
   &--low {
     min-width: 87px;
     min-height: max-content;
@@ -62,10 +66,6 @@
       background-repeat: no-repeat;
       background-position: center;
     }
-  }
-
-  &.-hovered- {
-    background-image: $gradient-main-50;
   }
 }
 
