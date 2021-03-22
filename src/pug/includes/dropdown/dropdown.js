@@ -111,7 +111,7 @@
       btn.addEventListener('click', function () {
         toggleVisibilityDropMenu(btn, dropdownMenu);
         const overlay = createOverlay();
-        document.body.append(overlay);
+        dropdown.append(overlay);
         overlay.addEventListener('click', () => {
           toggleVisibilityDropMenu(btn, dropdownMenu);
           overlay.remove();
