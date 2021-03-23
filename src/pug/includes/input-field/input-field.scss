@@ -1,40 +1,38 @@
 @import '../../../assets/scss/var.scss';
 
-.input-field {
-  &__title {
-    margin: 0 0 5px;
+// Title
 
-    font-family: $main-font;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: $heading;
-  }
+.input-field__title {
+  margin: 0 0 5px;
+  font-family: $main-font;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: $heading;
+}
 
-  &__input {
-    width: 100%;
-    margin: 0;
-    padding: 13px 45px 13px 15px;
+// Input
 
-    border: 1px solid $border;
-    border-radius: 4px;
+.input-field__input {
+  width: 100%;
+  margin: 0;
+  padding: 13px 45px 13px 15px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
+  transition: border-color 0.2s;
 
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: -0.2px;
-
-    transition: border-color 0.2s;
-
-    &::placeholder {
-      color: $placeholder;
-    }
+  &::placeholder {
+    color: $placeholder;
   }
 }
 
 /* Hover & Focus */
 
-@media(hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .input-field__input:hover {
     border-color: $border-active;
   }
