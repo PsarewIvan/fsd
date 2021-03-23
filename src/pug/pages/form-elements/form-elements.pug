@@ -192,8 +192,8 @@ block content
   .form-elements__wrapper(class= "form-elements__wrapper--dropdown")
     .form-elements__block
       .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
-        h3.form-elements__title= "Dropdown"
         +dropdown({
+          title: "Dropdown",
           label: "2 спальни, 2 кровати...",
           isButton: false,
           elements: [
@@ -203,8 +203,8 @@ block content
           ]
         })
       .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
-        h3.form-elements__title= "Dropdown"
         +dropdown({
+          title: "Dropdown",
           label: "2 спальни, 2 кровати...",
           isOpen: true,
           isButton: false,
@@ -216,8 +216,8 @@ block content
         })
     .form-elements__block(class="form-elements__block--dropdown")
       .form-elements__element(class="form-elements__element--min-margin")
-        h3.form-elements__title= "Dropdown"
         +dropdown({
+          title: "Dropdown",
           label: "Сколько гостей",
           isOpen: true,
           elements: [
@@ -228,8 +228,8 @@ block content
         })
     .form-elements__block(class="form-elements__block--dropdown")
       .form-elements__element(class="form-elements__element--min-margin")
-        h3.form-elements__title= "Dropdown"
         +dropdown({
+          title: "Dropdown",
           label: "Сколько гостей",
           isOpen: true,
           elements: [
