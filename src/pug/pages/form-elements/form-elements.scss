@@ -30,6 +30,10 @@
     grid-template-columns: 320px 320px;
     row-gap: 35px;
     max-width: 860px;
+
+    &--dropdown:not(:last-of-type) {
+      row-gap: 150px;
+    }
   }
 
   @media (max-width: 740px) {
@@ -41,7 +45,7 @@
   }
 
   &--dropdown:not(:last-of-type) {
-    margin-bottom: 54px;
+    margin-bottom: 174px;
   }
 
   &--checkbox:not(:last-of-type) {
