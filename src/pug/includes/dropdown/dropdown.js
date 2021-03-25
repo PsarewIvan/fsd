@@ -4,8 +4,8 @@ class Dropdown {
     this.button = dropdown.querySelector('.js-dropdown__drop-button');
     this.menu = dropdown.querySelector('.js-dropdown__menu');
     this.valueInputs = dropdown.querySelectorAll('.js-dropdown__input');
-    this.totalValue = 0;
-    this.clearButton = this.createButton(
+    this.declensions = this.getDeclensions();
+    this.buttonClear = this.createButton(
       '',
       'Очистить',
       'button-ctrl',
@@ -18,7 +18,7 @@ class Dropdown {
       'apply'
     );
     this.overlay = this.createOverlay();
-    this.clearNoJSClass();
+    this.clearNoJSClasses();
     this.activateButtonAttribute();
     this.addValueButtons();
     this.addControlButtons();
@@ -32,7 +32,7 @@ class Dropdown {
     this.button.setAttribute('aria-visible', 'true');
   }
 
-  clearNoJSClass() {
+  clearNoJSClasses() {
     this.button.classList.remove('-no-js-');
     this.menu.classList.remove('-no-js-');
   }
@@ -50,16 +50,8 @@ class Dropdown {
     if (this.button.dataset.button === 'true') {
       const controlWrapper = document.createElement('div');
       controlWrapper.classList.add('dropdown__controls');
-      controlWrapper.append(this.clearButton, this.applyButton);
+      controlWrapper.append(this.buttonClear, this.applyButton);
       this.menu.append(controlWrapper);
-    }
-  }
-
-  toggleCLearButton() {
-    if (this.isInputsEmpty) {
-      this.clearButton.classList.add('-disabled-');
-    } else {
-      this.clearButton.classList.remove('-disabled-');
     }
   }
 
@@ -69,20 +61,18 @@ class Dropdown {
     this.valueInputs.forEach((input) => {
       input.previousSibling.addEventListener(
         'click',
-        this.downButtonListener.bind(input)
+        this.updateValue.bind(input)
       );
-      input.nextSibling.addEventListener(
-        'click',
-        this.upButtonListener.bind(input)
+      input.nextSibling.addEventListener('click', this.updateValue.bind(input));
+      input.addEventListener(
+        'change',
+        this.changeStateOfValueButton.bind(input)
       );
-      input.addEventListener('change', this.valueInputListener.bind(input));
       input.addEventListener('change', this.toggleCLearButton.bind(this));
+      input.addEventListener('change', this.changeLabelText.bind(this));
     });
     this.applyButton.addEventListener('click', this.buttonListener.bind(this));
-    this.clearButton.addEventListener(
-      'click',
-      this.clearButtonListener.bind(this)
-    );
+    this.buttonClear.addEventListener('click', this.resetInputs.bind(this));
   }
 
   buttonListener(evt) {
@@ -91,27 +81,27 @@ class Dropdown {
     this.toggleOverlay();
   }
 
-  downButtonListener() {
+  updateValue(evt) {
     const currentValue = Number(this.value);
     const min = this.min ? Number(this.min) : 0;
-    if (currentValue - 1 >= min) {
-      this.value = currentValue - 1;
-    }
-    this.dispatchEvent(new Event('change'));
-    this.totalValue -= 1;
-  }
-
-  upButtonListener() {
-    const currentValue = Number(this.value);
     const max = this.max ? Number(this.max) : Infinity;
-    if (currentValue + 1 <= max) {
-      this.value = currentValue + 1;
+    let newValue;
+    switch (evt.target) {
+      case this.previousSibling:
+        newValue = currentValue - 1;
+        break;
+      case this.nextSibling:
+        newValue = currentValue + 1;
+        break;
+    }
+    const isNewValueInRange = min <= newValue <= max;
+    if (isNewValueInRange) {
+      this.value = newValue;
     }
     this.dispatchEvent(new Event('change'));
-    this.totalValue += 1;
   }
 
-  valueInputListener() {
+  changeStateOfValueButton() {
     const max = this.max ? Number(this.max) : Infinity;
     const min = this.min ? Number(this.min) : 0;
     const isBigger = Number(this.value) >= max;
@@ -128,11 +118,74 @@ class Dropdown {
     }
   }
 
-  clearButtonListener() {
+  toggleCLearButton() {
+    if (this.isInputsValueOnMin) {
+      this.buttonClear.classList.add('-disabled-');
+    } else {
+      this.buttonClear.classList.remove('-disabled-');
+    }
+  }
+
+  resetInputs() {
     this.valueInputs.forEach((input) => {
-      input.value = 0;
-      input.dispatchEvent(new Event('change'));
+      input.value = input.min || '0';
     });
+    input.dispatchEvent(new Event('change'));
+  }
+
+  changeLabelText() {
+    let labelText = '';
+    let sum = 0;
+    this.valueInputs.forEach((input) => {
+      sum += Number(input.value);
+    });
+    if (sum === 0) {
+      labelText = this.button.dataset.defaultLabel;
+    } else {
+      labelText =
+        this.commonInputsDeclension(sum) || this.multiInputsDeclension();
+    }
+    this.button.innerHTML = labelText;
+  }
+
+  commonInputsDeclension(sum) {
+    if (this.declensions.length === 1) {
+      return `${sum} ${this.getWordDeclension(sum, this.declensions[0])}`;
+    }
+  }
+
+  multiInputsDeclension() {
+    let labelText = '';
+    if (this.declensions.length > 1) {
+      let isFirstChange = true;
+      this.valueInputs.forEach((input, i) => {
+        if (!isFirstChange) {
+          labelText += `, `;
+        }
+        isFirstChange = false;
+        labelText += `${input.value} ${this.getWordDeclension(
+          Number(input.value),
+          this.declensions[i]
+        )}`;
+      });
+    }
+    return labelText;
+  }
+
+  getDeclensions() {
+    const declensions = [];
+    if (this.button.dataset.declension) {
+      declensions.push(this.stringDecompose(this.button.dataset.declension));
+    } else {
+      this.valueInputs.forEach((input) => {
+        declensions.push(this.stringDecompose(input.dataset.declension));
+      });
+    }
+    return declensions;
+  }
+
+  stringDecompose(string) {
+    return string.replace(/\s/g, '').split(',');
   }
 
   toggleMenu() {
@@ -181,18 +234,27 @@ class Dropdown {
     return btnElem;
   }
 
+  getWordDeclension(n, declensions) {
+    n = Math.abs(n) % 100;
+    let n1 = n % 10;
+    if (n > 10 && n < 20) return declensions[2];
+    if (n1 > 1 && n1 < 5) return declensions[1];
+    if (n1 == 1) return declensions[0];
+    return declensions[2];
+  }
+
   get menuStatus() {
     return this.button.dataset.open;
   }
 
-  get isInputsEmpty() {
-    let isEmpty = true;
+  get isInputsValueOnMin() {
+    let isMin = true;
     this.valueInputs.forEach((input) => {
-      if (input.value !== '0') {
-        isEmpty = false;
+      if (input.value !== (input.min || '0')) {
+        isMin = false;
       }
     });
-    return isEmpty;
+    return isMin;
   }
 }
 
