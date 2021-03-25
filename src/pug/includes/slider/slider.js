@@ -1,24 +1,22 @@
 import 'ion-rangeslider';
 
-
-(function() {
-  const sliders = document.querySelectorAll(".js-slider");
-
-  Array.prototype.forEach.call(sliders, slider => {
+(() => {
+  const sliders = document.querySelectorAll('.js-slider');
+  sliders.forEach((slider) => {
     const fromToValue = slider.querySelector('.slider__data-from-to');
-
     function changeValue(data) {
-      $(fromToValue).html(`${data.from_pretty}&#8381; - ${data.to_pretty}&#8381;`);
+      $(fromToValue).html(
+        `${data.from_pretty}&#8381; - ${data.to_pretty}&#8381;`
+      );
     }
 
-    $(".js-range-slider").ionRangeSlider({
-      onStart: function(data) {
+    $('.js-range-slider').ionRangeSlider({
+      onStart: (data) => {
         changeValue(data);
       },
-
-      onChange: function(data) {
+      onChange: (data) => {
         changeValue(data);
-      }
+      },
     });
   });
-})()
+})();
