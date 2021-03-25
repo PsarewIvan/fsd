@@ -13,6 +13,7 @@ form.form-filter
     +dropdown({
       title: "гости",
       label: "Сколько гостей",
+      commonDeclension: "Гость, Гостя, Гостей",
       elements: [
         {label: "Взрослые", name: "adult", min: "0", max: "10"},
         {label: "Дети", name: "children", min: "0"},
@@ -52,11 +53,11 @@ form.form-filter
   .form-filter__block
     +dropdown({
       title: "удобства номера",
-      label: "2 спальни, 2 кровати...",
+      label: "Выберите удобства номера",
       elements: [
-        {label: "спальни", name: "bedroom", min: "0", max: "5"},
-        {label: "кровати", name: "bed", min: "0"},
-        {label: "ванные комнаты", name: "bathroom", min: "0", max: "5"}
+        {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2", selfDeclension: "Спальня, Спальни, Спален"},
+        {label: "кровати", name: "bed2", min: "0", value: "2", selfDeclension: "Кровать, Кровати, Кроватей"},
+        {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5", value: "1", selfDeclension: "Ванная, Ванные, Ванных"}
       ]
     })
   .form-filter__block
