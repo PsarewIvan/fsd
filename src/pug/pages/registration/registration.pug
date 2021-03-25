@@ -1,0 +1,15 @@
+extends ../../layout/landing-base/landing-base
+include ../../includes/registration/registration
+
+block title
+  title Toxin
+
+block content
+  h1.visually-hidden= "Toxin - сайт по бронированию номеров в лучшем отеле"
+  section.landing__block(class=["landing__block--reg"])
+    .landing__block-reg
+      h2.visually-hidden= "Форма регистрации на сайте"
+      .landing__reg
+        +registration({
+          action: "#"
+        })

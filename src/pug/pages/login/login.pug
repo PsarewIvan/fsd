@@ -1,0 +1,13 @@
+extends ../../layout/landing-base/landing-base
+include ../../includes/login/login
+
+block title
+  title Toxin
+
+block content
+  h1.visually-hidden= "Toxin - сайт по бронированию номеров в лучшем отеле"
+  section.landing__block(class=["landing__block--login"])
+    .landing__block-login
+      h2.visually-hidden= "Форма входа на сайт"
+      .landing__login
+        +login({})
