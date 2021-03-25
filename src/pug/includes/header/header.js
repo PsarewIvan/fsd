@@ -23,3 +23,7 @@ class HeaderNavigation {
 document.querySelectorAll('.js-header__block').forEach((block) => {
   new HeaderNavigation(block);
 });
+
+if (window.location.pathname.slice(1, -5) === 'landing') {
+  document.querySelector('.js-header__main-link').removeAttribute('href');
+}
