@@ -41,8 +41,9 @@ block content
         +dropdown({
           title: "Dropdown",
           label: "Сколько гостей",
+          commonDeclension: "Гость, Гостя, Гостей",
           elements: [
-            {label: "Взрослые", name: "adult", min: "1", max: "10"},
+            {label: "Взрослые", name: "adult", min: "0", max: "10"},
             {label: "Дети", name: "children", min: "0"},
             {label: "Младенцы", name: "baby", min: "0"}
           ]
@@ -194,24 +195,24 @@ block content
       .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
         +dropdown({
           title: "Dropdown",
-          label: "2 спальни, 2 кровати...",
+          label: "Выберите удобства номера",
           isButton: false,
           elements: [
-            {label: "спальни", name: "bedroom", min: "1", max: "5", value: "2"},
-            {label: "кровати", name: "bed", min: "1", value: "10"},
-            {label: "ванные комнаты", name: "bathroom", min: "1", max: "5"}
+            {label: "спальни", name: "bedroom", min: "1", max: "5", value: "2", selfDeclension: "Спальня, Спальни, Спален"},
+            {label: "кровати", name: "bed", min: "1", value: "2", selfDeclension: "Кровать, Кровати, Кроватей"},
+            {label: "ванные комнаты", name: "bathroom", min: "1", max: "5", selfDeclension: "Ванная, Ванные, Ванных"}
           ]
         })
       .form-elements__element(class=["form-elements__element--min-margin", "form-elements__element--narrow"])
         +dropdown({
           title: "Dropdown",
-          label: "2 спальни, 2 кровати...",
+          label: "Выберите удобства номера",
           isOpen: true,
           isButton: false,
           elements: [
-            {label: "спальни", name: "bedroom2", min: "1", max: "5", value: "2"},
-            {label: "кровати", name: "bed2", min: "1", value: "2"},
-            {label: "ванные комнаты", name: "bathroom2", min: "1", max: "5"}
+            {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2", selfDeclension: "Спальня, Спальни, Спален"},
+            {label: "кровати", name: "bed2", min: "0", value: "2", selfDeclension: "Кровать, Кровати, Кроватей"},
+            {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5", selfDeclension: "Ванная, Ванные, Ванных"}
           ]
         })
     .form-elements__block(class="form-elements__block--dropdown")
@@ -220,8 +221,9 @@ block content
           title: "Dropdown",
           label: "Сколько гостей",
           isOpen: true,
+          commonDeclension: "Гость, Гостя, Гостей",
           elements: [
-            {label: "Взрослые", name: "adult2", min: "1", max: "10"},
+            {label: "Взрослые", name: "adult2", min: "0", max: "10"},
             {label: "Дети", name: "children2", min: "0"},
             {label: "Младенцы", name: "baby2", min: "0"}
           ]
@@ -231,9 +233,10 @@ block content
         +dropdown({
           title: "Dropdown",
           label: "Сколько гостей",
+          commonDeclension: "Гость, Гостя, Гостей",
           isOpen: true,
           elements: [
-            {label: "Взрослые", name: "adult3", min: "1", max: "10", value: "2"},
+            {label: "Взрослые", name: "adult3", min: "0", max: "10", value: "2"},
             {label: "Дети", name: "children3", min: "0", value: "1"},
             {label: "Младенцы", name: "baby3", min: "0"}
           ]
