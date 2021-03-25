@@ -1,10 +1,12 @@
-mixin dropdown({title, label, isOpen= "false", isButton= "true", elements})
+mixin dropdown({title, label, isOpen= "false", isButton= "true", elements, commonDeclension})
   .dropdown(class= "js-dropdown")
     h4.dropdown__title= title
     button.dropdown__drop-button(
       class= "js-dropdown__drop-button -no-js-"
       data-open= isOpen.toString()
       data-button= isButton.toString()
+      data-declension= commonDeclension
+      data-default-label= label
       aria-visible= 'false'
       tabindex= -1
     )= label
@@ -22,4 +24,5 @@ mixin dropdown({title, label, isOpen= "false", isButton= "true", elements})
             value= elem.value
             min= elem.min
             max= elem.max
+            data-declension= elem.selfDeclension
           )
