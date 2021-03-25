@@ -6,7 +6,8 @@ include ../user-link/user-link
   header.header
     .header__icon-wrapper
       a.header__main-link(
-        href= "index.html"
+        class= "js-header__main-link"
+        href= "landing.html"
       )
         img(
           class= "header__icon"
@@ -74,7 +75,7 @@ include ../user-link/user-link
           .header__log-wrapper
             +buttons({
               type: "link",
-              link: "#",
+              link: "login.html",
               label: "войти",
               modify: ["fill", "low"],
               classes: ["-login-button-"]
@@ -82,7 +83,7 @@ include ../user-link/user-link
           .header__reg-wrapper
             +buttons({
               type: "link",
-              link: "#",
+              link: "registration.html",
               label: "зарегистрироваться",
               modify: ["low"],
               classes: ["-reg-button-"]
