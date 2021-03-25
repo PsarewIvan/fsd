@@ -25,7 +25,8 @@ mixin search-room({action})
         })
       .search-room__button
         +buttons({
-          type: "submit",
+          type: "link",
+          link: "room-filter.html",
           label: "подобрать номер",
           modify: ["large"]
         })
