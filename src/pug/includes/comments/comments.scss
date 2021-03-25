@@ -1,36 +1,46 @@
 @import '../../../assets/scss/var.scss';
 
+// Comments
+
 .comments {
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 13px 10px;
+}
 
-  &__img {
-    border: 2px solid white;
-    border-radius: 50%;
-    box-shadow: 0px 10px 20px $avatar-shadow-color;
-  }
+// Image
 
-  &__name {
-    margin: 5px 0 0;
+.comments__img {
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 10px 20px $avatar-shadow-color;
+}
 
-    letter-spacing: 0.4px;
-    color: inherit;
-  }
+// Name
 
-  &__time {
-    display: block;
-    margin: 8px 0 0;
-  }
+.comments__name {
+  margin: 5px 0 0;
+  letter-spacing: 0.4px;
+  color: inherit;
+}
 
-  &__comment {
-    margin: 0;
+// Time
 
-    line-height: 1.7;
-  }
+.comments__time {
+  display: block;
+  margin: 8px 0 0;
+}
 
-  &__like {
-    display: flex;
-    justify-content: center;
-  }
+// Comment
+
+.comments__comment {
+  margin: 0;
+  line-height: 1.7;
+}
+
+// Like
+
+.comments__like {
+  display: flex;
+  justify-content: center;
 }

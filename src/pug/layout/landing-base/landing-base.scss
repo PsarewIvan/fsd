@@ -1,13 +1,14 @@
+// Landing base
+
 .landing-base {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   min-height: 100vh;
+}
 
-  &__content {
-    z-index: 1;
+// Content
 
-    // padding-bottom: 70px;
-
-    box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.25);
-  }
+.landing-base__content {
+  z-index: 1;
+  box-shadow: inset 0px -1px 0px rgba(31, 32, 65, 0.25);
 }

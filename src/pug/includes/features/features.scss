@@ -1,43 +1,44 @@
 @import '../../../assets/scss/var.scss';
 
-.features {
-  &__list {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
+// List
 
-    list-style: none;
+.features__list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+// List element
+
+.features__li {
+  min-height: 65px;
+  padding-left: 58px;
+  background-repeat: no-repeat;
+  background-position: 5px top;
+  border-bottom: 1px solid $features-border;
+  line-height: 1.7;
+
+  &:not(:last-of-type) {
+    margin-bottom: 24px;
   }
+}
 
-  &__li {
-    min-height: 65px;
-    padding-left: 58px;
+// List element title
 
-    background-repeat: no-repeat;
-    background-position: 5px top;
+.features__li-title {
+  margin: 0 0 5px;
+  padding: 0;
+  line-height: 1.2;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  color: $main-text;
+}
 
-    border-bottom: 1px solid $features-border;
+// Description
 
-    line-height: 1.7;
-
-    &:not(:last-of-type) {
-      margin-bottom: 24px;
-    }
-  }
-
-  &__li-title {
-    margin: 0 0 5px;
-    padding: 0;
-
-    line-height: 1.2;
-    letter-spacing: 0.4px;
-    font-weight: bold;
-    color: $main-text;
-  }
-
-  &__li-description {
-    margin: 0;
-    padding: 0;
-  }
+.features__li-description {
+  margin: 0;
+  padding: 0;
 }

@@ -5,10 +5,9 @@
 }
 
 .visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
+input[type='checkbox'].visually-hidden,
+input[type='radio'].visually-hidden {
   position: absolute;
-
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
@@ -17,9 +16,7 @@ input[type="radio"].visually-hidden {
   height: 1px;
   margin: -1px;
   padding: 0;
-
   border: 0;
-
   white-space: nowrap;
 }
 
@@ -44,10 +41,15 @@ body {
   padding: 145px 0;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $heading-font;
   font-weight: bold;
-  color: $heading
+  color: $heading;
 }
 
 input {
@@ -56,5 +58,5 @@ input {
 }
 
 .js-focus-visible :focus:not(.focus-visible) {
-    outline: 0
+  outline: 0;
 }

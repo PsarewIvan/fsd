@@ -1,24 +1,23 @@
 // Colors
 
-$dark-shade-100: #1F2041;
+$dark-shade-100: #1f2041;
 $dark-shade-75: rgba(31, 32, 65, 0.75);
 $dark-shade-50: rgba(31, 32, 65, 0.5);
 $dark-shade-25: rgba(31, 32, 65, 0.25);
 $dark-shade-10: rgba(31, 32, 65, 0.1);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
-$purple: #BC9CFF;
-$purple-40: #BC9CFF4d;
-$purple-50: #BC9CFF80;
-$purple-light: #8BA4F9;
-$purple-light-40: #8BA4F94D;
-$purple-light-50: #8BA4F980;
-$light-blue: #66D2EA;
-$green: #6FCF97;
-$white: #FFFFFF;
+$purple: #bc9cff;
+$purple-40: #bc9cff4d;
+$purple-50: #bc9cff80;
+$purple-light: #8ba4f9;
+$purple-light-40: #8ba4f94d;
+$purple-light-50: #8ba4f980;
+$light-blue: #66d2ea;
+$green: #6fcf97;
+$white: #ffffff;
 $gray-12: rgba(0, 0, 0, 0.12);
 $gray-20: rgba(0, 0, 0, 0.2);
-$gray: #F4F4F6;
-
+$gray: #f4f4f6;
 
 $main-text: $dark-shade-75;
 $light-text: $dark-shade-50;
@@ -36,51 +35,48 @@ $button-light: $purple;
 $button-like-checked: $purple;
 $button-like-fill: $white;
 $button-like-text: $dark-shade-25;
-
 $border-color-calendar: $dark-shade-25;
 $shadow-color-calendar: $dark-shade-5;
 $calendar-day-name-color: $purple;
 $calendar-day-prev-month-color: $dark-shade-25;
 $calendar-day-color: $dark-shade-50;
 $calendar-current-day-color: $white;
-
 $button-text-main: $white;
 $button-text-fill: $purple;
 $button-simple-hover: $dark-shade-50;
-
 $pagination-hover: $dark-shade-5;
 $pagination-text-current: $white;
-
 $features-border: $dark-shade-10;
-
 $avatar-shadow-color: $dark-shade-10;
-
 $cards-border-color: $gray-12;
 $cards-shadow-color: $gray-20;
 $cards-border-color: $dark-shade-10;
-
 $room-luxe: $purple;
-
 $diagram-text: $purple;
-
 $background-color: $gray;
-
 $footer-border: $dark-shade-10;
 
 // Gradients
 
 $gradient-main: linear-gradient(180deg, $purple 0%, $purple-light 100%);
-$gradient-main-40: linear-gradient(180deg, $purple-40 0%, $purple-light-40 100%);
-$gradient-main-50: linear-gradient(180deg, $purple-50 0%, $purple-light-50 100%);
+$gradient-main-40: linear-gradient(
+  180deg,
+  $purple-40 0%,
+  $purple-light-40 100%
+);
+$gradient-main-50: linear-gradient(
+  180deg,
+  $purple-50 0%,
+  $purple-light-50 100%
+);
 $gradient-second: linear-gradient(180deg, $green 0%, $light-blue 100%);
 $gradient-opacity: linear-gradient(180deg, $green 0%, $light-blue 100%);
 
 // Diagram-gradients
-$gradient-magnificently: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-$gradient-good: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-$gradient-passably: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-$gradient-disappointed: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-
+$gradient-magnificently: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+$gradient-good: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+$gradient-passably: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+$gradient-disappointed: linear-gradient(180deg, #919191 0%, #3d4975 100%);
 $gradient-like-button: $gradient-main;
 $gradient-radio-button: $gradient-main;
 $gradient-toggle-button: $gradient-main;
@@ -90,8 +86,18 @@ $gradient-slider: $gradient-second;
 $gradient-datepicker-current: $gradient-second;
 $gradient-datepicker-selected: $gradient-main;
 $gradient-datepicker-focus: $gradient-main-40;
-$gradient-slick-slider-prev: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-$gradient-slick-slider-next: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+$gradient-slick-slider-prev: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0) 99.99%,
+  rgba(255, 255, 255, 0) 100%
+);
+$gradient-slick-slider-next: linear-gradient(
+  270deg,
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0) 99.99%,
+  rgba(255, 255, 255, 0) 100%
+);
 
 // Sizes
 
