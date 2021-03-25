@@ -1,20 +1,28 @@
-(function() {
-  const checkboxLists = document.querySelectorAll('.checkbox');
+class Checkbox {
+  constructor(checkbox) {
+    this.checkbox = checkbox;
+    this.list = checkbox.querySelector('.checkbox__list');
+    this.button = checkbox.querySelector('.checkbox__title-button');
 
-  Array.prototype.forEach.call(checkboxLists, function(checkbox) {
-    const list = checkbox.querySelector('.checkbox__list');
-    const button = checkbox.querySelector('.checkbox__title-button');
-
-    if (button) {
-      if (!list.classList.contains('display-none')) {
-        button.classList.add('-open-');
-      }
-
-      button.addEventListener('click', (evt) => {
-        evt.preventDefault();
-        list.classList.toggle('display-none');
-        button.classList.toggle('-open-');
-      })
+    if (this.button) {
+      this.openList();
+      this.button.addEventListener('click', this.buttonListener.bind(this));
     }
-  })
-})();
+  }
+
+  openList() {
+    if (!this.list.classList.contains('display-none')) {
+      this.button.classList.add('-open-');
+    }
+  }
+
+  buttonListener(evt) {
+    evt.preventDefault();
+    this.list.classList.toggle('display-none');
+    this.button.classList.toggle('-open-');
+  }
+}
+
+document.querySelectorAll('.checkbox').forEach((checkbox) => {
+  new Checkbox(checkbox);
+});
