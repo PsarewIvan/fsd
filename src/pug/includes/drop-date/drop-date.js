@@ -1,6 +1,6 @@
 import 'air-datepicker';
 
-(function () {
+(() => {
   $('.drop-date').each(function () {
     const dropDate = $(this);
     const titleFrom = dropDate.find('.drop-date__input-from');
