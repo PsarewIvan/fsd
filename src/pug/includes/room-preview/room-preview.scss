@@ -15,17 +15,23 @@
 .room-preview__block {
   display: flex;
   justify-content: space-between;
-  width: 233px;
+  max-width: 233px;
   min-height: 34px;
   margin: 0 auto;
-  &:not(:last-of-type) {
-    align-items: baseline;
-    border-bottom: 1px solid $cards-border-color;
-  }
+  align-items: flex-end;
+}
 
-  &:last-of-type {
-    align-items: flex-end;
-  }
+// Link
+
+.room-preview__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 233px;
+  min-height: 34px;
+  margin: 0 auto;
+  border-bottom: 1px solid $cards-border-color;
+  text-decoration: none;
 }
 
 // Number
@@ -37,7 +43,7 @@
 
   &.-luxe-:after {
     content: 'люкс';
-    margin-left: 3px;
+    margin-left: 10px;
     font-size: 12px;
     color: $room-luxe;
     text-transform: uppercase;
@@ -77,4 +83,10 @@
   margin-left: 2px;
   font-size: 12px;
   color: $light-text;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .room-preview__link:hover {
+    opacity: 0.7;
+  }
 }
