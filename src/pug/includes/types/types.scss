@@ -16,7 +16,7 @@
 .types__element {
   display: flex;
   align-items: baseline;
-  margin-bottom: 52px;
+  margin-bottom: 51px;
 
   &:last-child {
     margin-bottom: 0;
@@ -60,7 +60,7 @@
   flex-shrink: 0;
   width: 37px;
   margin: 0 30px 0 0;
-  line-height: 1.2;
+  line-height: 1.22;
   color: $dark-shade-25;
   text-align: right;
 }
@@ -68,7 +68,11 @@
 // Lorem
 
 .types__lorem {
-  line-height: 1.23;
+  line-height: 1.25;
   font-weight: bold;
   color: $heading;
+}
+
+.types__element:last-child .types__lorem {
+  max-width: 310px;
 }
