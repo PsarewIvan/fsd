@@ -1,12 +1,14 @@
 include ../img-slider/img-slider
 include ../rating/rating
 
-mixin room-preview({number, price, isLuxe, rating, comments, images})
+mixin room-preview({number, link, price, isLuxe, rating, comments, images})
   if isLuxe
     - var luxe= "-luxe-"
+  if !link
+    - link= "#"
   .room-preview
     +img-slider({images})
-    .room-preview__block
+    a.room-preview__link(href= link)
       .room-preview__number-wrapper
         span.room-preview__number-symbol= "№ "
         span.room-preview__number(class= luxe)= number
