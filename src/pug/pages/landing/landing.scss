@@ -1,40 +1,21 @@
 @import '../../../assets/scss/var.scss';
 
-// Block
+// Landing
 
-.landing__block {
+.landing {
   display: flex;
   max-width: $body;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-position: top center;
   background-size: auto 100%;
-
-  &--search {
-    min-height: 830px;
-    background-image: url(img/title.jpg);
-  }
-
-  &--login,
-  &--reg {
-    justify-content: center;
-    align-items: center;
-    background-image: url(img/title2.jpg);
-    background-size: cover;
-  }
-
-  &--login {
-    min-height: 702px;
-  }
-
-  &--reg {
-    min-height: 683px;
-  }
+  min-height: 830px;
+  background-image: url(img/title.jpg);
 }
 
-// Block search
+// Wrapper
 
-.landing__block-search {
+.landing__wrapper {
   position: relative;
   width: 100%;
   max-width: $content-pc;
@@ -70,18 +51,4 @@
   @media (max-width: 650px) {
     margin: 0 auto;
   }
-}
-
-// Login
-
-.landing__block-login {
-  max-width: 380px;
-  width: 100%;
-}
-
-// Reg
-
-.landing__block-reg {
-  max-width: 380px;
-  width: 100%;
 }
