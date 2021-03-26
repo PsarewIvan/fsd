@@ -96,6 +96,10 @@
 
 .form-elements__button {
   width: 99px;
+
+  &:not(:last-of-type) {
+    margin-right: 20px;
+  }
 }
 
 // Element
@@ -144,18 +148,6 @@
     }
   }
 
-  &__button-block {
-    display: flex;
-
-    &:not(:last-of-type) {
-      margin-bottom: 30px;
-    }
-
-    &:not(:last-of-type) {
-      margin-right: 20px;
-    }
-  }
-
   &--bullet {
     max-width: 240px;
   }
@@ -194,7 +186,6 @@
 .form-elements__buttons-block {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
 
   &--simple {
     gap: 15px;
