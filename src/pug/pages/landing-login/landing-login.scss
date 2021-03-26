@@ -1,0 +1,23 @@
+@import '../../../assets/scss/var.scss';
+
+// Landing login
+
+.landing-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: $body;
+  min-height: 702px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url(img/title.jpg);
+  background-size: cover;
+}
+
+// Wrapper
+
+.landing-login__wrapper {
+  width: 100%;
+  max-width: 380px;
+}

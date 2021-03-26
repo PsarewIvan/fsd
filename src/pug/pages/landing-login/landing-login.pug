@@ -6,8 +6,7 @@ block title
 
 block content
   h1.visually-hidden= "Toxin - сайт по бронированию номеров в лучшем отеле"
-  section.landing__block(class=["landing__block--login"])
-    .landing__block-login
+  section.landing-login
+    .landing-login__wrapper
       h2.visually-hidden= "Форма входа на сайт"
-      .landing__login
-        +login({})
+      +login({})

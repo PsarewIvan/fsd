@@ -1,0 +1,23 @@
+@import '../../../assets/scss/var.scss';
+
+// Landing registration
+
+.landing-registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: $body;
+  min-height: 683px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url(img/title.jpg);
+  background-size: cover;
+}
+
+// Wrapper
+
+.landing-registration__wrapper {
+  width: 100%;
+  max-width: 380px;
+}
