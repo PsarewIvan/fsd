@@ -29,7 +29,7 @@ class Dropdown {
 
   activateButtonAttribute() {
     this.button.setAttribute('tabindex', '0');
-    this.button.setAttribute('aria-visible', 'true');
+    this.button.removeAttribute('aria-visible');
   }
 
   clearNoJSClasses() {
