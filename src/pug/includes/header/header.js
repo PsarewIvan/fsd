@@ -1,8 +1,15 @@
 class HeaderNavigation {
-  constructor(nav) {
+  constructor(nav, index) {
     this.button = nav.querySelector('.js-header__menu-button');
     this.list = nav.querySelector('.js-header__nav');
+    this.index = index;
+    this.addAriaControls();
     this.buttonListener();
+  }
+
+  addAriaControls() {
+    this.button.setAttribute('aria-controls', `menu-header-${this.index}`);
+    this.list.setAttribute('id', `menu-header-${this.index}`);
   }
 
   buttonListener() {
@@ -20,8 +27,8 @@ class HeaderNavigation {
   }
 }
 
-document.querySelectorAll('.js-header__block').forEach((block) => {
-  new HeaderNavigation(block);
+document.querySelectorAll('.js-header__block').forEach((block, i) => {
+  new HeaderNavigation(block, i);
 });
 
 if (window.location.pathname.slice(1, -5) === 'landing') {

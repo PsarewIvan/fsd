@@ -24,7 +24,6 @@ include ../user-link/user-link
         class= "header__menu-button js-header__menu-button"
         type= "button"
         aria-expanded= "false"
-        aria-controls= "menu__list"
         aria-label= "Открыть меню"
       )
         svg(
@@ -47,7 +46,9 @@ include ../user-link/user-link
             stroke-linecap= "round"
             stroke= "#000000"
           )
-      .header__nav(class= "js-header__nav")
+      .header__nav(
+        class= "js-header__nav"
+      )
         +nav({
           items: [
             {label: "О нас", href: "#"},
