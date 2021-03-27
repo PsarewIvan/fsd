@@ -1,7 +1,7 @@
 mixin slider({title, description, type, min, max, from, to, skin= "round", isMinMax= "true"})
   .slider(class="js-slider")
     h3.slider__title= title
-    .slider__data-from-to
+    .slider__data-from-to(class= "js-slider__data-from-to")
     input.js-range-slider(
       type= "text",
       name= "slider",
