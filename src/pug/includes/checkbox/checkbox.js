@@ -1,8 +1,8 @@
 class Checkbox {
   constructor(checkbox) {
     this.checkbox = checkbox;
-    this.list = checkbox.querySelector('.checkbox__list');
-    this.button = checkbox.querySelector('.checkbox__title-button');
+    this.list = checkbox.querySelector('.js-checkbox__list');
+    this.button = checkbox.querySelector('.js-checkbox__title-button');
 
     if (this.button) {
       this.openList();
@@ -23,6 +23,6 @@ class Checkbox {
   }
 }
 
-document.querySelectorAll('.checkbox').forEach((checkbox) => {
+document.querySelectorAll('.js-checkbox').forEach((checkbox) => {
   new Checkbox(checkbox);
 });

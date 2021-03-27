@@ -3,13 +3,15 @@ mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
     - var rich= "-rich-"
   if isHide === "true"
     - var hide= "display-none"
-  .checkbox
+  .checkbox(class= "js-checkbox")
     if isExpandable === "true"
       h3.checkbox__title
-        button.checkbox__title-button= title
+        button.checkbox__title-button(
+          class= "js-checkbox__title-button"
+        )= title
     else
       h3.checkbox__title= title
-    ul.checkbox__list(class= [mod, hide])
+    ul.checkbox__list(class= ["js-checkbox__list", hide])
       for elem in elements
         li.checkbox__element
           input.checkbox__input(
