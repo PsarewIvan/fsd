@@ -3,7 +3,7 @@ mixin input({title, type, name, value, placeholder, masked= false})
     h3.input-field__title= title
   if masked
     input.input-field__input(
-      class= "input-field__input--masked"
+      class= "input-field__input--masked js-input-field__input--masked"
       type= "text",
       name= name,
       value= value,
