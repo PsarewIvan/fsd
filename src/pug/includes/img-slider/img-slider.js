@@ -2,7 +2,7 @@ import 'slick-carousel';
 
 (() => {
   $(document).ready(function () {
-    $('.img-slider').slick({
+    $('.js-img-slider').slick({
       dots: true,
       infinite: true,
       nextArrow:
