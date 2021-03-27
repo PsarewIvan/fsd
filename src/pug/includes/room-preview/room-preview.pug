@@ -5,7 +5,7 @@ mixin room-preview({number, link, price, isLuxe, rating, comments, images})
   if isLuxe
     - var luxe= "-luxe-"
   if !link
-    - link= "#"
+    - link= "/mock-address/change-me"
   .room-preview
     +img-slider({images})
     a.room-preview__link(href= link)

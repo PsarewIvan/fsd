@@ -51,18 +51,18 @@ include ../user-link/user-link
       )
         +nav({
           items: [
-            {label: "О нас", href: "#"},
-            {label: "Услуги", href: "#", extend: [
-              {label: "Услуга 1", href: "#"},
-              {label: "Услуга 2", href: "#"},
-              {label: "Услуга 3", href: "#"}
+            {label: "О нас", href: "/mock-address/change-me"},
+            {label: "Услуги", href: "/mock-address/change-me", extend: [
+              {label: "Услуга 1", href: "/mock-address/change-me"},
+              {label: "Услуга 2", href: "/mock-address/change-me"},
+              {label: "Услуга 3", href: "/mock-address/change-me"}
             ]},
-            {label: "Вакансии", href: "#"},
-            {label: "Новости", href: "#"},
-            {label: "Соглашения", href: "#", extend: [
-              {label: "Соглашение 1", href: "#"},
-              {label: "Соглашение 2", href: "#"},
-              {label: "Соглашение 3", href: "#"}
+            {label: "Вакансии", href: "/mock-address/change-me"},
+            {label: "Новости", href: "/mock-address/change-me"},
+            {label: "Соглашения", href: "/mock-address/change-me", extend: [
+              {label: "Соглашение 1", href: "/mock-address/change-me"},
+              {label: "Соглашение 2", href: "/mock-address/change-me"},
+              {label: "Соглашение 3", href: "/mock-address/change-me"}
             ]}
           ],
           currentPage: current
@@ -70,7 +70,7 @@ include ../user-link/user-link
         if isLogin
           +user-link({
             name: "Юлий Цезарь",
-            link: "#"
+            link: "/mock-address/change-me"
           })
         else
           .header__log-wrapper
