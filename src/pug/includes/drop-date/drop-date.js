@@ -1,17 +1,17 @@
 import 'air-datepicker';
 
 (() => {
-  $('.drop-date').each(function () {
+  $('.js-drop-date').each(function () {
     const dropDate = $(this);
-    const titleFrom = dropDate.find('.drop-date__input-from');
-    const titleTo = dropDate.find('.drop-date__input-to');
+    const titleFrom = dropDate.find('.js-drop-date__input-from');
+    const titleTo = dropDate.find('.js-drop-date__input-to');
     const isMulti = titleFrom && titleTo;
     let inline = false;
-    if (dropDate.find('.drop-date__input').hasClass('-inline-')) {
+    if (dropDate.find('.js-drop-date__input').hasClass('-inline-')) {
       inline = true;
     }
 
-    dropDate.find('.js-drop-date').datepicker({
+    dropDate.find('.js-drop-date__input').datepicker({
       minDate: new Date(),
       range: true,
       multipleDatesSeparator: ' - ',
@@ -29,12 +29,12 @@ import 'air-datepicker';
 
     if (!titleFrom.length && !titleTo.length) {
       dropDate.addClass('drop-date__single');
-      dropDate.find('.js-drop-date').datepicker({
+      dropDate.find('.js-drop-date__input').datepicker({
         classes: '-filter-',
       });
     }
 
-    const datep = dropDate.find('.js-drop-date').data('datepicker');
+    const datep = dropDate.find('.js-drop-date__input').data('datepicker');
     const datepEl = datep.$datepicker;
     const applyButton = $(
       `<span class='datepicker--button-apply'>Применить</span>`
@@ -53,7 +53,7 @@ import 'air-datepicker';
 
     $(document).mouseup(function (e) {
       const dep = $('.datepickers-container');
-      const wrap = $('.drop-date');
+      const wrap = $('.js-drop-date');
       if (
         !dep.is(e.target) &&
         dep.has(e.target).length === 0 &&

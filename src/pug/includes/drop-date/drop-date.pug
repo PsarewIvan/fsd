@@ -1,21 +1,21 @@
 mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from, to, inline})
   if inline
     - var inlineClass= "-inline-"
-  .drop-date
+  .drop-date(class= "js-drop-date")
     if !isMultiple
       .drop-date__wrapper
         h4(
           class= ["drop-date__title", inlineClass]
         )= filterDate
         input(
-          class= ["drop-date__input", "js-drop-date", inlineClass]
+          class= ["drop-date__input", "js-drop-date__input", inlineClass]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= range
         )
     else
       input(
-        class= ["drop-date__datepicker-multi", "js-drop-date"]
+        class= ["drop-date__datepicker-multi", "js-drop-date__input"]
         type= "text"
       )
       .drop-date__block
@@ -23,7 +23,7 @@ mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from,
           class= ["drop-date__title", inlineClass]
         )= titleFrom
         input(
-          class= ["drop-date__input", "drop-date__input-from", inlineClass]
+          class= ["drop-date__input", "drop-date__input-from", inlineClass, "js-drop-date__input-from"]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= from
@@ -37,7 +37,7 @@ mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from,
           class= ["drop-date__title", inlineClass]
         )= titleTo
         input(
-          class= ["drop-date__input", "drop-date__input-to", inlineClass]
+          class= ["drop-date__input", "drop-date__input-to", inlineClass, "js-drop-date__input-to"]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= to
