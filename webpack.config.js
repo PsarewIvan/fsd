@@ -12,7 +12,7 @@ const { SourceMapDevToolPlugin } = require('webpack');
 
 const PATHS = {
   src: path.resolve(__dirname, './src'),
-  dist: path.join(__dirname, './dist')
+  dist: path.join(__dirname, './dist'),
 };
 
 const PAGES_DIR = `${PATHS.src}/pug/pages/`;
@@ -29,24 +29,22 @@ const optimization = () => {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
-  }
+          enforce: true,
+        },
+      },
+    },
+  };
 
   if (isProd) {
-    config.minimizer = [
-      new OptimizeCssAssetsPlugin(),
-      new TerserPlugin( )
-    ]
+    config.minimizer = [new OptimizeCssAssetsPlugin(), new TerserPlugin()];
   }
   return config;
 };
 
-const filename = ext => isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[contenthash].${ext}`;
+const filename = (ext) =>
+  isDev ? `${ext}/[name].${ext}` : `${ext}/[name].[contenthash].${ext}`;
 
-const cssLoaders = extra => {
+const cssLoaders = (extra) => {
   const loaders = [
     'style-loader',
     {
@@ -54,41 +52,39 @@ const cssLoaders = extra => {
       options: {
         hmr: isDev, // Hot Module Replacement, в режиме dev
         reloadAll: true,
-        publicPath: "../"
-      }
+        publicPath: '../',
+      },
     },
     {
       loader: 'css-loader',
       options: {
-        sourceMap: true
-      }
+        sourceMap: true,
+      },
     },
     {
       loader: 'postcss-loader',
       options: {
         sourceMap: true,
         config: {
-          path: './postcss.config.js'
-        }
-      }
-    }
+          path: './postcss.config.js',
+        },
+      },
+    },
   ];
 
   if (extra) {
     loaders.push({
       loader: extra,
-      options: { sourceMap: true }
+      options: { sourceMap: true },
     });
   }
 
   return loaders;
 };
 
-const babelOptions = preset => {
+const babelOptions = (preset) => {
   const options = {
-    presets: [
-      '@babel/preset-env'
-    ]
+    presets: ['@babel/preset-env'],
   };
 
   if (preset) {
@@ -102,7 +98,7 @@ module.exports = {
   context: PATHS.src,
   mode: 'development',
   entry: {
-    main:['@babel/polyfill', './index.js']
+    main: ['@babel/polyfill', './index.js'],
   },
   output: {
     filename: filename('js'),
@@ -113,36 +109,39 @@ module.exports = {
     extensions: ['.js', '.json', '.png', 'jpg', 'svg'],
     alias: {
       '@': PATHS.src,
-    }
+    },
   },
   devtool: isDev ? 'cheap-module-eval-source-map' : '',
   plugins: [
-    ...PAGES.map(page => new HTMLWebpackPlugin({
-      template: `${PAGES_DIR}/${page}/${page}.pug`,
-      filename: `${page}.html`
-    })),
+    ...PAGES.map(
+      (page) =>
+        new HTMLWebpackPlugin({
+          template: `${PAGES_DIR}/${page}/${page}.pug`,
+          filename: `${page}.html`,
+        })
+    ),
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         {
           from: `${PATHS.src}/favicon`,
-          to: PATHS.dist
+          to: PATHS.dist,
         },
         {
           from: `${PATHS.src}/assets/img`,
-          to: `${PATHS.dist}/img`
-        }
-      ]
+          to: `${PATHS.dist}/img`,
+        },
+      ],
     }),
     new MiniCssExtractPlugin({
       filename: filename('css'),
     }),
     new SourceMapDevToolPlugin({
-      filename: '[file].map'
+      filename: '[file].map',
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
     }),
   ],
   optimization: optimization(),
@@ -154,63 +153,63 @@ module.exports = {
     contentBase: PATHS.dist,
     overlay: {
       warnings: true,
-      errors: true
-    }
+      errors: true,
+    },
   },
   module: {
     rules: [
       {
         test: /\.pug$/,
         loader: {
-          loader: 'pug-loader'
-        }
+          loader: 'pug-loader',
+        },
       },
       {
         test: /\.css$/i,
-        use: cssLoaders()
+        use: cssLoaders(),
       },
       {
         test: /\.s[ac]ss$/i,
-        use: cssLoaders('sass-loader')
+        use: cssLoaders('sass-loader'),
       },
       {
         test: /\.(png|jpg|svg|gif)$/i,
-        exclude: [ `${PATHS.src}/assets/fonts` ],
+        exclude: [`${PATHS.src}/assets/fonts`],
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[contenthash].[ext]',
-            outputPath: 'img'
-          }
-        }
+            outputPath: 'img',
+          },
+        },
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/i,
-        include: [ `${PATHS.src}/assets/fonts` ],
+        include: [`${PATHS.src}/assets/fonts`],
         use: {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'fonts'
-          }
-        }
+            outputPath: 'fonts',
+          },
+        },
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
-          options: babelOptions()
-        }
+          options: babelOptions(),
+        },
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
-          options: babelOptions('@babel/preset-typescript')
-        }
-      }
-    ]
-  }
+          options: babelOptions('@babel/preset-typescript'),
+        },
+      },
+    ],
+  },
 };
