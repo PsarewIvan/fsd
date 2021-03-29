@@ -1,0 +1,52 @@
+@import '../../../assets/scss/var.scss';
+
+// Main
+
+.main {
+  max-width: $body;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @media (max-width: 660px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 8px;
+  }
+}
+
+// List
+
+.main__list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Link
+
+.main__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: max-content;
+}
+
+// Image
+
+.main__img {
+  max-width: 200px;
+  order: -1;
+}
+
+// Hover & Focus
+
+@media (hover: hover) and (pointer: fine) {
+  .main__link:hover {
+    opacity: 0.7;
+  }
+}
