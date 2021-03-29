@@ -173,7 +173,7 @@ module.exports = {
         use: cssLoaders('sass-loader'),
       },
       {
-        test: /\.(png|jpg|svg|gif)$/i,
+        test: /\.(png|jpg|jpeg|svg|gif)$/i,
         exclude: [`${PATHS.src}/assets/fonts`],
         use: {
           loader: 'file-loader',
