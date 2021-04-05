@@ -129,8 +129,8 @@ class Dropdown {
   resetInputs() {
     this.valueInputs.forEach((input) => {
       input.value = input.min || '0';
+      input.dispatchEvent(new Event('change'));
     });
-    input.dispatchEvent(new Event('change'));
   }
 
   changeLabelText() {
