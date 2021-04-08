@@ -1,12 +1,8 @@
 @import '../../../assets/scss/var.scss';
 
-// Promo
-
 .room-details__promo {
   margin-bottom: 70px;
 }
-
-// Main wrapper
 
 .room-details__main-wrapper {
   display: grid;
@@ -23,8 +19,6 @@
   }
 }
 
-// Reserve
-
 .room-details__reserve {
   max-width: 380px;
 
@@ -39,8 +33,6 @@
   }
 }
 
-// Section wrapper
-
 .room-details__section-wrapper {
   display: grid;
   grid-template-columns: max-content max-content;
@@ -54,13 +46,9 @@
   }
 }
 
-// Block wrapper
-
 .room-details__block-wrapper {
   max-width: 708px;
 }
-
-// Title
 
 .room-details__title {
   margin: 0 0 22px;
@@ -77,41 +65,29 @@
   }
 }
 
-// Info
-
 .room-details__info {
   display: flex;
   flex-direction: column;
   min-width: 280px;
 }
 
-// Features
-
 .room-details__features {
   margin-top: 2px;
 }
-
-// Showing
 
 .room-details__showing {
   min-width: 311px;
   margin-right: 36px;
 }
 
-// Comments title wrapper
-
 .room-details__comments-title-wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-// Comments
-
 .room-details__comments {
   margin-bottom: 34px;
 }
-
-// Comments list
 
 .room-details__comments-list {
   padding: 0;
@@ -119,20 +95,14 @@
   list-style: none;
 }
 
-// Comments list element
-
 .room-details__comments-li:not(:last-of-type) {
   margin-bottom: 22px;
 }
-
-// Comments amount
 
 .room-details__comments-amount {
   margin: 8px 0 auto 15px;
   white-space: nowrap;
 }
-
-// Additional
 
 .room-details__additional {
   display: grid;
@@ -145,19 +115,13 @@
   }
 }
 
-// Rules wrapper
-
 .room-details__rules-wrapper {
   max-width: 292px;
 }
 
-// Cancellation wrapper
-
 .room-details__cancellation-wrapper {
   max-width: 347px;
 }
-
-// Cancellation
 
 .room-details__cancellation {
   margin: 0 10px 0 0;

@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Title
-
 .checkbox__title {
   margin: 0 0 17px;
   font-family: $main-font;
@@ -12,8 +10,6 @@
   color: $heading;
 }
 
-// List
-
 .checkbox__list {
   display: flex;
   flex-direction: column;
@@ -21,8 +17,6 @@
   padding: 0;
   list-style: none;
 }
-
-// Element
 
 .checkbox__element {
   position: relative;
@@ -32,8 +26,6 @@
     margin-bottom: 10px;
   }
 }
-
-// Label
 
 .checkbox__label {
   display: flex;
@@ -67,8 +59,6 @@
   }
 }
 
-// Input
-
 .checkbox__input:checked + .checkbox__label {
   color: $button-text-checked;
 
@@ -79,8 +69,6 @@
     background-position: center 2px;
   }
 }
-
-// Title button
 
 .checkbox__title-button {
   position: relative;
@@ -112,8 +100,6 @@
   }
 }
 
-// Rich text
-
 .checkbox__rich-text {
   display: block;
   width: 230px;
@@ -121,8 +107,6 @@
   font-size: 12px;
   color: $light-text;
 }
-
-/* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .checkbox__label:hover {

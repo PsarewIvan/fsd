@@ -1,14 +1,10 @@
 @import '../../../assets/scss/var.scss';
 
-// Diagram
-
 .diagram {
   position: relative;
   width: 120px;
   line-height: 0;
 }
-
-// Text
 
 .diagram__text {
   position: absolute;
@@ -24,8 +20,6 @@
   color: $diagram-text;
   transform: translate(-50%, -50%);
 }
-
-// Text count
 
 .diagram__text-count {
   margin-bottom: 1px;

@@ -1,5 +1,3 @@
-// Form filter
-
 .form-filter {
   @media (max-width: 945px) {
     display: grid;
@@ -20,8 +18,6 @@
     grid-template-columns: 1fr;
   }
 }
-
-// Block
 
 .form-filter__block {
   max-width: 266px;

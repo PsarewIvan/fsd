@@ -1,19 +1,13 @@
 @import '../../../assets/scss/var.scss';
 
-// Pagination
-
 .pagination {
   display: flex;
   flex-direction: column;
 }
 
-// Wrapper
-
 .pagination__wrapper {
   display: flex;
 }
-
-// List
 
 .pagination__list {
   display: flex;
@@ -21,8 +15,6 @@
   padding: 0;
   list-style: none;
 }
-
-// Link
 
 .pagination__link {
   display: flex;
@@ -42,8 +34,6 @@
   }
 }
 
-// Next button
-
 .pagination__next-button {
   display: flex;
   justify-content: center;
@@ -59,8 +49,6 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-
-// Footer
 
 .pagination__footer {
   margin: 11px 0 0 5px;

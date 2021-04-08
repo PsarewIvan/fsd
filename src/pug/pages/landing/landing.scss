@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Landing
-
 .landing {
   display: flex;
   max-width: $body;
@@ -12,8 +10,6 @@
   min-height: 830px;
   background-image: url(img/title.jpg);
 }
-
-// Wrapper
 
 .landing__wrapper {
   position: relative;
@@ -26,8 +22,6 @@
     padding: 0;
   }
 }
-
-// Title
 
 .landing__title {
   position: absolute;
@@ -42,8 +36,6 @@
   text-align: right;
   color: $main-text;
 }
-
-// Search
 
 .landing__search {
   max-width: 380px;

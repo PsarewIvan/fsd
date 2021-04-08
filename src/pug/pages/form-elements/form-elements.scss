@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Title
-
 .form-elements__title {
   margin: 0 0 5px;
   font-family: $main-font;
@@ -15,8 +13,6 @@
     margin-bottom: 17px;
   }
 }
-
-// Wrapper
 
 .form-elements__wrapper {
   display: grid;
@@ -57,8 +53,6 @@
   }
 }
 
-// Block
-
 .form-elements__block {
   display: flex;
   flex-wrap: wrap;
@@ -92,8 +86,6 @@
   }
 }
 
-// Button
-
 .form-elements__button {
   width: 99px;
 
@@ -101,8 +93,6 @@
     margin-right: 20px;
   }
 }
-
-// Element
 
 .form-elements__element {
   width: 100%;
@@ -161,27 +151,19 @@
   }
 }
 
-// Narrow element
-
 .form-elements__narrow-element {
   max-width: 266px;
 }
-
-// Likes
 
 .form-elements__likes {
   display: flex;
   gap: 10px;
 }
 
-// Rating
-
 .form-elements__rating {
   display: flex;
   gap: 20px;
 }
-
-// Buttons block
 
 .form-elements__buttons-block {
   display: flex;
@@ -195,8 +177,6 @@
     margin-bottom: 29px;
   }
 }
-
-// Slider
 
 .form-elements__slider {
   max-width: 266px;

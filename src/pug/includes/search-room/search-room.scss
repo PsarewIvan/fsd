@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Search room
-
 .search-room {
   max-width: 320px;
   margin: 38px auto 29px;
@@ -12,16 +10,12 @@
   }
 }
 
-// Wrapper
-
 .search-room__wrapper {
   border: 1px solid $cards-border-color;
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
 }
-
-// Title
 
 .search-room__title {
   margin: 0 0 24px;
@@ -31,13 +25,9 @@
   letter-spacing: 0.5px;
 }
 
-// Date
-
 .search-room__date {
   margin-bottom: 23px;
 }
-
-// Guests
 
 .search-room__guests {
   margin-bottom: 31px;

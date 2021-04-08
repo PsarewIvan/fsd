@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// User link
-
 .user-link {
   display: flex;
   align-items: center;
@@ -10,14 +8,10 @@
   border-left: 1px solid $cards-border-color;
 }
 
-// Link
-
 .user-link__link {
   color: $light-text;
   text-decoration: none;
 }
-
-// Hover & focus
 
 @media (hover: hover) and (pointer: fine) {
   .user-link__link:hover {

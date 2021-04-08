@@ -1,8 +1,6 @@
 @import '~slick-carousel/slick/slick.scss';
 @import 'var.scss';
 
-// Slider
-
 .slick-slider {
   position: relative;
   overflow: hidden;
@@ -13,13 +11,9 @@
   }
 }
 
-// List
-
 .slick-list {
   height: 151px;
 }
-
-// Arrow
 
 .slick-arrow {
   position: absolute;
@@ -46,8 +40,6 @@
   }
 }
 
-// Previous
-
 .slick-prev {
   left: 0;
   background-image: $gradient-slick-slider-prev;
@@ -59,8 +51,6 @@
   }
 }
 
-// Next
-
 .slick-next {
   right: 0;
   background-image: $gradient-slick-slider-next;
@@ -71,8 +61,6 @@
     border-bottom: none;
   }
 }
-
-// Dots
 
 .slick-dots {
   position: absolute;
@@ -99,8 +87,6 @@
     cursor: pointer;
   }
 }
-
-// Active
 
 .slick-active {
   & button {

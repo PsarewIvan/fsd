@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Colors-type
-
 .colors-type {
   display: flex;
   justify-content: space-between;
@@ -18,8 +16,6 @@
   }
 }
 
-// Colors
-
 .colors-type__colors {
   margin-right: 35px;
 
@@ -28,8 +24,6 @@
     margin-bottom: 55px;
   }
 }
-
-// Type
 
 .colors-type__type {
   margin-right: 8px;

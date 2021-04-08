@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// List
-
 .features__list {
   display: flex;
   flex-direction: column;
@@ -9,8 +7,6 @@
   margin: 0;
   list-style: none;
 }
-
-// List element
 
 .features__li {
   min-height: 65px;
@@ -25,8 +21,6 @@
   }
 }
 
-// List element title
-
 .features__li-title {
   margin: 0 0 5px;
   padding: 0;
@@ -35,8 +29,6 @@
   font-weight: bold;
   color: $main-text;
 }
-
-// Description
 
 .features__li-description {
   margin: 0;

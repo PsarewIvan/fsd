@@ -1,15 +1,11 @@
 @import '../../../assets/scss/var.scss';
 
-// Room cards
-
 .room-cards {
   border: 1px solid $cards-border-color;
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
 }
-
-// Form
 
 .room-cards__form {
   max-width: 320px;
@@ -21,15 +17,11 @@
   }
 }
 
-// Title block
-
 .room-cards__title-block {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-
-// Title
 
 .room-cards__title {
   position: relative;
@@ -48,58 +40,40 @@
   }
 }
 
-// Price block
-
 .room-cards__price-block {
   margin: 0;
   color: $light-text;
 }
-
-// Price
 
 .room-cards__price {
   margin-right: 1px;
   font-weight: bold;
 }
 
-// Price text
-
 .room-cards__price-text {
   font-size: 12px;
 }
-
-// Symbol
 
 .room-cards__symbol {
   font-size: 14px;
 }
 
-// Calendar
-
 .room-cards__calendar {
   margin-bottom: 22px;
 }
 
-// Guests
-
 .room-cards__guests {
   margin-bottom: 22px;
 }
-
-// Table
 
 .room-cards__table {
   width: 100%;
   border-collapse: collapse;
 }
 
-// Calculation
-
 .room-cards__calculation {
   margin-bottom: 18px;
 }
-
-// Table data
 
 .room-cards__td {
   margin: 0;
@@ -117,8 +91,6 @@
 .room-cards tr td {
   padding-bottom: 16px;
 }
-
-// Option table data
 
 .room-cards__option-td {
   width: 20px;
@@ -139,8 +111,6 @@
     cursor: pointer;
   }
 }
-
-// Total
 
 .room-cards__total {
   display: grid;

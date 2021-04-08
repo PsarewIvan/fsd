@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Header
-
 .header {
   position: relative;
   display: flex;
@@ -11,16 +9,12 @@
   padding: 0 40px;
 }
 
-// Wrapper
-
 .header__wrapper {
   min-height: 70px;
   padding: 15px 0;
   background-color: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
-
-// Block
 
 .header__block {
   display: flex;
@@ -32,15 +26,11 @@
   }
 }
 
-// Main link
-
 .header__main-link {
   display: flex;
   align-items: center;
   min-width: 106px;
 }
-
-// Icon wrapper
 
 .header__icon-wrapper {
   position: absolute;
@@ -48,8 +38,6 @@
   display: flex;
   align-items: center;
 }
-
-// Icon
 
 .header__icon {
   height: 40px;
@@ -59,8 +47,6 @@
     height: 14px;
   }
 }
-
-// Nav
 
 .header__nav {
   display: grid;
@@ -82,8 +68,6 @@
   }
 }
 
-// Menu button
-
 .header__menu-button {
   display: none;
   margin: 0 0 0 auto;
@@ -96,8 +80,6 @@
     display: block;
   }
 }
-
-// Nav icon
 
 .header__nav-icon {
   stroke: $heading;
@@ -116,19 +98,13 @@
   }
 }
 
-// Registration
-
 .header__reg-wrapper {
   width: 196px;
 }
 
-// Login
-
 .header__log-wrapper {
   width: 87px;
 }
-
-/* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .header__main-link:hover[href] {

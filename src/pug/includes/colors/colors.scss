@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Colors
-
 .colors {
   display: flex;
   flex-direction: column;
@@ -11,13 +9,9 @@
   list-style: none;
 }
 
-// Wrapper
-
 .colors__wrapper {
   justify-content: space-between;
 }
-
-// Element
 
 .colors__element {
   display: flex;
@@ -63,8 +57,6 @@
   }
 }
 
-// Description
-
 .colors__description {
   display: flex;
   flex-direction: column;
@@ -75,8 +67,6 @@
   font-weight: bold;
   color: $heading;
 }
-
-// Span
 
 .colors span:last-child {
   font-weight: normal;

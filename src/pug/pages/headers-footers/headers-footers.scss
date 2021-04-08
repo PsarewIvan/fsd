@@ -1,12 +1,8 @@
 @import '../../../assets/scss/var.scss';
 
-// Body
-
 .headers-footers__body {
   background-color: $background-color;
 }
-
-// Block
 
 .headers-footers__block {
   &--short {
@@ -18,8 +14,6 @@
     margin-bottom: 40px;
   }
 }
-
-// Content
 
 .headers-footers__body .content {
   padding-top: 140px;

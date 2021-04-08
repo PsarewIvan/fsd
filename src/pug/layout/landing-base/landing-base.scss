@@ -1,12 +1,8 @@
-// Landing base
-
 .landing-base {
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   min-height: 100vh;
 }
-
-// Content
 
 .landing-base__content {
   z-index: 1;

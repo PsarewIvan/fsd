@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Main
-
 .main {
   max-width: $body;
   padding: 0 40px;
@@ -15,8 +13,6 @@
     padding: 0 8px;
   }
 }
-
-// List
 
 .main__list {
   display: grid;
@@ -39,8 +35,6 @@
   }
 }
 
-// Link
-
 .main__link {
   display: flex;
   flex-direction: column;
@@ -52,14 +46,10 @@
   }
 }
 
-// Image
-
 .main__img {
   max-width: 200px;
   order: -1;
 }
-
-// Hover & Focus
 
 @media (hover: hover) and (pointer: fine) {
   .main__link:hover {

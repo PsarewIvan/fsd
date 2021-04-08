@@ -1,12 +1,8 @@
 @import '../../../assets/scss/var.scss';
 
-// SLider
-
 .slider {
   position: relative;
 }
-
-// Title
 
 .slider__title {
   margin: 0 0 16px;
@@ -18,16 +14,12 @@
   color: $heading;
 }
 
-// Data from to
-
 .slider__data-from-to {
   position: absolute;
   top: 0;
   right: 4px;
   font-size: 12px;
 }
-
-// Description
 
 .slider__description {
   margin: 11px 0 0;

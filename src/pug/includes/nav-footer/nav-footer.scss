@@ -1,14 +1,10 @@
 @import '../../../assets/scss/var.scss';
 
-// Nav footer
-
 .nav-footer {
   @media (max-width: 870px) {
     width: max-content;
   }
 }
-
-// Title
 
 .nav-footer__title {
   margin: 0 0 22px 0;
@@ -51,8 +47,6 @@
   }
 }
 
-// List
-
 .nav-footer__list {
   display: grid;
   grid-auto-flow: row;
@@ -62,14 +56,10 @@
   list-style: none;
 }
 
-// Link
-
 .nav-footer__link {
   color: $light-text;
   text-decoration: none;
 }
-
-// Nav
 
 .nav-footer__nav {
   @media (max-width: 870px) {
@@ -81,8 +71,6 @@
     }
   }
 }
-
-/* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .nav-footer__link:hover {

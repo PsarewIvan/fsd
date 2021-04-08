@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Room preview
-
 .room-preview {
   width: 270px;
   padding-bottom: 17px;
@@ -9,8 +7,6 @@
   background-color: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
-
-// Block
 
 .room-preview__block {
   display: flex;
@@ -20,8 +16,6 @@
   margin: 0 auto;
   align-items: flex-end;
 }
-
-// Link
 
 .room-preview__link {
   display: flex;
@@ -33,8 +27,6 @@
   border-bottom: 1px solid $cards-border-color;
   text-decoration: none;
 }
-
-// Number
 
 .room-preview__number {
   font-size: 19px;
@@ -50,34 +42,24 @@
   }
 }
 
-// Number symbol
-
 .room-preview__number-symbol {
   font-weight: bold;
   color: $heading;
 }
-
-// Comments
 
 .room-preview__comments {
   margin-bottom: 6px;
   color: $light-text;
 }
 
-// Price
-
 .room-preview__price {
   font-weight: bold;
   color: $light-text;
 }
 
-// Comments count
-
 .room-preview__comments-count {
   font-weight: bold;
 }
-
-// Price description
 
 .room-preview__price-descr {
   margin-left: 2px;

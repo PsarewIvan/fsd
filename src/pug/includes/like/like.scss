@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Like button
-
 .like-button {
   position: relative;
   padding: 0;
@@ -53,8 +51,6 @@
   }
 }
 
-// Count
-
 .like-button__count {
   display: inline-block;
   margin-left: 25px;
@@ -62,8 +58,6 @@
   color: $button-like-text;
   transform: translateX(-50%);
 }
-
-/* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .like-button:not(.like-button--liked):hover {

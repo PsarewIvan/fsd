@@ -1,11 +1,7 @@
 @import '~air-datepicker/dist/css/datepicker.css';
 @import 'var.scss';
 
-// Variable
-
 $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0.984375L17.0156 9L9 17.0156L7.59375 15.6094L13.1719 9.98438H0.984375V8.01562H13.1719L7.59375 2.39062L9 0.984375Z' fill='url(%23paint0_linear)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear' x1='9' y1='-13' x2='9' y2='31' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
-
-// Styles from Double dropdown
 
 .datepicker {
   width: 320px;
@@ -21,28 +17,20 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
   }
 }
 
-// Pointer
-
 .datepicker--pointer {
   display: none;
 }
-
-// Navigation
 
 .datepicker--nav {
   padding: 16px 16px 30px;
   border-bottom: none;
 }
 
-// Navigation title
-
 .datepicker--nav-title {
   font-size: 19px;
   line-height: 1.22;
   color: $heading;
 }
-
-// Navigation action
 
 .datepicker--nav-action {
   background-image: $svg-arrow;
@@ -58,19 +46,13 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
   }
 }
 
-// Content
-
 .datepicker--content {
   padding: 0 22px 5px;
 }
 
-// Days names
-
 .datepicker--days-names {
   margin-bottom: 12px;
 }
-
-// Day name
 
 .datepicker--day-name {
   font-size: inherit;
@@ -78,13 +60,9 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
   text-transform: none;
 }
 
-// Cell
-
 .datepicker--cell {
   height: 40px;
 }
-
-// Cell day
 
 .datepicker--cell-day {
   font-weight: normal;
@@ -209,15 +187,11 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
   }
 }
 
-// Buttons
-
 .datepicker--buttons {
   justify-content: space-between;
   padding: 9px 20px;
   border: none;
 }
-
-// Button
 
 .datepicker--button {
   flex: 0;
@@ -238,8 +212,6 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
   }
 }
 
-// Styles from filter date
-
 .datepicker.-filter- {
   max-width: 266px;
 
@@ -251,8 +223,6 @@ $svg-arrow: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 1
     height: 32.28px;
   }
 }
-
-/* Hover & Focus */
 
 @media (hover: hover) and (pointer: fine) {
   .datepicker--nav-action:hover {

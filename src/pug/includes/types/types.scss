@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Types
-
 .types {
   display: flex;
   flex-direction: column;
@@ -10,8 +8,6 @@
   padding: 0;
   list-style: none;
 }
-
-// Element
 
 .types__element {
   display: flex;
@@ -54,8 +50,6 @@
   }
 }
 
-// Names
-
 .types__names {
   flex-shrink: 0;
   width: 37px;
@@ -64,8 +58,6 @@
   color: $dark-shade-25;
   text-align: right;
 }
-
-// Lorem
 
 .types__lorem {
   line-height: 1.25;

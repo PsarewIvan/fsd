@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Room filter
-
 .room-filter {
   display: grid;
   grid-template-columns: 266px auto;
@@ -21,8 +19,6 @@
     padding: 0 10px;
   }
 }
-
-// Rooms title
 
 .room-filter__rooms-title {
   margin: 0 0 22px;

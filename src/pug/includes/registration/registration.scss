@@ -1,15 +1,11 @@
 @import '../../../assets/scss/var.scss';
 
-// Registration
-
 .registration {
   border: 1px solid $cards-border-color;
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
 }
-
-// Wrapper
 
 .registration__wrapper {
   max-width: 320px;
@@ -21,13 +17,9 @@
   }
 }
 
-// Form
-
 .registration__form {
   margin-bottom: 30px;
 }
-
-// Title
 
 .registration__title {
   margin: 0 0 21px;
@@ -36,8 +28,6 @@
   line-height: 1.2;
   letter-spacing: 0.5px;
 }
-
-// Element
 
 .registration {
   &__name,
@@ -53,8 +43,6 @@
     margin-bottom: 24px;
   }
 }
-
-// Log
 
 .registration__log {
   display: flex;

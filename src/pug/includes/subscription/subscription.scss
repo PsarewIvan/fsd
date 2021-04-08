@@ -1,7 +1,5 @@
 @import '../../../assets/scss/var.scss';
 
-// Title
-
 .subscription__title {
   margin: 0 0 6px;
   font-family: $main-font;
@@ -12,13 +10,9 @@
   color: $heading;
 }
 
-// Form
-
 .subscription__form {
   position: relative;
 }
-
-// Button
 
 .subscription__button {
   position: absolute;
