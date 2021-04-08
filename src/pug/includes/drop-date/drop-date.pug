@@ -1,4 +1,4 @@
-mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from, to, inline})
+mixin drop-date({isMultiple= false, titleFrom, titleTo, title, range, from, to, inline})
   if inline
     - var inlineClass= "-inline-"
   .drop-date(class= "js-drop-date")
@@ -6,7 +6,7 @@ mixin drop-date({isMultiple= false, titleFrom, titleTo, filterDate, range, from,
       .drop-date__wrapper
         h4(
           class= ["drop-date__title", inlineClass]
-        )= filterDate
+        )= title
         input(
           class= ["drop-date__input", "js-drop-date__input", inlineClass]
           type= "text"
