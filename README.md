@@ -11,6 +11,11 @@
 - Сборка проекта для прода: `npm run build`
 - Запуск локального сервера для разработки: `npm start`
 
+## Как скачать
+
+- По HTTPS: `git clone https://github.com/PsarewIvan/fsd.git`
+- По SSH: `git@github.com:PsarewIvan/fsd.git`
+
 ## Сторонние библиотеки
 
 - [Normalize.css](https://necolas.github.io/normalize.css/)
