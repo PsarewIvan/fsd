@@ -14,17 +14,15 @@ mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
     ul.checkbox__list(class= ["js-checkbox__list", hideClass])
       for elem in elements
         li.checkbox__element
-          input.checkbox__input(
+          label(
+            class= ["checkbox__label", "js-checkbox__label", richClass]
+          )= elem.label
+            input.checkbox__input(
             class= "visually-hidden js-checkbox__input",
-            id= elem.id,
             type="checkbox",
             name= name,
             value= elem.value,
             checked= elem.checked
           )
-          label(
-            class= ["checkbox__label", "js-checkbox__label", richClass],
-            for= elem.id
-          )= elem.label
           if isRich
             span.checkbox__rich-text= elem.description
