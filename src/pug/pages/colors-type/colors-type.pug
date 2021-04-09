@@ -1,5 +1,6 @@
 extends ../../layout/uikit-base/uikit-base
 include ../../includes/colors/colors
+include ../../includes/types/types
 
 block title
   title Colors &amp; Type
@@ -19,4 +20,11 @@ block content
         ]
       })
     .colors-type__type
-      include ../../includes/types/types
+      +types({
+        values: [
+          {name: "H1", description: "This one is the sub-section or widget title", mod: "h1"},
+          {name: "H2", description: "Next one is the item title inside widgets", mod: "h2"},
+          {name: "H3", description: "This is a label or CTA text", mod: "h3"},
+          {name: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", mod: "body"}
+        ]
+      })

@@ -1,0 +1,4 @@
+mixin type-element({name, description, mod})
+  .type-element(class=`type-element--${mod}`)
+    p.type-element__names= name
+    span.type-element__lorem= description
