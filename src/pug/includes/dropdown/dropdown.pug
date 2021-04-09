@@ -2,7 +2,7 @@ mixin dropdown({title, label, isOpen= "false", isButton= "true", elements, commo
   .dropdown(class= "js-dropdown")
     h4.dropdown__title= title
     button.dropdown__drop-button(
-      class= "js-dropdown__drop-button -no-js-"
+      class= "js-dropdown__drop-button dropdown__drop-button--no-js"
       data-open= isOpen.toString()
       data-button= isButton.toString()
       data-declension= commonDeclension
@@ -10,7 +10,7 @@ mixin dropdown({title, label, isOpen= "false", isButton= "true", elements, commo
       aria-visible= 'false'
       tabindex= -1
     )= label
-    .dropdown__menu(class= "js-dropdown__menu -no-js-")
+    .dropdown__menu(class= "js-dropdown__menu dropdown__menu--no-js")
       for elem in elements
         if elem.value == undefined
           - elem.value= "0"

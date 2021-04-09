@@ -1,5 +1,8 @@
 class Dropdown {
   constructor(dropdown) {
+    this.DROP_BUTTON_CLASS = 'dropdown__drop-button';
+    this.MENU_CLASS = 'dropdown__menu';
+    this.CTRL_BUTTON_CLASS = 'dropdown__button-ctrl';
     this.dropdown = dropdown;
     this.button = dropdown.querySelector('.js-dropdown__drop-button');
     this.menu = dropdown.querySelector('.js-dropdown__menu');
@@ -22,7 +25,9 @@ class Dropdown {
     this.activateButtonAttribute();
     this.addValueButtons();
     this.addControlButtons();
-    this.openMenu();
+    if (this.menuStatus === 'true') {
+      this.toggleMenu();
+    }
     this.addListeners();
     this.activateValueButtons();
   }
@@ -33,8 +38,8 @@ class Dropdown {
   }
 
   clearNoJSClasses() {
-    this.button.classList.remove('-no-js-');
-    this.menu.classList.remove('-no-js-');
+    this.button.classList.remove(`${this.DROP_BUTTON_CLASS}--no-js`);
+    this.menu.classList.remove(`${this.MENU_CLASS}--no-js`);
   }
 
   addValueButtons() {
@@ -77,6 +82,8 @@ class Dropdown {
 
   buttonListener(evt) {
     evt.preventDefault();
+    const dataOpen = this.menuStatus === 'true' ? 'false' : 'true';
+    this.button.dataset.open = dataOpen;
     this.toggleMenu();
     this.toggleOverlay();
   }
@@ -120,9 +127,9 @@ class Dropdown {
 
   toggleCLearButton() {
     if (this.isInputsValueOnMin) {
-      this.buttonClear.classList.add('-disabled-');
+      this.buttonClear.classList.add(`${this.CTRL_BUTTON_CLASS}--disabled`);
     } else {
-      this.buttonClear.classList.remove('-disabled-');
+      this.buttonClear.classList.remove(`${this.CTRL_BUTTON_CLASS}--disabled`);
     }
   }
 
@@ -188,13 +195,6 @@ class Dropdown {
     return string.replace(/\s/g, '').split(',');
   }
 
-  toggleMenu() {
-    const dataOpen = this.menuStatus === 'true' ? 'false' : 'true';
-    this.button.dataset.open = dataOpen;
-    this.button.classList.toggle('-open-');
-    this.menu.classList.toggle('-open-');
-  }
-
   toggleOverlay() {
     if (this.menuStatus === 'true') {
       this.dropdown.append(this.overlay);
@@ -203,11 +203,9 @@ class Dropdown {
     }
   }
 
-  openMenu() {
-    if (this.menuStatus === 'true') {
-      this.button.classList.toggle('-open-');
-      this.menu.classList.toggle('-open-');
-    }
+  toggleMenu() {
+    this.button.classList.toggle(`${this.DROP_BUTTON_CLASS}--open`);
+    this.menu.classList.toggle(`${this.MENU_CLASS}--open`);
   }
 
   activateValueButtons() {
