@@ -61,12 +61,11 @@ block content
             titleFrom: "date Dropdown",
             titleTo: "date Dropdown"
           })
-        .form-elements__element
-          .form-elements__narrow-element
-            +drop-date({
-              isMultiple: false,
-              title: "filter date dropdown"
-            })
+        .form-elements__element(class="form-elements__element--narrow")
+          +drop-date({
+            isMultiple: false,
+            title: "filter date dropdown"
+          })
         .form-elements__element(class="form-elements__element--narrow")
           +subscription({
             title: "subscription text field",
@@ -85,15 +84,15 @@ block content
           })
         .form-elements__element(class="form-elements__element--margin")
           h3.form-elements__title(class="form-elements__title--margin-large")= "Radio buttons"
-            +radio({
-              name: "sex",
-              elements: [
-                {label: "Мужчина", id: "man", value: "man", checked: true},
-                {label: "Женщина", id: "woman", value: "woman", checked: false}
-              ]
-            })
-          .form-elements__element(class="form-elements__element--margin")
-            h3.form-elements__title(class="form-elements__title--margin-large")= "Toggle"
+          +radio({
+            name: "sex",
+            elements: [
+              {label: "Мужчина", id: "man", value: "man", checked: true},
+              {label: "Женщина", id: "woman", value: "woman", checked: false}
+            ]
+          })
+        .form-elements__element(class="form-elements__element--margin")
+          h3.form-elements__title(class="form-elements__title--margin-large")= "Toggle"
           +toggle({
             name: "special",
             elements: [
