@@ -1,48 +1,36 @@
 mixin drop-date({isMultiple= false, titleFrom, titleTo, title, range, from, to, inline})
   if inline
-    - var inlineClass= "-inline-"
-  .drop-date(class= "js-drop-date")
+    - var inlineClass= "drop-date--inline"
+  .drop-date(class= ["js-drop-date", inlineClass])
     if !isMultiple
       .drop-date__wrapper
-        h4(
-          class= ["drop-date__title", inlineClass]
-        )= title
+        h4(class= "drop-date__title")= title
         input(
-          class= ["drop-date__input", "js-drop-date__input", inlineClass]
+          class= ["drop-date__input", "js-drop-date__input"]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= range
         )
     else
       input(
-        class= ["drop-date__datepicker-multi", "js-drop-date__input", inlineClass]
+        class= ["drop-date__datepicker-multi", "js-drop-date__input"]
         type= "text"
       )
       .drop-date__block
-        h4(
-          class= ["drop-date__title", inlineClass]
-        )= titleFrom
+        h4(class= "drop-date__title")= titleFrom
         input(
-          class= ["drop-date__input", "drop-date__input-from", inlineClass, "js-drop-date__input-from"]
+          class= ["drop-date__input", "js-drop-date__input-from"]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= from
         )
-        .drop-date__icon(
-          class= inlineClass
-          aria-hidden= "true"
-          )
+        .drop-date__icon(aria-hidden= "true")
       .drop-date__block
-        h4(
-          class= ["drop-date__title", inlineClass]
-        )= titleTo
+        h4(class= "drop-date__title")= titleTo
         input(
-          class= ["drop-date__input", "drop-date__input-to", inlineClass, "js-drop-date__input-to"]
+          class= ["drop-date__input", "js-drop-date__input-to"]
           type= "text"
           placeholder= "ДД.ММ.ГГГГ"
           value= to
         )
-        .drop-date__icon(
-          class= inlineClass
-          aria-hidden= "true"
-          )
+        .drop-date__icon(aria-hidden= "true")

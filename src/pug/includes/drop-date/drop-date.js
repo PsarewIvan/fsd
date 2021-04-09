@@ -2,16 +2,21 @@ import 'air-datepicker';
 
 (() => {
   $('.js-drop-date').each(function () {
+    const INLINE_CLASS = 'drop-date--inline';
+    const SINGLE_CLASS = 'drop-date__single';
+    const TITLE_FROM_CLASS = '.js-drop-date__input-from';
+    const TITLE_TO_CLASS = '.js-drop-date__input-to';
+    const INPUT_CLASS = '.js-drop-date__input';
     const dropDate = $(this);
-    const titleFrom = dropDate.find('.js-drop-date__input-from');
-    const titleTo = dropDate.find('.js-drop-date__input-to');
+    const titleFrom = dropDate.find(TITLE_FROM_CLASS);
+    const titleTo = dropDate.find(TITLE_TO_CLASS);
     const isMulti = titleFrom && titleTo;
     let inline = false;
-    if (dropDate.find('.js-drop-date__input').hasClass('-inline-')) {
+    if (dropDate.hasClass(INLINE_CLASS)) {
       inline = true;
     }
 
-    dropDate.find('.js-drop-date__input').datepicker({
+    dropDate.find(INPUT_CLASS).datepicker({
       minDate: new Date(),
       range: true,
       multipleDatesSeparator: ' - ',
@@ -28,13 +33,13 @@ import 'air-datepicker';
     });
 
     if (!titleFrom.length && !titleTo.length) {
-      dropDate.addClass('drop-date__single');
-      dropDate.find('.js-drop-date__input').datepicker({
+      dropDate.addClass(SINGLE_CLASS);
+      dropDate.find(INPUT_CLASS).datepicker({
         classes: '-filter-',
       });
     }
 
-    const datep = dropDate.find('.js-drop-date__input').data('datepicker');
+    const datep = dropDate.find(INPUT_CLASS).data('datepicker');
     const datepEl = datep.$datepicker;
     const applyButton = $(
       `<span class='datepicker--button-apply'>Применить</span>`

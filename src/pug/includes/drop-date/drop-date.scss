@@ -6,6 +6,14 @@
   justify-content: space-between;
   max-width: 320px;
 
+  &--inline {
+    .drop-date__icon,
+    .drop-date__title,
+    .drop-date__input {
+      display: none;
+    }
+  }
+
   &__wrapper {
     width: 100%;
   }
@@ -36,10 +44,6 @@
     opacity: 0.4;
     pointer-events: none;
     transition: opacity 0.2s;
-
-    &.-inline- {
-      display: none;
-    }
   }
 
   &__title {
@@ -50,10 +54,6 @@
     font-weight: bold;
     text-transform: uppercase;
     color: $heading;
-
-    &.-inline- {
-      display: none;
-    }
   }
 
   &__input {
@@ -63,10 +63,6 @@
     border: 1px solid $border;
     border-radius: 4px;
     transition: border-color 0.2s;
-
-    &.-inline- {
-      display: none;
-    }
 
     &:hover {
       @media (hover: hover) and (pointer: fine) {
