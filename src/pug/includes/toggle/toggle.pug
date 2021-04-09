@@ -1,12 +1,13 @@
 mixin toggle({name, elements})
-  for elem in elements
-    .toggle__element
-      input.toggle__input(
-        class= "visually-hidden"
-        id= elem.id,
-        type="checkbox",
-        name= name,
-        value= elem.value,
-        checked= elem.checked
-      )
-      label.toggle__label(for= elem.id)= elem.label
+  .toggle
+    for elem in elements
+      .toggle__element
+        input.toggle__input(
+          class= "visually-hidden"
+          id= elem.id,
+          type="checkbox",
+          name= name,
+          value= elem.value,
+          checked= elem.checked
+        )
+        label.toggle__label(for= elem.id)= elem.label
