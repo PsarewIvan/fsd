@@ -46,19 +46,7 @@
       transition: border-color 0.2s, left 0.2s;
     }
 
-    &:hover {
-      @media (hover: hover) and (pointer: fine) {
-        color: $button-text-hover;
-
-        &::before {
-          border-color: $button-border-hover;
-        }
-      }
-    }
-  }
-
-  &__input {
-    &:checked + .toggle__label {
+    &--checked {
       color: $button-text-checked;
 
       &::before {
@@ -71,14 +59,22 @@
       }
     }
 
-    &:focus {
-      & + .toggle__label {
-        text-decoration: underline;
-        color: $button-text-hover;
-      }
+    &--focus {
+      text-decoration: underline;
+      color: $button-text-hover;
 
-      & + .toggle__label::before {
+      &::before {
         border-color: $button-border-hover;
+      }
+    }
+
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        color: $button-text-hover;
+
+        &::before {
+          border-color: $button-border-hover;
+        }
       }
     }
   }
