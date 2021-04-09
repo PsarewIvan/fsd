@@ -1,18 +1,19 @@
 mixin input({title, type, name, value, placeholder, masked= false})
-  if title
-    h3.input-field__title= title
-  if masked
-    input.input-field__input(
-      class= "input-field__input--masked js-input-field__input--masked"
-      type= "text",
-      name= name,
-      value= value,
-      placeholder= "ДД.ММ.ГГГГ"
-    )
-  else
-    input.input-field__input(
-      type= type,
-      name= name,
-      value= value,
-      placeholder= placeholder
-    )
+  .input-field
+    if title
+      h3.input-field__title= title
+    if masked
+      input.input-field__input(
+        class= "input-field__input--masked js-input-field__input--masked"
+        type= "text",
+        name= name,
+        value= value,
+        placeholder= "ДД.ММ.ГГГГ"
+      )
+    else
+      input.input-field__input(
+        type= type,
+        name= name,
+        value= value,
+        placeholder= placeholder
+      )
