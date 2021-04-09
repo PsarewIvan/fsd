@@ -1,0 +1,50 @@
+@import '../../../assets/scss/var.scss';
+
+.type-element {
+  display: flex;
+  align-items: baseline;
+
+  &--h1 {
+    font-size: 24px;
+  }
+
+  &--h2 {
+    font-size: 19px;
+  }
+
+  &--h3 {
+    font-size: 12px;
+    line-height: 1.25;
+
+    & .type-element__lorem {
+      text-transform: uppercase;
+    }
+  }
+
+  &--body {
+    font-size: 14px;
+    line-height: 1.7;
+
+    & .type-element__lorem {
+      max-width: 310px;
+      font-weight: normal;
+      line-height: 1.5;
+      color: $main-text;
+    }
+  }
+
+  &__names {
+    flex-shrink: 0;
+    width: 37px;
+    margin: 0 30px 0 0;
+    line-height: 1.22;
+    color: $dark-shade-25;
+    text-align: right;
+  }
+
+  &__lorem {
+    line-height: 1.25;
+    font-weight: bold;
+    color: $heading;
+  }
+}
