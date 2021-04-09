@@ -1,6 +1,18 @@
 @import '../../../assets/scss/var.scss';
 
 .form-elements {
+  max-width: $content-pc;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 1120px) {
+    max-width: 860px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 0 8px;
+  }
+
   &__title {
     margin: 0 0 5px;
     font-family: $main-font;
@@ -19,14 +31,10 @@
     display: grid;
     grid-template-columns: 320px 320px 320px;
     justify-content: space-between;
-    max-width: $content-pc;
-    padding: 0 40px;
-    margin: 0 auto;
 
     @media (max-width: 1120px) {
       grid-template-columns: 320px 320px;
       row-gap: 35px;
-      max-width: 860px;
 
       &--dropdown:not(:last-of-type) {
         row-gap: 175px;
@@ -47,10 +55,6 @@
 
     &--checkbox:not(:last-of-type) {
       margin-bottom: 106px;
-    }
-
-    @media (max-width: 400px) {
-      padding: 0 8px;
     }
   }
 
