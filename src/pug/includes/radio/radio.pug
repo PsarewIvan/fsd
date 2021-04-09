@@ -1,13 +1,13 @@
 mixin radio({name, elements})
-  ul.radio__list
-    for elem in elements
-      li.radio__element
-        input.radio__input(
-          class= "visually-hidden"
-          id= elem.id,
-          type="radio",
-          name= name,
-          value= elem.value,
-          checked= elem.checked
-        )
-        label.radio__label(for= elem.id)= elem.label
+  .radio(class= "js-radio")
+    ul.radio__list(class= "js-radio__list")
+      for elem in elements
+        li.radio__element
+          label.radio__label(class= "js-radio__label")= elem.label
+            input.radio__input(
+              class= "visually-hidden js-radio__input"
+              type="radio",
+              name= name,
+              value= elem.value,
+              checked= elem.checked
+            )
