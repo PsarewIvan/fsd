@@ -1,0 +1,57 @@
+@import '../../../assets/scss/var.scss';
+
+.colors-element {
+  display: flex;
+
+  &::before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  &--color {
+    &--dark-100::before {
+      background-color: $dark-shade-100;
+    }
+
+    &--dark-75::before {
+      background-color: $dark-shade-75;
+    }
+
+    &--dark-50::before {
+      background-color: $dark-shade-50;
+    }
+
+    &--dark-25::before {
+      background-color: $dark-shade-25;
+    }
+
+    &--dark-5::before {
+      background-color: $dark-shade-5;
+    }
+
+    &--purple::before {
+      background-color: $purple;
+    }
+
+    &--green::before {
+      background-color: $green;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    align-self: center;
+    font-size: 19px;
+    line-height: 1.45;
+    font-weight: bold;
+    color: $heading;
+  }
+
+  & span:last-child {
+    font-weight: normal;
+  }
+}
