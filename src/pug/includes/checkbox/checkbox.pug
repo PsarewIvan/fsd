@@ -1,8 +1,8 @@
 mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
   if isRich
-    - var rich= "-rich-"
+    - var richClass= "checkbox__label--rich"
   if isHide === "true"
-    - var hide= "display-none"
+    - var hideClass= "checkbox__list--hidden"
   .checkbox(class= "js-checkbox")
     if isExpandable === "true"
       h3.checkbox__title
@@ -11,11 +11,11 @@ mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
         )= title
     else
       h3.checkbox__title= title
-    ul.checkbox__list(class= ["js-checkbox__list", hide])
+    ul.checkbox__list(class= ["js-checkbox__list", hideClass])
       for elem in elements
         li.checkbox__element
           input.checkbox__input(
-            class= "visually-hidden",
+            class= "visually-hidden js-checkbox__input",
             id= elem.id,
             type="checkbox",
             name= name,
@@ -23,7 +23,7 @@ mixin checkbox({name, title, isExpandable, isRich, isHide, elements})
             checked= elem.checked
           )
           label(
-            class= ["checkbox__label", rich],
+            class= ["checkbox__label", "js-checkbox__label", richClass],
             for= elem.id
           )= elem.label
           if isRich
