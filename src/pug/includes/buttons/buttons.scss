@@ -22,6 +22,20 @@
   text-decoration: none;
   cursor: pointer;
 
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      background-image: $gradient-main-50;
+    }
+  }
+
+  &:focus {
+    background-image: $gradient-main-50;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
   &.-hovered- {
     background-image: $gradient-main-50;
   }
@@ -44,6 +58,18 @@
     color: $button-text-fill;
 
     &.-hovered- {
+      background-image: none;
+      color: $button-simple-hover;
+    }
+
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        background-image: none;
+        color: $button-simple-hover;
+      }
+    }
+
+    &:focus {
       background-image: none;
       color: $button-simple-hover;
     }
@@ -88,28 +114,4 @@
 
 .buttons--large .buttons__span {
   padding: 5px 30px;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .buttons:hover {
-    background-image: $gradient-main-50;
-  }
-
-  .buttons--simple:hover {
-    background-image: none;
-    color: $button-simple-hover;
-  }
-}
-
-.buttons:focus {
-  background-image: $gradient-main-50;
-}
-
-.buttons--simple:focus {
-  background-image: none;
-  color: $button-simple-hover;
-}
-
-.buttons:active {
-  opacity: 0.4;
 }

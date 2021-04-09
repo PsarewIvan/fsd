@@ -5,39 +5,39 @@
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
-}
 
-.login__wrapper {
-  max-width: 320px;
-  margin: 40px auto 31px;
+  &__wrapper {
+    max-width: 320px;
+    margin: 40px auto 31px;
 
-  @media (max-width: 340px) {
-    margin-left: 9px;
-    margin-right: 9px;
+    @media (max-width: 340px) {
+      margin-left: 9px;
+      margin-right: 9px;
+    }
   }
-}
 
-.login__form {
-  margin-bottom: 30px;
-}
+  &__form {
+    margin-bottom: 30px;
+  }
 
-.login__title {
-  margin: 0 0 22px;
-  padding: 0;
-  font-size: 24px;
-  line-height: 1.1;
-  letter-spacing: 0.5px;
-}
+  &__title {
+    margin: 0 0 22px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+  }
 
-.login__form-email {
-  margin-bottom: 10px;
-}
+  &__form-email {
+    margin-bottom: 10px;
+  }
 
-.login__form-pass {
-  margin-bottom: 20px;
-}
+  &__form-pass {
+    margin-bottom: 20px;
+  }
 
-.login__log {
-  display: flex;
-  justify-content: space-between;
+  &__log {
+    display: flex;
+    justify-content: space-between;
+  }
 }

@@ -6,19 +6,19 @@
   min-height: 30px;
   padding-left: 20px;
   border-left: 1px solid $cards-border-color;
-}
 
-.user-link__link {
-  color: $light-text;
-  text-decoration: none;
-}
+  &__link {
+    color: $light-text;
+    text-decoration: none;
 
-@media (hover: hover) and (pointer: fine) {
-  .user-link__link:hover {
-    opacity: 0.7;
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        opacity: 0.7;
+      }
+    }
+
+    &:focus {
+      opacity: 0.7;
+    }
   }
-}
-
-.user-link__link:focus {
-  opacity: 0.7;
 }

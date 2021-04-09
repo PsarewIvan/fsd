@@ -7,67 +7,67 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
 
-.colors__wrapper {
-  justify-content: space-between;
-}
-
-.colors__element {
-  display: flex;
-  margin-bottom: 20px;
-
-  &:last-of-type {
-    margin-bottom: 0;
+  &__wrapper {
+    justify-content: space-between;
   }
 
-  &::before {
-    content: '';
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
+  &__element {
+    display: flex;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+    }
+
+    &--dark-shade-100::before {
+      background-color: $dark-shade-100;
+    }
+
+    &--dark-shade-75::before {
+      background-color: $dark-shade-75;
+    }
+
+    &--dark-shade-50::before {
+      background-color: $dark-shade-50;
+    }
+
+    &--dark-shade-25::before {
+      background-color: $dark-shade-25;
+    }
+
+    &--dark-shade-5::before {
+      background-color: $dark-shade-5;
+    }
+
+    &--purple::before {
+      background-color: $purple;
+    }
+
+    &--green::before {
+      background-color: $green;
+    }
   }
 
-  &--dark-shade-100::before {
-    background-color: $dark-shade-100;
+  &__description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    align-self: center;
+    font-size: 19px;
+    line-height: 1.45;
+    font-weight: bold;
+    color: $heading;
   }
 
-  &--dark-shade-75::before {
-    background-color: $dark-shade-75;
+  & span:last-child {
+    font-weight: normal;
   }
-
-  &--dark-shade-50::before {
-    background-color: $dark-shade-50;
-  }
-
-  &--dark-shade-25::before {
-    background-color: $dark-shade-25;
-  }
-
-  &--dark-shade-5::before {
-    background-color: $dark-shade-5;
-  }
-
-  &--purple::before {
-    background-color: $purple;
-  }
-
-  &--green::before {
-    background-color: $green;
-  }
-}
-
-.colors__description {
-  display: flex;
-  flex-direction: column;
-  margin-left: 40px;
-  align-self: center;
-  font-size: 19px;
-  line-height: 1.45;
-  font-weight: bold;
-  color: $heading;
-}
-
-.colors span:last-child {
-  font-weight: normal;
 }

@@ -17,28 +17,28 @@
     grid-template-columns: 1fr;
     padding: 0;
   }
+
+  &__body {
+    background-color: $background-color;
+  }
+
+  &__block {
+    width: 380px;
+
+    &:last-of-type {
+      width: 320px;
+    }
+
+    @media (max-width: 380px) {
+      width: 100%;
+    }
+  }
+
+  &__element:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
 }
 
 .cards__body .content {
   padding-top: 150px;
-}
-
-.cards__body {
-  background-color: $background-color;
-}
-
-.cards__block {
-  width: 380px;
-
-  @media (max-width: 380px) {
-    width: 100%;
-  }
-
-  &:last-of-type {
-    width: 320px;
-  }
-}
-
-.cards__element:not(:last-of-type) {
-  margin-bottom: 40px;
 }

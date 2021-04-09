@@ -5,31 +5,29 @@
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 0px 25px $cards-shadow-color;
-}
 
-.registration__wrapper {
-  max-width: 320px;
-  margin: 40px auto 29px;
+  &__wrapper {
+    max-width: 320px;
+    margin: 40px auto 29px;
 
-  @media (max-width: 340px) {
-    margin-left: 9px;
-    margin-right: 9px;
+    @media (max-width: 340px) {
+      margin-left: 9px;
+      margin-right: 9px;
+    }
   }
-}
 
-.registration__form {
-  margin-bottom: 30px;
-}
+  &__form {
+    margin-bottom: 30px;
+  }
 
-.registration__title {
-  margin: 0 0 21px;
-  padding: 0;
-  font-size: 24px;
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-}
+  &__title {
+    margin: 0 0 21px;
+    padding: 0;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+  }
 
-.registration {
   &__name,
   &__surname,
   &__email,
@@ -42,9 +40,9 @@
   &__special {
     margin-bottom: 24px;
   }
-}
 
-.registration__log {
-  display: flex;
-  justify-content: space-between;
+  &__log {
+    display: flex;
+    justify-content: space-between;
+  }
 }

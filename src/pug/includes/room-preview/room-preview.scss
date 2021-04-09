@@ -6,69 +6,69 @@
   border-radius: 4px;
   background-color: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
 
-.room-preview__block {
-  display: flex;
-  justify-content: space-between;
-  max-width: 233px;
-  min-height: 34px;
-  margin: 0 auto;
-  align-items: flex-end;
-}
-
-.room-preview__link {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  max-width: 233px;
-  min-height: 34px;
-  margin: 0 auto;
-  border-bottom: 1px solid $cards-border-color;
-  text-decoration: none;
-}
-
-.room-preview__number {
-  font-size: 19px;
-  font-weight: bold;
-  color: $heading;
-
-  &.-luxe-:after {
-    content: 'люкс';
-    margin-left: 10px;
-    font-size: 12px;
-    color: $room-luxe;
-    text-transform: uppercase;
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 233px;
+    min-height: 34px;
+    margin: 0 auto;
+    align-items: flex-end;
   }
-}
 
-.room-preview__number-symbol {
-  font-weight: bold;
-  color: $heading;
-}
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    max-width: 233px;
+    min-height: 34px;
+    margin: 0 auto;
+    border-bottom: 1px solid $cards-border-color;
+    text-decoration: none;
 
-.room-preview__comments {
-  margin-bottom: 6px;
-  color: $light-text;
-}
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        opacity: 0.7;
+      }
+    }
+  }
 
-.room-preview__price {
-  font-weight: bold;
-  color: $light-text;
-}
+  &__number {
+    font-size: 19px;
+    font-weight: bold;
+    color: $heading;
 
-.room-preview__comments-count {
-  font-weight: bold;
-}
+    &.-luxe-:after {
+      content: 'люкс';
+      margin-left: 10px;
+      font-size: 12px;
+      color: $room-luxe;
+      text-transform: uppercase;
+    }
+  }
 
-.room-preview__price-descr {
-  margin-left: 2px;
-  font-size: 12px;
-  color: $light-text;
-}
+  &__number-symbol {
+    font-weight: bold;
+    color: $heading;
+  }
 
-@media (hover: hover) and (pointer: fine) {
-  .room-preview__link:hover {
-    opacity: 0.7;
+  &__comments {
+    margin-bottom: 6px;
+    color: $light-text;
+  }
+
+  &__price {
+    font-weight: bold;
+    color: $light-text;
+  }
+
+  &__comments-count {
+    font-weight: bold;
+  }
+
+  &__price-descr {
+    margin-left: 2px;
+    font-size: 12px;
+    color: $light-text;
   }
 }

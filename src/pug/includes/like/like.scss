@@ -25,6 +25,16 @@
     background-repeat: no-repeat;
   }
 
+  &:not(.like-button--liked):hover {
+    @media (hover: hover) and (pointer: fine) {
+      border-color: $button-like-checked;
+    }
+  }
+
+  &:not(.like-button--liked):focus {
+    border-color: $button-like-checked;
+  }
+
   &--liked {
     border: none;
     background-image: $gradient-like-button;
@@ -49,22 +59,12 @@
       background-color: $button-like-fill;
     }
   }
-}
 
-.like-button__count {
-  display: inline-block;
-  margin-left: 25px;
-  font-size: 10px;
-  color: $button-like-text;
-  transform: translateX(-50%);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .like-button:not(.like-button--liked):hover {
-    border-color: $button-like-checked;
+  &__count {
+    display: inline-block;
+    margin-left: 25px;
+    font-size: 10px;
+    color: $button-like-text;
+    transform: translateX(-50%);
   }
-}
-
-.like-button:not(.like-button--liked):focus {
-  border-color: $button-like-checked;
 }

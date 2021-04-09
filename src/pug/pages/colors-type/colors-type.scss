@@ -14,17 +14,17 @@
   @media (max-width: 400px) {
     padding: 0 8px;
   }
-}
 
-.colors-type__colors {
-  margin-right: 35px;
+  &__colors {
+    margin-right: 35px;
 
-  @media (max-width: 660px) {
-    margin-right: 0;
-    margin-bottom: 55px;
+    @media (max-width: 660px) {
+      margin-right: 0;
+      margin-bottom: 55px;
+    }
   }
-}
 
-.colors-type__type {
-  margin-right: 8px;
+  &__type {
+    margin-right: 8px;
+  }
 }

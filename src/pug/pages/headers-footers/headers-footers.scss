@@ -1,20 +1,22 @@
 @import '../../../assets/scss/var.scss';
 
-.headers-footers__body {
-  background-color: $background-color;
-}
-
-.headers-footers__block {
-  &--short {
-    max-width: 768px;
-    margin: 0 auto;
+.headers-footers {
+  &__body {
+    background-color: $background-color;
   }
 
-  &:not(:last-of-type) {
-    margin-bottom: 40px;
-  }
-}
+  &__block {
+    &--short {
+      max-width: 768px;
+      margin: 0 auto;
+    }
 
-.headers-footers__body .content {
-  padding-top: 140px;
+    &:not(:last-of-type) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__body .content {
+    padding-top: 140px;
+  }
 }

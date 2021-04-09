@@ -1,80 +1,86 @@
 @import '../../../assets/scss/var.scss';
 
-.radio__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.radio__element {
-  position: relative;
-
-  &:not(:last-of-type) {
-    margin-right: 20px;
+.radio {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
-}
 
-.radio__label {
-  display: block;
-  min-height: 20px;
-  padding-left: 30px;
-  line-height: 1.28;
-  color: $button-text;
-  user-select: none;
-  cursor: pointer;
-  transition: color 0.2s;
+  &__element {
+    position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 0;
+    &:not(:last-of-type) {
+      margin-right: 20px;
+    }
+  }
+
+  &__label {
     display: block;
-    box-sizing: border-box;
-    width: 20px;
-    height: 20px;
-    border: 1px solid $border;
-    border-radius: 50%;
-    transition: border-color 0.2s;
-  }
-}
+    min-height: 20px;
+    padding-left: 30px;
+    line-height: 1.28;
+    color: $button-text;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.2s;
 
-.radio__input:checked + .radio__label {
-  color: $button-text-checked;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $border;
+      border-radius: 50%;
+      transition: border-color 0.2s;
+    }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-image: $gradient-radio-button;
-  }
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        color: $button-text-hover;
 
-  &::before {
-    border-color: $button-border-checked;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .radio__label:hover {
-    color: $button-text-hover;
+        &::before {
+          border-color: $button-border-hover;
+        }
+      }
+    }
   }
 
-  .radio__label:hover::before {
-    border-color: $button-border-hover;
+  &__input {
+    &:checked + .radio__label {
+      color: $button-text-checked;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-image: $gradient-radio-button;
+      }
+
+      &::before {
+        border-color: $button-border-checked;
+      }
+    }
+
+    &:focus {
+      & + .radio__label {
+        text-decoration: underline;
+        color: $button-text-hover;
+      }
+
+      & + .radio__label::before {
+        border-color: $button-border-hover;
+      }
+    }
   }
-}
-
-.radio__input:focus + .radio__label {
-  text-decoration: underline;
-  color: $button-text-hover;
-}
-
-.radio__input:focus + .radio__label::before {
-  border-color: $button-border-hover;
 }

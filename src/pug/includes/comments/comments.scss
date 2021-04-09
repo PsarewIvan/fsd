@@ -4,31 +4,31 @@
   display: grid;
   grid-template-columns: 48px 1fr;
   gap: 13px 10px;
-}
 
-.comments__img {
-  border: 2px solid white;
-  border-radius: 50%;
-  box-shadow: 0px 10px 20px $avatar-shadow-color;
-}
+  &__img {
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0px 10px 20px $avatar-shadow-color;
+  }
 
-.comments__name {
-  margin: 5px 0 0;
-  letter-spacing: 0.4px;
-  color: inherit;
-}
+  &__name {
+    margin: 5px 0 0;
+    letter-spacing: 0.4px;
+    color: inherit;
+  }
 
-.comments__time {
-  display: block;
-  margin: 8px 0 0;
-}
+  &__time {
+    display: block;
+    margin: 8px 0 0;
+  }
 
-.comments__comment {
-  margin: 0;
-  line-height: 1.7;
-}
+  &__comment {
+    margin: 0;
+    line-height: 1.7;
+  }
 
-.comments__like {
-  display: flex;
-  justify-content: center;
+  &__like {
+    display: flex;
+    justify-content: center;
+  }
 }

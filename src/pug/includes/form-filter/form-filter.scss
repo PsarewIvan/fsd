@@ -17,16 +17,16 @@
   @media (max-width: 640px) {
     grid-template-columns: 1fr;
   }
-}
 
-.form-filter__block {
-  max-width: 266px;
+  &__block {
+    max-width: 266px;
 
-  &:not(:last-of-type) {
-    margin-bottom: 32px;
-  }
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+    }
 
-  &:first-of-type {
-    margin-bottom: 23px;
+    &:first-of-type {
+      margin-bottom: 23px;
+    }
   }
 }

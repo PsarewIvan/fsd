@@ -5,86 +5,86 @@
   display: flex;
   justify-content: space-between;
   max-width: 320px;
-}
 
-.drop-date__wrapper {
-  width: 100%;
-}
-
-.drop-date__block {
-  position: relative;
-  width: 46.875%;
-}
-
-.drop-date__datepicker-multi {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  border: 0;
-  visibility: hidden;
-}
-
-.drop-date__icon {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 44px;
-  height: 44px;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' /%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.4;
-  pointer-events: none;
-  transition: opacity 0.2s;
-
-  &.-inline- {
-    display: none;
-  }
-}
-
-.drop-date__title {
-  margin: 0 0 6px;
-  font-size: 12px;
-  line-height: 1.1;
-  font-family: $main-font;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: $heading;
-
-  &.-inline- {
-    display: none;
-  }
-}
-
-.drop-date__input {
-  width: 100%;
-  margin: 0;
-  padding: 13px 32px 13px 15px;
-  border: 1px solid $border;
-  border-radius: 4px;
-  transition: border-color 0.2s;
-
-  &.-inline- {
-    display: none;
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .drop-date__input:hover {
-    border-color: $border-active;
+  &__wrapper {
+    width: 100%;
   }
 
-  .drop-date__input:hover ~ .drop-date__icon {
-    opacity: 0.6;
+  &__block {
+    position: relative;
+    width: 46.875%;
   }
-}
 
-.drop-date__input:focus {
-  outline: none;
-  border-color: $border-active;
-}
+  &__datepicker-multi {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 0;
+    visibility: hidden;
+  }
 
-.drop-date__input:focus ~ .drop-date__icon {
-  opacity: 0.6;
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z' fill='%231F2041' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity 0.2s;
+
+    &.-inline- {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 6px;
+    font-size: 12px;
+    line-height: 1.1;
+    font-family: $main-font;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $heading;
+
+    &.-inline- {
+      display: none;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding: 13px 32px 13px 15px;
+    border: 1px solid $border;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+
+    &.-inline- {
+      display: none;
+    }
+
+    &:hover {
+      @media (hover: hover) and (pointer: fine) {
+        border-color: $border-active;
+      }
+
+      & ~ .drop-date__icon {
+        opacity: 0.6;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $border-active;
+
+      & ~ .drop-date__icon {
+        opacity: 0.6;
+      }
+    }
+  }
 }

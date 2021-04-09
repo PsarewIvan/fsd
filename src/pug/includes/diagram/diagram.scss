@@ -4,26 +4,26 @@
   position: relative;
   width: 120px;
   line-height: 0;
-}
 
-.diagram__text {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1.25;
-  text-transform: uppercase;
-  color: $diagram-text;
-  transform: translate(-50%, -50%);
-}
+  &__text {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: $diagram-text;
+    transform: translate(-50%, -50%);
+  }
 
-.diagram__text-count {
-  margin-bottom: 1px;
-  font-size: 24px;
-  line-height: 1.2;
-  text-align: center;
+  &__text-count {
+    margin-bottom: 1px;
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: center;
+  }
 }

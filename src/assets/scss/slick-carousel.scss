@@ -1,95 +1,97 @@
 @import '~slick-carousel/slick/slick.scss';
 @import 'var.scss';
 
-.slick-slider {
-  position: relative;
-  overflow: hidden;
+.slick {
+  &-slider {
+    position: relative;
+    overflow: hidden;
 
-  &:hover .slick-arrow,
-  &:focus .slick-arrow {
-    opacity: 1;
+    &:hover .slick-arrow,
+    &:focus .slick-arrow {
+      opacity: 1;
+    }
   }
-}
 
-.slick-list {
-  height: 151px;
-}
+  &-list {
+    height: 151px;
+  }
 
-.slick-arrow {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  width: 42px;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background-color: transparent;
-  opacity: 0;
-  transition: opacity 0.4s;
-  cursor: pointer;
-
-  &::after {
-    content: '';
+  &-arrow {
     position: absolute;
-    display: block;
-    width: 7px;
-    height: 7px;
-    border: 2px solid $white;
-    transform: rotate(45deg);
-  }
-}
-
-.slick-prev {
-  left: 0;
-  background-image: $gradient-slick-slider-prev;
-
-  &::after {
-    left: 17px;
-    border-right: none;
-    border-top: none;
-  }
-}
-
-.slick-next {
-  right: 0;
-  background-image: $gradient-slick-slider-next;
-
-  &::after {
-    right: 17px;
-    border-left: none;
-    border-bottom: none;
-  }
-}
-
-.slick-dots {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  z-index: 1;
-  display: flex;
-  gap: 3px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  & button {
-    display: flex;
-    width: 8px;
-    height: 8px;
+    top: 0;
+    z-index: 1;
+    width: 42px;
+    height: 100%;
     padding: 0;
-    border: 1px solid $white;
-    border-radius: 50%;
+    margin: 0;
+    border: none;
     background-color: transparent;
-    box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
-    line-height: 0;
-    font-size: 0;
+    opacity: 0;
+    transition: opacity 0.4s;
     cursor: pointer;
-  }
-}
 
-.slick-active {
-  & button {
-    background-color: $white;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 7px;
+      height: 7px;
+      border: 2px solid $white;
+      transform: rotate(45deg);
+    }
+  }
+
+  &-prev {
+    left: 0;
+    background-image: $gradient-slick-slider-prev;
+
+    &::after {
+      left: 17px;
+      border-right: none;
+      border-top: none;
+    }
+  }
+
+  &-next {
+    right: 0;
+    background-image: $gradient-slick-slider-next;
+
+    &::after {
+      right: 17px;
+      border-left: none;
+      border-bottom: none;
+    }
+  }
+
+  &-dots {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1;
+    display: flex;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    & button {
+      display: flex;
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 1px solid $white;
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+      line-height: 0;
+      font-size: 0;
+      cursor: pointer;
+    }
+  }
+
+  &-active {
+    & button {
+      background-color: $white;
+    }
   }
 }

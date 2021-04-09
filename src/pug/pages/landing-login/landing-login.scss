@@ -11,9 +11,9 @@
   background-position: top center;
   background-image: url(img/title.jpg);
   background-size: cover;
-}
 
-.landing-login__wrapper {
-  width: 100%;
-  max-width: 380px;
+  &__wrapper {
+    width: 100%;
+    max-width: 380px;
+  }
 }
