@@ -2,9 +2,7 @@ class Radio {
   constructor(radio) {
     this.LABEL_CHECKED_CLASS = 'radio__label--checked';
     this.LABEL_FOCUS_CLASS = 'radio__label--focus';
-    this.HIDDEN_LIST_CLASS = 'radio__list--hidden';
     this.radio = radio;
-    this.list = radio.querySelector('.js-radio__list');
     this.inputs = radio.querySelectorAll('.js-radio__input');
     this.labels = radio.querySelectorAll('.js-radio__label');
 
