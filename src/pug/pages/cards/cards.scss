@@ -1,25 +1,26 @@
 @import '../../../assets/scss/var.scss';
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: $content-pc;
-  gap: 40px;
-  padding: 0 40px;
-  margin: 0 auto;
+  padding: 150px 0;
+  background-color: $background-color;
 
-  @media (max-width: 1240px) {
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: $content-pc;
+    gap: 40px;
+    padding: 0 40px;
+    margin: 0 auto;
 
-  @media (max-width: 880px) {
-    grid-template-columns: 1fr;
-    padding: 0;
-  }
+    @media (max-width: 1240px) {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+    }
 
-  &__body {
-    background-color: $background-color;
+    @media (max-width: 880px) {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
   }
 
   &__block {
@@ -37,8 +38,4 @@
   &__element:not(:last-of-type) {
     margin-bottom: 40px;
   }
-}
-
-.cards__body .content {
-  padding-top: 150px;
 }
