@@ -1,19 +1,19 @@
 @import '../../../assets/scss/var.scss';
 
 .search-room {
-  max-width: 320px;
-  margin: 38px auto 29px;
+  border: 1px solid $cards-border-color;
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0px 0px 25px $cards-shadow-color;
 
   @media (max-width: 340px) {
     margin-left: 9px;
     margin-right: 9px;
   }
 
-  &__wrapper {
-    border: 1px solid $cards-border-color;
-    border-radius: 4px;
-    background-color: $white;
-    box-shadow: 0px 0px 25px $cards-shadow-color;
+  &__form {
+    max-width: 320px;
+    margin: 38px auto 29px;
   }
 
   &__title {

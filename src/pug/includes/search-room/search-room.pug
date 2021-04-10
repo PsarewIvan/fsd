@@ -3,8 +3,8 @@ include ../drop-date/drop-date
 include ../buttons/buttons
 
 mixin search-room({action})
-  .search-room__wrapper
-    form.search-room(method="GET" action= action)
+  .search-room
+    form.search-room__form(method="GET" action= action)
       h3.search-room__title= "Найдём номера под ваши пожелания"
       .search-room__date
         +drop-date({
