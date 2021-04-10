@@ -1,6 +1,8 @@
 class Nav {
   constructor(list) {
     this.MIN_WINDOW_WIDTH = 980;
+    this.LINK_OPEN_CLASS = 'nav__extend-link--open';
+    this.LIST_OPEN_CLASS = 'nav__list--open';
     this.list = list;
     this.extendList = this.list.querySelector('.js-nav__list--extend-wrapper');
     this.extendLink = this.list.querySelector('.js-nav__extend-link');
@@ -27,8 +29,8 @@ class Nav {
 
   linkHandler(evt) {
     evt.preventDefault();
-    this.extendLink.classList.toggle('-open-');
-    this.extendList.classList.toggle('-open-');
+    this.extendLink.classList.toggle(this.LINK_OPEN_CLASS);
+    this.extendList.classList.toggle(this.LIST_OPEN_CLASS);
     this.extendLink.blur();
   }
 
