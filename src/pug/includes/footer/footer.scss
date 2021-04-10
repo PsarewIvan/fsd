@@ -1,64 +1,64 @@
 @import '../../../assets/scss/var.scss';
 
 .footer {
-  display: grid;
-  grid-template-columns: 22.414% 13.794% 13.794% 13.794% 22.414%;
-  justify-content: space-between;
-  max-width: $content-pc;
-  padding: 0 40px;
-  margin: 100px auto 101px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  @media (max-width: 870px) {
-    grid-template-columns: 1fr;
-    grid-auto-flow: row;
-    width: 100%;
-    margin: 30px auto;
+  &--short {
+    .footer-wrapper {
+      width: auto;
+      grid-template-columns: 1fr;
+      margin: 120px 104px 0;
+    }
+
+    .footer__block {
+      display: flex;
+      justify-content: center;
+
+      &:not(:first-of-type) {
+        display: none;
+      }
+    }
+
+    .footer__sub-block-wrapper {
+      margin-bottom: 118px;
+      border: none;
+    }
+
+    .footer__sub-block {
+      width: auto;
+      min-height: auto;
+      flex-direction: column;
+    }
+
+    .footer__main-link {
+      margin-bottom: 21px;
+    }
+
+    .footer__link-description {
+      display: none;
+    }
+
+    .footer__license {
+      margin-bottom: 27px;
+    }
   }
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    display: grid;
+    grid-template-columns: 22.414% 13.794% 13.794% 13.794% 22.414%;
+    justify-content: space-between;
+    max-width: $content-pc;
+    padding: 0 40px;
+    margin: 100px auto 101px;
 
-    &--short {
-      .footer {
-        width: auto;
-        grid-template-columns: 1fr;
-        margin: 120px 104px 0;
-      }
-
-      .footer__block {
-        display: flex;
-        justify-content: center;
-
-        &:not(:first-of-type) {
-          display: none;
-        }
-      }
-
-      .footer__sub-block-wrapper {
-        margin-bottom: 118px;
-        border: none;
-      }
-
-      .footer__sub-block {
-        width: auto;
-        min-height: auto;
-        flex-direction: column;
-      }
-
-      .footer__main-link {
-        margin-bottom: 21px;
-      }
-
-      .footer__link-description {
-        display: none;
-      }
-
-      .footer__license {
-        margin-bottom: 27px;
-      }
+    @media (max-width: 870px) {
+      grid-template-columns: 1fr;
+      grid-auto-flow: row;
+      width: 100%;
+      margin: 30px auto;
     }
   }
 
