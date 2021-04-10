@@ -5,7 +5,7 @@ include ../buttons/buttons
 mixin room-cards({number, isLuxe, price, action})
   - var luxe= ""
   if isLuxe
-    - luxe= "-luxe-"
+    - luxe= "room-cards__title--luxe"
   .room-cards
     form.room-cards__form(method= "GET", action= action)
       .room-cards__title-block
@@ -54,15 +54,15 @@ mixin room-cards({number, isLuxe, price, action})
           tbody
             tr
               td.room-cards__td= "9 990₽ х 4 суток"
-              td(class= ["room-cards__td", "room-cards__option-td"])
+              td(class= ["room-cards__td", "room-cards__td--option"])
               td.room-cards__td= "39 960₽"
             tr
               td.room-cards__td= "Сбор за услуги: скидка 2 179₽"
-              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
+              td(class= ["room-cards__td", "room-cards__td--option", "room-cards__td--info"])
               td.room-cards__td= "0₽"
             tr
               td.room-cards__td= "Сбор за дополнительные услуги"
-              td(class= ["room-cards__td", "room-cards__option-td", "-info-"])
+              td(class= ["room-cards__td", "room-cards__td--option", "room-cards__td--info"])
               td.room-cards__td= "300₽"
       .room-cards__total
         span.room-cards__total-text= "Итого"

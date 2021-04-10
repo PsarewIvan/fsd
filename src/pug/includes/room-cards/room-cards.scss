@@ -30,7 +30,7 @@
     line-height: 1.22;
     font-family: $main-font;
 
-    &.-luxe-::after {
+    &--luxe::after {
       content: 'люкс';
       display: inline-block;
       font-size: 12px;
@@ -76,7 +76,7 @@
 
   &__td {
     margin: 0;
-    padding: 0;
+    padding: 0 0 16px;
     vertical-align: top;
     border: none;
     line-height: 1.2;
@@ -85,16 +85,12 @@
       width: 80px;
       text-align: right;
     }
-  }
 
-  & tr td {
-    padding-bottom: 16px;
-  }
+    &--option {
+      width: 20px;
+    }
 
-  &__option-td {
-    width: 20px;
-
-    &.-info-::after {
+    &--info::after {
       content: 'i';
       box-sizing: border-box;
       display: flex;
@@ -115,17 +111,17 @@
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     margin-bottom: 21px;
+  }
 
-    &-dotted {
-      margin-bottom: 4px;
-      border-bottom: 1px dotted $border;
-    }
+  &__total-dotted {
+    margin-bottom: 4px;
+    border-bottom: 1px dotted $border;
+  }
 
-    &-text,
-    &-price {
-      font-size: 19px;
-      font-weight: bold;
-      color: $heading;
-    }
+  &__total-text,
+  &__total-price {
+    font-size: 19px;
+    font-weight: bold;
+    color: $heading;
   }
 }
