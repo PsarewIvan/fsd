@@ -1,18 +1,22 @@
 @import '../../../assets/scss/var.scss';
 
 .colors-type {
-  display: flex;
-  justify-content: space-between;
-  max-width: $content-colors-types-pc;
-  padding: 0 40px;
-  margin: 0 auto;
+  padding: 145px 0;
 
-  @media (max-width: 660px) {
-    flex-direction: column;
-  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    max-width: $content-colors-types-pc;
+    padding: 0 40px;
+    margin: 0 auto;
 
-  @media (max-width: 400px) {
-    padding: 0 8px;
+    @media (max-width: 660px) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 400px) {
+      padding: 0 8px;
+    }
   }
 
   &__colors {

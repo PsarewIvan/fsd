@@ -7,24 +7,25 @@ block title
 
 block content
   .colors-type
-    .colors-type__colors
-      +colors({
-        values: [
-          {title: "Dark Shade 100%", color: "#1F2041", mod: "dark-100"},
-          {title: "Dark Shade 75%", color: "#1F2041", mod: "dark-75"},
-          {title: "Dark Shade 50%", color: "#1F2041", mod: "dark-50"},
-          {title: "Dark Shade 25%", color: "#1F2041", mod: "dark-25"},
-          {title: "Dark Shade 5%", color: "#1F2041", mod: "dark-5"},
-          {title: "Purple", color: "#BC9CFF", mod: "purple"},
-          {title: "Green", color: "#6FCF97", mod: "green"}
-        ]
-      })
-    .colors-type__type
-      +types({
-        values: [
-          {name: "H1", description: "This one is the sub-section or widget title", mod: "h1"},
-          {name: "H2", description: "Next one is the item title inside widgets", mod: "h2"},
-          {name: "H3", description: "This is a label or CTA text", mod: "h3"},
-          {name: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", mod: "body"}
-        ]
-      })
+    .colors-type__wrapper
+      .colors-type__colors
+        +colors({
+          values: [
+            {title: "Dark Shade 100%", color: "#1F2041", mod: "dark-100"},
+            {title: "Dark Shade 75%", color: "#1F2041", mod: "dark-75"},
+            {title: "Dark Shade 50%", color: "#1F2041", mod: "dark-50"},
+            {title: "Dark Shade 25%", color: "#1F2041", mod: "dark-25"},
+            {title: "Dark Shade 5%", color: "#1F2041", mod: "dark-5"},
+            {title: "Purple", color: "#BC9CFF", mod: "purple"},
+            {title: "Green", color: "#6FCF97", mod: "green"}
+          ]
+        })
+      .colors-type__type
+        +types({
+          values: [
+            {name: "H1", description: "This one is the sub-section or widget title", mod: "h1"},
+            {name: "H2", description: "Next one is the item title inside widgets", mod: "h2"},
+            {name: "H3", description: "This is a label or CTA text", mod: "h3"},
+            {name: "Body", description: "This is the body text which is used for most of the design, like paragraphs, lists, etc.", mod: "body"}
+          ]
+        })
