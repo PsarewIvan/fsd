@@ -26,7 +26,7 @@
     text-decoration: none;
     border-radius: 50%;
 
-    &.-current- {
+    &--current {
       background-image: $gradient-pagination-current-button;
       color: $pagination-text-current;
       font-weight: bold;

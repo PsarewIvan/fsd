@@ -5,7 +5,7 @@ mixin pagination({elements, currentPage})
       ul.pagination__list
         for element in elements
           if count === currentPage
-            - var current= "-current-"
+            - var current= "pagination__link--current"
           else
             - current= ""
           - count++
