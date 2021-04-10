@@ -7,6 +7,10 @@
   background-color: $white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
+  &__slider {
+    margin-bottom: 22px;
+  }
+
   &__block {
     display: flex;
     justify-content: space-between;
@@ -38,7 +42,7 @@
     font-weight: bold;
     color: $heading;
 
-    &.-luxe-:after {
+    &--luxe:after {
       content: 'люкс';
       margin-left: 10px;
       font-size: 12px;

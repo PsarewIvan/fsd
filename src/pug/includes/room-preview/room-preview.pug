@@ -3,16 +3,17 @@ include ../rating/rating
 
 mixin room-preview({number, link, price, isLuxe, rating, comments, images})
   if isLuxe
-    - var luxe= "-luxe-"
+    - var luxe= "room-preview__number--luxe"
   if !link
     - link= "/mock-address/change-me"
   .room-preview
-    +img-slider({images})
+    .room-preview__slider
+      +img-slider({images})
     a.room-preview__link(href= link)
-      .room-preview__number-wrapper
+      span.room-preview__number-wrapper
         span.room-preview__number-symbol= "№ "
         span.room-preview__number(class= luxe)= number
-      .room-preview__price-wrapper
+      span.room-preview__price-wrapper
         span.room-preview__price= `${price}₽`
         span.room-preview__price-descr= " в сутки"
     .room-preview__block
