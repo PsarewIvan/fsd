@@ -1,5 +1,8 @@
 extends ../../layout/uikit-base/uikit-base
 
+include ../../includes/header/header
+include ../../includes/footer/footer
+
 block title
   title Headers &amp; Footers
 
@@ -7,20 +10,19 @@ block content
   .headers-footers
     .headers-footers__wrapper
       .headers-footers__block
-        block header
-          - var current = "О нас"
-          include ../../includes/header/header
+        +header({
+          current: "О нас"
+        })
       .headers-footers__block
-        block header
-          - var current = "О нас"
-          - var isLogin = true
-          include ../../includes/header/header
+        +header({
+          current: "О нас",
+          isLogin: true
+        })
       .headers-footers__block
-        block footer
-          include ../../includes/footer/footer
+        +footer({})
       .headers-footers__block(
         class= "headers-footers__block--short"
       )
-        block footer
-          - var mod = "short"
-          include ../../includes/footer/footer
+        +footer({
+          mod: 'short'
+        })
