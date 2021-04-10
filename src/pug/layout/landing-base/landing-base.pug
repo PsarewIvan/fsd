@@ -1,3 +1,6 @@
+include ../../includes/header/header
+include ../../includes/footer/footer
+
 doctype html
 html(lang="ru")
   head
@@ -17,13 +20,9 @@ html(lang="ru")
     meta(name="theme-color" content="#ffffff")
 
   body.landing-base
-    block header
-      .landing-base__header
-        include ../../includes/header/header
-
+    .landing-base__header
+      +header({})
     .landing-base__content
       block content
-
-    block footer
-      .landing-base__footer
-        include ../../includes/footer/footer
+    .landing-base__footer
+      +footer({})
