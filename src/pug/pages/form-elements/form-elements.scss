@@ -1,16 +1,20 @@
 @import '../../../assets/scss/var.scss';
 
 .form-elements {
-  max-width: $content-pc;
-  margin: 0 auto;
-  padding: 0 40px;
+  padding: 140px 0 130px;
 
-  @media (max-width: 1120px) {
-    max-width: 860px;
-  }
+  &__cover {
+    max-width: $content-pc;
+    margin: 0 auto;
+    padding: 0 40px;
 
-  @media (max-width: 400px) {
-    padding: 0 8px;
+    @media (max-width: 1120px) {
+      max-width: 860px;
+    }
+
+    @media (max-width: 400px) {
+      padding: 0 8px;
+    }
   }
 
   &__title {
