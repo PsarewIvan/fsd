@@ -1,8 +1,11 @@
 @import '../../../assets/scss/var.scss';
 
 .headers-footers {
-  &__body {
-    background-color: $background-color;
+  min-height: 100vh;
+  background-color: $background-color;
+
+  &__wrapper {
+    padding: 140px 0;
   }
 
   &__block {
