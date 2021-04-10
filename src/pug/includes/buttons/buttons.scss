@@ -36,8 +36,13 @@
     opacity: 0.4;
   }
 
-  &.-hovered- {
+  &--hovered {
     background-image: $gradient-main-50;
+
+    &.buttons--simple {
+      background-image: none;
+      color: $button-simple-hover;
+    }
   }
 
   &--low {
@@ -48,6 +53,11 @@
 
   &--fill {
     color: $button-text-fill;
+
+    .buttons__span {
+      background-color: white;
+      background-origin: border-box;
+    }
   }
 
   &--simple {
@@ -56,11 +66,6 @@
     min-height: auto;
     background-image: none;
     color: $button-text-fill;
-
-    &.-hovered- {
-      background-image: none;
-      color: $button-simple-hover;
-    }
 
     &:hover {
       @media (hover: hover) and (pointer: fine) {
@@ -72,6 +77,10 @@
     &:focus {
       background-image: none;
       color: $button-simple-hover;
+    }
+
+    .buttons__span {
+      padding: 0;
     }
   }
 
@@ -90,28 +99,32 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+
+    .buttons__span {
+      padding: 5px 30px;
+    }
+  }
+
+  &__span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 5px 17px;
+    border-radius: 22px;
+    line-height: 1.2;
   }
 }
 
-.buttons .buttons__span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 5px 17px;
-  border-radius: 22px;
-  line-height: 1.2;
-}
+// .buttons--fill .buttons__span {
+//   background-color: white;
+//   background-origin: border-box;
+// }
 
-.buttons--fill .buttons__span {
-  background-color: white;
-  background-origin: border-box;
-}
+// .buttons--simple .buttons__span {
+//   padding: 0;
+// }
 
-.buttons--simple .buttons__span {
-  padding: 0;
-}
-
-.buttons--large .buttons__span {
-  padding: 5px 30px;
-}
+// .buttons--large .buttons__span {
+//   padding: 5px 30px;
+// }
