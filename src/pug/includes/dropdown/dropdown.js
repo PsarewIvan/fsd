@@ -61,26 +61,32 @@ class Dropdown {
   }
 
   addListeners() {
-    this.button.addEventListener('click', this.buttonListener.bind(this));
-    this.overlay.addEventListener('click', this.buttonListener.bind(this));
+    this.button.addEventListener('click', this.handleMenuClick.bind(this));
+    this.overlay.addEventListener('click', this.handleMenuClick.bind(this));
     this.valueInputs.forEach((input) => {
-      input.previousSibling.addEventListener(
+      const lowButton = input.previousSibling;
+      const hightButton = input.nextSibling;
+      lowButton.addEventListener(
         'click',
-        this.updateValue.bind(input)
+        this.handleValueButtonClick.bind(input)
       );
-      input.nextSibling.addEventListener('click', this.updateValue.bind(input));
+      hightButton.addEventListener(
+        'click',
+        this.handleValueButtonClick.bind(input)
+      );
       input.addEventListener(
         'change',
-        this.changeStateOfValueButton.bind(input)
+        this.handleInputChange.bind(this, input)
       );
-      input.addEventListener('change', this.toggleCLearButton.bind(this));
-      input.addEventListener('change', this.changeLabelText.bind(this));
     });
-    this.applyButton.addEventListener('click', this.buttonListener.bind(this));
-    this.buttonClear.addEventListener('click', this.resetInputs.bind(this));
+    this.applyButton.addEventListener('click', this.handleMenuClick.bind(this));
+    this.buttonClear.addEventListener(
+      'click',
+      this.handleClearButtonClick.bind(this)
+    );
   }
 
-  buttonListener(evt) {
+  handleMenuClick(evt) {
     evt.preventDefault();
     const dataOpen = this.menuStatus === 'true' ? 'false' : 'true';
     this.button.dataset.open = dataOpen;
@@ -88,7 +94,7 @@ class Dropdown {
     this.toggleOverlay();
   }
 
-  updateValue(evt) {
+  handleValueButtonClick(evt) {
     const currentValue = Number(this.value);
     const min = this.min ? Number(this.min) : 0;
     const max = this.max ? Number(this.max) : Infinity;
@@ -108,20 +114,26 @@ class Dropdown {
     this.dispatchEvent(new Event('change'));
   }
 
-  changeStateOfValueButton() {
-    const max = this.max ? Number(this.max) : Infinity;
-    const min = this.min ? Number(this.min) : 0;
-    const isBigger = Number(this.value) >= max;
-    const isLower = Number(this.value) <= min;
+  handleInputChange(input) {
+    this.buttonsDisabledSwitcher(input);
+    this.toggleCLearButton();
+    this.changeLabelText();
+  }
+
+  buttonsDisabledSwitcher(input) {
+    const max = input.max ? Number(input.max) : Infinity;
+    const min = input.min ? Number(input.min) : 0;
+    const isBigger = Number(input.value) >= max;
+    const isLower = Number(input.value) <= min;
     if (isBigger) {
-      this.nextSibling.disabled = true;
+      input.nextSibling.disabled = true;
     } else {
-      this.nextSibling.disabled = false;
+      input.nextSibling.disabled = false;
     }
     if (isLower) {
-      this.previousSibling.disabled = true;
+      input.previousSibling.disabled = true;
     } else {
-      this.previousSibling.disabled = false;
+      input.previousSibling.disabled = false;
     }
   }
 
@@ -133,7 +145,7 @@ class Dropdown {
     }
   }
 
-  resetInputs() {
+  handleClearButtonClick() {
     this.valueInputs.forEach((input) => {
       input.value = input.min || '0';
       input.dispatchEvent(new Event('change'));

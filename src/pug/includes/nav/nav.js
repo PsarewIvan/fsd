@@ -10,7 +10,7 @@ class Nav {
     if (this.isWindowThin) {
       this.activateMenu();
     }
-    this.windowListener();
+    window.addEventListener('resize', this.handleWindowResize.bind(this));
   }
 
   activateMenu() {
@@ -18,31 +18,35 @@ class Nav {
     this.isActivate = true;
   }
 
-  deactivateMenu() {
-    this.extendLink.removeEventListener('click', this.linkHandler.bind(this));
-    this.isActivate = false;
-  }
-
   linkListener() {
-    this.extendLink.addEventListener('click', this.linkHandler.bind(this));
+    this.extendLink.addEventListener(
+      'click',
+      this.handleExtendLinkClick.bind(this)
+    );
   }
 
-  linkHandler(evt) {
+  handleExtendLinkClick(evt) {
     evt.preventDefault();
     this.extendLink.classList.toggle(this.LINK_OPEN_CLASS);
     this.extendList.classList.toggle(this.LIST_OPEN_CLASS);
     this.extendLink.blur();
   }
 
-  windowListener() {
-    window.addEventListener('resize', () => {
-      if (this.isWindowThin && !this.isActive) {
-        this.activateMenu();
-      }
-      if (!this.isWindowThin && this.isActive) {
-        this.deactivateMenu();
-      }
-    });
+  handleWindowResize() {
+    if (this.isWindowThin && !this.isActive) {
+      this.activateMenu();
+    }
+    if (!this.isWindowThin && this.isActive) {
+      this.deactivateMenu();
+    }
+  }
+
+  deactivateMenu() {
+    this.extendLink.removeEventListener(
+      'click',
+      this.handleExtendLinkClick.bind(this)
+    );
+    this.isActivate = false;
   }
 
   get isWindowThin() {

@@ -8,12 +8,12 @@ class Radio {
 
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
-      input.addEventListener('focus', this.inputFocusHandler.bind(this, i));
-      input.addEventListener('blur', this.inputBlurHandler.bind(this, i));
+      input.addEventListener('focus', this.handleInputFocus.bind(this, i));
+      input.addEventListener('blur', this.handleInputBlur.bind(this, i));
     });
   }
 
-  inputFocusHandler(i) {
+  handleInputFocus(i) {
     this.labels.forEach((label, index) => {
       if (i === index) {
         label.classList.add(this.LABEL_FOCUS_CLASS);
@@ -25,7 +25,7 @@ class Radio {
     });
   }
 
-  inputBlurHandler(i) {
+  handleInputBlur(i) {
     this.labels[i].classList.remove(this.LABEL_FOCUS_CLASS);
   }
 

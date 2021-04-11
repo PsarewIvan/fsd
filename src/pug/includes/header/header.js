@@ -15,10 +15,10 @@ class HeaderNavigation {
   }
 
   buttonListener() {
-    this.button.addEventListener('click', this.buttonHandler.bind(this));
+    this.button.addEventListener('click', this.handleButtonCLick.bind(this));
   }
 
-  buttonHandler() {
+  handleButtonCLick() {
     const expanded = this.button.getAttribute('aria-expanded') === 'true';
     this.button.setAttribute('aria-expanded', !expanded);
     expanded

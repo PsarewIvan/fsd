@@ -12,26 +12,26 @@ class Checkbox {
 
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
-      input.addEventListener('click', this.inputClickHandler.bind(this, i));
-      input.addEventListener('focus', this.inputFocusHandler.bind(this, i));
-      input.addEventListener('blur', this.inputBlurHandler.bind(this, i));
+      input.addEventListener('click', this.handleInputClick.bind(this, i));
+      input.addEventListener('focus', this.handleInputFocus.bind(this, i));
+      input.addEventListener('blur', this.handleInputBlur.bind(this, i));
     });
 
     if (this.button) {
       this.openList();
-      this.button.addEventListener('click', this.buttonHandler.bind(this));
+      this.button.addEventListener('click', this.buttonHandlerClick.bind(this));
     }
   }
 
-  inputClickHandler(i, evt) {
+  handleInputClick(i, evt) {
     this.labelCheckedToggle(this.labels[i], evt.target);
   }
 
-  inputFocusHandler(i) {
+  handleInputFocus(i) {
     this.labels[i].classList.add(this.LABEL_FOCUS_CLASS);
   }
 
-  inputBlurHandler(i) {
+  handleInputBlur(i) {
     this.labels[i].classList.remove(this.LABEL_FOCUS_CLASS);
   }
 
@@ -49,7 +49,7 @@ class Checkbox {
     }
   }
 
-  buttonHandler(evt) {
+  buttonHandlerClick(evt) {
     evt.preventDefault();
     this.list.classList.toggle(this.HIDDEN_LIST_CLASS);
     this.button.classList.toggle(this.BUTTON_OPEN_CLASS);

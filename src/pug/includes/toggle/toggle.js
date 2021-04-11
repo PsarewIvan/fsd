@@ -8,21 +8,21 @@ class Toggle {
 
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
-      input.addEventListener('click', this.inputClickHandler.bind(this, i));
-      input.addEventListener('focus', this.inputFocusHandler.bind(this, i));
-      input.addEventListener('blur', this.inputBlurHandler.bind(this, i));
+      input.addEventListener('click', this.handleInputClick.bind(this, i));
+      input.addEventListener('focus', this.handleInputFocus.bind(this, i));
+      input.addEventListener('blur', this.handleInputBlur.bind(this, i));
     });
   }
 
-  inputClickHandler(i, evt) {
+  handleInputClick(i, evt) {
     this.labelCheckedToggle(this.labels[i], evt.target);
   }
 
-  inputFocusHandler(i) {
+  handleInputFocus(i) {
     this.labels[i].classList.add(this.LABEL_FOCUS_CLASS);
   }
 
-  inputBlurHandler(i) {
+  handleInputBlur(i) {
     this.labels[i].classList.remove(this.LABEL_FOCUS_CLASS);
   }
 
