@@ -81,18 +81,6 @@ const cssLoaders = (extra) => {
   return loaders;
 };
 
-const babelOptions = (preset) => {
-  const options = {
-    presets: ['@babel/preset-env'],
-  };
-
-  if (preset) {
-    options.presets.push(preset);
-  }
-
-  return options;
-};
-
 module.exports = {
   context: PATHS.src,
   mode: 'development',
@@ -193,15 +181,9 @@ module.exports = {
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
-          options: babelOptions(),
-        },
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: {
-          loader: 'babel-loader',
-          options: babelOptions('@babel/preset-typescript'),
+          options: {
+            presets: ['@babel/preset-env'],
+          },
         },
       },
     ],
