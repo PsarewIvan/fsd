@@ -2,8 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // могут быть проблемы с git
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -50,7 +49,7 @@ const cssLoaders = (extra) => {
     {
       loader: MiniCssExtractPlugin.loader,
       options: {
-        hmr: isDev, // Hot Module Replacement, в режиме dev
+        hmr: isDev,
         reloadAll: true,
         publicPath: '../',
       },
@@ -103,7 +102,6 @@ module.exports = {
   output: {
     filename: filename('js'),
     path: PATHS.dist,
-    // publicPath: PATHS.dist
   },
   resolve: {
     extensions: ['.js', '.json', '.png', 'jpg', 'svg'],
@@ -126,10 +124,6 @@ module.exports = {
         {
           from: `${PATHS.src}/favicon`,
           to: PATHS.dist,
-        },
-        {
-          from: `${PATHS.src}/assets/img`,
-          to: `${PATHS.dist}/img`,
         },
       ],
     }),
@@ -174,7 +168,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif)$/i,
-        exclude: [`${PATHS.src}/assets/fonts`],
+        include: [`${PATHS.src}/pug`],
         use: {
           loader: 'file-loader',
           options: {
