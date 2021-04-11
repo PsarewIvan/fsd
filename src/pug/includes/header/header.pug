@@ -2,90 +2,91 @@ include ../nav/nav
 include ../buttons/buttons
 include ../user-link/user-link
 
-.header__wrapper
+mixin header({current = '', isLogin = false})
   header.header
-    .header__icon-wrapper
-      a.header__main-link(
-        class= "js-header__main-link"
-        href= "landing.html"
-      )
-        img(
-          class= "header__icon"
-          alt= "Toxin icon"
-          src= 'img/icon-color.svg'
+    .header__wrapper
+      .header__icon-wrapper
+        a.header__main-link(
+          class= "js-header__main-link"
+          href= "landing.html"
         )
-        img(
-          class= "header__icon-text"
-          alt= "Toxin"
-          src= 'img/toxin.svg'
-        )
-    .header__block(class= "js-header__block")
-      button(
-        class= "header__menu-button js-header__menu-button"
-        type= "button"
-        aria-expanded= "false"
-        aria-label= "Открыть меню"
-      )
-        svg(
-          class= "header__nav-icon"
-          width= "32"
-          height= "32"
-          viewBox= "0 0 32 32"
-        )
-          path(
-            class= "header__nav-icon header__nav-icon--menu"
-            d= "M5 8h22M5 16h22M27 24H5"
-            stroke-width= "3"
-            stroke-linecap= "round"
-            stroke= "#000000"
+          img(
+            class= "header__icon"
+            src= require('./../../includes/header/img/icon-color.svg').default
+            alt= "Toxin icon"
           )
-          path(
-            class= "header__nav-icon header__nav-icon--cross"
-            d= "M7 24L25 8M25 24L7 8"
-            stroke-width= "3"
-            stroke-linecap= "round"
-            stroke= "#000000"
+          img(
+            class= "header__icon-text"
+            src= require('./../../includes/header/img/toxin.svg').default
+            alt= "Toxin"
           )
-      .header__nav(
-        class= "js-header__nav"
-      )
-        +nav({
-          items: [
-            {label: "О нас", href: "/mock-address/change-me"},
-            {label: "Услуги", href: "/mock-address/change-me", extend: [
-              {label: "Услуга 1", href: "/mock-address/change-me"},
-              {label: "Услуга 2", href: "/mock-address/change-me"},
-              {label: "Услуга 3", href: "/mock-address/change-me"}
-            ]},
-            {label: "Вакансии", href: "/mock-address/change-me"},
-            {label: "Новости", href: "/mock-address/change-me"},
-            {label: "Соглашения", href: "/mock-address/change-me", extend: [
-              {label: "Соглашение 1", href: "/mock-address/change-me"},
-              {label: "Соглашение 2", href: "/mock-address/change-me"},
-              {label: "Соглашение 3", href: "/mock-address/change-me"}
-            ]}
-          ],
-          currentPage: current
-        })
-        if isLogin
-          +user-link({
-            name: "Юлий Цезарь",
-            link: "/mock-address/change-me"
+      .header__block(class= "js-header__block")
+        button(
+          class= "header__menu-button js-header__menu-button"
+          type= "button"
+          aria-expanded= "false"
+          aria-label= "Открыть меню"
+        )
+          svg(
+            class= "header__nav-icon"
+            width= "32"
+            height= "32"
+            viewBox= "0 0 32 32"
+          )
+            path(
+              class= "header__nav-icon header__nav-icon--menu"
+              d= "M5 8h22M5 16h22M27 24H5"
+              stroke-width= "3"
+              stroke-linecap= "round"
+              stroke= "#000000"
+            )
+            path(
+              class= "header__nav-icon header__nav-icon--cross"
+              d= "M7 24L25 8M25 24L7 8"
+              stroke-width= "3"
+              stroke-linecap= "round"
+              stroke= "#000000"
+            )
+        .header__nav(
+          class= "js-header__nav"
+        )
+          +nav({
+            items: [
+              {label: "О нас", href: "/mock-address/change-me"},
+              {label: "Услуги", href: "/mock-address/change-me", extend: [
+                {label: "Услуга 1", href: "/mock-address/change-me"},
+                {label: "Услуга 2", href: "/mock-address/change-me"},
+                {label: "Услуга 3", href: "/mock-address/change-me"}
+              ]},
+              {label: "Вакансии", href: "/mock-address/change-me"},
+              {label: "Новости", href: "/mock-address/change-me"},
+              {label: "Соглашения", href: "/mock-address/change-me", extend: [
+                {label: "Соглашение 1", href: "/mock-address/change-me"},
+                {label: "Соглашение 2", href: "/mock-address/change-me"},
+                {label: "Соглашение 3", href: "/mock-address/change-me"}
+              ]}
+            ],
+            currentPage: current
           })
-        else
-          .header__log-wrapper
-            +buttons({
-              type: "link",
-              link: "landing-login.html",
-              label: "войти",
-              modify: ["fill", "low"],
-              classes: ["-login-button-"]
+          if isLogin
+            +user-link({
+              name: "Юлий Цезарь",
+              link: "/mock-address/change-me"
             })
-          .header__reg-wrapper
-            +buttons({
-              type: "link",
-              link: "landing-registration.html",
-              label: "зарегистрироваться",
-              modify: ["low"],
-              classes: ["-reg-button-"]
-            })
+          else
+            .header__log-wrapper
+              +buttons({
+                type: "link",
+                link: "landing-login.html",
+                label: "войти",
+                modify: ["fill", "low"],
+                classes: ["-login-button-"]
+              })
+            .header__reg-wrapper
+              +buttons({
+                type: "link",
+                link: "landing-registration.html",
+                label: "зарегистрироваться",
+                modify: ["low"],
+                classes: ["-reg-button-"]
+              })
