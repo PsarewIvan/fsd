@@ -14,7 +14,7 @@
 ## Как скачать
 
 - По HTTPS: `git clone https://github.com/PsarewIvan/fsd.git`
-- По SSH: `git@github.com:PsarewIvan/fsd.git`
+- По SSH: `git clone git@github.com:PsarewIvan/fsd.git`
 
 ## Сторонние библиотеки
 
