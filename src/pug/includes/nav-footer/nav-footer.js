@@ -1,9 +1,14 @@
 class NavFooter {
   constructor(nav) {
     this.WINDOW_WIDTH_THIN = 870;
+    this.JS_MENU_CLASS = 'js-nav-footer__nav';
+    this.JS_BUTTON_CLASS = 'js-nav-footer__title';
+    this.BUTTON_CLASS = 'nav-footer__title';
+    this.BUTTON_OPEN_CLASS = 'nav-footer__title--open';
+    this.MENU_OPEN_CLASS = 'nav-footer__nav--open';
     this.nav = nav;
     this.isActive = false;
-    this.menu = nav.querySelector('.js-nav-footer__nav');
+    this.menu = nav.querySelector(`.${this.JS_MENU_CLASS}`);
     if (this.isWindowThin) {
       this.activateMenu();
     }
@@ -22,12 +27,12 @@ class NavFooter {
   }
 
   buttonListener() {
-    const button = this.nav.querySelector('.js-nav-footer__title');
+    const button = this.nav.querySelector(`.${this.JS_BUTTON_CLASS}`);
     button.addEventListener('click', (evt) => {
       evt.preventDefault();
       button.blur();
-      button.classList.toggle('-open-');
-      this.menu.classList.toggle('-open-');
+      button.classList.toggle(this.BUTTON_OPEN_CLASS);
+      this.menu.classList.toggle(this.MENU_OPEN_CLASS);
     });
   }
 
@@ -43,7 +48,7 @@ class NavFooter {
   }
 
   replaceTag() {
-    const pageElement = this.nav.querySelector('.js-nav-footer__title');
+    const pageElement = this.nav.querySelector(`.${this.JS_BUTTON_CLASS}`);
     let insertElement;
     if (!this.isActive) {
       insertElement = this.createButton();
@@ -58,7 +63,7 @@ class NavFooter {
 
   createButton() {
     const button = document.createElement('button');
-    button.classList.add('nav-footer__title', 'js-nav-footer__title');
+    button.classList.add(this.BUTTON_CLASS, this.JS_BUTTON_CLASS);
     button.setAttribute('type', 'button');
     button.setAttribute('aria-label', 'Открыть меню');
     return button;
@@ -66,7 +71,7 @@ class NavFooter {
 
   createHeading() {
     const heading = document.createElement('h4');
-    heading.classList.add('nav-footer__title', 'js-nav-footer__title');
+    heading.classList.add(this.BUTTON_CLASS, this.JS_BUTTON_CLASS);
     return heading;
   }
 
