@@ -1,20 +1,21 @@
 include ../pagination/pagination
 include ../room-preview/room-preview
 
-ul.room-list
-  each room in list
-    li.room-list__li
-      +room-preview({
-        number: room.number,
-        link: room.link,
-        price: room.price,
-        isLuxe: room.isLuxe,
-        rating: room.rating,
-        comments: room.comments,
-        images: room.images
-      })
-.room-list__pagination
-  +pagination({
-    elements: ["1", "2", "3", "...", "15"],
-    currentPage: 1
-  })
+mixin room-list({list})
+  ul.room-list
+    each room in list
+      li.room-list__li
+        +room-preview({
+          number: room.number,
+          link: room.link,
+          price: room.price,
+          isLuxe: room.isLuxe,
+          rating: room.rating,
+          comments: room.comments,
+          images: room.images
+        })
+  .room-list__pagination
+    +pagination({
+      elements: ["1", "2", "3", "...", "15"],
+      currentPage: 1
+    })
