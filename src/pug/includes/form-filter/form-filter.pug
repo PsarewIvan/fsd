@@ -3,75 +3,76 @@ include ../drop-date/drop-date
 include ../slider/slider
 include ../checkbox/checkbox
 
-form.form-filter
-  .form-filter__block
-    +drop-date({
-      isMultiple: false,
-      title: "даты пребывания в отеле"
-    })
-  .form-filter__block
-    +dropdown({
-      title: "гости",
-      label: "Сколько гостей",
-      commonDeclension: "Гость, Гостя, Гостей",
-      elements: [
-        {label: "Взрослые", name: "adult", min: "0", max: "10"},
-        {label: "Дети", name: "children", min: "0"},
-        {label: "Младенцы", name: "baby", min: "0"}
-      ]
-    })
-  .form-filter__block
-    +slider({
-      title: "диапазон цены",
-      description: "Стоимость за сутки пребывания в номере",
-      type: "double",
-      min: 0,
-      max: 15000,
-      from: 5000,
-      to: 10000
-    })
-  .form-filter__block
-    +checkbox({
-      name: "rules",
-      title: "правила дома",
-      elements: [
-        {label: "Можно курить", value: "isSmoking", checked: false},
-        {label: "Можно с питомцами", value: "isAnimals", checked: true},
-        {label: "Можно пригласить гостей (до 10 человек)", value: "isGuests", checked: true}
-      ]
-    })
-  .form-filter__block
-    +checkbox({
-      name: "accessibility",
-      title: "доступность",
-      isRich: "true",
-      elements: [
-        {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", value: "isHall", checked: false},
-        {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", value: "isInvalid", checked: false}
-      ]
-    })
-  .form-filter__block
-    +dropdown({
-      title: "удобства номера",
-      label: "Выберите удобства номера",
-      elements: [
-        {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2", selfDeclension: "Спальня, Спальни, Спален"},
-        {label: "кровати", name: "bed2", min: "0", value: "2", selfDeclension: "Кровать, Кровати, Кроватей"},
-        {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5", value: "1", selfDeclension: "Ванная, Ванные, Ванных"}
-      ]
-    })
-  .form-filter__block
-    +checkbox({
-          name: "options",
-          title: "дополнительные удобства",
-          isExpandable: "true",
-          isHide: "true",
-          elements: [
-            {label: "Завтрак", value: "isBreakfast", checked: false},
-            {label: "Письменный стол", value: "isTable", checked: true},
-            {label: "Стул для кормления", value: "isHighChair", checked: true},
-            {label: "Кроватка", value: "isCrib", checked: true},
-            {label: "Телевизор", value: "isTv", checked: false},
-            {label: "Шампунь", value: "isShampoo", checked: false}
-          ]
-        })
+mixin form-filter()
+  form.form-filter
+    .form-filter__block
+      +drop-date({
+        isMultiple: false,
+        title: "даты пребывания в отеле"
+      })
+    .form-filter__block
+      +dropdown({
+        title: "гости",
+        label: "Сколько гостей",
+        commonDeclension: "Гость, Гостя, Гостей",
+        elements: [
+          {label: "Взрослые", name: "adult", min: "0", max: "10"},
+          {label: "Дети", name: "children", min: "0"},
+          {label: "Младенцы", name: "baby", min: "0"}
+        ]
+      })
+    .form-filter__block
+      +slider({
+        title: "диапазон цены",
+        description: "Стоимость за сутки пребывания в номере",
+        type: "double",
+        min: 0,
+        max: 15000,
+        from: 5000,
+        to: 10000
+      })
+    .form-filter__block
+      +checkbox({
+        name: "rules",
+        title: "правила дома",
+        elements: [
+          {label: "Можно курить", value: "isSmoking", checked: false},
+          {label: "Можно с питомцами", value: "isAnimals", checked: true},
+          {label: "Можно пригласить гостей (до 10 человек)", value: "isGuests", checked: true}
+        ]
+      })
+    .form-filter__block
+      +checkbox({
+        name: "accessibility",
+        title: "доступность",
+        isRich: "true",
+        elements: [
+          {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", value: "isHall", checked: false},
+          {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист  и проводит до номера.", value: "isInvalid", checked: false}
+        ]
+      })
+    .form-filter__block
+      +dropdown({
+        title: "удобства номера",
+        label: "Выберите удобства номера",
+        elements: [
+          {label: "спальни", name: "bedroom2", min: "0", max: "5", value: "2", selfDeclension: "Спальня, Спальни, Спален"},
+          {label: "кровати", name: "bed2", min: "0", value: "2", selfDeclension: "Кровать, Кровати, Кроватей"},
+          {label: "ванные комнаты", name: "bathroom2", min: "0", max: "5", value: "1", selfDeclension: "Ванная, Ванные, Ванных"}
+        ]
+      })
+    .form-filter__block
+      +checkbox({
+            name: "options",
+            title: "дополнительные удобства",
+            isExpandable: "true",
+            isHide: "true",
+            elements: [
+              {label: "Завтрак", value: "isBreakfast", checked: false},
+              {label: "Письменный стол", value: "isTable", checked: true},
+              {label: "Стул для кормления", value: "isHighChair", checked: true},
+              {label: "Кроватка", value: "isCrib", checked: true},
+              {label: "Телевизор", value: "isTv", checked: false},
+              {label: "Шампунь", value: "isShampoo", checked: false}
+            ]
+          })
