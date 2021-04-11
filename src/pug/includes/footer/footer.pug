@@ -14,12 +14,12 @@ mixin footer({mod})
           img(
             class= "footer__icon"
             alt= "Toxin icon"
-            src= "img/icon-color.svg"
+            src= require('./../../includes/footer/img/icon-color.svg').default
           )
           img(
             class= "footer__icon-text"
             alt= "Toxin"
-            src= "img/toxin.svg"
+            src= require('./../../includes/footer/img/toxin.svg').default
           )
         p.footer__link-description= "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
       .footer__block
@@ -67,17 +67,17 @@ mixin footer({mod})
               {
                 label: "twitter",
                 href: "http://t.co",
-                iconSrc: "img/twitter.svg"
+                iconSrc: src= require('./../../includes/footer/img/twitter.svg').default
               },
               {
                 label: "facebook",
                 href: "https://www.facebook.com/",
-                iconSrc: "img/facebook.svg"
+                iconSrc: src= require('./../../includes/footer/img/facebook.svg').default
               },
               {
                 label: "instagram",
                 href: "https://www.instagram.com/",
-                iconSrc: "img/instagram.svg"
+                iconSrc: src= require('./../../includes/footer/img/instagram.svg').default
               }
             ]
           })
