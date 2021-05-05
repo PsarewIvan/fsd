@@ -15,9 +15,9 @@ block content
     h2.visually-hidden= "Фотографии номера"
     +room-gallery({
       images: [
-        {src: require("./img/888.1.jpg").default, alt: "Спальня номера 888"},
-        {src: require("./img/888.2.jpg").default, alt: "Рабочий кабинет номера 888"},
-        {src: require("./img/888.3.jpg").default, alt: "Гостиная номера 888"}
+        {src: require("./img/888-1.jpg").default, alt: "Спальня номера 888"},
+        {src: require("./img/888-2.jpg").default, alt: "Рабочий кабинет номера 888"},
+        {src: require("./img/888-3.jpg").default, alt: "Гостиная номера 888"}
       ]
     })
   .room-details__main-wrapper
@@ -31,12 +31,12 @@ block content
                 {
                   label: "Комфорт",
                   description: "Шумопоглощающие стены",
-                  url: require("./img/insert_emoticon.svg").default
+                  url: require("./img/insert-emoticon.svg").default
                 },
                 {
                   label: "Удобство",
                   description: "Окно в каждой из спален",
-                  url: require("./img/location_city.svg").default
+                  url: require("./img/location-city.svg").default
                 },
                 {
                   label: "Уют",
@@ -56,7 +56,7 @@ block content
           li.room-details__comments-li
             +comments({
               name: "Мурад Сарафанов",
-              imgSrc: require("./img/image1.jpg").default,
+              imgSrc: require("./img/avatar-1.jpg").default,
               label: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
               isLiked: true,
               longAgo: "5 дней",
@@ -65,7 +65,7 @@ block content
           li.room-details__comments-li
             +comments({
               name: "Патрисия Стёклышкова",
-              imgSrc: require("./img/image2.jpg").default,
+              imgSrc: require("./img/avatar-2.jpg").default,
               label: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
               isLiked: false,
               longAgo: "Неделю",
