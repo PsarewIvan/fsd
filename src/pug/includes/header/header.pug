@@ -2,7 +2,7 @@ include ../nav/nav
 include ../buttons/buttons
 include ../user-link/user-link
 
-mixin header({current = '', isLogin = false})
+mixin header({current = "", isLogin = false})
   header.header
     .header__wrapper
       .header__icon-wrapper
@@ -12,12 +12,12 @@ mixin header({current = '', isLogin = false})
         )
           img(
             class= "header__icon"
-            src= require('./../../includes/header/img/icon-color.svg').default
+            src= require("./../../includes/header/img/icon-color.svg").default
             alt= "Toxin icon"
           )
           img(
             class= "header__icon-text"
-            src= require('./../../includes/header/img/toxin.svg').default
+            src= require("./../../includes/header/img/toxin.svg").default
             alt= "Toxin"
           )
       .header__block(class= "js-header__block")

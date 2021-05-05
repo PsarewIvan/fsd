@@ -7,7 +7,7 @@ mixin dropdown({title, label, isOpen= "false", isButton= "true", elements, commo
       data-button= isButton.toString()
       data-declension= commonDeclension
       data-default-label= label
-      aria-visible= 'false'
+      aria-visible= "false"
       tabindex= -1
     )= label
     .dropdown__menu(class= "js-dropdown__menu dropdown__menu--no-js")
