@@ -1,11 +1,13 @@
 class Radio {
-  constructor(radio) {
+  constructor(root) {
     this.LABEL_CHECKED_CLASS = 'radio__label--checked';
     this.LABEL_FOCUS_CLASS = 'radio__label--focus';
-    this.radio = radio;
-    this.inputs = radio.querySelectorAll('.js-radio__input');
-    this.labels = radio.querySelectorAll('.js-radio__label');
+    this.root = root;
+    this.inputs = root.querySelectorAll('.js-radio__input');
+    this.labels = root.querySelectorAll('.js-radio__label');
+  }
 
+  init() {
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
       input.addEventListener('focus', this.handleInputFocus.bind(this, i));
@@ -38,6 +40,4 @@ class Radio {
   }
 }
 
-document.querySelectorAll('.js-radio').forEach((radio) => {
-  new Radio(radio);
-});
+export default Radio;

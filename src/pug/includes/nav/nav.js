@@ -7,6 +7,9 @@ class Nav {
     this.extendList = this.list.querySelector('.js-nav__list--extend-wrapper');
     this.extendLink = this.list.querySelector('.js-nav__extend-link');
     this.isActivate = false;
+  }
+
+  init() {
     if (this.isWindowThin) {
       this.activateMenu();
     }
@@ -54,6 +57,4 @@ class Nav {
   }
 }
 
-document.querySelectorAll('.js-nav__li').forEach((extendList) => {
-  new Nav(extendList);
-});
+export default Nav;

@@ -21,6 +21,9 @@ class Dropdown {
       'apply'
     );
     this.overlay = this.createOverlay();
+  }
+
+  init() {
     this.clearNoJSClasses();
     this.activateButtonAttribute();
     this.addValueButtons();
@@ -268,6 +271,4 @@ class Dropdown {
   }
 }
 
-document.querySelectorAll('.js-dropdown').forEach((dropdown) => {
-  new Dropdown(dropdown);
-});
+export default Dropdown;

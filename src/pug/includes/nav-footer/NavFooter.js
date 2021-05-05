@@ -8,6 +8,9 @@ class NavFooter {
     this.nav = nav;
     this.isActive = false;
     this.menu = nav.querySelector(`.js-${this.MENU_CLASS}`);
+  }
+
+  init() {
     if (this.isWindowThin) {
       this.activateMenu();
     }
@@ -66,7 +69,7 @@ class NavFooter {
 
   createHeading() {
     const heading = document.createElement('h4');
-    heading.classList.add(this.BUTTON_CLASS, `js-${this.JS_BUTTON_CLASS}`);
+    heading.classList.add(this.BUTTON_CLASS, `js-${this.BUTTON_CLASS}`);
     return heading;
   }
 
@@ -75,6 +78,4 @@ class NavFooter {
   }
 }
 
-document.querySelectorAll('.js-nav-footer').forEach((nav) => {
-  new NavFooter(nav);
-});
+export default NavFooter;
