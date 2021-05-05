@@ -41,7 +41,7 @@
     margin-bottom: 12px;
 
     @media (max-width: 1120px) {
-      grid-template-columns: max-content;
+      grid-template-columns: 100%;
       gap: 20px;
       margin-bottom: 35px;
     }
@@ -49,6 +49,10 @@
 
   &__block-wrapper {
     max-width: 708px;
+
+    @media (max-width: 840px) {
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -77,8 +81,12 @@
   }
 
   &__showing {
-    min-width: 311px;
+    width: 100%;
     margin-right: 36px;
+
+    @media (max-width: 1120px) {
+      margin-right: auto;
+    }
   }
 
   &__comments-title-wrapper {
@@ -111,7 +119,7 @@
     justify-content: space-between;
 
     @media (max-width: 1120px) {
-      grid-template-columns: max-content;
+      grid-template-columns: 100%;
       gap: 30px;
     }
   }
