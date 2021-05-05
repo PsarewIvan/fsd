@@ -10,10 +10,8 @@ class ImgSlider {
     this.$root.slick({
       dots: true,
       infinite: true,
-      nextArrow:
-        "<button type='button' class='slick-next' aria-label='Next'></button>",
-      prevArrow:
-        "<button type='button' class='slick-prev' aria-label='Previous'></button>",
+      nextArrow: `<button type='button' class='slick-next' aria-label='Next'></button>`,
+      prevArrow: `<button type='button' class='slick-prev' aria-label='Previous'></button>`,
     });
   }
 }
