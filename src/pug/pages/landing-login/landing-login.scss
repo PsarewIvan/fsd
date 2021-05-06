@@ -12,6 +12,14 @@
   background-image: url(img/title.jpg);
   background-size: cover;
 
+  @media (max-width: 980px) {
+    min-height: 480px;
+  }
+
+  @media (max-width: 740px) {
+    min-height: 380px;
+  }
+
   &__wrapper {
     width: 100%;
     max-width: 380px;
