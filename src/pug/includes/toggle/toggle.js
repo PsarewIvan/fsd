@@ -1,11 +1,13 @@
 class Toggle {
-  constructor(toggle) {
+  constructor(root) {
     this.LABEL_CHECKED_CLASS = 'toggle__label--checked';
     this.LABEL_FOCUS_CLASS = 'toggle__label--focus';
-    this.toggle = toggle;
-    this.inputs = toggle.querySelectorAll('.js-toggle__input');
-    this.labels = toggle.querySelectorAll('.js-toggle__label');
+    this.root = root;
+    this.inputs = root.querySelectorAll('.js-toggle__input');
+    this.labels = root.querySelectorAll('.js-toggle__label');
+  }
 
+  init() {
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
       input.addEventListener('click', this.handleInputClick.bind(this, i));
@@ -35,6 +37,4 @@ class Toggle {
   }
 }
 
-document.querySelectorAll('.js-toggle').forEach((toggle) => {
-  new Toggle(toggle);
-});
+export default Toggle;

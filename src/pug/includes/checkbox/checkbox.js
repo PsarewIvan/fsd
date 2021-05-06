@@ -9,7 +9,9 @@ class Checkbox {
     this.button = checkbox.querySelector('.js-checkbox__title-button');
     this.inputs = checkbox.querySelectorAll('.js-checkbox__input');
     this.labels = checkbox.querySelectorAll('.js-checkbox__label');
+  }
 
+  init() {
     this.inputs.forEach((input, i) => {
       this.labelCheckedToggle(this.labels[i], input);
       input.addEventListener('click', this.handleInputClick.bind(this, i));
@@ -17,6 +19,10 @@ class Checkbox {
       input.addEventListener('blur', this.handleInputBlur.bind(this, i));
     });
 
+    this.initButton();
+  }
+
+  initButton() {
     if (this.button) {
       this.openList();
       this.button.addEventListener('click', this.buttonHandlerClick.bind(this));
@@ -56,6 +62,4 @@ class Checkbox {
   }
 }
 
-document.querySelectorAll('.js-checkbox').forEach((checkbox) => {
-  new Checkbox(checkbox);
-});
+export default Checkbox;
