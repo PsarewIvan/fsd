@@ -1,12 +1,18 @@
-class HeaderNavigation {
+class Header {
   constructor(nav, index) {
     this.LIST_OPEN_CLASS = 'header__nav--open';
     this.BUTTON_OPEN_CLASS = 'header__menu-button--open';
+    this.MAIN_LINK_CLASS = 'js-header__main-link';
+    this.LINK_PATHNAME = 'landing';
     this.button = nav.querySelector('.js-header__menu-button');
     this.list = nav.querySelector('.js-header__nav');
     this.index = index;
+  }
+
+  init() {
     this.addAriaControls();
     this.buttonListener();
+    this.clearHrefOnMainLink();
   }
 
   addAriaControls() {
@@ -27,12 +33,14 @@ class HeaderNavigation {
     this.button.classList.toggle(this.BUTTON_OPEN_CLASS);
     this.list.classList.toggle(this.LIST_OPEN_CLASS);
   }
+
+  clearHrefOnMainLink() {
+    if (window.location.pathname.slice(1, -5) === this.LINK_PATHNAME) {
+      document
+        .querySelector(`.${this.MAIN_LINK_CLASS}`)
+        .removeAttribute('href');
+    }
+  }
 }
 
-document.querySelectorAll('.js-header__block').forEach((block, i) => {
-  new HeaderNavigation(block, i);
-});
-
-if (window.location.pathname.slice(1, -5) === 'landing') {
-  document.querySelector('.js-header__main-link').removeAttribute('href');
-}
+export default Header;
